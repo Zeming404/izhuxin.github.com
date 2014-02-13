@@ -2,76 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      
     <url>
-        <loc>jeason.me/</loc>
+        <loc>/</loc>
     </url> 
     <url>
-        <loc>jeason.me/blog</loc>
+        <loc>/blog</loc>
     </url> 
     <url>
-        <loc>jeason.me/diary</loc>
+        <loc>/diary</loc>
     </url> 
     <url>
-        <loc>jeason.me/album</loc>
+        <loc>/album</loc>
     </url> 
     <url>
-        <loc>jeason.me/about</loc>
+        <loc>/about</loc>
     </url>
     
     
     <url>
-        <loc>jeason.me/theme-setup/about-hmfaysal-omega</loc>
+        <loc>/theme-setup/about-hmfaysal-omega</loc>
     </url>
     
     <url>
-        <loc>jeason.me/sample-posts/a-status</loc>
+        <loc>/sample-posts/a-status</loc>
     </url>
     
     <url>
-        <loc>jeason.me/theme-setup/theme-elements</loc>
+        <loc>/theme-setup/theme-elements</loc>
     </url>
     
     <url>
-        <loc>jeason.me/photos/sample-gallery-post</loc>
+        <loc>/photos/sample-gallery-post</loc>
     </url>
     
     <url>
-        <loc>jeason.me/sample-posts/a-quotation</loc>
+        <loc>/sample-posts/a-quotation</loc>
     </url>
     
     <url>
-        <loc>jeason.me/videos/video-post</loc>
+        <loc>/videos/video-post</loc>
     </url>
     
     <url>
-        <loc>jeason.me/sample-posts/fancy-columns</loc>
+        <loc>/sample-posts/fancy-columns</loc>
     </url>
     
     <url>
-        <loc>jeason.me/sample-posts/sample-mathjax-post</loc>
+        <loc>/sample-posts/sample-mathjax-post</loc>
     </url>
     
     <url>
-        <loc>jeason.me/sample-posts/sample-link-post</loc>
+        <loc>/sample-posts/sample-link-post</loc>
     </url>
     
     <url>
-        <loc>jeason.me/sample-posts/code-highlighting-post</loc>
+        <loc>/sample-posts/code-highlighting-post</loc>
     </url>
     
     <url>
-        <loc>jeason.me/photos/sample-post-images</loc>
+        <loc>/photos/sample-post-images</loc>
     </url>
     
     <url>
-        <loc>jeason.me/sample-posts/readability-post</loc>
+        <loc>/sample-posts/readability-post</loc>
     </url>
     
     <url>
-        <loc>jeason.me/theme-setup/installing-jekyll-on-windows</loc>
+        <loc>/theme-setup/installing-jekyll-on-windows</loc>
     </url>
     
     <url>
-        <loc>jeason.me/sample-posts/readability-feature-post</loc>
+        <loc>/sample-posts/readability-feature-post</loc>
     </url>
     
 </urlset>
