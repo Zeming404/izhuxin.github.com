@@ -460,35 +460,20 @@ html {
   max-height: 120px;
 }
 /* - Blog title and description - */
-/* - 博客标题用的字体 － */
-@font-face {
-  font-family: 'Edwardian Script ITCRegular';
-  src: url('../font/Edwardian Script ITC.ttf');
-  src: local('Edwardian Script ITC Regular'),
-            local( 'Edwardian Script ITC' ), 
-            url('../font/Edwardian Script ITC.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .blog-title {
-  font-family: Edwardian Script ITCRegular;
   font-size: 36px;
   line-height: 36px;
   text-transform: uppercase;
   margin-bottom: 12px;
 }
-
 .blog-title span {
   display: block;
-  font: ;
 }
 .blog-description {
   text-transform: none;
   padding-top: 12px;
   margin-top: 12px;
   font-size: 18px;
-
 }
 #main {
   position: relative;

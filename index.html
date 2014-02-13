@@ -1,8 +1,9 @@
 ---
 layout: home
-title: 最近更新
-description: "Jeason的个人空间."
-headline: 
+title: Latest Posts
+description: "The personal blog of Hossain Mohd. Faysal, a doctoral candidate in Electrical Engineering at University of Pennsylvania."
+headline: An Engineer's Diary
+tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsylvania, doha, Qatar]
 ---
 {% if site.paginate %}
 	{% for post in paginator.posts %}
@@ -22,7 +23,7 @@ headline:
 	                    <h2 class="post-title text-center super lighter">
 	                        <a href="{{ site.url }}{{ post.url }}"><i class="icon-quote-left"></i> {{ post.excerpt | strip_html }}</a>
 	                    </h2>
-	                <!--    <p class="light small text-center">
+	                    <p class="light small text-center">
 	                        Share this Quote
 	                    </p>
 	                    <ul class="social-mini text-center">
@@ -45,16 +46,14 @@ headline:
 	                            </a>
 	                        </li>
 	                    </ul>
-	                -->
-
 			            <div class="post-body bordered-bottom text-center">
 			                {% if post.description %}
 			                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link">
-			                    <i class="icon-link"></i> read more...
+			                    <i class="icon-link"></i> permalink...
 			                </a>
 			                {% else %}
 			                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link">
-			                    <i class="icon-link"></i> read more...
+			                    <i class="icon-link"></i> permalink...
 			                </a>
 			                {% endif %}
 			            </div>
@@ -69,7 +68,7 @@ headline:
 	                    <h2 class="post-title text-center super lighter">
 	                        <a href="{{ site.url }}{{ post.url }}" style="color: #c91b26"><i class="icon-retweet"></i> "{{ post.excerpt | strip_html }}"</a>
 	                    </h2>
-	                  <!-- <p class="light small text-center">
+	                    <p class="light small text-center">
 	                        Share this Status
 	                    </p>
 	                    <ul class="social-mini text-center">
@@ -92,7 +91,6 @@ headline:
 	                            </a>
 	                        </li>
 	                    </ul>
-	                -->
 	                    <div class="post-info text-center small">
 	                        Status posted @ <time datetime="{{ post.date | date_to_xmlschema }}" class="post-time">{{ post.date | date: "%d %b %Y" }}</time>{% if post.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ post.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ post.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}
 	                        in <span class="post-tags">{% for tag in post.categories %}<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</span>&nbsp;<span class="post-tags">by {{ site.owner.name }}</span>
