@@ -1,9 +1,9 @@
 title:            小人物Jeason
 description:      "写作，只是为了不让平淡的生活把我变得无话可说"
-logo:             omikron.png
+logo:             logo.png
 disqus_shortname: jeason
 # Assign a default image for your site's header and footer
-default_bg:       disneyland.jpg
+default_bg:       J.jpg
 search:           true
 share:            false
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
@@ -13,7 +13,7 @@ animated_fins:    true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://www.jeason.me
+url:              http://0.0.0.0:4000
 
 # Owner/author information
 owner:
@@ -49,11 +49,13 @@ links:
   - title: <i class="icon-home"></i>首页
     url: /
     external: false
-  - title: <i class="icon-book"></i> 文档
-    url: /documentation
-  - title:  <i class="icon-camera"></i> 相册
-    url: /categories
-  - title: <i class="icon-eye-open"></i> 认识我
+  - title: <i class="icon-bug"></i>技术博客
+    url: /blog
+  - title: <i class="icon-book"></i>杂谈日志
+    url: /diary
+  - title:  <i class="icon-camera"></i>游记相册
+    url: /album
+  - title: <i class="icon-user"></i>关于我
     url: /about
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
