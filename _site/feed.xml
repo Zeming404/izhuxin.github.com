@@ -2,26 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">小人物Jeason</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://0.0.0.0:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://0.0.0.0:4000" />
-<updated>2014-02-13T16:44:41+08:00</updated>
-<id>http://0.0.0.0:4000/</id>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2014-02-13T18:09:02+08:00</updated>
+<id>/</id>
 <author>
   <name>Jeason George</name>
-  <uri>http://0.0.0.0:4000/</uri>
+  <uri>/</uri>
   <email>sysu.ss.jeason@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[ABOUT HMFAYSAL OMEGA]]></title>
-  <link>http://0.0.0.0:4000/theme-setup/about-hmfaysal-omega</link>
-  <id>http://0.0.0.0:4000/theme-setup/about-hmfaysal-omega</id>
+  <link>/theme-setup/about-hmfaysal-omega</link>
+  <id>/theme-setup/about-hmfaysal-omega</id>
   <published>2014-01-12T00:00:00+08:00</published>
   <updated>2014-01-12T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;HMFAYSAL OMEGA is a minimalist, beautiful, responsive theme for Jekyll designed for engineers as well as writers who want their content to take front and center. This theme elegantly wraps each page and post with featured images complementing the content. HMFAYSAL OMEGA (named after the Greek Alphabet) complements Jekyll’s minimalist, content-first approach with gorgeous typography and subtle design elements.&lt;/p&gt;
@@ -117,8 +117,8 @@
   &lt;li&gt;Footer Menu&lt;/li&gt;
   &lt;li&gt;361 Fontawesome icons&lt;/li&gt;
   &lt;li&gt;Tags for &lt;a href=&quot;https://developers.facebook.com/docs/opengraph/&quot;&gt;Open Graph&lt;/a&gt; and &lt;a href=&quot;https://dev.twitter.com/docs/cards&quot;&gt;Twitter Cards&lt;/a&gt; for a better social sharing experience&lt;/li&gt;
-  &lt;li&gt;Beautifully crafted &lt;a href=&quot;http://0.0.0.0:4000/404.html&quot;&gt;404 page&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Custom &lt;a href=&quot;http://0.0.0.0:4000/categories/&quot;&gt;categories&lt;/a&gt; and &lt;a href=&quot;http://0.0.0.0:4000/tags/&quot;&gt;tags&lt;/a&gt; pages for viewers pleasure&lt;/li&gt;
+  &lt;li&gt;Beautifully crafted &lt;a href=&quot;/404.html&quot;&gt;404 page&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Custom &lt;a href=&quot;/categories/&quot;&gt;categories&lt;/a&gt; and &lt;a href=&quot;/tags/&quot;&gt;tags&lt;/a&gt; pages for viewers pleasure&lt;/li&gt;
   &lt;li&gt;Stylesheets for Pygments and Coderay to make your code examples look snazzy.&lt;/li&gt;
   &lt;li&gt;Sitemap for search engines&lt;/li&gt;
 &lt;/ul&gt;
@@ -129,7 +129,7 @@
 
 &lt;h3 id=&quot;questions&quot;&gt;Questions?&lt;/h3&gt;
 
-&lt;p&gt;Having a problem getting something to work or want to know why I setup something in a certain way? Read the &lt;a href=&quot;http://0.0.0.0:4000/documentation/&quot;&gt;theme documentation&lt;/a&gt; or ping me on Twitter &lt;a href=&quot;http://twitter.com/hmfaysal&quot;&gt;@hmfaysal&lt;/a&gt; or &lt;a href=&quot;https://github.com/hmfaysal/hmfaysal-omega-theme/issues/new&quot;&gt;file a GitHub Issue&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Having a problem getting something to work or want to know why I setup something in a certain way? Read the &lt;a href=&quot;/documentation/&quot;&gt;theme documentation&lt;/a&gt; or ping me on Twitter &lt;a href=&quot;http://twitter.com/hmfaysal&quot;&gt;@hmfaysal&lt;/a&gt; or &lt;a href=&quot;https://github.com/hmfaysal/hmfaysal-omega-theme/issues/new&quot;&gt;file a GitHub Issue&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -141,23 +141,23 @@
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
-&lt;p&gt;This theme is free and open source software, distributed under the &lt;a href=&quot;http://0.0.0.0:4000/license/&quot;&gt;The MIT License&lt;/a&gt;. So feel free to use this Jekyll theme on your site without linking back to me or using a disclaimer.&lt;/p&gt;
+&lt;p&gt;This theme is free and open source software, distributed under the &lt;a href=&quot;/license/&quot;&gt;The MIT License&lt;/a&gt;. So feel free to use this Jekyll theme on your site without linking back to me or using a disclaimer.&lt;/p&gt;
 
 &lt;p&gt;If you’d like to give me credit somewhere on your blog or tweet a shout out to &lt;a href=&quot;https://twitter.com/hmfaysal&quot;&gt;@hmfaysal&lt;/a&gt;, that would be pretty sweet.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/theme-setup/about-hmfaysal-omega&quot;&gt;ABOUT HMFAYSAL OMEGA&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 12, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/theme-setup/about-hmfaysal-omega&quot;&gt;ABOUT HMFAYSAL OMEGA&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 12, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Sample Status Post]]></title>
-  <link>http://0.0.0.0:4000/sample-posts/a-status</link>
-  <id>http://0.0.0.0:4000/sample-posts/a-status</id>
+  <link>/sample-posts/a-status</link>
+  <id>/sample-posts/a-status</id>
   <published>2014-01-11T00:00:00+08:00</published>
   <updated>2014-01-11T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Oh Hello. This is a status post. Click here to learn about it more :-)&lt;/p&gt;
@@ -181,19 +181,19 @@ mathjax:
 ---
 &lt;/code&gt;&lt;/pre&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/sample-posts/a-status&quot;&gt;Sample Status Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 11, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/sample-posts/a-status&quot;&gt;Sample Status Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 11, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Theme Elements]]></title>
-  <link>http://0.0.0.0:4000/theme-setup/theme-elements</link>
-  <id>http://0.0.0.0:4000/theme-setup/theme-elements</id>
+  <link>/theme-setup/theme-elements</link>
+  <id>/theme-setup/theme-elements</id>
   <published>2014-01-10T00:00:00+08:00</published>
   <updated>2014-01-10T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;I’ve put together a little post to introduce you to the HMFAYSAL OMEGA theme and get you started with Markdown. Go ahead and edit this post to get going and learn how it all works!&lt;/p&gt;
@@ -260,14 +260,14 @@ mathjax:
 &lt;p&gt;Images work too! And they are responsive! Already know the URL of the image you want to include in your article? Images are responsive and uses lightbox. &lt;/p&gt;
 
 &lt;figure&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (16).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (16).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (16).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (16).jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (14).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (13).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (20).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (19).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (14).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (13).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (20).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (19).jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;Check out &lt;a href=&quot;http://0.0.0.0:4000/articles/sample-post-images/&quot;&gt;this post&lt;/a&gt; to learn about including images in your post.&lt;/p&gt;
+&lt;p&gt;Check out &lt;a href=&quot;/articles/sample-post-images/&quot;&gt;this post&lt;/a&gt; to learn about including images in your post.&lt;/p&gt;
 
 &lt;h2 id=&quot;and-videos&quot;&gt;AND VIDEOS?&lt;/h2&gt;
 
@@ -349,7 +349,7 @@ mathjax:
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Learn more about syntax highlighting &lt;a href=&quot;http://0.0.0.0:4000/articles/code-highlighting-post/&quot;&gt;in this post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Learn more about syntax highlighting &lt;a href=&quot;/articles/code-highlighting-post/&quot;&gt;in this post&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;ready-for-a-break&quot;&gt;READY FOR A BREAK?&lt;/h2&gt;
 
@@ -399,7 +399,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum velit quis m
 &lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;For more column combinations, visit &lt;a href=&quot;http://0.0.0.0:4000/personal/fancy-columns/&quot;&gt;this post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more column combinations, visit &lt;a href=&quot;/personal/fancy-columns/&quot;&gt;this post&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;buttons&quot;&gt;BUTTONS&lt;/h2&gt;
 
@@ -422,59 +422,59 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum velit quis m
 
 &lt;p&gt;That should be enough to get you started. Have fun - and let me know what you think &lt;a href=&quot;https://twitter.com/hmfaysal&quot;&gt;@hmfaysal&lt;/a&gt; or at &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#104;&amp;#109;&amp;#102;&amp;#097;&amp;#121;&amp;#115;&amp;#097;&amp;#108;&amp;#064;&amp;#097;&amp;#108;&amp;#117;&amp;#109;&amp;#046;&amp;#109;&amp;#105;&amp;#116;&amp;#046;&amp;#101;&amp;#100;&amp;#117;&quot;&gt;&amp;#104;&amp;#109;&amp;#102;&amp;#097;&amp;#121;&amp;#115;&amp;#097;&amp;#108;&amp;#064;&amp;#097;&amp;#108;&amp;#117;&amp;#109;&amp;#046;&amp;#109;&amp;#105;&amp;#116;&amp;#046;&amp;#101;&amp;#100;&amp;#117;&lt;/a&gt; :)&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/theme-setup/theme-elements&quot;&gt;Theme Elements&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 10, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/theme-setup/theme-elements&quot;&gt;Theme Elements&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 10, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Sample Gallery Post]]></title>
-  <link>http://0.0.0.0:4000/photos/sample-gallery-post</link>
-  <id>http://0.0.0.0:4000/photos/sample-gallery-post</id>
+  <link>/photos/sample-gallery-post</link>
+  <id>/photos/sample-gallery-post</id>
   <published>2014-01-09T00:00:00+08:00</published>
   <updated>2014-01-09T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Here is an example of what a post with a gallery might look like. If you want to display two or three images next to each other responsively use &lt;code&gt;figure&lt;/code&gt; with the appropriate &lt;code&gt;class&lt;/code&gt;. Each instance of &lt;code&gt;figure&lt;/code&gt; is auto-numbered and displayed in the caption.&lt;/p&gt;
 
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (4).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (3).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (18).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (17).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (10).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (9).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (4).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (3).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (18).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (17).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (10).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (9).jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (6).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (5).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (12).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (11).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (6).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (5).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (12).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (11).jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (16).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (16).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (16).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (16).jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (14).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (13).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (20).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (19).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (14).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (13).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (20).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (19).jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (22).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (21).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (24).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (23).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (74).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (73).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (22).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (21).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (24).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (23).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (74).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (73).jpg&quot; /&gt;&lt;/a&gt;
 	&lt;figcaption&gt;Photos from my Japan trip.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/photos/sample-gallery-post&quot;&gt;Sample Gallery Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 09, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/photos/sample-gallery-post&quot;&gt;Sample Gallery Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 09, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Sample Quotation Post]]></title>
-  <link>http://0.0.0.0:4000/sample-posts/a-quotation</link>
-  <id>http://0.0.0.0:4000/sample-posts/a-quotation</id>
+  <link>/sample-posts/a-quotation</link>
+  <id>/sample-posts/a-quotation</id>
   <published>2014-01-08T00:00:00+08:00</published>
   <updated>2014-01-08T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;blockquote&gt;
@@ -531,19 +531,19 @@ mathjax:
 
 &lt;p&gt;Einstein’s gifts inevitably resulted in his dwelling much in intellectual solitude and, for relaxation, music played an important part in his life. He married Mileva Maric in 1903 and they had a daughter and two sons; their marriage was dissolved in 1919 and in the same year he married his cousin, Elsa Löwenthal, who died in 1936. He died on April 18, 1955 at Princeton, New Jersey.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/sample-posts/a-quotation&quot;&gt;Sample Quotation Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/sample-posts/a-quotation&quot;&gt;Sample Quotation Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[A Post with a Video]]></title>
-  <link>http://0.0.0.0:4000/videos/video-post</link>
-  <id>http://0.0.0.0:4000/videos/video-post</id>
+  <link>/videos/video-post</link>
+  <id>/videos/video-post</id>
   <published>2014-01-07T00:00:00+08:00</published>
   <updated>2014-01-07T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Video embeds are responsive and scale with the width of the main content block with the help of &lt;a href=&quot;http://fitvidsjs.com/&quot;&gt;FitVids&lt;/a&gt;.&lt;/p&gt;
@@ -553,19 +553,19 @@ mathjax:
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;iframe&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;940&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;529&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;//www.youtube.com/embed/CQJByFp7H38?theme=light&amp;amp;amp;color=white&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;frameborder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;allowfullscreen&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/iframe&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/videos/video-post&quot;&gt;A Post with a Video&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 07, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/videos/video-post&quot;&gt;A Post with a Video&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 07, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Fancy Some Columns?]]></title>
-  <link>http://0.0.0.0:4000/sample-posts/fancy-columns</link>
-  <id>http://0.0.0.0:4000/sample-posts/fancy-columns</id>
+  <link>/sample-posts/fancy-columns</link>
+  <id>/sample-posts/fancy-columns</id>
   <published>2014-01-07T00:00:00+08:00</published>
   <updated>2014-01-07T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Some Premium WordPress themes feature multi-column text entries, which is quite important for academics and engineers like myself for content presentation. HMFAYSAL OMEGA is the first Jekyll Theme to showcase multi-column text entries. HMFAYSAL OMEGA features four types of multi-column configuration, the first being the single column, the others are two, three and four columns. To insert a two-column text entry, simply enter this markup:&lt;/p&gt;
@@ -687,19 +687,19 @@ mathjax:
 
 &lt;p&gt;For any layout, make sure in the &lt;code&gt;&amp;lt;div class=&quot;col-md-#&quot;&amp;gt;&lt;/code&gt; the &lt;code&gt;&quot;col-md-#&quot;&lt;/code&gt; numbers add up to 12. the You can include any type of elements between the &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; tags, like texts, images, videos etc.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/sample-posts/fancy-columns&quot;&gt;Fancy Some Columns?&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 07, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/sample-posts/fancy-columns&quot;&gt;Fancy Some Columns?&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 07, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Sample Mathjax Post]]></title>
-  <link>http://0.0.0.0:4000/sample-posts/sample-mathjax-post</link>
-  <id>http://0.0.0.0:4000/sample-posts/sample-mathjax-post</id>
+  <link>/sample-posts/sample-mathjax-post</link>
+  <id>/sample-posts/sample-mathjax-post</id>
   <published>2014-01-06T00:00:00+08:00</published>
   <updated>2014-01-06T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;HMFAYSAL OMEGA theme supports both inline and displayed equations via MathJax.  The theme keeps MathJax turned off by default to improve page load speed. MathJax can be turned on from the post’s Front Matter YAML. Simply put the following statement in the post’s Front Matter YAML:&lt;/p&gt;
@@ -780,36 +780,36 @@ disturbing the spacing between lines.&lt;/p&gt;
 
 &lt;p&gt;In MathJax I use &lt;code&gt;$$...$$&lt;/code&gt; or (&lt;code&gt;\begin{equation(*)}...\end{equation(*)}&lt;/code&gt; also works) for displayed equations and &lt;code&gt;$....$&lt;/code&gt; for inline equations. Take care of &amp;gt;,&amp;lt; and &amp;amp;, because they have special meanings in .html files. If your post/page is not displaying the equations properly, try to wrap the equations between &lt;code&gt;{% raw %}...{% endraw %}&lt;/code&gt; tags.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/sample-posts/sample-mathjax-post&quot;&gt;Sample Mathjax Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 06, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/sample-posts/sample-mathjax-post&quot;&gt;Sample Mathjax Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 06, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Sample Link Post]]></title>
   <link>http://alum.mit.edu/www/hmfaysal</link>
-  <id>http://0.0.0.0:4000/sample-posts/sample-link-post</id>
+  <id>/sample-posts/sample-link-post</id>
   <published>2014-01-05T00:00:00+08:00</published>
   <updated>2014-01-05T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;HMFAYSAL OMEGA Theme now supports &lt;strong&gt;link posts&lt;/strong&gt;, made famous by John Gruber. To activate just add &lt;code&gt;link: http://url-you-want-linked&lt;/code&gt; to the post’s YAML front matter and you’re done.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/sample-posts/sample-link-post&quot;&gt;Sample Link Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 05, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/sample-posts/sample-link-post&quot;&gt;Sample Link Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 05, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Syntax Highlighting Post]]></title>
-  <link>http://0.0.0.0:4000/sample-posts/code-highlighting-post</link>
-  <id>http://0.0.0.0:4000/sample-posts/code-highlighting-post</id>
+  <link>/sample-posts/code-highlighting-post</link>
+  <id>/sample-posts/code-highlighting-post</id>
   <published>2014-01-04T00:00:00+08:00</published>
   <updated>2014-01-04T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -913,19 +913,19 @@ end
   &lt;/ol&gt;
 &lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/sample-posts/code-highlighting-post&quot;&gt;Syntax Highlighting Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 04, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/sample-posts/code-highlighting-post&quot;&gt;Syntax Highlighting Post&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 04, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[A Post with Images]]></title>
-  <link>http://0.0.0.0:4000/photos/sample-post-images</link>
-  <id>http://0.0.0.0:4000/photos/sample-post-images</id>
+  <link>/photos/sample-post-images</link>
+  <id>/photos/sample-post-images</id>
   <published>2014-01-03T00:00:00+08:00</published>
   <updated>2014-01-03T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Here are some examples of what a post with images might look like. If you want to display two or three images next to each other responsively use &lt;code&gt;figure&lt;/code&gt; with the appropriate &lt;code&gt;class&lt;/code&gt;. Images are responsive and are opened in a Magnific Popup lightbox if you link a larger image to the entry. Also if you link a larger image, the image thumbs uses CSS3 transitions to turn B&amp;amp;W and change back to color on mouse-hover. Each instance of &lt;code&gt;figure&lt;/code&gt; is auto-numbered and displayed in the caption.&lt;/p&gt;
@@ -935,7 +935,7 @@ end
 &lt;h3 id=&quot;one-up&quot;&gt;One Up&lt;/h3&gt;
 
 &lt;figure&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/disneyland.jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/disneyland.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/disneyland.jpg&quot;&gt;&lt;img src=&quot;/images/disneyland.jpg&quot; /&gt;&lt;/a&gt;
 	&lt;figcaption&gt;&lt;a href=&quot;http://hmfaysal.github.io/&quot; data-toggle=&quot;tooltip&quot; title=&quot;Visit my website&quot;&gt;A day at Disneyland, Tokyo&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -953,10 +953,10 @@ end
 &lt;p&gt;And you’ll get something that looks like this:&lt;/p&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (6).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (5).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (12).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (11).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (13).jpg&quot; /&gt;
-	&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (19).jpg&quot; /&gt;
+	&lt;a href=&quot;/images/gallery1/photo (6).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (5).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (12).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (11).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;img src=&quot;/images/gallery1/photo (13).jpg&quot; /&gt;
+	&lt;img src=&quot;/images/gallery1/photo (19).jpg&quot; /&gt;
 	&lt;figcaption&gt;Two images.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -975,28 +975,28 @@ end
 &lt;p&gt;And you’ll get something that looks like this:&lt;/p&gt;
 
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (22).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (21).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (24).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (23).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (74).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (73).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (4).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (3).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (18).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (17).jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://0.0.0.0:4000/images/gallery1/photo (10).jpg&quot;&gt;&lt;img src=&quot;http://0.0.0.0:4000/images/gallery1/photo (9).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (22).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (21).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (24).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (23).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (74).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (73).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (4).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (3).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (18).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (17).jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/gallery1/photo (10).jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/photo (9).jpg&quot; /&gt;&lt;/a&gt;
 	&lt;figcaption&gt;Three images.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/photos/sample-post-images&quot;&gt;A Post with Images&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 03, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/photos/sample-post-images&quot;&gt;A Post with Images&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 03, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Testing Readability with a Bunch of Text]]></title>
-  <link>http://0.0.0.0:4000/sample-posts/readability-post</link>
-  <id>http://0.0.0.0:4000/sample-posts/readability-post</id>
+  <link>/sample-posts/readability-post</link>
+  <id>/sample-posts/readability-post</id>
   <published>2014-01-01T00:00:00+08:00</published>
   <updated>2014-01-01T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Portland in shoreditch Vice, labore typewriter pariatur hoodie fap sartorial Austin. Pinterest literally occupy Schlitz forage. Odio ad blue bottle vinyl, 90’s narwhal commodo bitters pour-over nostrud. Ugh est hashtag in, fingerstache adipisicing laboris esse Pinterest shabby chic Portland. Shoreditch bicycle rights anim, flexitarian laboris put a bird on it vinyl cupidatat narwhal. Hashtag artisan skateboard, flannel Bushwick nesciunt salvia aute fixie do plaid post-ironic dolor McSweeney’s. Cliche pour-over chambray nulla four loko skateboard sapiente hashtag.&lt;/p&gt;
@@ -1040,19 +1040,19 @@ end
 
 &lt;p&gt;Aliquip enim artisan dolor post-ironic. Pug tote bag Marfa, deserunt pour-over Portland wolf eu odio intelligentsia american apparel ugh ea. Sunt viral et, 3 wolf moon gastropub pug id. Id fashion axe est typewriter, mlkshk Portland art party aute brunch. Sint pork belly Cosby sweater, deep v mumblecore kitsch american apparel. Try-hard direct trade tumblr sint skateboard. Adipisicing bitters excepteur biodiesel, pickled gastropub aute veniam.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/sample-posts/readability-post&quot;&gt;Testing Readability with a Bunch of Text&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on January 01, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/sample-posts/readability-post&quot;&gt;Testing Readability with a Bunch of Text&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on January 01, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Installing Jekyll on Windows]]></title>
-  <link>http://0.0.0.0:4000/theme-setup/installing-jekyll-on-windows</link>
-  <id>http://0.0.0.0:4000/theme-setup/installing-jekyll-on-windows</id>
+  <link>/theme-setup/installing-jekyll-on-windows</link>
+  <id>/theme-setup/installing-jekyll-on-windows</id>
   <published>2013-12-31T00:00:00+08:00</published>
   <updated>2013-12-31T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Welcome to HMFAYSAL OMEGA Theme for Jekyll. In this tutorial, I will show you how you can install and get started with Jekyll in 10 easy steps. While Jekyll itself is very easy to get started with, Jekyll has several dependencies which needed to be installed in order for Jekyll to work properly. The process of installing these requirements can be a little frustrating on any system, and it can be a tad bit more frustrating if you own a Windows PC. In this article, I will provide step-by-step details about installing Jekyll on windows and all its dependencies properly and will try to elaborate on the errors that one might encounter during the steps.&lt;/p&gt;
@@ -1182,20 +1182,20 @@ end
 
 &lt;p&gt;If you’ve enjoyed this post, feel free to like it or share it on facebook, or give me a shoutout in twitter @hmfaysal&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/theme-setup/installing-jekyll-on-windows&quot;&gt;Installing Jekyll on Windows&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on December 31, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/theme-setup/installing-jekyll-on-windows&quot;&gt;Installing Jekyll on Windows&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on December 31, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Post with Large Feature Image and Text]]></title>
-  <link>http://0.0.0.0:4000/sample-posts/readability-feature-post</link>
-  <id>http://0.0.0.0:4000/sample-posts/readability-feature-post</id>
+  <link>/sample-posts/readability-feature-post</link>
+  <id>/sample-posts/readability-feature-post</id>
   <updated>2013-06-30T00:00:00-00:00</updated>
   <published>2013-12-30T00:00:00+08:00</published>
   
   <author>
     <name>Jeason George</name>
-    <uri>http://0.0.0.0:4000</uri>
+    <uri></uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;This is a sample post with a large feature image[^1] up top and tons of text. Odio ad blue bottle vinyl, 90’s narwhal commodo bitters pour-over nostrud. Ugh est hashtag in, fingerstache adipisicing laboris esse Pinterest shabby chic Portland. Shoreditch bicycle rights anim, flexitarian laboris put a bird on it vinyl cupidatat narwhal. Hashtag artisan skateboard, flannel Bushwick nesciunt salvia aute fixie do plaid post-ironic dolor McSweeney’s. Cliche pour-over chambray nulla four loko skateboard sapiente hashtag.&lt;/p&gt;
@@ -1239,7 +1239,7 @@ end
 
 &lt;p&gt;Aliquip enim artisan dolor post-ironic. Pug tote bag Marfa, deserunt pour-over Portland wolf eu odio intelligentsia american apparel ugh ea. Sunt viral et, 3 wolf moon gastropub pug id. Id fashion axe est typewriter, mlkshk Portland art party aute brunch. Sint pork belly Cosby sweater, deep v mumblecore kitsch american apparel. Try-hard direct trade tumblr sint skateboard. Adipisicing bitters excepteur biodiesel, pickled gastropub aute veniam.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://0.0.0.0:4000/sample-posts/readability-feature-post&quot;&gt;Post with Large Feature Image and Text&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://0.0.0.0:4000&quot;&gt;小人物Jeason&lt;/a&gt; on December 30, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/sample-posts/readability-feature-post&quot;&gt;Post with Large Feature Image and Text&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;&quot;&gt;小人物Jeason&lt;/a&gt; on December 30, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>
