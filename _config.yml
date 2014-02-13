@@ -1,9 +1,9 @@
-title:            Jeason George
-description:      "Developer for IOS, student in SYSU, iFans to friend."
+title:            小人物Jeason
+description:      "写作，只是为了不让平淡的生活把我变得无话可说"
 logo:             omikron.png
-disqus_shortname: Jeason
+disqus_shortname: 
 # Assign a default image for your site's header and footer
-default_bg:       default_bg.jpg
+default_bg:       disneyland.jpg
 search:           true
 share:            false
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
@@ -13,7 +13,7 @@ animated_fins:    true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://izhuxin.github.io
+url:              http://0.0.0.0:4000
 
 # Owner/author information
 owner:
@@ -27,6 +27,7 @@ owner:
   twitter:        
   facebook:       
   github:         izhuxin
+  weibo:          u/2966878797
   stackexchange:  
   linkedin:       
   instagram:      
@@ -45,18 +46,15 @@ bing_verify:
 # Links to include in footer navigation
 # For external links add external: true
 links:
-  - title: 首页
+  - title: <i class="icon-home"></i>首页
     url: /
     external: false
-    icon: home
   - title: <i class="icon-book"></i> 文档
     url: /documentation
-  - title: 分类
+  - title:  <i class="icon-camera"></i> 相册
     url: /categories
-  - title: 标签
-    url: /tags
-  - title: 关于我
-    url: /hossain-mohd-faysal
+  - title: <i class="icon-eye-open"></i> 认识我
+    url: /about
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Chongqing

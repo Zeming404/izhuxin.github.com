@@ -2,76 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      
     <url>
-        <loc>izhuxin.github.io/</loc>
+        <loc>http://0.0.0.0:4000/</loc>
     </url> 
     <url>
-        <loc>izhuxin.github.io/documentation</loc>
+        <loc>http://0.0.0.0:4000/documentation</loc>
     </url> 
     <url>
-        <loc>izhuxin.github.io/categories</loc>
+        <loc>http://0.0.0.0:4000/categories</loc>
     </url> 
     <url>
-        <loc>izhuxin.github.io/tags</loc>
-    </url> 
-    <url>
-        <loc>izhuxin.github.io/hossain-mohd-faysal</loc>
+        <loc>http://0.0.0.0:4000/about</loc>
     </url>
     
     
     <url>
-        <loc>izhuxin.github.io/theme-setup/about-hmfaysal-omega</loc>
+        <loc>http://0.0.0.0:4000/theme-setup/about-hmfaysal-omega</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/sample-posts/a-status</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/a-status</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/theme-setup/theme-elements</loc>
+        <loc>http://0.0.0.0:4000/theme-setup/theme-elements</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/photos/sample-gallery-post</loc>
+        <loc>http://0.0.0.0:4000/photos/sample-gallery-post</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/sample-posts/a-quotation</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/a-quotation</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/videos/video-post</loc>
+        <loc>http://0.0.0.0:4000/videos/video-post</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/sample-posts/fancy-columns</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/fancy-columns</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/sample-posts/sample-mathjax-post</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/sample-mathjax-post</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/sample-posts/sample-link-post</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/sample-link-post</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/sample-posts/code-highlighting-post</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/code-highlighting-post</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/photos/sample-post-images</loc>
+        <loc>http://0.0.0.0:4000/photos/sample-post-images</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/sample-posts/readability-post</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/readability-post</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/theme-setup/installing-jekyll-on-windows</loc>
+        <loc>http://0.0.0.0:4000/theme-setup/installing-jekyll-on-windows</loc>
     </url>
     
     <url>
-        <loc>izhuxin.github.io/sample-posts/readability-feature-post</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/readability-feature-post</loc>
     </url>
     
 </urlset>
