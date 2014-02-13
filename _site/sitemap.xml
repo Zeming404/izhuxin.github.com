@@ -2,76 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      
     <url>
-        <loc>/</loc>
+        <loc>http://0.0.0.0:4000/</loc>
     </url> 
     <url>
-        <loc>/blog</loc>
+        <loc>http://0.0.0.0:4000/blog</loc>
     </url> 
     <url>
-        <loc>/diary</loc>
+        <loc>http://0.0.0.0:4000/diary</loc>
     </url> 
     <url>
-        <loc>/album</loc>
+        <loc>http://0.0.0.0:4000/album</loc>
     </url> 
     <url>
-        <loc>/about</loc>
+        <loc>http://0.0.0.0:4000/about</loc>
     </url>
     
     
     <url>
-        <loc>/theme-setup/about-hmfaysal-omega</loc>
+        <loc>http://0.0.0.0:4000/theme-setup/about-hmfaysal-omega</loc>
     </url>
     
     <url>
-        <loc>/sample-posts/a-status</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/a-status</loc>
     </url>
     
     <url>
-        <loc>/theme-setup/theme-elements</loc>
+        <loc>http://0.0.0.0:4000/theme-setup/theme-elements</loc>
     </url>
     
     <url>
-        <loc>/photos/sample-gallery-post</loc>
+        <loc>http://0.0.0.0:4000/photos/sample-gallery-post</loc>
     </url>
     
     <url>
-        <loc>/sample-posts/a-quotation</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/a-quotation</loc>
     </url>
     
     <url>
-        <loc>/videos/video-post</loc>
+        <loc>http://0.0.0.0:4000/videos/video-post</loc>
     </url>
     
     <url>
-        <loc>/sample-posts/fancy-columns</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/fancy-columns</loc>
     </url>
     
     <url>
-        <loc>/sample-posts/sample-mathjax-post</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/sample-mathjax-post</loc>
     </url>
     
     <url>
-        <loc>/sample-posts/sample-link-post</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/sample-link-post</loc>
     </url>
     
     <url>
-        <loc>/sample-posts/code-highlighting-post</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/code-highlighting-post</loc>
     </url>
     
     <url>
-        <loc>/photos/sample-post-images</loc>
+        <loc>http://0.0.0.0:4000/photos/sample-post-images</loc>
     </url>
     
     <url>
-        <loc>/sample-posts/readability-post</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/readability-post</loc>
     </url>
     
     <url>
-        <loc>/theme-setup/installing-jekyll-on-windows</loc>
+        <loc>http://0.0.0.0:4000/theme-setup/installing-jekyll-on-windows</loc>
     </url>
     
     <url>
-        <loc>/sample-posts/readability-feature-post</loc>
+        <loc>http://0.0.0.0:4000/sample-posts/readability-feature-post</loc>
     </url>
     
 </urlset>
