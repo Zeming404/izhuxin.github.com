@@ -2,8 +2,8 @@
 	
 		{
 		  "title"      : "ABOUT HMFAYSAL OMEGA",
-		  "category"   : "Theme-Setup",
-		  "url"        : "http://localhost:4000/theme-setup/about-hmfaysal-omega",
+		  "category"   : "diary",
+		  "url"        : "http://localhost:4000/diary/about-hmfaysal-omega",
 		  "date"       : "2014-01-12 00:00:00 +0800",
 		  "shortdate"  : "January 12, 2014"
 		} ,

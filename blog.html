@@ -1,0 +1,63 @@
+---
+layout: pageminimal
+title: 技术博客
+permalink: /blog/index.html
+description: "技术分享总结的小洲。"
+---
+
+<article class="post col-md-offset-2">
+Jeason是来自广州国立中山大学软件学院的大二学生，典型的IT技术爱好者。至于软件工程专业方面，Jeason现在主要的方向是iOS前端开发。既然是学生，自然这里也会兼谈许多其他技术领域。如果你对Jeason的文章表示认同想要转载的话，最好能在页面的某个不起眼的角落标上原文出处，他会为此感到相当感激。
+</article>
+<br />
+<ul class="tag-box inline">
+{% assign tags_list = site.tags %}  
+  {% if tags_list.first[0] == null %}
+    {% for tag in tags_list %}
+    	{% assign blog_var = 0 %} 
+    	{% for post in tag[1] limit:1 %}
+    		{% if post.category == 'blog' %}
+    			{% assign blog_var = 1 %}
+    		{% endif %}
+    	{% endfor %}
+    	{% if blog_var == 1 %}
+    	<li><a href="#{{ tag }}">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li>
+    	{% endif %}
+    {% endfor %}
+  {% else %}
+    {% for tag in tags_list %}
+    	{% assign blog_var = 0 %} 
+    	{% for post in tag[1] limit:1 %}
+    		{% if post.category == 'blog' %}
+    			{% assign blog_var = 1 %}
+    		{% endif %}
+    	{% endfor %}
+    	{% if blog_var == 1 %}
+    		<li><a href="#{{ tag[0] }}">{{ tag[0] }} <span>{{ tag[1].size }}</span></a></li>
+    	{% endif %}
+    {% endfor %}
+  {% endif %}
+{% assign tags_list = nil %}
+</ul>
+{% for tag in site.tags %}
+ 	{% assign blog_var = 0 %} 
+    	{% for post in tag[1] limit:1 %}
+    		{% if post.category == 'blog' %}
+    			{% assign blog_var = 1 %}
+    		{% endif %}
+    	{% endfor %}
+    	{% if blog_var == 1 %}
+			<h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
+			<ul class="post-list">
+			{% assign pages_list = tag[1] %}  
+			{% for post in pages_list %}
+				{% if post.title != null %}
+					{% if group == null or group == post.group %}
+					<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></a></li>
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+			{% assign pages_list = nil %}
+			{% assign group = nil %}
+		{% endif %}
+	</ul>
+{% endfor %}
