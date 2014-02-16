@@ -2649,7 +2649,10 @@ figure a img:hover {
     }
 
     figure.third figcaption {
-        clear: left;
+        float: left;
+        width: 240px;
+        margin-right: 5px;
+        margin-left: 5px;
     }
 }
 

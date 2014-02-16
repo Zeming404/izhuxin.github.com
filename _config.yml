@@ -1,13 +1,13 @@
-title:            小人物Jeason
-description:      "一半是海水，一半是火焰"
+title:            Jeason
+description:      "创作，只是为了让我不会对浮躁的社会无话可说"
 logo:             logo.png
-disqus_shortname: jeason
+disqus_shortname: Jeason
 # Assign a default image for your site's header and footer
 default_bg:       J.jpg
 search:           true
 share:            false
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
-readtime:         false
+readtime:         true
 # Turn on or off the fin animations in the header and footer
 animated_fins:    true
 # Specify the fin color in RGB value
@@ -23,7 +23,7 @@ owner:
   avatar:         headphoto.JPG
   email:          sysu.ss.jeason@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    创作，只是为了不让每天重复又重复的生活把我变得无话可说
+  description:    那就成为他们中最勤奋的那一个吧
   # Social networking links used in footer. Update and remove as you like.
   # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
   twitter:        
@@ -65,7 +65,7 @@ timezone:    Asia/Chongqing
 future:      true
 pygments:    true
 markdown:    kramdown
-paginate:    6
+paginate:    3
 paginate_path: "page:num"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
@@ -75,7 +75,7 @@ kramdown:
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
-  toc_levels: 1..6
+  toc_levels: 1..3
   use_coderay: false
 
   coderay:
