@@ -1,3 +1,11 @@
 [
 	
+		{
+		  "title"      : "漫游中大",
+		  "category"   : "album",
+		  "url"        : "http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7",
+		  "date"       : "2014-03-01 00:00:00 +0800",
+		  "shortdate"  : "March 01, 2014"
+		} 
+	
 ]
