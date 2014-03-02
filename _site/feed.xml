@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-03-02T13:39:34+08:00</updated>
+<updated>2014-03-02T14:20:36+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Jeason George</name>
@@ -65,13 +65,14 @@
 	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;5.当然那么美丽的校园，图书馆自然不是读书的唯一去处，去图书馆借一本自己喜欢的小说，或坐在木椅或坐在草坪，那都是非常不错的选择。
+&lt;p&gt;5.当然那么美丽的校园，图书馆自然不是读书的唯一去处，去图书馆借一本自己喜欢的小说，或坐在木椅或坐在草坪，那都是非常不错的选择。&lt;/p&gt;
+&lt;html&gt;
 &lt;figure class=&quot;third&quot;&gt;
 	&lt;a href=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302130551021.jpg&quot;&gt;&lt;img src=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302130551021.jpg&quot; /&gt;&lt;/a&gt;
 	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
 	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
-&lt;/figure&gt;&lt;/p&gt;
-
+&lt;/figure&gt;
+&lt;/html&gt;
 &lt;p&gt;6.终于，我沿着路旁参天的古树，来到了周围一片肃静的图书馆。凭着中山大学的校园卡刷卡入馆，最后我在馆内坐下，打开笔记本记录下这份回忆。
 &lt;figure class=&quot;half&quot;&gt;
 	&lt;a href=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302130319092.jpg&quot;&gt;&lt;img src=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302130319092.jpg&quot; /&gt;&lt;/a&gt;
