@@ -98,14 +98,16 @@ mathjax:
         top_constraint = [NSLayoutConstraint constraintWithItem:self.backgroundView
                                                       attribute:NSLayoutAttributeTop
                                                       relatedBy:NSLayoutRelationEqual
-                                                         toItem:self.view attribute:NSLayoutAttributeTop
+                                                         toItem:self.view 
+                                                      attribute:NSLayoutAttributeTop
                                                      multiplier:1
                                                        constant:0];
     } else {
         top_constraint = [NSLayoutConstraint constraintWithItem:self.backgroundView
                                                       attribute:NSLayoutAttributeTop
                                                       relatedBy:NSLayoutRelationEqual
-                                                         toItem:self.view attribute:NSLayoutAttributeTop
+                                                         toItem:self.view 
+                                                      attribute:NSLayoutAttributeTop
                                                      multiplier:1
                                                        constant:-20];
     }
