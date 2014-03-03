@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>一种简单适配iOS开发中各种屏幕的投机取巧方法 &#8211; Jeason</title>
+<meta name="description" content="">
+<meta name="keywords" content="IOS Developer">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一种简单适配iOS开发中各种屏幕的投机取巧方法">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://localhost:4000/blog/View%2Bin%2BView">
+<meta property="og:site_name" content="Jeason">
+<meta property="og:image" content="http://localhost:4000/images/ios6_ios7_home_screens.jpg">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/View%2Bin%2BView">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/style.css" />
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search...">
+        <i class="icon-remove-sign"></i>
+        <ul class="search-results post-list"></ul><!-- /.search-results -->
+    </div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/ios6_ios7_home_screens.jpg)" itemscope itemtype="http://schema.org/Organization">
+
+
+    <div class="inner">
+        <div class="container">
+            <a class="brand" href="http://localhost:4000" role="banner" itemprop="url">
+
+                <img itemprop="logo" src="http://localhost:4000/images/logo.png" alt="Jeason Logo" />
+
+            <h1 class="blog-title light" itemprop="name">
+                Jeason
+            </h1>
+                
+            </a>
+        </div>
+    </div>
+    
+    
+    <div class="decor-wrapper">
+        <svg id="header-decor" class="decor bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+            <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+            <path class="medium left" d="M0 100 L50 50 L0 33.3" fill="rgba(255,255,255, .3)"></path>
+            <path class="medium right" d="M100 100 L50 50 L100 33.3" fill="rgba(255,255,255, .3)"></path>
+
+            <path class="small left" d="M0 100 L50 50 L0 66.6" fill="rgba(255,255,255, .5)"></path>
+            <path class="small right" d="M100 100 L50 50 L100 66.6" fill="rgba(255,255,255, .5)"></path>
+
+            <path d="M0 99.9 L50 49.9 L100 99.9 L0 99.9" fill="rgba(255,255,255, 1)"></path>
+
+            <path d="M48 52 L50 49 L52 52 L48 52" fill="rgba(255,255,255, 1)"></path>
+
+        </svg>
+    </div>
+    
+</header>
+<div id="main" class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+    <div class="container">
+        <div class="row">
+            <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            
+            
+            
+                
+            
+             
+             
+                    <header class="post-header entry-header">
+                        
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">一种简单适配iOS开发中各种屏幕的投机取巧方法</h1>
+                        
+                        <div class="post-info text-center small">
+                            <span class="entry-date date published updated"><time datetime="2014-03-02T00:00:00+08:00" class="post-time" itemprop="datePublished">02 Mar 2014</time><span>
+                            in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                        </div>
+                    </header>
+                    <div class="post-body bordered-bottom" itemprop="description">
+                        
+                        <section>
+  <header>
+    <h1>大纲</h1>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#section">背景介绍</a></li>
+  <li><a href="#view-in-view">View in View的方法</a>    <ul>
+      <li><a href="#section-1">导入</a></li>
+      <li><a href="#section-2">实践</a>        <ul>
+          <li><a href="#view">引入内层View</a></li>
+          <li><a href="#autolayout">使用autolayout</a></li>
+          <li><a href="#autolayout-1">在代码中使用autolayout</a></li>
+          <li><a href="#viewdidloadautolayout">在viewDidLoad中使用autolayout</a></li>
+          <li><a href="#section-3">解决4寸屏幕上的问题</a></li>
+        </ul>
+      </li>
+      <li><a href="#section-4">总结</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-5">其他方法总结</a></li>
+</ul>
+
+  </div>
+</section>
+
+<h1 id="section">背景介绍</h1>
+<p>正如标题所说，Jeason想出来的这个方法是投机取巧式的，是有一定适用条件的。在这里，我不会将IOS中不同尺寸不同系统的适配问题统统讲完，不过会在后面给出其他适配方法的链接。</p>
+
+<ul>
+  <li>是这样的，之前Jeason实习的那家公司的产品从iOS7发布之前就开始启动了，所以之前的设计一直没有考虑iOS6/iOS7适配的问题。</li>
+  <li>而设计师严重缺人而且主美之前还无IOS开发的经验，所以我们也几乎没有考虑iPhone5的尺寸问题。</li>
+  <li>这个春节项目接近尾声，经理一直在催赶进度，我需要找到一种简单的适配方法来达到在iOS6，iOS7以及3.5寸和4.0寸视觉效果上的基本一致(至少不会太差)。</li>
+  <li>提一下重要的一点，就是我们的项目是拆分了一个个模块，每个模块的界面大多是用xib搭建的，而且大多带有导航栏。这是问题的难点，同时这也是这个方法的关键。</li>
+</ul>
+
+<h1 id="view-in-view">View in View的方法</h1>
+
+<h2 id="section-1">导入</h2>
+<p>为了方便说明这个方法，我随手弄了一个小project，如下图所示，虽然丑了点，不过大概能表达出真实的情况。
+  这是一个登录页面，上面有很多个必要的控件而且有一个iOS7风格的导航栏，还有背景图。</p>
+<figure>
+<a href="http://localhost:4000/images/2014/03/02/1.jpg"><img src="http://localhost:4000/images/2014/03/02/1.jpg" /></a>
+</figure>
+
+<p>现在这样在3.5寸，iOS7的模拟器上运行视觉上是OK的。（不要问我为什么会这么丑，这只是demo）问题主要是出现在当在iOS6上和4寸的模拟器上时，会出现比较大的问题，如下所示。
+<figure class="half">
+<a href="http://localhost:4000/images/2014/03/02/2.jpg"><img src="http://localhost:4000/images/2014/03/02/2.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/02/3.jpg"><img src="http://localhost:4000/images/2014/03/02/3.jpg" /></a>
+</figure></p>
+
+<p>正如第一张图所示，iOS6的self.view.frame的零点是在状态栏以下的位置，而iOS7的则是在整个屏幕的最左上方位置，两者纵坐标相差20px。而第二张图则说明了另一个问题，就是在依靠xib搭建的界面元素不会动态地去布局。</p>
+
+<p>通过一些搜索的尝试，我发现了一些其他人的解决方案。对于第一个问题，有人说xib里取消到autolayout就可以设置iOS6/iOS7中的坐标差，从而使整个页面的元素可以在iOS6中整体往上移动20px。但事实上这个方法对有很多个元素的界面效果并不好。另外，要解决第二个问题，Apple给出的最佳解决方案使autolayout，而autolayout在xib里使用是最为方便的，在代码中使用autolayout实在有点冗长。所以我冥思苦想，想出了下列这种方法。</p>
+
+<h2 id="section-2">实践</h2>
+
+<h3 id="view">引入内层View</h3>
+<figure>
+<a href="http://localhost:4000/images/2014/03/02/4.jpg"><img src="http://localhost:4000/images/2014/03/02/4.jpg" /></a>
+</figure>
+
+<ul>
+  <li>首先，如图中1位置所示，拖拽一个UIView进入xib中。</li>
+  <li>然后把原本的self.view拉入新建的UIView中作为它的subview，如图中2位置所示。</li>
+  <li>然后将图中2位置中的上面的View（我们在以后称它为外层View）的Referencing Outlets指向File’s Owner。</li>
+  <li>将图中2位置中的下面的View（我们以后称它为内层View）的Referencing Outlets连接删去。
+这样做，就相当于新建了一个UIView从外层“包住”了原本的视图中的所有的元素，这样就可以通过控制内层View的坐标而使它内部的所有subviews同步地平移。</li>
+</ul>
+
+<h3 id="autolayout">使用autolayout</h3>
+<p>正如上面所说的，我们是要让内层view整体平移，所以只需在内层view上添加autolayout就可以了。首先不管是iOS6还是iOS7中，内层view的底/左/右端和外层view的底/左/右端的距离都为0。所以通过xib中添加这三个constrains就可以了，如下图所示。</p>
+<figure>
+<a href="http://localhost:4000/images/2014/03/02/5.jpg"><img src="http://localhost:4000/images/2014/03/02/5.jpg" /></a>
+</figure>
+
+<p>那个小红点是由我们只确定了下左右的constrains，而对上端没有约束造成的。对于内层view的上端和外层view的距离，我们希望它在iOS6中为－20px，即在iOS6中内层view上推20px，而在iOS7中为0px。这种动态效果是要靠代码中来实现的。</p>
+
+<h3 id="autolayout-1">在代码中使用autolayout</h3>
+
+<h4 id="iboulet">创建IBOulet</h4>
+
+<p>在xib中，将内层View通过Control＋拖拽的方法拉入对应的ViewController.m代码中（在我这里是IOS6_7_DemoMainViewController.h）的@nterface部分</p>
+
+<div class="highlight"><pre><code class="objective-c"><span class="k">@interface</span> <span class="nc">IOS6_7_DemoMainViewController</span> <span class="p">()</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="n">weak</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="kt">IBOutlet</span> <span class="n">UIView</span> <span class="o">*</span><span class="n">backgroundView</span><span class="p">;</span>
+
+<span class="k">@end</span>
+</code></pre></div>
+
+<h4 id="ios7">定义iOS7宏</h4>
+
+<p>同样在.m文件中加入下面的iOS7判断的宏定义
+<code>#define IS_IOS7 [[[UIDevice currentDevice]systemVersion]floatValue]&gt;=7.0?YES:NO</code></p>
+
+<h3 id="viewdidloadautolayout">在viewDidLoad中使用autolayout</h3>
+
+<p>在同一个文件中，找到viewDidLoad这个函数在尾部添加下面的autolayout的代码</p>
+
+<div class="highlight"><pre><code class="objective-c">    <span class="n">NSLayoutConstraint</span> <span class="o">*</span><span class="n">top_constraint</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">IS_IOS7</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">top_constraint</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSLayoutConstraint</span> <span class="n">constraintWithItem</span><span class="o">:</span><span class="n">self</span><span class="p">.</span><span class="n">backgroundView</span>
+                                                      <span class="nl">attribute:</span><span class="n">NSLayoutAttributeTop</span>
+                                                      <span class="nl">relatedBy:</span><span class="n">NSLayoutRelationEqual</span>
+                                                         <span class="nl">toItem:</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="n">attribute</span><span class="o">:</span><span class="n">NSLayoutAttributeTop</span>
+                                                     <span class="nl">multiplier:</span><span class="mi">1</span>
+                                                       <span class="nl">constant:</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">top_constraint</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSLayoutConstraint</span> <span class="n">constraintWithItem</span><span class="o">:</span><span class="n">self</span><span class="p">.</span><span class="n">backgroundView</span>
+                                                      <span class="nl">attribute:</span><span class="n">NSLayoutAttributeTop</span>
+                                                      <span class="nl">relatedBy:</span><span class="n">NSLayoutRelationEqual</span>
+                                                         <span class="nl">toItem:</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="n">attribute</span><span class="o">:</span><span class="n">NSLayoutAttributeTop</span>
+                                                     <span class="nl">multiplier:</span><span class="mi">1</span>
+                                                       <span class="nl">constant:</span><span class="o">-</span><span class="mi">20</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="n">addConstraint</span><span class="o">:</span><span class="n">top_constraint</span><span class="p">];</span>
+</code></pre></div>
+
+<p>关于autolayout的使用，可以参考Apple中关于<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Introduction/Introduction.html">autolayout的文档</a>。现在，我们再运行一下模拟器，可以看到iOS6中已经可以显示正常了。不过在4寸屏幕上的问题仍然没有解决。</p>
+<figure>
+<a href="http://localhost:4000/images/2014/03/02/6.jpg"><img src="http://localhost:4000/images/2014/03/02/6.jpg" /></a>
+</figure>
+<p>不过没有关系，我们有autolayout!</p>
+
+<h3 id="section-3">解决4寸屏幕上的问题</h3>
+<p>4寸屏幕主要是让背景图片可以伸缩填充整个屏幕，所以要在背景图片的imageView上添加高度为greater than current value的constrains，底部距离内层View为0px的constrains就可以了，如图所示。</p>
+
+<figure>
+<a href="http://localhost:4000/images/2014/03/02/9.jpg"><img src="http://localhost:4000/images/2014/03/02/9.jpg" /></a>
+</figure>
+
+<p>至此所有的适配工作已经完成，整个页面可以在iOS6/iOS7，3.5/4寸屏幕上显示基本正常。
+<figure class="half">
+<a href="http://localhost:4000/images/2014/03/02/7.jpg"><img src="http://localhost:4000/images/2014/03/02/7.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/02/8.jpg"><img src="http://localhost:4000/images/2014/03/02/8.jpg" /></a>
+</figure></p>
+
+<h2 id="section-4">总结</h2>
+<p>这种View in View的方法，主要步骤有：</p>
+
+<ol>
+  <li>
+    <p>新建了一个UIView从外层“包住”了原本的视图中的所有的元素。</p>
+  </li>
+  <li>
+    <p>在xib中为内层的view添加下/左/右端的constrains值。</p>
+  </li>
+  <li>
+    <p>在代码中为内层view动态地添加上端的constrains值。</p>
+  </li>
+  <li>
+    <p>如果有背景，则让背景的高度可以变高，并为其添加必要的或上或下或左或右的constrains值。</p>
+  </li>
+</ol>
+
+<h1 id="section-5">其他方法总结</h1>
+<p>1。<a href="http://blog.csdn.net/chengwuli125/article/details/12613897">不启用autolayout适配导航栏问题（苹果官方建议）</a></p>
+
+<p>2。<a href="http://blog.csdn.net/chengwuli125/article/details/12617657">修改windows frame的方法</a></p>
+
+<p>3。<a href="http://www.xiaoyaoli.com/?p=897">简单适配3.5寸, 4c寸iPhone屏幕</a></p>
+
+
+                        <br>
+                    <span class="entry-tags">
+                    <p>
+                        <i class="icon-tags"></i>&nbsp;Tagged with <a href="http://localhost:4000/tags/index.html#IOS Developer" data-toggle="tooltip" title="Posts tagged with IOS Developer" rel="tag">IOS Developer</a>
+                    </p>
+                    </span>
+                    </div>
+        </div>
+                    <footer class="post-footer entry-meta">
+                        
+                        <div class="post-author text-center">                       
+	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	    <p>那就成为他们中最勤奋的那一个吧</p>
+</div> 
+                        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+                    </footer>
+            </article>
+    </div>
+</div>
+
+
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/ios6_ios7_home_screens.jpg)" >
+
+
+    <div class="inner">
+        <div class="container">
+
+            <ul class="social-icons">
+            
+            
+            
+            
+            
+            <li>
+                <a href="http://weibo.com/u/2966878797" data-toggle="tooltip" title="Jeason George on Sina Weibo" target = "_blank">
+                    <i class="icon-weibo"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="http://github.com/izhuxin" data-toggle="tooltip" title="Jeason George on Github" target="_blank">
+                    <i class="icon-github"></i>
+                </a>
+            </li>
+            <li><a href="http://localhost:4000/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+                    <i class="icon-rss"></i>
+                </a>
+            </li>
+
+        </ul>
+            <p class="copy-text">
+                <a href="http://localhost:4000/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+            </p>
+
+            <ul class="menu-items">
+            
+            <li>
+                
+                    <a href="http://localhost:4000/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/about"><i class="icon-user"></i>关于我</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li class="dosearch"><i class="icon-search"></i> 站内搜索</li>
+        </ul>
+        </div>
+    </div>
+    
+        <div class="decor-wrapper">
+            <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+                <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+                <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+                <path class="medium left" d="M0 0 L50 50 L0 66.6" fill="rgba(255,255,255, .3)"></path>
+                <path class="medium right" d="M100 0 L50 50 L100 66.6" fill="rgba(255,255,255, .3)"></path>
+
+                <path class="small left" d="M0 0 L50 50 L0 33.3" fill="rgba(255,255,255, .5)"></path>
+                <path class="small right" d="M100 0 L50 50 L100 33.3" fill="rgba(255,255,255, .5)"></path>
+
+                <path d="M0 0 L50 50 L100 0 L0 0" fill="rgba(255,255,255, 1)"></path>
+
+                <path d="M48 48 L50 51 L52 48 L48 48" fill="rgba(255,255,255, 1)"></path>
+
+            </svg>
+        </div>
+    
+</footer>
+
+    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/script.js"></script>
+
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://localhost:4000/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-48042789-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'Jeason'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+</body>
+</html>

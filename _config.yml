@@ -1,5 +1,5 @@
 title:            Jeason
-description:      "创作，只是为了让我不会对浮躁的社会无话可说"
+description:      "以出世的心态，过入世的生活"
 logo:             logo.png
 disqus_shortname: Jeason
 # Assign a default image for your site's header and footer
@@ -7,14 +7,14 @@ default_bg:       J.jpg
 search:           true
 share:            false
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
-readtime:         true
+readtime:         false
 # Turn on or off the fin animations in the header and footer
 animated_fins:    true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:               http://jeason.me
-# url:               http://localhost:4000
+# url:               http://jeason.me
+url:               http://localhost:4000
 # url:                 http://izhuxin.github.io
 
 # Owner/author information
@@ -23,7 +23,7 @@ owner:
   avatar:         headphoto.JPG
   email:          sysu.ss.jeason@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    那就成为他们中最勤奋的那一个吧
+  description:    创作，只是为了让我不会对浮躁的社会无话可说
   # Social networking links used in footer. Update and remove as you like.
   # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
   twitter:        

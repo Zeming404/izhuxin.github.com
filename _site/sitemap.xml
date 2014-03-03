@@ -19,6 +19,10 @@
     
     
     <url>
+        <loc>http://localhost:4000/blog/View%2Bin%2BView</loc>
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</loc>
     </url>
     

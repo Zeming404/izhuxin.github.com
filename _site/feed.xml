@@ -4,13 +4,192 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-03-02T15:08:22+08:00</updated>
+<updated>2014-03-03T17:10:11+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Jeason George</name>
   <uri>http://localhost:4000/</uri>
   <email>sysu.ss.jeason@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[一种简单适配iOS开发中各种屏幕的投机取巧方法]]></title>
+  <link>http://localhost:4000/blog/View%2Bin%2BView</link>
+  <id>http://localhost:4000/blog/View+in+View</id>
+  <published>2014-03-02T00:00:00+08:00</published>
+  <updated>2014-03-02T00:00:00+08:00</updated>
+  <author>
+    <name>Jeason George</name>
+    <uri>http://localhost:4000</uri>
+    <email>sysu.ss.jeason@gmail.com</email>
+  </author>
+  <content type="html">&lt;section&gt;
+  &lt;header&gt;
+    &lt;h1&gt;大纲&lt;/h1&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot;&gt;背景介绍&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#view-in-view&quot;&gt;View in View的方法&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-1&quot;&gt;导入&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-2&quot;&gt;实践&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#view&quot;&gt;引入内层View&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#autolayout&quot;&gt;使用autolayout&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#autolayout-1&quot;&gt;在代码中使用autolayout&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#viewdidloadautolayout&quot;&gt;在viewDidLoad中使用autolayout&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-3&quot;&gt;解决4寸屏幕上的问题&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-4&quot;&gt;总结&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-5&quot;&gt;其他方法总结&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;背景介绍&lt;/h1&gt;
+&lt;p&gt;正如标题所说，Jeason想出来的这个方法是投机取巧式的，是有一定适用条件的。在这里，我不会将IOS中不同尺寸不同系统的适配问题统统讲完，不过会在后面给出其他适配方法的链接。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;是这样的，之前Jeason实习的那家公司的产品从iOS7发布之前就开始启动了，所以之前的设计一直没有考虑iOS6/iOS7适配的问题。&lt;/li&gt;
+  &lt;li&gt;而设计师严重缺人而且主美之前还无IOS开发的经验，所以我们也几乎没有考虑iPhone5的尺寸问题。&lt;/li&gt;
+  &lt;li&gt;这个春节项目接近尾声，经理一直在催赶进度，我需要找到一种简单的适配方法来达到在iOS6，iOS7以及3.5寸和4.0寸视觉效果上的基本一致(至少不会太差)。&lt;/li&gt;
+  &lt;li&gt;提一下重要的一点，就是我们的项目是拆分了一个个模块，每个模块的界面大多是用xib搭建的，而且大多带有导航栏。这是问题的难点，同时这也是这个方法的关键。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;view-in-view&quot;&gt;View in View的方法&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;导入&lt;/h2&gt;
+&lt;p&gt;为了方便说明这个方法，我随手弄了一个小project，如下图所示，虽然丑了点，不过大概能表达出真实的情况。
+  这是一个登录页面，上面有很多个必要的控件而且有一个iOS7风格的导航栏，还有背景图。&lt;/p&gt;
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;现在这样在3.5寸，iOS7的模拟器上运行视觉上是OK的。（不要问我为什么会这么丑，这只是demo）问题主要是出现在当在iOS6上和4寸的模拟器上时，会出现比较大的问题，如下所示。
+&lt;figure class=&quot;half&quot;&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;正如第一张图所示，iOS6的self.view.frame的零点是在状态栏以下的位置，而iOS7的则是在整个屏幕的最左上方位置，两者纵坐标相差20px。而第二张图则说明了另一个问题，就是在依靠xib搭建的界面元素不会动态地去布局。&lt;/p&gt;
+
+&lt;p&gt;通过一些搜索的尝试，我发现了一些其他人的解决方案。对于第一个问题，有人说xib里取消到autolayout就可以设置iOS6/iOS7中的坐标差，从而使整个页面的元素可以在iOS6中整体往上移动20px。但事实上这个方法对有很多个元素的界面效果并不好。另外，要解决第二个问题，Apple给出的最佳解决方案使autolayout，而autolayout在xib里使用是最为方便的，在代码中使用autolayout实在有点冗长。所以我冥思苦想，想出了下列这种方法。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;实践&lt;/h2&gt;
+
+&lt;h3 id=&quot;view&quot;&gt;引入内层View&lt;/h3&gt;
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首先，如图中1位置所示，拖拽一个UIView进入xib中。&lt;/li&gt;
+  &lt;li&gt;然后把原本的self.view拉入新建的UIView中作为它的subview，如图中2位置所示。&lt;/li&gt;
+  &lt;li&gt;然后将图中2位置中的上面的View（我们在以后称它为外层View）的Referencing Outlets指向File’s Owner。&lt;/li&gt;
+  &lt;li&gt;将图中2位置中的下面的View（我们以后称它为内层View）的Referencing Outlets连接删去。
+这样做，就相当于新建了一个UIView从外层“包住”了原本的视图中的所有的元素，这样就可以通过控制内层View的坐标而使它内部的所有subviews同步地平移。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;autolayout&quot;&gt;使用autolayout&lt;/h3&gt;
+&lt;p&gt;正如上面所说的，我们是要让内层view整体平移，所以只需在内层view上添加autolayout就可以了。首先不管是iOS6还是iOS7中，内层view的底/左/右端和外层view的底/左/右端的距离都为0。所以通过xib中添加这三个constrains就可以了，如下图所示。&lt;/p&gt;
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;那个小红点是由我们只确定了下左右的constrains，而对上端没有约束造成的。对于内层view的上端和外层view的距离，我们希望它在iOS6中为－20px，即在iOS6中内层view上推20px，而在iOS7中为0px。这种动态效果是要靠代码中来实现的。&lt;/p&gt;
+
+&lt;h3 id=&quot;autolayout-1&quot;&gt;在代码中使用autolayout&lt;/h3&gt;
+
+&lt;h4 id=&quot;iboulet&quot;&gt;创建IBOulet&lt;/h4&gt;
+
+&lt;p&gt;在xib中，将内层View通过Control＋拖拽的方法拉入对应的ViewController.m代码中（在我这里是IOS6_7_DemoMainViewController.h）的@nterface部分&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;IOS6_7_DemoMainViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;weak&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;IBOutlet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;ios7&quot;&gt;定义iOS7宏&lt;/h4&gt;
+
+&lt;p&gt;同样在.m文件中加入下面的iOS7判断的宏定义
+&lt;code&gt;#define IS_IOS7 [[[UIDevice currentDevice]systemVersion]floatValue]&amp;gt;=7.0?YES:NO&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;viewdidloadautolayout&quot;&gt;在viewDidLoad中使用autolayout&lt;/h3&gt;
+
+&lt;p&gt;在同一个文件中，找到viewDidLoad这个函数在尾部添加下面的autolayout的代码&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;    &lt;span class=&quot;n&quot;&gt;NSLayoutConstraint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top_constraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IS_IOS7&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;top_constraint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutConstraint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;constraintWithItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundView&lt;/span&gt;
+                                                      &lt;span class=&quot;nl&quot;&gt;attribute:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutAttributeTop&lt;/span&gt;
+                                                      &lt;span class=&quot;nl&quot;&gt;relatedBy:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutRelationEqual&lt;/span&gt;
+                                                         &lt;span class=&quot;nl&quot;&gt;toItem:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutAttributeTop&lt;/span&gt;
+                                                     &lt;span class=&quot;nl&quot;&gt;multiplier:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                                                       &lt;span class=&quot;nl&quot;&gt;constant:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;top_constraint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutConstraint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;constraintWithItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundView&lt;/span&gt;
+                                                      &lt;span class=&quot;nl&quot;&gt;attribute:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutAttributeTop&lt;/span&gt;
+                                                      &lt;span class=&quot;nl&quot;&gt;relatedBy:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutRelationEqual&lt;/span&gt;
+                                                         &lt;span class=&quot;nl&quot;&gt;toItem:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutAttributeTop&lt;/span&gt;
+                                                     &lt;span class=&quot;nl&quot;&gt;multiplier:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                                                       &lt;span class=&quot;nl&quot;&gt;constant:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addConstraint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top_constraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;关于autolayout的使用，可以参考Apple中关于&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Introduction/Introduction.html&quot;&gt;autolayout的文档&lt;/a&gt;。现在，我们再运行一下模拟器，可以看到iOS6中已经可以显示正常了。不过在4寸屏幕上的问题仍然没有解决。&lt;/p&gt;
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;p&gt;不过没有关系，我们有autolayout!&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;解决4寸屏幕上的问题&lt;/h3&gt;
+&lt;p&gt;4寸屏幕主要是让背景图片可以伸缩填充整个屏幕，所以要在背景图片的imageView上添加高度为greater than current value的constrains，底部距离内层View为0px的constrains就可以了，如图所示。&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;至此所有的适配工作已经完成，整个页面可以在iOS6/iOS7，3.5/4寸屏幕上显示基本正常。
+&lt;figure class=&quot;half&quot;&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;总结&lt;/h2&gt;
+&lt;p&gt;这种View in View的方法，主要步骤有：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;新建了一个UIView从外层“包住”了原本的视图中的所有的元素。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在xib中为内层的view添加下/左/右端的constrains值。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在代码中为内层view动态地添加上端的constrains值。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果有背景，则让背景的高度可以变高，并为其添加必要的或上或下或左或右的constrains值。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;其他方法总结&lt;/h1&gt;
+&lt;p&gt;1。&lt;a href=&quot;http://blog.csdn.net/chengwuli125/article/details/12613897&quot;&gt;不启用autolayout适配导航栏问题（苹果官方建议）&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2。&lt;a href=&quot;http://blog.csdn.net/chengwuli125/article/details/12617657&quot;&gt;修改windows frame的方法&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3。&lt;a href=&quot;http://www.xiaoyaoli.com/?p=897&quot;&gt;简单适配3.5寸, 4c寸iPhone屏幕&lt;/a&gt;&lt;/p&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; on March 02, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -37,7 +216,7 @@
 
 &lt;p&gt;1.广州的地铁几乎可以带你游遍广州任意角落。到康乐园，只需搭上八号线，然后从拥挤喧哗的鹭江地铁口出来，沿着马路直走100米左右，便可以到中大南校区的东门所在。走进门内，迎来的是另一个世界。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;https://picasaweb.google.com/lh/photo/-YTfjyMr_0RLPT2rRhrGwdMTjNZETYmyPJy0liipFm0?feat=directlink&quot;&gt;&lt;img src=&quot;https://picasaweb.google.com/lh/photo/-YTfjyMr_0RLPT2rRhrGwdMTjNZETYmyPJy0liipFm0?feat=directlink&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;2.在校道飞驰来往的车辆和两排稀稀落落的便利商店，似乎是宁静美丽的康乐园与嘈杂不堪的中间地带。这里链接着校园与外部，书香与尾气，宁静与浮华。校道的两旁,有着各式各样的涂鸦与横幅，彰显着校园的青春气息。
@@ -49,14 +228,14 @@
 
 &lt;p&gt;3.当你经过旁边的小路进入校园内部的时候，康乐园就开始忍不住像你展示它的美丽了。古树，红楼，美女；花香，鸟语，人闹。它就像是一个世外桃源一般，吸引着任何向往祥和的生灵。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302131050091.jpg&quot;&gt;&lt;img src=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302131050091.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot; /&gt;&lt;/a&gt;
 	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;third&quot;&gt;
 	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot; /&gt;&lt;/a&gt;
 	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302130437053.jpg&quot;&gt;&lt;img src=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302130437053.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;4.校园内几乎每一个关键的道路口都会有明确的标示，提醒人们不要被美不胜收的校园迷惑了方向。按照路牌指示，我向&lt;a href=&quot;http://library.sysu.edu.cn/web/guest/index&quot;&gt;图书馆&lt;/a&gt;前进。
@@ -65,18 +244,17 @@
 	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;5.当然那么美丽的校园，图书馆自然不是读书的唯一去处，去图书馆借一本自己喜欢的小说，或坐在木椅或坐在草坪，那都是非常不错的选择。&lt;/p&gt;
-&lt;html&gt;
+&lt;p&gt;5.当然那么美丽的校园，图书馆自然不是读书的唯一去处，去图书馆借一本自己喜欢的小说，或坐在木椅或坐在草坪，那都是非常不错的选择。
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302130551021.jpg&quot;&gt;&lt;img src=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302130551021.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot; /&gt;&lt;/a&gt;
 	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
 	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
-&lt;/figure&gt;
-&lt;/html&gt;
-&lt;p&gt;6.终于，我沿着路旁参天的古树，来到了周围一片肃静的图书馆。凭着中山大学的校园卡刷卡入馆，最后我在馆内坐下，打开笔记本记录下这份回忆。
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;6.终于，我沿着路旁参天的古树，来到了周围一片肃静的图书馆。凭着中山大学的校园卡刷卡入馆去了～。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302130319092.jpg&quot;&gt;&lt;img src=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/13/17425063820140302130319092.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/12/17425063820140302125905074.jpg&quot;&gt;&lt;img src=&quot;http://image15-c.poco.cn/mypoco/myphoto/20140302/12/17425063820140302125905074.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;figure&gt;
 	&lt;figcaption&gt;漫步康乐园&lt;/figcaption&gt;
