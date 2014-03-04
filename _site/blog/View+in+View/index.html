@@ -132,7 +132,11 @@
       <li><a href="#section-2">实践</a>        <ul>
           <li><a href="#view">引入内层View</a></li>
           <li><a href="#autolayout">使用autolayout</a></li>
-          <li><a href="#autolayout-1">在代码中使用autolayout</a></li>
+          <li><a href="#autolayout-1">在代码中使用autolayout</a>            <ul>
+              <li><a href="#iboulet">创建IBOulet</a></li>
+              <li><a href="#ios7">定义iOS7宏</a></li>
+            </ul>
+          </li>
           <li><a href="#viewdidloadautolayout">在viewDidLoad中使用autolayout</a></li>
           <li><a href="#section-3">解决4寸屏幕上的问题</a></li>
         </ul>
@@ -225,14 +229,16 @@
         <span class="n">top_constraint</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSLayoutConstraint</span> <span class="n">constraintWithItem</span><span class="o">:</span><span class="n">self</span><span class="p">.</span><span class="n">backgroundView</span>
                                                       <span class="nl">attribute:</span><span class="n">NSLayoutAttributeTop</span>
                                                       <span class="nl">relatedBy:</span><span class="n">NSLayoutRelationEqual</span>
-                                                         <span class="nl">toItem:</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="n">attribute</span><span class="o">:</span><span class="n">NSLayoutAttributeTop</span>
+                                                         <span class="nl">toItem:</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> 
+                                                      <span class="n">attribute</span><span class="o">:</span><span class="n">NSLayoutAttributeTop</span>
                                                      <span class="nl">multiplier:</span><span class="mi">1</span>
                                                        <span class="nl">constant:</span><span class="mi">0</span><span class="p">];</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="n">top_constraint</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSLayoutConstraint</span> <span class="n">constraintWithItem</span><span class="o">:</span><span class="n">self</span><span class="p">.</span><span class="n">backgroundView</span>
                                                       <span class="nl">attribute:</span><span class="n">NSLayoutAttributeTop</span>
                                                       <span class="nl">relatedBy:</span><span class="n">NSLayoutRelationEqual</span>
-                                                         <span class="nl">toItem:</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="n">attribute</span><span class="o">:</span><span class="n">NSLayoutAttributeTop</span>
+                                                         <span class="nl">toItem:</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> 
+                                                      <span class="n">attribute</span><span class="o">:</span><span class="n">NSLayoutAttributeTop</span>
                                                      <span class="nl">multiplier:</span><span class="mi">1</span>
                                                        <span class="nl">constant:</span><span class="o">-</span><span class="mi">20</span><span class="p">];</span>
     <span class="p">}</span>
@@ -277,11 +283,17 @@
 </ol>
 
 <h1 id="section-5">其他方法总结</h1>
-<p>1。<a href="http://blog.csdn.net/chengwuli125/article/details/12613897">不启用autolayout适配导航栏问题（苹果官方建议）</a></p>
-
-<p>2。<a href="http://blog.csdn.net/chengwuli125/article/details/12617657">修改windows frame的方法</a></p>
-
-<p>3。<a href="http://www.xiaoyaoli.com/?p=897">简单适配3.5寸, 4c寸iPhone屏幕</a></p>
+<ol>
+  <li>
+    <p><a href="http://blog.csdn.net/chengwuli125/article/details/12613897">不启用autolayout适配导航栏问题（苹果官方建议）</a></p>
+  </li>
+  <li>
+    <p><a href="http://blog.csdn.net/chengwuli125/article/details/12617657">修改windows frame的方法</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.xiaoyaoli.com/?p=897">简单适配3.5寸, 4c寸iPhone屏幕</a></p>
+  </li>
+</ol>
 
 
                         <br>
@@ -297,7 +309,7 @@
                         <div class="post-author text-center">                       
 	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
 	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
-	    <p>那就成为他们中最勤奋的那一个吧</p>
+	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
 </div> 
                         <div id="disqus_thread"></div><!-- /#disqus_thread -->
                     </footer>

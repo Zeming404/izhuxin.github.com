@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-03-03T17:10:11+08:00</updated>
+<updated>2014-03-04T17:12:29+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Jeason George</name>
@@ -36,7 +36,11 @@
       &lt;li&gt;&lt;a href=&quot;#section-2&quot;&gt;实践&lt;/a&gt;        &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;#view&quot;&gt;引入内层View&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#autolayout&quot;&gt;使用autolayout&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#autolayout-1&quot;&gt;在代码中使用autolayout&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#autolayout-1&quot;&gt;在代码中使用autolayout&lt;/a&gt;            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#iboulet&quot;&gt;创建IBOulet&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#ios7&quot;&gt;定义iOS7宏&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#viewdidloadautolayout&quot;&gt;在viewDidLoad中使用autolayout&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#section-3&quot;&gt;解决4寸屏幕上的问题&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
@@ -129,14 +133,16 @@
         &lt;span class=&quot;n&quot;&gt;top_constraint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutConstraint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;constraintWithItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundView&lt;/span&gt;
                                                       &lt;span class=&quot;nl&quot;&gt;attribute:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutAttributeTop&lt;/span&gt;
                                                       &lt;span class=&quot;nl&quot;&gt;relatedBy:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutRelationEqual&lt;/span&gt;
-                                                         &lt;span class=&quot;nl&quot;&gt;toItem:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutAttributeTop&lt;/span&gt;
+                                                         &lt;span class=&quot;nl&quot;&gt;toItem:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; 
+                                                      &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutAttributeTop&lt;/span&gt;
                                                      &lt;span class=&quot;nl&quot;&gt;multiplier:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
                                                        &lt;span class=&quot;nl&quot;&gt;constant:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;top_constraint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutConstraint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;constraintWithItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundView&lt;/span&gt;
                                                       &lt;span class=&quot;nl&quot;&gt;attribute:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutAttributeTop&lt;/span&gt;
                                                       &lt;span class=&quot;nl&quot;&gt;relatedBy:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutRelationEqual&lt;/span&gt;
-                                                         &lt;span class=&quot;nl&quot;&gt;toItem:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutAttributeTop&lt;/span&gt;
+                                                         &lt;span class=&quot;nl&quot;&gt;toItem:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; 
+                                                      &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSLayoutAttributeTop&lt;/span&gt;
                                                      &lt;span class=&quot;nl&quot;&gt;multiplier:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
                                                        &lt;span class=&quot;nl&quot;&gt;constant:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -181,11 +187,17 @@
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;section-5&quot;&gt;其他方法总结&lt;/h1&gt;
-&lt;p&gt;1。&lt;a href=&quot;http://blog.csdn.net/chengwuli125/article/details/12613897&quot;&gt;不启用autolayout适配导航栏问题（苹果官方建议）&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2。&lt;a href=&quot;http://blog.csdn.net/chengwuli125/article/details/12617657&quot;&gt;修改windows frame的方法&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;3。&lt;a href=&quot;http://www.xiaoyaoli.com/?p=897&quot;&gt;简单适配3.5寸, 4c寸iPhone屏幕&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/chengwuli125/article/details/12613897&quot;&gt;不启用autolayout适配导航栏问题（苹果官方建议）&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/chengwuli125/article/details/12617657&quot;&gt;修改windows frame的方法&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.xiaoyaoli.com/?p=897&quot;&gt;简单适配3.5寸, 4c寸iPhone屏幕&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; was originally published by Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; on March 02, 2014.&lt;/p&gt;</content>
