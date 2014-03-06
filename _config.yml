@@ -57,7 +57,7 @@ links:
     url: /diary
   - title:  <i class="icon-camera"></i>游记相册
     url: /album
-  - title: <i class="icon-user"></i>关于我
+  - title: <i class="icon-user"></i>关于
     url: /about
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
