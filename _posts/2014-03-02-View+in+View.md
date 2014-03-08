@@ -12,7 +12,7 @@ mathjax:
 
 <section>
   <header>
-    <h1 >大纲</h1>
+    <h1 >目录</h1>
   </header>
 <div id="drawer" markdown="1">
 *  Auto generated table of contents

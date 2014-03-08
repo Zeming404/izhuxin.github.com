@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SE 数据结构课程总结 &#8211; Jeason</title>
+<meta name="description" content="">
+<meta name="keywords" content="Courses">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SE 数据结构课程总结">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://jeason.me/blog/DS%2BCourse%2BReview">
+<meta property="og:site_name" content="Jeason">
+<meta property="og:image" content="http://jeason.me/images/J.jpg">
+
+
+
+
+
+<link rel="canonical" href="http://jeason.me/blog/DS%2BCourse%2BReview">
+<link href="http://jeason.me/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/style.css" />
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search...">
+        <i class="icon-remove-sign"></i>
+        <ul class="search-results post-list"></ul><!-- /.search-results -->
+    </div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+
+<!--Load Mathjax-->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                   autoNumber: "AMS",
+                },
+                unicode: {
+                   fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://jeason.me/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://jeason.me/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://jeason.me/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://jeason.me/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://jeason.me/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://jeason.me/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://jeason.me/images/J.jpg)" itemscope itemtype="http://schema.org/Organization">
+
+
+    <div class="inner">
+        <div class="container">
+            <a class="brand" href="http://jeason.me" role="banner" itemprop="url">
+
+                <img itemprop="logo" src="http://jeason.me/images/logo.png" alt="Jeason Logo" />
+
+            <h1 class="blog-title light" itemprop="name">
+                Jeason
+            </h1>
+                
+            </a>
+        </div>
+    </div>
+    
+    
+    <div class="decor-wrapper">
+        <svg id="header-decor" class="decor bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+            <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+            <path class="medium left" d="M0 100 L50 50 L0 33.3" fill="rgba(255,255,255, .3)"></path>
+            <path class="medium right" d="M100 100 L50 50 L100 33.3" fill="rgba(255,255,255, .3)"></path>
+
+            <path class="small left" d="M0 100 L50 50 L0 66.6" fill="rgba(255,255,255, .5)"></path>
+            <path class="small right" d="M100 100 L50 50 L100 66.6" fill="rgba(255,255,255, .5)"></path>
+
+            <path d="M0 99.9 L50 49.9 L100 99.9 L0 99.9" fill="rgba(255,255,255, 1)"></path>
+
+            <path d="M48 52 L50 49 L52 52 L48 52" fill="rgba(255,255,255, 1)"></path>
+
+        </svg>
+    </div>
+    
+</header>
+<div id="main" class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+    <div class="container">
+        <div class="row">
+            <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            
+            
+            
+                
+            
+             
+             
+                    <header class="post-header entry-header">
+                        
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">SE 数据结构课程总结</h1>
+                        
+                        <div class="post-info text-center small">
+                            <span class="entry-date date published updated"><time datetime="2014-03-08T00:00:00+08:00" class="post-time" itemprop="datePublished">08 Mar 2014</time><span>
+                            in <span class="post-tags"><a href="http://jeason.me/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                        </div>
+                    </header>
+                    <div class="post-body bordered-bottom" itemprop="description">
+                        
+                        <section>
+  <header>
+    <h1>目录</h1>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#section">写在最前</a></li>
+  <li><a href="#section-1">基本数据结构</a>    <ul>
+      <li><a href="#list">List</a>        <ul>
+          <li><a href="#list-1">顺序List</a></li>
+          <li><a href="#list-2">链接List</a></li>
+          <li><a href="#list-3">使用List实现其他数据结构</a></li>
+        </ul>
+      </li>
+      <li><a href="#table">Table</a>        <ul>
+          <li><a href="#rectangular-table">Rectangular Table</a></li>
+          <li><a href="#hash-table">Hash Table</a></li>
+          <li><a href="#section-2">开放定址法</a></li>
+          <li><a href="#section-3">单独链表法</a></li>
+        </ul>
+      </li>
+      <li><a href="#tree">Tree</a>        <ul>
+          <li><a href="#section-4">满二叉树</a></li>
+          <li><a href="#section-5">完全二叉树</a></li>
+          <li><a href="#section-6">二叉树的遍历</a></li>
+          <li><a href="#avl">AVL树</a></li>
+        </ul>
+      </li>
+      <li><a href="#graph">Graph</a>        <ul>
+          <li><a href="#section-7">图的表示方式</a></li>
+          <li><a href="#section-8">图的遍历</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#section-9">基本算法</a>    <ul>
+      <li><a href="#section-10">排序</a>        <ul>
+          <li><a href="#section-11">代码实现</a></li>
+        </ul>
+      </li>
+      <li><a href="#section-12">查找/搜索</a>        <ul>
+          <li><a href="#section-13">二分查找</a></li>
+        </ul>
+      </li>
+      <li><a href="#section-14">基于图论的算法</a>        <ul>
+          <li><a href="#section-15">最小生成树</a></li>
+          <li><a href="#section-16">最短路径</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
+</section>
+
+<h1 id="section">写在最前</h1>
+<p>这注定会是一篇很长的博文，可能我一次难以把它完全写好。本文主要是基于中山大学的《SE-221 数据结构与算法》这门课的课程内容而写，以后可能还有其他数据结构方面的补充与完善。</p>
+
+<h1 id="section-1">基本数据结构</h1>
+<p>在我看来，基本的数据结构包括以下几个：List，Table，Tree，Graph，接下来会给大家一一介绍一下，以及我对这些数据结构的一些认识和总结。</p>
+
+<h2 id="list">List</h2>
+<p>在我看来，List是最基本的数据结构，由它可以衍生出一些相当有用的数据结构，比如先进后出的stack和先进先出的queue等。所以只要我们掌握了list，就可以用它来实现这些比较实用的数据结构。而List又分为两种，一种是在数据存储上“逻辑上”连续的<strong>顺序List</strong>，一种是在逻辑上不连续的<strong>链接List</strong>。</p>
+
+<h3 id="list-1">顺序List</h3>
+<p>最典型的一种顺序List就是数组。顺序List的一个最大的特点就是它可以通过数组下标，快速地访问到我们需要的位置上的元素。想到数组，那么它的一个最大的缺点也就不言而喻了：在数组的中部插入和删除元素时开销过大。C++的标准库为我们提供了一个封装好了的数组－－<a href="http://www.cplusplus.com/reference/vector/vector/?kw=vector">std::vector</a>（因为课程里的数据结构是用C++实现的，所以本文以C++为例）。vector为我们提供了顺序list的基本操作，同时还额外提供了许多数组没有的功能，比如是在vector的尾部可以快速地增加和删除元素，提供的接口为<code>push_back()</code>和<code>pop_back()</code>，详情请参考<a href="http://www.cplusplus.com">cplusplus.com</a></p>
+
+<h3 id="list-2">链接List</h3>
+<p>这就是我们一般意义上链表的概念了。链接List的一个最大特点就是它可以真正地做到动态分配内存进行快速的增加和删除元素。它的缺点刚好与顺序list的优点对应：不支持快速访问。同样的，C++标准库也为我们提供了一个链接List的经典实现－－<a href="http://www.cplusplus.com/reference/list/list/?kw=list">std::list</a>。std::list是一个双向链表，它可以快速地访问链表的头部和尾部，可以快速地在链表中的任意位置快速的进行重复的增<code>insert</code>和删<code>erase</code>的操作。详情参考上面的链接。</p>
+
+<h3 id="list-3">使用List实现其他数据结构</h3>
+<ul>
+  <li>
+    <p>Stack</p>
+  </li>
+  <li>
+    <p>Queue</p>
+  </li>
+  <li>
+    <p>String</p>
+  </li>
+</ul>
+
+<h2 id="table">Table</h2>
+<p>Table在我看来，就是顺序List的一种延伸。</p>
+
+<h3 id="rectangular-table">Rectangular Table</h3>
+<p>它其实就是二维数组，包含数组的数组或者包含顺序List的顺序List，其跟顺序List不同之处就是它的元素也是一个顺序List，所以提供了两个下标为两个List来使用索引至我们想要的位置，它可以通过行展开或者列展开为一个顺序List，这其实没什么好说的。</p>
+
+<h3 id="hash-table">Hash Table</h3>
+<p>哈希是一个重要的内容，它是根据关键字而直接访问在内存存储位置的数据结构。也就是说，它通过把键值通过一个函数的计算，映射到表中一个位置来访问记录，这加快了查找速度。这个映射函数称做哈希函数，存放记录的数组称做哈希表。对不同的关键字可能得到同一散列地址，即k1 != k2，而f(k1)=f(k2)，这种现象称碰撞。处理碰撞的主要方法有:</p>
+
+<h3 id="section-2">开放定址法</h3>
+<p>hash_i = ( hash(key) + d_i ) mod m, 其中hash(key)为哈希函数，m为哈希表的长度，d_i为增量序列，i为已发生碰撞的次数。增量序列可有下列取法：</p>
+
+<ul>
+  <li>
+    <p>d_i=1,2,3…(m-1)称为线性探测；即d_i=i，或者为其他线性函数。相当于逐个探测存放地址的表，直到查找到一个空单元，把散列地址存放在该空单元。</p>
+  </li>
+  <li>
+    <p>d_i= 1^2,2^2,3^2…k^2称为平方探测。相对线性探测，相当于发生碰撞时探测间隔d_i=i^2个单元的位置是否为空，如果为空，将地址存放进去。</p>
+  </li>
+  <li>
+    <p>d_i=伪随机数序列，称为伪随机探测。</p>
+  </li>
+</ul>
+
+<p>举个例子吧：关键字为{89,18,49,58,69}插入到一个散列表中的情况。此时线性探测的方法是取d_i=i。并假定取关键字除以10的余数为散列函数法则。</p>
+
+<figure class="half">
+<a href="http://jeason.me/images/2014/03/08/1.jpg"><img src="http://jeason.me/images/2014/03/08/1.jpg" /></a>
+</figure>
+
+<p>第一次碰撞发生在填装49的时候。地址为9的单元已经填装了89这个关键字，所以取i=1，往下查找一个单位，发现为空，所以将49填装在地址为0的空单元。第二次碰撞则发生在58上，取i=2，往下查找两个单位，将58填装在地址为1的空单元。69同理。
+表的大小选取至关重要，此处选取10作为大小，发生碰撞的几率就比选择质数11作为大小的可能性大。越是质数，mod取余就越可能均匀分布在表的各处。
+开放定址法的一个最大缺点就是容易造成聚集，使性能大大下降。所以开放定址法的表的至少要为一个比key的数量两倍还多的顺序List。</p>
+
+<h3 id="section-3">单独链表法</h3>
+<p>它的思想是将散列到同一个存储位置的所有元素保存在一个链表中。即为链接List的顺序List。对于有相同的f(key)的key值构成了一个链表，而所有的这些链表组成的数组就是单独链接法得到的哈希表，如下图所示:
+<figure class="half">
+<a href="http://jeason.me/images/2014/03/08/6.jpg"><img src="http://jeason.me/images/2014/03/08/6.jpg" /></a>
+</figure></p>
+
+<h2 id="tree">Tree</h2>
+<p>树，可以说是链接List的一个延伸。不同的是它每个节点都有多个指针，指向它的子树们。而在树中，最重要的就是二叉树。</p>
+
+<div class="highlight"><pre><code class="c++"><span class="cm">/* 二叉树的二叉链表存儲表示 */</span>
+ <span class="k">typedef</span> <span class="k">struct</span> <span class="n">BiTNode</span>
+ <span class="p">{</span>
+   <span class="n">TElemType</span> <span class="n">data</span><span class="p">;</span>
+   <span class="k">struct</span> <span class="n">BiTNode</span> <span class="o">*</span><span class="n">lchild</span><span class="p">,</span><span class="o">*</span><span class="n">rchild</span><span class="p">;</span> <span class="cm">/* 左右孩子指針 */</span>
+ <span class="p">}</span><span class="n">BiTNode</span><span class="p">,</span><span class="o">*</span><span class="n">BiTree</span><span class="p">;</span>
+</code></pre></div>
+
+<h3 id="section-4">满二叉树</h3>
+<p>一棵深度为k，且有2^k-1个节点称之为满二叉树，如下图所示
+<figure class="half">
+<a href="http://jeason.me/images/2014/03/08/3.jpg"><img src="http://jeason.me/images/2014/03/08/3.jpg" /></a>
+</figure></p>
+
+<h3 id="section-5">完全二叉树</h3>
+<p>完全二叉树又叫做堆，它是深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中序号为1至n的节点对应时，称之为完全二叉树。
+<figure class="half">
+<a href="http://jeason.me/images/2014/03/08/2.jpg"><img src="http://jeason.me/images/2014/03/08/2.jpg" /></a>
+</figure></p>
+
+<h3 id="section-6">二叉树的遍历</h3>
+<p>遍历即将树的所有结点访问且仅访问一次。按照根节点位置的不同分为前序遍历，中序遍历，后序遍历。
+前序遍历：根节点-&gt;左子树-&gt;右子树
+中序遍历：左子树-&gt;根节点-&gt;右子树
+后序遍历：左子树-&gt;右子树-&gt;根节点
+例如：求下面树的三种遍历
+<figure class="half">
+<a href="http://jeason.me/images/2014/03/08/4.jpg"><img src="http://jeason.me/images/2014/03/08/4.jpg" /></a>
+</figure></p>
+
+<p>前序遍历：abdefgc
+中序遍历：debgfac
+后序遍历：edgfbca</p>
+
+<h3 id="avl">AVL树</h3>
+
+<h2 id="graph">Graph</h2>
+
+<h3 id="section-7">图的表示方式</h3>
+<ul>
+  <li>
+    <p>数组（邻接矩阵）存储表示（有向或无向）。</p>
+  </li>
+  <li>
+    <p>邻接表存储表示。</p>
+  </li>
+</ul>
+
+<h3 id="section-8">图的遍历</h3>
+<figure class="half">
+<a href="http://jeason.me/images/2014/03/08/5.jpg"><img src="http://jeason.me/images/2014/03/08/5.jpg" /></a>
+</figure>
+
+<h1 id="section-9">基本算法</h1>
+
+<h2 id="section-10">排序</h2>
+
+<h3 id="section-11">代码实现</h3>
+
+<div class="highlight"><pre><code class="c++"><span class="c1">//</span>
+<span class="c1">//  sort.cpp</span>
+<span class="c1">//  Courses</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 14-3-8.</span>
+<span class="c1">//  Copyright (c) 2014年 Jeason. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="k">class</span> <span class="nc">sortBrain</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">sortBrain</span><span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">data_</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size_</span> <span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">bubble_sort</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">seletion_sort</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">inserting_sort</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">merge_sort</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">heap_sort</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">quick_sort</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">print_data</span><span class="p">();</span>
+    
+<span class="nl">private:</span>
+    <span class="c1">//为了可以递归，所以在公有函数里调用似有成员里的函数，这种写法在研究生教材中很常见，其实挺有道理的</span>
+    <span class="kt">void</span> <span class="nf">quick_sort</span><span class="p">(</span> <span class="kt">int</span> <span class="n">begin</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span> <span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">merge_sort</span><span class="p">(</span> <span class="kt">int</span> <span class="n">begin</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span> <span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">merge</span><span class="p">(</span> <span class="kt">int</span> <span class="n">begin</span><span class="p">,</span> <span class="kt">int</span> <span class="n">middle</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span> <span class="p">);</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">sortBrain</span><span class="o">::</span><span class="n">sortBrain</span><span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">data_</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size_</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//Constructor</span>
+    <span class="c1">//只是复制指针而没复制指针的内容，这种叫做浅复制</span>
+    <span class="c1">//若复制内容，如 data = new int[size_] for( int i = 0; i &lt; size_; i++ ) data[i] = data_[i]称为深复制</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data_</span><span class="p">;</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">size_</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">sortBrain</span><span class="o">::</span><span class="n">print_data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span> <span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span> <span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">sortBrain</span><span class="o">::</span><span class="n">bubble_sort</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">maxIn</span><span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">int</span> <span class="n">begin</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">begin</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">begin</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">max</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">max</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">max</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">sortBrain</span><span class="o">::</span><span class="n">seletion_sort</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//将第i大的元素放到n－1-i的位置</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//找到0～n-1-i中最大的元素的下标</span>
+        <span class="kt">int</span> <span class="n">current</span> <span class="o">=</span> <span class="n">maxIn</span><span class="p">(</span> <span class="n">data</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span> <span class="p">);</span>
+        <span class="c1">//如果找到的第i大的下标跟n-1-i不一样，就交换两个位置的内容</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">current</span> <span class="o">!=</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">current</span><span class="p">];</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">current</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">];</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">sortBrain</span><span class="o">::</span><span class="n">inserting_sort</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//未排序的数列中的第一个元素</span>
+	    <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+	    <span class="k">for</span> <span class="p">(</span> <span class="n">k</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span><span class="o">--</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//从右往左扫描已排序的数列</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">temp</span> <span class="p">)</span> <span class="p">{</span> <span class="c1">//确定未排序的数列中的第一个元素在已排序数列中的位置</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+	    <span class="p">}</span>
+        <span class="c1">//将未排序的元素插入到确定的位置中</span>
+	    <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">sortBrain</span><span class="o">::</span><span class="n">quick_sort</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//为了可以递归，所以在公有函数里调用似有成员里的函数，这种写法在研究生教材中很常见，其实挺有道理的</span>
+    <span class="n">quick_sort</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">sortBrain</span><span class="o">::</span><span class="n">quick_sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">begin</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//递归结束条件</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">begin</span> <span class="o">&gt;=</span> <span class="n">end</span> <span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="c1">//选取主元，可任意取</span>
+    <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">end</span><span class="p">;</span>
+    <span class="c1">//划分点初始位置</span>
+    <span class="kt">int</span> <span class="n">middle</span> <span class="o">=</span> <span class="n">begin</span><span class="p">;</span>
+    <span class="c1">//扫描数组</span>
+    <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">begin</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="p">)</span> <span class="p">{</span> <span class="c1">//如果比主元小</span>
+            <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="c1">//就把它放到划分点前面</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">middle</span><span class="p">];</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+            <span class="n">middle</span><span class="o">++</span><span class="p">;</span> <span class="c1">//划分点右移</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//将主元插入到中间</span>
+    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">pivot</span><span class="p">];</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">middle</span><span class="p">];</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+    
+    <span class="c1">//递归重复这个过程排列主元前和主元后的数列</span>
+    <span class="n">quick_sort</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">middle</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">quick_sort</span><span class="p">(</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">sortBrain</span><span class="o">::</span><span class="n">merge_sort</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">merge_sort</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">sortBrain</span><span class="o">::</span><span class="n">merge_sort</span><span class="p">(</span> <span class="kt">int</span> <span class="n">begin</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">begin</span> <span class="o">&gt;=</span> <span class="n">end</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">middle</span> <span class="o">=</span> <span class="p">(</span> <span class="n">begin</span> <span class="o">+</span> <span class="n">end</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">merge_sort</span><span class="p">(</span> <span class="n">begin</span><span class="p">,</span> <span class="n">middle</span> <span class="p">);</span>
+    <span class="n">merge_sort</span><span class="p">(</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span> <span class="p">);</span>
+    <span class="n">merge</span><span class="p">(</span> <span class="n">begin</span><span class="p">,</span> <span class="n">middle</span><span class="p">,</span> <span class="n">end</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">sortBrain</span><span class="o">::</span><span class="n">merge</span><span class="p">(</span> <span class="kt">int</span> <span class="n">begin</span><span class="p">,</span> <span class="kt">int</span> <span class="n">middle</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">new_array</span><span class="p">[</span> <span class="n">end</span> <span class="o">-</span> <span class="n">begin</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">];</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">begin</span><span class="p">;</span> <span class="c1">//左边的数组的头</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span><span class="c1">//右边的数组的头</span>
+    <span class="kt">int</span> <span class="n">current</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//新数组的头</span>
+    <span class="c1">//当左边没有到尾，而且右边也没到尾</span>
+    <span class="k">while</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">middle</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">end</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="n">new_array</span><span class="p">[</span> <span class="n">current</span> <span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+            <span class="n">current</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">new_array</span><span class="p">[</span> <span class="n">current</span> <span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="n">current</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//如果是左边没有到尾，就继续复制左边的，如果已经到尾，直接跳过了循环</span>
+    <span class="k">while</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">middle</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">new_array</span><span class="p">[</span> <span class="n">current</span> <span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">current</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">//同理</span>
+    <span class="k">while</span> <span class="p">(</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">end</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">new_array</span><span class="p">[</span> <span class="n">current</span> <span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+        <span class="n">current</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">//note:将合并的数组拷贝到原来相应的位置</span>
+    <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">begin</span> <span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_array</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="n">begin</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span> <span class="p">};</span>
+    <span class="n">sortBrain</span> <span class="nf">mySortBrain</span><span class="p">(</span> <span class="n">data</span><span class="p">,</span> <span class="mi">10</span> <span class="p">);</span>
+    <span class="c1">//mySortBrain.seletion_sort();</span>
+    <span class="c1">//mySortBrain.bubble_sort();</span>
+    <span class="c1">//mySortBrain.inserting_sort();</span>
+    <span class="c1">//mySortBrain.quick_sort();</span>
+    <span class="n">mySortBrain</span><span class="p">.</span><span class="n">merge_sort</span><span class="p">();</span>
+    <span class="n">mySortBrain</span><span class="p">.</span><span class="n">print_data</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="section-12">查找/搜索</h2>
+
+<h3 id="section-13">二分查找</h3>
+
+<h2 id="section-14">基于图论的算法</h2>
+
+<h3 id="section-15">最小生成树</h3>
+
+<h3 id="section-16">最短路径</h3>
+
+                        <br>
+                    <span class="entry-tags">
+                    <p>
+                        <i class="icon-tags"></i>&nbsp;Tagged with <a href="http://jeason.me/tags/index.html#Courses" data-toggle="tooltip" title="Posts tagged with Courses" rel="tag">Courses</a>
+                    </p>
+                    </span>
+                    </div>
+        </div>
+                    <footer class="post-footer entry-meta">
+                        
+                        <div class="post-author text-center">                       
+	        <img src="http://jeason.me/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://jeason.me/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
+</div> 
+                        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+                    </footer>
+            </article>
+    </div>
+</div>
+
+
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://jeason.me/images/J.jpg)" >
+
+
+    <div class="inner">
+        <div class="container">
+
+            <ul class="social-icons">
+            
+            
+            
+            
+            
+            <li>
+                <a href="http://weibo.com/u/2966878797" data-toggle="tooltip" title="Jeason George on Sina Weibo" target = "_blank">
+                    <i class="icon-weibo"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="http://github.com/izhuxin" data-toggle="tooltip" title="Jeason George on Github" target="_blank">
+                    <i class="icon-github"></i>
+                </a>
+            </li>
+            <li><a href="http://jeason.me/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+                    <i class="icon-rss"></i>
+                </a>
+            </li>
+
+        </ul>
+            <p class="copy-text">
+                <a href="http://jeason.me/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+            </p>
+
+            <ul class="menu-items">
+            
+            <li>
+                
+                    <a href="http://jeason.me/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://jeason.me/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://jeason.me/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://jeason.me/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://jeason.me/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li class="dosearch"><i class="icon-search"></i> 站内搜索</li>
+        </ul>
+        </div>
+    </div>
+    
+        <div class="decor-wrapper">
+            <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+                <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+                <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+                <path class="medium left" d="M0 0 L50 50 L0 66.6" fill="rgba(255,255,255, .3)"></path>
+                <path class="medium right" d="M100 0 L50 50 L100 66.6" fill="rgba(255,255,255, .3)"></path>
+
+                <path class="small left" d="M0 0 L50 50 L0 33.3" fill="rgba(255,255,255, .5)"></path>
+                <path class="small right" d="M100 0 L50 50 L100 33.3" fill="rgba(255,255,255, .5)"></path>
+
+                <path d="M0 0 L50 50 L100 0 L0 0" fill="rgba(255,255,255, 1)"></path>
+
+                <path d="M48 48 L50 51 L52 48 L48 48" fill="rgba(255,255,255, 1)"></path>
+
+            </svg>
+        </div>
+    
+</footer>
+
+    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://jeason.me/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://jeason.me/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://jeason.me/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://jeason.me/assets/js/script.js"></script>
+
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://jeason.me/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-48042789-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'Jeason'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+</body>
+</html>

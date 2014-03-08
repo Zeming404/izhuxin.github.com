@@ -23,6 +23,10 @@ section,
 summary {
   display: block;
 }
+article {
+  font-size: 18px;
+
+}
 audio,
 canvas,
 video {
