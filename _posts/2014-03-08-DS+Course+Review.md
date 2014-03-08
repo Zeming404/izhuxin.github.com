@@ -120,11 +120,24 @@ hash_i = ( hash(key) + d_i ) mod m, 其中hash(key)为哈希函数，m为哈希�
 ###图的表示方式
 - 数组（邻接矩阵）存储表示（有向或无向）。
 
+<figure class="half">
+<a href = "{{ site.url }}/images/2014/03/08/7.jpg"><img src = "{{ site.url }}/images/2014/03/08/7.jpg" /></a>
+</figure>
+
 - 邻接表存储表示。
+
+<figure>
+<a href = "{{ site.url }}/images/2014/03/08/8.jpg"><img src = "{{ site.url }}/images/2014/03/08/8.jpg" /></a>
+</figure>
 
 ###图的遍历
 <figure class="half">
 <a href = "{{ site.url }}/images/2014/03/08/5.jpg"><img src = "{{ site.url }}/images/2014/03/08/5.jpg" /></a>
+</figure>
+
+###拓扑排序
+<figure class="half">
+<a href = "{{ site.url }}/images/2014/03/08/9.jpg"><img src = "{{ site.url }}/images/2014/03/08/9.jpg" /></a>
 </figure>
 
 #基本算法
@@ -329,9 +342,16 @@ int main() {
 
 ###二分查找
 
-
 ##基于图论的算法
+
+###最短路径
+
+####Dijkstra算法
+
+<figure class="half">
+<a href = "{{ site.url }}/images/2014/03/08/10.jpg"><img src = "{{ site.url }}/images/2014/03/08/10.jpg" /></a>
+</figure>
 
 ###最小生成树
 
-###最短路径
+####Prime算法

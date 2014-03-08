@@ -178,22 +178,29 @@
       <li><a href="#graph">Graph</a>        <ul>
           <li><a href="#section-7">图的表示方式</a></li>
           <li><a href="#section-8">图的遍历</a></li>
+          <li><a href="#section-9">拓扑排序</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#section-9">基本算法</a>    <ul>
-      <li><a href="#section-10">排序</a>        <ul>
-          <li><a href="#section-11">代码实现</a></li>
+  <li><a href="#section-10">基本算法</a>    <ul>
+      <li><a href="#section-11">排序</a>        <ul>
+          <li><a href="#section-12">代码实现</a></li>
         </ul>
       </li>
-      <li><a href="#section-12">查找/搜索</a>        <ul>
-          <li><a href="#section-13">二分查找</a></li>
+      <li><a href="#section-13">查找/搜索</a>        <ul>
+          <li><a href="#section-14">二分查找</a></li>
         </ul>
       </li>
-      <li><a href="#section-14">基于图论的算法</a>        <ul>
-          <li><a href="#section-15">最小生成树</a></li>
-          <li><a href="#section-16">最短路径</a></li>
+      <li><a href="#section-15">基于图论的算法</a>        <ul>
+          <li><a href="#section-16">最短路径</a>            <ul>
+              <li><a href="#dijkstra">Dijkstra算法</a></li>
+            </ul>
+          </li>
+          <li><a href="#section-17">最小生成树</a>            <ul>
+              <li><a href="#prime">Prime算法</a></li>
+            </ul>
+          </li>
         </ul>
       </li>
     </ul>
@@ -314,24 +321,36 @@
 
 <h3 id="section-7">图的表示方式</h3>
 <ul>
-  <li>
-    <p>数组（邻接矩阵）存储表示（有向或无向）。</p>
-  </li>
-  <li>
-    <p>邻接表存储表示。</p>
-  </li>
+  <li>数组（邻接矩阵）存储表示（有向或无向）。</li>
 </ul>
+
+<figure class="half">
+<a href="http://jeason.me/images/2014/03/08/7.jpg"><img src="http://jeason.me/images/2014/03/08/7.jpg" /></a>
+</figure>
+
+<ul>
+  <li>邻接表存储表示。</li>
+</ul>
+
+<figure>
+<a href="http://jeason.me/images/2014/03/08/8.jpg"><img src="http://jeason.me/images/2014/03/08/8.jpg" /></a>
+</figure>
 
 <h3 id="section-8">图的遍历</h3>
 <figure class="half">
 <a href="http://jeason.me/images/2014/03/08/5.jpg"><img src="http://jeason.me/images/2014/03/08/5.jpg" /></a>
 </figure>
 
-<h1 id="section-9">基本算法</h1>
+<h3 id="section-9">拓扑排序</h3>
+<figure class="half">
+<a href="http://jeason.me/images/2014/03/08/9.jpg"><img src="http://jeason.me/images/2014/03/08/9.jpg" /></a>
+</figure>
 
-<h2 id="section-10">排序</h2>
+<h1 id="section-10">基本算法</h1>
 
-<h3 id="section-11">代码实现</h3>
+<h2 id="section-11">排序</h2>
+
+<h3 id="section-12">代码实现</h3>
 
 <div class="highlight"><pre><code class="c++"><span class="c1">//</span>
 <span class="c1">//  sort.cpp</span>
@@ -524,15 +543,22 @@
 <span class="p">}</span>
 </code></pre></div>
 
-<h2 id="section-12">查找/搜索</h2>
+<h2 id="section-13">查找/搜索</h2>
 
-<h3 id="section-13">二分查找</h3>
+<h3 id="section-14">二分查找</h3>
 
-<h2 id="section-14">基于图论的算法</h2>
-
-<h3 id="section-15">最小生成树</h3>
+<h2 id="section-15">基于图论的算法</h2>
 
 <h3 id="section-16">最短路径</h3>
+<figure class="half">
+<a href="http://jeason.me/images/2014/03/08/10.jpg"><img src="http://jeason.me/images/2014/03/08/10.jpg" /></a>
+</figure>
+
+<h4 id="dijkstra">Dijkstra算法</h4>
+
+<h3 id="section-17">最小生成树</h3>
+
+<h4 id="prime">Prime算法</h4>
 
                         <br>
                     <span class="entry-tags">
