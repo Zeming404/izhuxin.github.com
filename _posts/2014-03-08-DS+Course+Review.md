@@ -84,12 +84,13 @@ hash_i = ( hash(key) + d_i ) mod m, 其中hash(key)为哈希函数，m为哈希�
 <a href = "{{ site.url }}/images/2014/03/08/6.jpg"><img src = "{{ site.url }}/images/2014/03/08/6.jpg" /></a>
 </figure>
 
-
+###单独链表法的平均探测次数
+可以参考开放定址法得到.<!--TODO-->
 
 ##Tree
 树，可以说是链接List的一个延伸。不同的是它每个节点都有多个指针，指向它的子树们。而在树中，最重要的就是二叉树。
 {% highlight C++ %}
-/* 二叉树的二叉链表存儲表示 */
+/* 二叉树的二叉链表存储表示 */
  typedef struct BiTNode
  {
    TElemType data;
@@ -146,6 +147,7 @@ hash_i = ( hash(key) + d_i ) mod m, 其中hash(key)为哈希函数，m为哈希�
 <figure class="half">
 <a href = "{{ site.url }}/images/2014/03/08/5.jpg"><img src = "{{ site.url }}/images/2014/03/08/5.jpg" /></a>
 </figure>
+采用深度优先搜索和广度优先搜索的方法遍历图。（见下文：基本算法－基于图论的算法）
 
 ###拓扑排序
 <figure class="half">

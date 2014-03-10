@@ -171,38 +171,39 @@
             </ul>
           </li>
           <li><a href="#section-6">单独链表法</a></li>
+          <li><a href="#section-7">单独链表法的平均探测次数</a></li>
         </ul>
       </li>
       <li><a href="#tree">Tree</a>        <ul>
-          <li><a href="#section-7">满二叉树</a></li>
-          <li><a href="#section-8">完全二叉树</a></li>
-          <li><a href="#section-9">二叉树的遍历</a></li>
+          <li><a href="#section-8">满二叉树</a></li>
+          <li><a href="#section-9">完全二叉树</a></li>
+          <li><a href="#section-10">二叉树的遍历</a></li>
           <li><a href="#avl">AVL树</a></li>
         </ul>
       </li>
       <li><a href="#graph">Graph</a>        <ul>
-          <li><a href="#section-10">图的表示方式</a></li>
-          <li><a href="#section-11">图的遍历</a></li>
-          <li><a href="#section-12">拓扑排序</a></li>
+          <li><a href="#section-11">图的表示方式</a></li>
+          <li><a href="#section-12">图的遍历</a></li>
+          <li><a href="#section-13">拓扑排序</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#section-13">基本算法</a>    <ul>
-      <li><a href="#section-14">排序</a>        <ul>
-          <li><a href="#section-15">代码实现</a></li>
+  <li><a href="#section-14">基本算法</a>    <ul>
+      <li><a href="#section-15">排序</a>        <ul>
+          <li><a href="#section-16">代码实现</a></li>
         </ul>
       </li>
-      <li><a href="#section-16">查找/搜索</a>        <ul>
-          <li><a href="#section-17">二分查找</a></li>
+      <li><a href="#section-17">查找/搜索</a>        <ul>
+          <li><a href="#section-18">二分查找</a></li>
         </ul>
       </li>
-      <li><a href="#section-18">基于图论的算法</a>        <ul>
-          <li><a href="#section-19">最短路径</a>            <ul>
+      <li><a href="#section-19">基于图论的算法</a>        <ul>
+          <li><a href="#section-20">最短路径</a>            <ul>
               <li><a href="#dijkstra">Dijkstra算法</a></li>
             </ul>
           </li>
-          <li><a href="#section-20">最小生成树</a>            <ul>
+          <li><a href="#section-21">最小生成树</a>            <ul>
               <li><a href="#prime">Prime算法</a></li>
             </ul>
           </li>
@@ -291,10 +292,13 @@
 <a href="http://jeason.me/images/2014/03/08/6.jpg"><img src="http://jeason.me/images/2014/03/08/6.jpg" /></a>
 </figure></p>
 
+<h3 id="section-7">单独链表法的平均探测次数</h3>
+<p>可以参考开放定址法得到.<!--TODO--></p>
+
 <h2 id="tree">Tree</h2>
 <p>树，可以说是链接List的一个延伸。不同的是它每个节点都有多个指针，指向它的子树们。而在树中，最重要的就是二叉树。</p>
 
-<div class="highlight"><pre><code class="c++"><span class="cm">/* 二叉树的二叉链表存儲表示 */</span>
+<div class="highlight"><pre><code class="c++"><span class="cm">/* 二叉树的二叉链表存储表示 */</span>
  <span class="k">typedef</span> <span class="k">struct</span> <span class="n">BiTNode</span>
  <span class="p">{</span>
    <span class="n">TElemType</span> <span class="n">data</span><span class="p">;</span>
@@ -302,19 +306,19 @@
  <span class="p">}</span><span class="n">BiTNode</span><span class="p">,</span><span class="o">*</span><span class="n">BiTree</span><span class="p">;</span>
 </code></pre></div>
 
-<h3 id="section-7">满二叉树</h3>
+<h3 id="section-8">满二叉树</h3>
 <p>一棵深度为k，且有2^k-1个节点称之为满二叉树，如下图所示
 <figure class="half">
 <a href="http://jeason.me/images/2014/03/08/3.jpg"><img src="http://jeason.me/images/2014/03/08/3.jpg" /></a>
 </figure></p>
 
-<h3 id="section-8">完全二叉树</h3>
+<h3 id="section-9">完全二叉树</h3>
 <p>完全二叉树又叫做堆，它是深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中序号为1至n的节点对应时，称之为完全二叉树。
 <figure class="half">
 <a href="http://jeason.me/images/2014/03/08/2.jpg"><img src="http://jeason.me/images/2014/03/08/2.jpg" /></a>
 </figure></p>
 
-<h3 id="section-9">二叉树的遍历</h3>
+<h3 id="section-10">二叉树的遍历</h3>
 <p>遍历即将树的所有结点访问且仅访问一次。按照根节点位置的不同分为前序遍历，中序遍历，后序遍历。
 前序遍历：根节点-&gt;左子树-&gt;右子树
 中序遍历：左子树-&gt;根节点-&gt;右子树
@@ -334,7 +338,7 @@
 
 <h2 id="graph">Graph</h2>
 
-<h3 id="section-10">图的表示方式</h3>
+<h3 id="section-11">图的表示方式</h3>
 <ul>
   <li>数组（邻接矩阵）存储表示（有向或无向）。</li>
 </ul>
@@ -351,21 +355,22 @@
 <a href="http://jeason.me/images/2014/03/08/8.jpg"><img src="http://jeason.me/images/2014/03/08/8.jpg" /></a>
 </figure>
 
-<h3 id="section-11">图的遍历</h3>
+<h3 id="section-12">图的遍历</h3>
 <figure class="half">
 <a href="http://jeason.me/images/2014/03/08/5.jpg"><img src="http://jeason.me/images/2014/03/08/5.jpg" /></a>
 </figure>
+<p>采用深度优先搜索和广度优先搜索的方法遍历图。（见下文：基本算法－基于图论的算法）</p>
 
-<h3 id="section-12">拓扑排序</h3>
+<h3 id="section-13">拓扑排序</h3>
 <figure class="half">
 <a href="http://jeason.me/images/2014/03/08/9.jpg"><img src="http://jeason.me/images/2014/03/08/9.jpg" /></a>
 </figure>
 
-<h1 id="section-13">基本算法</h1>
+<h1 id="section-14">基本算法</h1>
 
-<h2 id="section-14">排序</h2>
+<h2 id="section-15">排序</h2>
 
-<h3 id="section-15">代码实现</h3>
+<h3 id="section-16">代码实现</h3>
 
 <div class="highlight"><pre><code class="c++"><span class="c1">//</span>
 <span class="c1">//  sort.cpp</span>
@@ -558,13 +563,13 @@
 <span class="p">}</span>
 </code></pre></div>
 
-<h2 id="section-16">查找/搜索</h2>
+<h2 id="section-17">查找/搜索</h2>
 
-<h3 id="section-17">二分查找</h3>
+<h3 id="section-18">二分查找</h3>
 
-<h2 id="section-18">基于图论的算法</h2>
+<h2 id="section-19">基于图论的算法</h2>
 
-<h3 id="section-19">最短路径</h3>
+<h3 id="section-20">最短路径</h3>
 
 <h4 id="dijkstra">Dijkstra算法</h4>
 
@@ -572,14 +577,14 @@
 <a href="http://jeason.me/images/2014/03/08/10.jpg"><img src="http://jeason.me/images/2014/03/08/10.jpg" /></a>
 </figure>
 
-<h3 id="section-20">最小生成树</h3>
+<h3 id="section-21">最小生成树</h3>
 
 <h4 id="prime">Prime算法</h4>
 
                         <br>
                     <span class="entry-tags">
                     <p>
-                        <i class="icon-tags"></i>&nbsp;Tagged with <a href="http://jeason.me/tags/index.html#Courses" data-toggle="tooltip" title="Posts tagged with Courses" rel="tag">Courses</a>
+                        <i class="icon-tags"></i>&nbsp;Tagged with 
                     </p>
                     </span>
                     </div>
