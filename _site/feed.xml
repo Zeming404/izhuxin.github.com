@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://jeason.me/feed.xml" />
 <link rel="alternate" type="text/html" href="http://jeason.me" />
-<updated>2014-03-08T13:52:45+08:00</updated>
+<updated>2014-03-10T14:50:03+08:00</updated>
 <id>http://jeason.me/</id>
 <author>
   <name>Jeason George</name>
@@ -42,39 +42,44 @@
           &lt;li&gt;&lt;a href=&quot;#rectangular-table&quot;&gt;Rectangular Table&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#hash-table&quot;&gt;Hash Table&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#section-2&quot;&gt;开放定址法&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-3&quot;&gt;单独链表法&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-3&quot;&gt;开放定址法的平均探测次数&lt;/a&gt;            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#section-4&quot;&gt;成功的平均探测次数&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#section-5&quot;&gt;不成功的平均探测次数&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-6&quot;&gt;单独链表法&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#tree&quot;&gt;Tree&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-4&quot;&gt;满二叉树&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-5&quot;&gt;完全二叉树&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-6&quot;&gt;二叉树的遍历&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-7&quot;&gt;满二叉树&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-8&quot;&gt;完全二叉树&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-9&quot;&gt;二叉树的遍历&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#avl&quot;&gt;AVL树&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#graph&quot;&gt;Graph&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-7&quot;&gt;图的表示方式&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-8&quot;&gt;图的遍历&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-9&quot;&gt;拓扑排序&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-10&quot;&gt;图的表示方式&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-11&quot;&gt;图的遍历&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-12&quot;&gt;拓扑排序&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-10&quot;&gt;基本算法&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-11&quot;&gt;排序&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-12&quot;&gt;代码实现&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-13&quot;&gt;基本算法&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-14&quot;&gt;排序&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-15&quot;&gt;代码实现&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-13&quot;&gt;查找/搜索&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-14&quot;&gt;二分查找&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-16&quot;&gt;查找/搜索&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-17&quot;&gt;二分查找&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-15&quot;&gt;基于图论的算法&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-16&quot;&gt;最短路径&lt;/a&gt;            &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-18&quot;&gt;基于图论的算法&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-19&quot;&gt;最短路径&lt;/a&gt;            &lt;ul&gt;
               &lt;li&gt;&lt;a href=&quot;#dijkstra&quot;&gt;Dijkstra算法&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-17&quot;&gt;最小生成树&lt;/a&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-20&quot;&gt;最小生成树&lt;/a&gt;            &lt;ul&gt;
               &lt;li&gt;&lt;a href=&quot;#prime&quot;&gt;Prime算法&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
@@ -145,11 +150,19 @@
 &lt;a href=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;第一次碰撞发生在填装49的时候。地址为9的单元已经填装了89这个关键字，所以取i=1，往下查找一个单位，发现为空，所以将49填装在地址为0的空单元。第二次碰撞则发生在58上，取i=2，往下查找两个单位，将58填装在地址为1的空单元。69同理。
+&lt;p&gt;第一次碰撞发生在填装49的时候。地址为9的单元已经填装了89这个关键字，所以取i=1，往下查找一个单位，发现为空，所以将49填装在地址为0的空单元。插入58时，地址8处发生第一次碰撞，d = 1, 探测位置9，发生第二次碰撞，d= 2,探测位置1，位置1为空，将58插入位置1。69同理。
 表的大小选取至关重要，此处选取10作为大小，发生碰撞的几率就比选择质数11作为大小的可能性大。越是质数，mod取余就越可能均匀分布在表的各处。
-开放定址法的一个最大缺点就是容易造成聚集，使性能大大下降。所以开放定址法的表的至少要为一个比key的数量两倍还多的顺序List。&lt;/p&gt;
+开放定址法的一个最大缺点就是容易造成聚集，使性能大大下降。所以开放定址法的表的至少要为一个比key的数量两倍还多的顺序List，且大小最好为质数。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-3&quot;&gt;单独链表法&lt;/h3&gt;
+&lt;h3 id=&quot;section-3&quot;&gt;开放定址法的平均探测次数&lt;/h3&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;成功的平均探测次数&lt;/h4&gt;
+&lt;p&gt;回到刚才举的例子，key89，18一次就放入了表内，探测次数为1，key49先在9的位置探测了一次，然后在0这个位置再探测了一次，探测次数是2，同理，可得58的探测次数时3，69为3.这样查找成功的平均探测次数为( 1 + 1 + 2 + 3 + 3 ) / 9。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-5&quot;&gt;不成功的平均探测次数&lt;/h4&gt;
+&lt;p&gt;计算查找不成功的次数就直接找关键字到第一个地址上关键字为空的距离即可。对于地址0，它到关键字为空的距离为3，地址1为2，地址2为1，地址8为1，地址9为2，所以不成功的平均查找次数是( 3 + 2 + 1 + 1 + 2 ) / 9.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;单独链表法&lt;/h3&gt;
 &lt;p&gt;它的思想是将散列到同一个存储位置的所有元素保存在一个链表中。即为链接List的顺序List。对于有相同的f(key)的key值构成了一个链表，而所有的这些链表组成的数组就是单独链接法得到的哈希表，如下图所示:
 &lt;figure class=&quot;half&quot;&gt;
 &lt;a href=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot; /&gt;&lt;/a&gt;
@@ -166,19 +179,19 @@
  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BiTNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BiTree&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;section-4&quot;&gt;满二叉树&lt;/h3&gt;
+&lt;h3 id=&quot;section-7&quot;&gt;满二叉树&lt;/h3&gt;
 &lt;p&gt;一棵深度为k，且有2^k-1个节点称之为满二叉树，如下图所示
 &lt;figure class=&quot;half&quot;&gt;
 &lt;a href=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-5&quot;&gt;完全二叉树&lt;/h3&gt;
+&lt;h3 id=&quot;section-8&quot;&gt;完全二叉树&lt;/h3&gt;
 &lt;p&gt;完全二叉树又叫做堆，它是深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中序号为1至n的节点对应时，称之为完全二叉树。
 &lt;figure class=&quot;half&quot;&gt;
 &lt;a href=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-6&quot;&gt;二叉树的遍历&lt;/h3&gt;
+&lt;h3 id=&quot;section-9&quot;&gt;二叉树的遍历&lt;/h3&gt;
 &lt;p&gt;遍历即将树的所有结点访问且仅访问一次。按照根节点位置的不同分为前序遍历，中序遍历，后序遍历。
 前序遍历：根节点-&amp;gt;左子树-&amp;gt;右子树
 中序遍历：左子树-&amp;gt;根节点-&amp;gt;右子树
@@ -188,15 +201,17 @@
 &lt;a href=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;前序遍历：abdefgc
-中序遍历：debgfac
-后序遍历：edgfbca&lt;/p&gt;
+&lt;p&gt;前序遍历：abdefgc&lt;/p&gt;
+
+&lt;p&gt;中序遍历：debgfac&lt;/p&gt;
+
+&lt;p&gt;后序遍历：edgfbca&lt;/p&gt;
 
 &lt;h3 id=&quot;avl&quot;&gt;AVL树&lt;/h3&gt;
 
 &lt;h2 id=&quot;graph&quot;&gt;Graph&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-7&quot;&gt;图的表示方式&lt;/h3&gt;
+&lt;h3 id=&quot;section-10&quot;&gt;图的表示方式&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;数组（邻接矩阵）存储表示（有向或无向）。&lt;/li&gt;
 &lt;/ul&gt;
@@ -213,21 +228,21 @@
 &lt;a href=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-&lt;h3 id=&quot;section-8&quot;&gt;图的遍历&lt;/h3&gt;
+&lt;h3 id=&quot;section-11&quot;&gt;图的遍历&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
 &lt;a href=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-&lt;h3 id=&quot;section-9&quot;&gt;拓扑排序&lt;/h3&gt;
+&lt;h3 id=&quot;section-12&quot;&gt;拓扑排序&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
 &lt;a href=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-&lt;h1 id=&quot;section-10&quot;&gt;基本算法&lt;/h1&gt;
+&lt;h1 id=&quot;section-13&quot;&gt;基本算法&lt;/h1&gt;
 
-&lt;h2 id=&quot;section-11&quot;&gt;排序&lt;/h2&gt;
+&lt;h2 id=&quot;section-14&quot;&gt;排序&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-12&quot;&gt;代码实现&lt;/h3&gt;
+&lt;h3 id=&quot;section-15&quot;&gt;代码实现&lt;/h3&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;//  sort.cpp&lt;/span&gt;
@@ -420,20 +435,21 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;section-13&quot;&gt;查找/搜索&lt;/h2&gt;
+&lt;h2 id=&quot;section-16&quot;&gt;查找/搜索&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-14&quot;&gt;二分查找&lt;/h3&gt;
+&lt;h3 id=&quot;section-17&quot;&gt;二分查找&lt;/h3&gt;
 
-&lt;h2 id=&quot;section-15&quot;&gt;基于图论的算法&lt;/h2&gt;
+&lt;h2 id=&quot;section-18&quot;&gt;基于图论的算法&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-16&quot;&gt;最短路径&lt;/h3&gt;
+&lt;h3 id=&quot;section-19&quot;&gt;最短路径&lt;/h3&gt;
+
+&lt;h4 id=&quot;dijkstra&quot;&gt;Dijkstra算法&lt;/h4&gt;
+
 &lt;figure class=&quot;half&quot;&gt;
 &lt;a href=&quot;http://jeason.me/images/2014/03/08/10.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/10.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-&lt;h4 id=&quot;dijkstra&quot;&gt;Dijkstra算法&lt;/h4&gt;
-
-&lt;h3 id=&quot;section-17&quot;&gt;最小生成树&lt;/h3&gt;
+&lt;h3 id=&quot;section-20&quot;&gt;最小生成树&lt;/h3&gt;
 
 &lt;h4 id=&quot;prime&quot;&gt;Prime算法&lt;/h4&gt;
 
@@ -486,9 +502,9 @@
 &lt;p&gt;正如标题所说，Jeason想出来的这个方法是投机取巧式的，是有一定适用条件的。在这里，我不会将IOS中不同尺寸不同系统的适配问题统统讲完，不过会在后面给出其他适配方法的链接。&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;是这样的，之前Jeason实习的那家公司的产品从iOS7发布之前就开始启动了，所以之前的设计一直没有考虑iOS6/iOS7适配的问题。&lt;/li&gt;
-  &lt;li&gt;而设计师严重缺人而且主美之前还无IOS开发的经验，所以我们也几乎没有考虑iPhone5的尺寸问题。&lt;/li&gt;
-  &lt;li&gt;这个春节项目接近尾声，经理一直在催赶进度，我需要找到一种简单的适配方法来达到在iOS6，iOS7以及3.5寸和4.0寸视觉效果上的基本一致(至少不会太差)。&lt;/li&gt;
+  &lt;li&gt;Jeason实习的那家公司的产品从iOS7发布之前就开始启动了，所以之前的设计一直没有考虑iOS6/iOS7适配的问题。&lt;/li&gt;
+  &lt;li&gt;时间紧张。&lt;/li&gt;
+  &lt;li&gt;我需要找到一种简单的适配方法来达到在iOS6，iOS7以及3.5寸和4.0寸视觉效果上的基本一致(至少不会太差)。&lt;/li&gt;
   &lt;li&gt;提一下重要的一点，就是我们的项目是拆分了一个个模块，每个模块的界面大多是用xib搭建的，而且大多带有导航栏。这是问题的难点，同时这也是这个方法的关键。&lt;/li&gt;
 &lt;/ul&gt;
 
