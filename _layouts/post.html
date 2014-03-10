@@ -38,7 +38,7 @@
                         <br>
                     <span class="entry-tags">
                     <p>
-                        <i class="icon-tags"></i>&nbsp;Tagged with {% for tag in page.tags %}{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}
+                        <i class="icon-tags"></i>&nbsp;Tagged with {% for tag in page.tags %}{{ tag }}{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}
                     </p>
                     </span>
                     </div>
