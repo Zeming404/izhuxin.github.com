@@ -158,7 +158,7 @@ hash_i = ( hash(key) + d_i ) mod m, 其中hash(key)为哈希函数，m为哈希�
 
 ##排序
 
-###代码实现
+这部分我觉得直接通过代码来理解会最好了，我会在代码中加上足够的注释。
 
 {% highlight C++ %}
 //
@@ -355,6 +355,74 @@ int main() {
 ##查找/搜索
 
 ###二分查找
+{% highlight C++ %}
+//
+//  BinaySearch.cpp
+//  sicily
+//
+//  Created by Jeason on 3/11/14.
+//  Copyright (c) 2014 Jeason. All rights reserved.
+//
+
+#include <stdio.h>
+
+typedef enum BinarySearchType {
+    SearchEndAtFound, SearchEndAtNone
+} BinarySearchType;
+
+bool BinarySearch( int *orderList, size_t listLength, BinarySearchType type, int target ){
+    size_t bottom = 0, top = listLength - 1;
+    
+    switch ( type ) {
+        case SearchEndAtFound:
+            while ( bottom <= top ) {
+                size_t middle = ( bottom + top ) / 2;
+                if ( orderList[middle] == target ) {
+                    return true;
+                } else if ( orderList[middle] > target ) {
+                    top = middle - 1;
+                } else {
+                    bottom = middle + 1;
+                }
+            }
+            break;
+            //在循环中，一旦找到立马return
+        case SearchEndAtNone:
+            while ( bottom < top ) {
+                size_t middle = ( bottom + top ) / 2;
+                if ( orderList[middle] >= target ) {
+                    top = middle;
+                } else {
+                    bottom = middle + 1;
+                }
+            }
+            //直到循环结束才去判断是否找到，才return
+            if ( top < bottom ) {
+                return false;
+            } else if ( target == orderList[bottom] ) {
+                return true;
+            } else {
+                return false;
+            }
+            break;
+    }
+    return false;
+}
+
+int main() {
+    int orderList[] = {1, 2, 3, 4, 5, 6};
+    int target = 10;
+    int listLength = sizeof(orderList) / sizeof(orderList[0]);
+    
+    if ( BinarySearch(orderList, listLength, SearchEndAtNone, target) ) {
+        printf( "%d target found\n", target );
+    } else {
+        printf( "%d target not found\n", target );
+    }
+    
+    return 0;
+}
+{% endhighlight %}
 
 ##基于图论的算法
 
