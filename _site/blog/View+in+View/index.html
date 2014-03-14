@@ -120,38 +120,7 @@
                     </header>
                     <div class="post-body bordered-bottom" itemprop="description">
                         
-                        <section>
-  <header>
-    <h1>目录</h1>
-  </header>
-<div id="drawer">
-<ul id="markdown-toc">
-  <li><a href="#section">背景介绍</a></li>
-  <li><a href="#view-in-view">View in View的方法</a>    <ul>
-      <li><a href="#section-1">导入</a></li>
-      <li><a href="#section-2">实践</a>        <ul>
-          <li><a href="#view">引入内层View</a></li>
-          <li><a href="#autolayout">使用autolayout</a></li>
-          <li><a href="#autolayout-1">在代码中使用autolayout</a>            <ul>
-              <li><a href="#iboulet">创建IBOulet</a></li>
-              <li><a href="#ios7">定义iOS7宏</a></li>
-            </ul>
-          </li>
-          <li><a href="#viewdidloadautolayout">在viewDidLoad中使用autolayout</a></li>
-          <li><a href="#section-3">解决4寸屏幕上的问题</a></li>
-        </ul>
-      </li>
-      <li><a href="#section-4">总结</a></li>
-    </ul>
-  </li>
-  <li><a href="#section-5">其他方法总结</a></li>
-</ul>
-
-  </div>
-</section>
-
-<h1 id="section">背景介绍</h1>
-<p>正如标题所说，Jeason想出来的这个方法是投机取巧式的，是有一定适用条件的。在这里，我不会将IOS中不同尺寸不同系统的适配问题统统讲完，不过会在后面给出其他适配方法的链接。</p>
+                        <p>正如标题所说，Jeason想出来的这个方法是投机取巧式的，是有一定适用条件的。在这里，我不会将IOS中不同尺寸不同系统的适配问题统统讲完，不过会在后面给出其他适配方法的链接。</p>
 
 <ul>
   <li>Jeason实习的那家公司的产品从iOS7发布之前就开始启动了，所以之前的设计一直没有考虑iOS6/iOS7适配的问题。</li>
@@ -160,9 +129,38 @@
   <li>提一下重要的一点，就是我们的项目是拆分了一个个模块，每个模块的界面大多是用xib搭建的，而且大多带有导航栏。这是问题的难点，同时这也是这个方法的关键。</li>
 </ul>
 
+<section>
+  <header>
+    <h1>目录</h1>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#view-in-view">View in View的方法</a>    <ul>
+      <li><a href="#section">导入</a></li>
+      <li><a href="#section-1">实践</a>        <ul>
+          <li><a href="#view">引入内层View</a></li>
+          <li><a href="#autolayout">使用autolayout</a></li>
+          <li><a href="#autolayout-1">在代码中使用autolayout</a>            <ul>
+              <li><a href="#iboulet">创建IBOulet</a></li>
+              <li><a href="#ios7">定义iOS7宏</a></li>
+            </ul>
+          </li>
+          <li><a href="#viewdidloadautolayout">在viewDidLoad中使用autolayout</a></li>
+          <li><a href="#section-2">解决4寸屏幕上的问题</a></li>
+        </ul>
+      </li>
+      <li><a href="#section-3">总结</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-4">其他方法总结</a></li>
+</ul>
+
+  </div>
+</section>
+
 <h1 id="view-in-view">View in View的方法</h1>
 
-<h2 id="section-1">导入</h2>
+<h2 id="section">导入</h2>
 <p>为了方便说明这个方法，我随手弄了一个小project，如下图所示，虽然丑了点，不过大概能表达出真实的情况。
   这是一个登录页面，上面有很多个必要的控件而且有一个iOS7风格的导航栏，还有背景图。</p>
 <figure>
@@ -179,7 +177,7 @@
 
 <p>通过一些搜索的尝试，我发现了一些其他人的解决方案。对于第一个问题，有人说xib里取消到autolayout就可以设置iOS6/iOS7中的坐标差，从而使整个页面的元素可以在iOS6中整体往上移动20px。但事实上这个方法对有很多个元素的界面效果并不好。另外，要解决第二个问题，Apple给出的最佳解决方案使autolayout，而autolayout在xib里使用是最为方便的，在代码中使用autolayout实在有点冗长。所以我冥思苦想，想出了下列这种方法。</p>
 
-<h2 id="section-2">实践</h2>
+<h2 id="section-1">实践</h2>
 
 <h3 id="view">引入内层View</h3>
 <figure>
@@ -251,7 +249,7 @@
 </figure>
 <p>不过没有关系，我们有autolayout!</p>
 
-<h3 id="section-3">解决4寸屏幕上的问题</h3>
+<h3 id="section-2">解决4寸屏幕上的问题</h3>
 <p>4寸屏幕主要是让背景图片可以伸缩填充整个屏幕，所以要在背景图片的imageView上添加高度为greater than current value的constrains，底部距离内层View为0px的constrains就可以了，如图所示。</p>
 
 <figure>
@@ -264,7 +262,7 @@
 <a href="http://jeason.me/images/2014/03/02/8.jpg"><img src="http://jeason.me/images/2014/03/02/8.jpg" /></a>
 </figure></p>
 
-<h2 id="section-4">总结</h2>
+<h2 id="section-3">总结</h2>
 <p>这种View in View的方法，主要步骤有：</p>
 
 <ol>
@@ -282,7 +280,7 @@
   </li>
 </ol>
 
-<h1 id="section-5">其他方法总结</h1>
+<h1 id="section-4">其他方法总结</h1>
 <ol>
   <li>
     <p><a href="http://blog.csdn.net/chengwuli125/article/details/12613897">不启用autolayout适配导航栏问题（苹果官方建议）</a></p>
@@ -299,7 +297,7 @@
                         <br>
                     <span class="entry-tags">
                     <p>
-                        <i class="icon-tags"></i>&nbsp;Tagged with 
+                        <i class="icon-tags"></i>&nbsp;Tagged with IOS Developer
                     </p>
                     </span>
                     </div>
