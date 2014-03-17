@@ -3,7 +3,7 @@ layout: page
 permalink: /about/index.html
 title: About
 image:
-  feature: city.jpg
+  feature: Apple_Club_Office.jpg
 ---
 
 >&quot;I find hope in the darkest of days, and focus in the brightest. I do not judge the universe.&quot;
