@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Objective-C快速入门 &#8211; Jeason</title>
+<meta name="description" content="">
+<meta name="keywords" content="IOS Developer">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Objective-C快速入门">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://localhost:4000/blog/Objective-C%2BIntroduction">
+<meta property="og:site_name" content="Jeason">
+<meta property="og:image" content="http://localhost:4000/images/ios6_ios7_home_screens.jpg">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/Objective-C%2BIntroduction">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/style.css" />
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search...">
+        <i class="icon-remove-sign"></i>
+        <ul class="search-results post-list"></ul><!-- /.search-results -->
+    </div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/ios6_ios7_home_screens.jpg)" itemscope itemtype="http://schema.org/Organization">
+
+
+    <div class="inner">
+        <div class="container">
+            <a class="brand" href="http://localhost:4000" role="banner" itemprop="url">
+
+                <img itemprop="logo" src="http://localhost:4000/images/logo.png" alt="Jeason Logo" />
+
+            <h1 class="blog-title light" itemprop="name">
+                Jeason
+            </h1>
+                
+            </a>
+        </div>
+    </div>
+    
+    
+    <div class="decor-wrapper">
+        <svg id="header-decor" class="decor bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+            <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+            <path class="medium left" d="M0 100 L50 50 L0 33.3" fill="rgba(255,255,255, .3)"></path>
+            <path class="medium right" d="M100 100 L50 50 L100 33.3" fill="rgba(255,255,255, .3)"></path>
+
+            <path class="small left" d="M0 100 L50 50 L0 66.6" fill="rgba(255,255,255, .5)"></path>
+            <path class="small right" d="M100 100 L50 50 L100 66.6" fill="rgba(255,255,255, .5)"></path>
+
+            <path d="M0 99.9 L50 49.9 L100 99.9 L0 99.9" fill="rgba(255,255,255, 1)"></path>
+
+            <path d="M48 52 L50 49 L52 52 L48 52" fill="rgba(255,255,255, 1)"></path>
+
+        </svg>
+    </div>
+    
+</header>
+<div id="main" class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+    <div class="container">
+        <div class="row">
+            <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            
+            
+            
+                
+            
+             
+             
+                    <header class="post-header entry-header">
+                        
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">Objective-C快速入门</h1>
+                        
+                        <div class="post-info text-center small">
+                            <span class="entry-date date published updated"><time datetime="2014-03-28T00:00:00+08:00" class="post-time" itemprop="datePublished">28 Mar 2014</time><span>
+                            in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                        </div>
+                    </header>
+                    <div class="post-body bordered-bottom" itemprop="description">
+                        
+                        <p>因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了<a href="https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550">Stanford‘的CS193p课程</a>，已及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。</p>
+
+<section>
+  <header>
+    <h1>目录</h1>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#section">概述</a></li>
+  <li><a href="#section-1">类的编写</a>    <ul>
+      <li><a href="#section-2">类的声明</a></li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
+</section>
+
+<h1 id="section">概述</h1>
+
+<ul>
+  <li>
+    <p>Objective-C是C语言的一个超集，即所有符合C语言语法的代码都可以直接通过OC的编译器。这一点跟C++十分类似（因为我之前是学C++的，学习OC的时候就把里面的很多语法都跟C++进行了联系和对比），它以另外一种不同于C++的语法实现了面向对象。</p>
+  </li>
+  <li>
+    <p>虽然OC现在几乎只运用于Apple系的操作系统上，但OC最初源于NeXTSTEP操作系统（乔帮主离开Apple那段时间创立的公司），后来NeXTSTEP被Apple收购，但并没有怎么修改NeXTSTEP留下的重要的Foundation库，所以我们现在的OC里的大部分类，枚举，结构体的名字都有个NS（NeXTSTEP的缩写）作为前缀。</p>
+  </li>
+  <li>
+    <p>Objective-C最大的特色是承自Smalltalk的信息传递模型（message passing），此机制与今日C++式之主流风格差异甚大。向一个函数传递参数只是向这个函数传递了一个模糊的信息，所有的信息处理都是直到runtime才会动态地决定(有点类似于C++的dynamic blinding)。</p>
+  </li>
+</ul>
+
+<h1 id="section-1">类的编写</h1>
+
+<p>既然是面向对象的语言，那么最重要的就是类的编写方法了，学习的最好方式，就是看代码。</p>
+
+<h3 id="section-2">类的声明</h3>
+
+<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
+<span class="c1">//  CENote.h</span>
+<span class="c1">//  TextKitNotepad</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 28/03/2014.</span>
+<span class="c1">//  Copyright (c) 2013 Jeason. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="c1">//#import &lt;Foundation/Foundation.h&gt;</span>
+<span class="c1">//1</span>
+<span class="p">@</span><span class="n">import</span> <span class="n">Foundation</span><span class="p">;</span>
+
+<span class="c1">//2</span>
+<span class="k">@interface</span> <span class="nc">Note</span> : <span class="nc">NSObject</span>
+
+<span class="c1">//3</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSString</span><span class="o">*</span> <span class="n">contents</span><span class="p">;</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSDate</span><span class="o">*</span> <span class="n">timestamp</span><span class="p">;</span>
+<span class="c1">// an automatically generated not title, based on the first few words</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">title</span><span class="p">;</span>
+
+<span class="k">@property</span> <span class="n">NSUInteger</span> <span class="n">NoteID</span><span class="p">;</span>
+
+<span class="c1">//4</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithText:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span> <span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span><span class="p">;</span>
+
+<span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">noteWithText:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span> <span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span><span class="p">;</span>
+
+<span class="k">@end</span>
+</code></pre></div>
+
+<html>
+<ol>
+<li>
+	#import&lt;Foundation/Foundation.h&gt;，如果你之前学过C++，那你肯定都能猜出这个语句的意思，它有点类似于C++里的#include<cstdlib>，就是把头文件导入进来，但它不需要像C/C++那样，要加上
+	
+<div class="highlight"><pre><code class="c">	<span class="err">#</span><span class="n">ifndef</span> <span class="n">XXX</span>
+	<span class="err">#</span><span class="n">define</span> <span class="n">XXX</span>
+	<span class="err">#</span><span class="n">endif</span>
+	
+</code></pre></div>
+
+	这样的宏来判断是否重复包含，#import就实现这个宏的功能来避免重复包含。之所以把它注释掉，是因为在IOS7中，更推荐的用法是下面那一行：<code>@import Foundation;</code>，@import不是让编译器导入一堆的库文件，而是让编译器link一个已经编译好的"module"，这样就极大地减少了编译的时间。
+
+
+<li>
+	<code>@interface Note : NSObject ... @end</code>, 这个看字面意思就可以看懂，就是声明了Note这个类的接口(interface)，":"后面跟的是Note这个类继承的类“NSObject”，NSObject几乎是你所编写的所有OC类的子类，它定义了很多通用的方法（如isEuqalTo:，init之类的，现在先不管他）。
+</li>
+
+<li>
+	@proerty，如果把它翻译成中文，可以说是属性吧，它是OC里的一个重要但不容易理解的语法。如果你之前写过C++，那你肯定写过一堆无聊的getter，setter来读/写这些成员变量，对于新人来说，可以认为property就相当于C++一个类内的成员变量，它的实例名字就是下划线＋somePropertyName,如<code>_contents</code>。而且@property还自动为我们生成了这些变量的getter和setter函数，他们默认的名字是setXXX和XXX。我们看到，@property后面可以跟有一堆的关键字，而且正如你所看到的那样，以后我们写的大部分property后面跟的都是(nonatomic, strong)，我本来应该把所有的关键字都列出来然后一一给你说明，但我不想那样子做，我只是遇到一些解释一些这样，因为通过不同的例子这样才有可能记得住这些关键字的具体含义和区别
+	<ul>
+		nonatomic: 
+	</ul>
+</li>
+
+<li>
+	接下来就是一些函数的声明了。OC的函数声明的样子对于C/C++的程序员来说是非常的别扭的，不妨你用英语把它读出来？
+
+	其中－和＋分别代表了实例方法和类方法，括号里的是函数的返回类型，instancetype表示这个返回的是这个类的类型，比如这里的Note。而冒号后面跟的是参数的类型和参数名。
+</li>
+
+
+
+
+<div class="highlight"><pre><code class="c++"><span class="err">如果你足够细心的话，你应该发现了在这个类的声明里，涉及到对象的几乎都是表示成指针的形式。的确，</span><span class="n">OC</span><span class="err">里的所有对象都是采用指针来访问的，而所有的对象的内存都是在堆里面产生的，而不象</span><span class="n">C</span><span class="o">++</span><span class="err">那样是可以通过棧产生。</span>
+</code></pre></div>
+
+
+###类的实现
+
+接下来我们就来实现这个类，注意，OC的类实现文件的后缀是.m
+
+
+<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
+<span class="c1">//  CENote.m</span>
+<span class="c1">//  TextKitNotepad</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 28/03/2014.</span>
+<span class="c1">//  Copyright (c) 2013 Jeason. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="c1">//1</span>
+<span class="cp">#import &quot;Note.h&quot;</span>
+
+<span class="k">@interface</span> <span class="nc">Note</span> <span class="p">()</span>
+<span class="c1">//2</span>
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">Note</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithText:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span> <span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span> <span class="p">{</span>
+    <span class="c1">//3</span>
+    <span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">super</span> <span class="n">init</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">self</span>  <span class="o">!=</span> <span class="nb">nil</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">text</span><span class="p">;</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">NoteID</span> <span class="o">=</span> <span class="n">noteid</span><span class="p">;</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">noteWithText:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span> <span class="p">{</span>
+    <span class="n">Note</span><span class="o">*</span> <span class="n">note</span> <span class="o">=</span> <span class="p">[</span><span class="n">Note</span> <span class="n">new</span><span class="p">];</span>
+    <span class="n">note</span><span class="p">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">text</span><span class="p">;</span>
+    <span class="n">note</span><span class="p">.</span><span class="n">NoteID</span> <span class="o">=</span> <span class="n">noteid</span><span class="p">;</span>
+    <span class="n">note</span><span class="p">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
+    <span class="k">return</span> <span class="n">note</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">title</span> <span class="p">{</span>
+	<span class="c1">//4</span>
+    <span class="c1">// split into lines</span>
+    <span class="n">NSArray</span><span class="o">*</span> <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">contents</span> <span class="n">componentsSeparatedByCharactersInSet</span><span class="o">:</span> <span class="p">[</span><span class="n">NSCharacterSet</span> <span class="n">newlineCharacterSet</span><span class="p">]];</span>
+    
+    <span class="c1">// return the first</span>
+    <span class="k">return</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</code></pre></div>
+
+<html>
+<ol>
+	<li>
+		在这里又遇到了#import，复习一下，它就相当于实现了防止重复包含的#include.
+	</li>
+
+	<li>
+		如果你以前学过C++或者JAVA，那你之前肯定会疑惑：OC里声明的成员哪些是public的，哪些是private的。在这里就告诉你答案：在.h文件的interface里声明的，都是public的，而在.m文件里的interface里声明的，就是private的（自然随@property产生的setter/getter也是private的）。
+	</li>
+
+	<li>
+		接下来这一个函数就是我们以后经常会见到的，你可以把它看出是C++里的构造函数。但又跟构造函数有点不同，我们姑且把它称为初始化函数吧。这里有几点要注意的:
+		<ul>
+			<li> self就相当于C++里的this指针（这是我认为最容易接受的理解，虽然它可能并不严谨）。</li>
+
+			<li>通过这个函数可以看到，OC里面调用函数（或者说传递消息？）的语法是[someObj someMethod]或者是[someClass someMethod]这样的写法，跟C++里的“.”符号只是写法不同而已。</li>
+
+			<li>我们要获得property定义的getter/setter，是通过一个"."这样的符号来获得的。当然，因为porperty为我们产生了getter/setter 函数，你也可以通过调用这些函数，如[someObj somePropertyName]和[someObj setSomePropertyName]，只是老是要写两个括号简直不能忍。不过这里说一句：<code>最好是通过"."来获得getter，直接用_somePropertyName来获得setter，具体原因以后再说。</code></li>
+
+			<li>它的写法一般都是固定的，就是先调用父类的init方法（NSObject）， 然后如果成功，返回的不为空（nil），就完成接下来的初始化的操作，最后返回。</li>
+	
+
+	<li>
+		@property自动生成的getter，就只是简单的返回它的值而已，而在这里，我们希望它每个Note的Title就是它内容的第一行，所以我们重写了这个函数。我们看这个函数会发现这个函数非常的长，但读起来却非常的简单易懂，这就是OC的魅力，以几乎是自然语言的方式写代码，让懂英语的人都可以读懂它的含义。
+	</li>
+	</ul>
+
+
+
+<article>
+就这样，你懂得了一个类的基本结构和写法，还初步看到了Foundation提供的很多的库类，如NSString，NSDate，NSArray，你肯定会想学学这些类，然后利用这些来实现你自己想要的功能的类。那我们现在就来个Overview吧。
+</article>
+
+
+##Foundation Overview
+</li></ol></html></cstdlib></li></ol></html>
+
+                        <br>
+                    <span class="entry-tags">
+                    <p>
+                        <i class="icon-tags"></i>&nbsp;Tagged with IOS Developer
+                    </p>
+                    </span>
+                    </div>
+        </div>
+                    <footer class="post-footer entry-meta">
+                        
+                        <div class="post-author text-center">                       
+	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
+</div> 
+                        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+                    </footer>
+            </article>
+    </div>
+</div>
+
+
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/ios6_ios7_home_screens.jpg)" >
+
+
+    <div class="inner">
+        <div class="container">
+
+            <ul class="social-icons">
+            
+            
+            
+            
+            
+            <li>
+                <a href="http://weibo.com/u/2966878797" data-toggle="tooltip" title="Jeason George on Sina Weibo" target = "_blank">
+                    <i class="icon-weibo"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="http://github.com/izhuxin" data-toggle="tooltip" title="Jeason George on Github" target="_blank">
+                    <i class="icon-github"></i>
+                </a>
+            </li>
+            <li><a href="http://localhost:4000/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+                    <i class="icon-rss"></i>
+                </a>
+            </li>
+
+        </ul>
+            <p class="copy-text">
+                <a href="http://localhost:4000/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+            </p>
+
+            <ul class="menu-items">
+            
+            <li>
+                
+                    <a href="http://localhost:4000/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li class="dosearch"><i class="icon-search"></i> 站内搜索</li>
+        </ul>
+        </div>
+    </div>
+    
+        <div class="decor-wrapper">
+            <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+                <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+                <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+                <path class="medium left" d="M0 0 L50 50 L0 66.6" fill="rgba(255,255,255, .3)"></path>
+                <path class="medium right" d="M100 0 L50 50 L100 66.6" fill="rgba(255,255,255, .3)"></path>
+
+                <path class="small left" d="M0 0 L50 50 L0 33.3" fill="rgba(255,255,255, .5)"></path>
+                <path class="small right" d="M100 0 L50 50 L100 33.3" fill="rgba(255,255,255, .5)"></path>
+
+                <path d="M0 0 L50 50 L100 0 L0 0" fill="rgba(255,255,255, 1)"></path>
+
+                <path d="M48 48 L50 51 L52 48 L48 48" fill="rgba(255,255,255, 1)"></path>
+
+            </svg>
+        </div>
+    
+</footer>
+
+    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/script.js"></script>
+
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://localhost:4000/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-48042789-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'Jeason'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+</body>
+</html>
