@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "SYSU Apple Club培训教程（一）：Objective-C"
+title: "Apple Club培训教程（一）：Objective-C"
 description: ""
 category: blog
 tags: [IOS Developer]
 image: 
   feature: objective_tutorial.jpg
 comments: true
+diary: 因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了Stanford‘的CS193p课程以及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。
+
 mathjax: 
 ---
 

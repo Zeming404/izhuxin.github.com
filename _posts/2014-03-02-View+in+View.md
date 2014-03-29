@@ -7,6 +7,8 @@ tags: [IOS Developer]
 image: 
   feature: ios6_ios7_home_screens.jpg
 comments: true
+diary: 正如标题所说，Jeason想出来的这个方法是投机取巧式的，是有一定适用条件的。在这里，我不会将IOS中不同尺寸不同系统的适配问题统统讲完，不过会在后面给出其他适配方法的链接。
+
 mathjax: 
 ---
 

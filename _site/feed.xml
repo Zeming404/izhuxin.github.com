@@ -2,26 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Jeason</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-03-29T10:40:11+08:00</updated>
-<id>http://localhost:4000/</id>
+<link rel="self" type="application/atom+xml" href="http://jeason.me/feed.xml" />
+<link rel="alternate" type="text/html" href="http://jeason.me" />
+<updated>2014-03-29T10:59:28+08:00</updated>
+<id>http://jeason.me/</id>
 <author>
   <name>Jeason George</name>
-  <uri>http://localhost:4000/</uri>
+  <uri>http://jeason.me/</uri>
   <email>sysu.ss.jeason@gmail.com</email>
 </author>
 
 
 <entry>
-  <title type="html"><![CDATA[Objective-C快速入门]]></title>
-  <link>http://localhost:4000/blog/Objective-C%2BIntroduction</link>
-  <id>http://localhost:4000/blog/Objective-C+Introduction</id>
+  <title type="html"><![CDATA[Apple Club培训教程（一）：Objective-C]]></title>
+  <link>http://jeason.me/blog/Objective-C%2BIntroduction</link>
+  <id>http://jeason.me/blog/Objective-C+Introduction</id>
   <published>2014-03-28T00:00:00+08:00</published>
   <updated>2014-03-28T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了&lt;a href=&quot;https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550&quot;&gt;Stanford‘的CS193p课程&lt;/a&gt;，已及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。&lt;/p&gt;
@@ -209,7 +209,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;4, @property自动生成的getter，就只是简单的返回它的值而已，而在这里，我们希望它每个Note的Title就是它内容的第一行，所以我们重写了这个函数。我们看这个函数会发现这个函数非常的长，但读起来却非常的简单易懂，这就是OC的魅力，以几乎是自然语言的方式写代码，让懂英语的人都可以读懂它的含义。&lt;/p&gt;
+&lt;p&gt;4, @property自动生成的getter，就只是简单的返回它的值而已，而在这里，我们希望它每个Note的Title就是它内容的第一行，所以我们重写了这个函数。我们看这个函数会发现有个语句非常的长（你肯定知道我说哪一个），但读起来却非常的简单易懂，这就是OC的魅力，以几乎是自然语言的方式写代码，让懂英语的人都可以读懂它的含义。&lt;/p&gt;
 
 &lt;p&gt;就这样，你懂得了一个类的基本结构和写法，还初步看到了Foundation提供的很多的库类，如NSString，NSDate，NSArray，你肯定会想学学这些类，然后利用这些来实现你自己想要的功能的类。那我们现在就来个Overview吧。&lt;/p&gt;
 
@@ -285,19 +285,19 @@
 
 &lt;p&gt;敬请期待。。&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Objective-C%2BIntroduction&quot;&gt;Objective-C快速入门&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Objective-C%2BIntroduction&quot;&gt;Apple Club培训教程（一）：Objective-C&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SE 数据结构课程总结]]></title>
-  <link>http://localhost:4000/blog/DS%2BCourse%2BReview</link>
-  <id>http://localhost:4000/blog/DS+Course+Review</id>
+  <link>http://jeason.me/blog/DS%2BCourse%2BReview</link>
+  <id>http://jeason.me/blog/DS+Course+Review</id>
   <published>2014-03-08T00:00:00+08:00</published>
   <updated>2014-03-08T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这注定会是一篇很长的博文，可能我一次难以把它完全写好。本文主要是基于中山大学的《SE-221 数据结构与算法》这门课的课程内容而写，以后可能还有其他数据结构方面的补充与完善。&lt;/p&gt;
@@ -419,7 +419,7 @@
 &lt;p&gt;举个例子吧：关键字为{89,18,49,58,69}插入到一个散列表中的情况。此时线性探测的方法是取d_i=i。并假定取关键字除以10的余数为散列函数法则。&lt;/p&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;第一次碰撞发生在填装49的时候。地址为9的单元已经填装了89这个关键字，所以取i=1，往下查找一个单位，发现为空，所以将49填装在地址为0的空单元。插入58时，地址8处发生第一次碰撞，d = 1, 探测位置9，发生第二次碰撞，d= 2,探测位置1，位置1为空，将58插入位置1。69同理。
@@ -437,7 +437,7 @@
 &lt;h3 id=&quot;section-5&quot;&gt;单独链表法&lt;/h3&gt;
 &lt;p&gt;它的思想是将散列到同一个存储位置的所有元素保存在一个链表中。即为链接List的顺序List。对于有相同的f(key)的key值构成了一个链表，而所有的这些链表组成的数组就是单独链接法得到的哈希表，如下图所示:
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/6.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/6.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-6&quot;&gt;单独链表法的平均探测次数&lt;/h3&gt;
@@ -457,13 +457,13 @@
 &lt;h3 id=&quot;section-7&quot;&gt;满二叉树&lt;/h3&gt;
 &lt;p&gt;一棵深度为k，且有2^k-1个节点称之为满二叉树，如下图所示
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-8&quot;&gt;完全二叉树&lt;/h3&gt;
 &lt;p&gt;完全二叉树又叫做堆，它是深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中序号为1至n的节点对应时，称之为完全二叉树。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-9&quot;&gt;二叉树的遍历&lt;/h3&gt;
@@ -473,7 +473,7 @@
 后序遍历：左子树-&amp;gt;右子树-&amp;gt;根节点
 例如：求下面树的三种遍历
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;前序遍历：abdefgc&lt;/p&gt;
@@ -492,7 +492,7 @@
 &lt;/ul&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/7.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/7.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/7.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/7.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -500,18 +500,18 @@
 &lt;/ul&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/8.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/8.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;section-11&quot;&gt;图的遍历&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;p&gt;采用深度优先搜索和广度优先搜索的方法遍历图。（见下文：基本算法－基于图论的算法）&lt;/p&gt;
 
 &lt;h3 id=&quot;section-12&quot;&gt;拓扑排序&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/9.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/9.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h1 id=&quot;section-13&quot;&gt;基本算法&lt;/h1&gt;
@@ -965,19 +965,19 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/DS%2BCourse%2BReview&quot;&gt;SE 数据结构课程总结&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/DS%2BCourse%2BReview&quot;&gt;SE 数据结构课程总结&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[一种简单适配iOS开发中各种屏幕的投机取巧方法]]></title>
-  <link>http://localhost:4000/blog/View%2Bin%2BView</link>
-  <id>http://localhost:4000/blog/View+in+View</id>
+  <link>http://jeason.me/blog/View%2Bin%2BView</link>
+  <id>http://jeason.me/blog/View+in+View</id>
   <published>2014-03-02T00:00:00+08:00</published>
   <updated>2014-03-02T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;正如标题所说，Jeason想出来的这个方法是投机取巧式的，是有一定适用条件的。在这里，我不会将IOS中不同尺寸不同系统的适配问题统统讲完，不过会在后面给出其他适配方法的链接。&lt;/p&gt;
@@ -1024,13 +1024,13 @@
 &lt;p&gt;为了方便说明这个方法，我随手弄了一个小project，如下图所示，虽然丑了点，不过大概能表达出真实的情况。
   这是一个登录页面，上面有很多个必要的控件而且有一个iOS7风格的导航栏，还有背景图。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;现在这样在3.5寸，iOS7的模拟器上运行视觉上是OK的。（不要问我为什么会这么丑，这只是demo）问题主要是出现在当在iOS6上和4寸的模拟器上时，会出现比较大的问题，如下所示。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/2.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;正如第一张图所示，iOS6的self.view.frame的零点是在状态栏以下的位置，而iOS7的则是在整个屏幕的最左上方位置，两者纵坐标相差20px。而第二张图则说明了另一个问题，就是在依靠xib搭建的界面元素不会动态地去布局。&lt;/p&gt;
@@ -1041,7 +1041,7 @@
 
 &lt;h3 id=&quot;view&quot;&gt;引入内层View&lt;/h3&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -1055,7 +1055,7 @@
 &lt;h3 id=&quot;autolayout&quot;&gt;使用autolayout&lt;/h3&gt;
 &lt;p&gt;正如上面所说的，我们是要让内层view整体平移，所以只需在内层view上添加autolayout就可以了。首先不管是iOS6还是iOS7中，内层view的底/左/右端和外层view的底/左/右端的距离都为0。所以通过xib中添加这三个constrains就可以了，如下图所示。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;那个小红点是由我们只确定了下左右的constrains，而对上端没有约束造成的。对于内层view的上端和外层view的距离，我们希望它在iOS6中为－20px，即在iOS6中内层view上推20px，而在iOS7中为0px。这种动态效果是要靠代码中来实现的。&lt;/p&gt;
@@ -1105,7 +1105,7 @@
 
 &lt;p&gt;关于autolayout的使用，可以参考Apple中关于&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Introduction/Introduction.html&quot;&gt;autolayout的文档&lt;/a&gt;。现在，我们再运行一下模拟器，可以看到iOS6中已经可以显示正常了。不过在4寸屏幕上的问题仍然没有解决。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/6.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/6.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;p&gt;不过没有关系，我们有autolayout!&lt;/p&gt;
 
@@ -1113,13 +1113,13 @@
 &lt;p&gt;4寸屏幕主要是让背景图片可以伸缩填充整个屏幕，所以要在背景图片的imageView上添加高度为greater than current value的constrains，底部距离内层View为0px的constrains就可以了，如图所示。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/9.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/9.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;至此所有的适配工作已经完成，整个页面可以在iOS6/iOS7，3.5/4寸屏幕上显示基本正常。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/7.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/7.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/8.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/8.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-3&quot;&gt;总结&lt;/h2&gt;
@@ -1154,19 +1154,19 @@
 &lt;/ol&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 02, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 02, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[漫游中大]]></title>
-  <link>http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</link>
-  <id>http://localhost:4000/album/漫游中大</id>
+  <link>http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</link>
+  <id>http://jeason.me/album/漫游中大</id>
   <published>2014-03-01T00:00:00+08:00</published>
   <updated>2014-03-01T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;blockquote&gt;
@@ -1181,51 +1181,51 @@
 
 &lt;p&gt;1.广州的地铁几乎可以带你游遍广州任意角落。到康乐园，只需搭上八号线，然后从拥挤喧哗的鹭江地铁口出来，沿着马路直走100米左右，便可以到中大南校区的东门所在。走进门内，迎来的是另一个世界。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1990.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1990.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;2.在校道飞驰来往的车辆和两排稀稀落落的便利商店，似乎是宁静美丽的康乐园与嘈杂不堪的中间地带。这里链接着校园与外部，书香与尾气，宁静与浮华。校道的两旁,有着各式各样的涂鸦与横幅，彰显着校园的青春气息。
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1989.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1989.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1988.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1988.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1978.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1978.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1989.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1989.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1988.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1988.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1978.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1978.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;3.当你经过旁边的小路进入校园内部的时候，康乐园就开始忍不住像你展示它的美丽了。古树，红楼，美女；花香，鸟语，人闹。它就像是一个世外桃源一般，吸引着任何向往祥和的生灵。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1977.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1977.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1980.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1980.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1983.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1983.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1985.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1985.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1971.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1971.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;4.校园内几乎每一个关键的道路口都会有明确的标示，提醒人们不要被美不胜收的校园迷惑了方向。按照路牌指示，我向&lt;a href=&quot;http://library.sysu.edu.cn/web/guest/index&quot;&gt;图书馆&lt;/a&gt;前进。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1981.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1981.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1981.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1981.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;5.当然那么美丽的校园，图书馆自然不是读书的唯一去处，去图书馆借一本自己喜欢的小说，或坐在木椅或坐在草坪，那都是非常不错的选择。
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1974.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1974.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;6.终于，我沿着路旁参天的古树，来到了周围一片肃静的图书馆。凭着中山大学的校园卡刷卡入馆去了～。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1970.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1970.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1969.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1969.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;figure&gt;
 	&lt;figcaption&gt;漫步康乐园&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7&quot;&gt;漫游中大&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 01, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7&quot;&gt;漫游中大&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 01, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>

@@ -7,6 +7,8 @@ tags: [Courses]
 image: 
   feature:
 comments: true
+diary: 这注定会是一篇很长的博文，可能我一次难以把它完全写好。本文主要是基于中山大学的《SE-221 数据结构与算法》这门课的课程内容而写，以后可能还有其他数据结构方面的补充与完善。
+
 mathjax: true
 ---
 
