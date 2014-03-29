@@ -247,3 +247,10 @@ mathjax:
 4.  相信你接触OC的目的不是为了写那些在命令行里运行的程序，而是想要写出足够触动人心的App应用然后改变世界。不急，我们会在接下来的一段时间里为大家带来iOS开发的基础培训教程。
 
 敬请期待。。
+
+
+##Assignment
+将下面的Agenda中的User和UserManager类翻译成Objective－C
+1.  [User.h](https://gist.github.com/anonymous/9848769)    [User.cpp](https://gist.github.com/anonymous/9848824)
+
+2.  [UserManager.h](https://gist.github.com/anonymous/9848876)     [UserManager.cpp](https://gist.github.com/anonymous/9848844) 
