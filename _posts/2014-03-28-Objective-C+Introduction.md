@@ -253,8 +253,6 @@ mathjax:
 将下面的Agenda中的User和UserManager类翻译成Objective－C
 
 1.  [User.h](https://gist.github.com/anonymous/9848769)
-
 2.  [User.cpp](https://gist.github.com/anonymous/9848824)
-
 3.  [UserManager.h](https://gist.github.com/anonymous/9848876)     
 4.  [UserManager.cpp](https://gist.github.com/anonymous/9848844) 
