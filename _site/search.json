@@ -1,9 +1,9 @@
 [
 	
 		{
-		  "title"      : "Apple Club培训教程（二）：UI Programming",
+		  "title"      : "Apple Club培训教程（二）：UI编程",
 		  "category"   : "blog",
-		  "url"        : "http://localhost:4000/blog/iOS%2BUI%2Bporgramming",
+		  "url"        : "http://jeason.me/blog/iOS%2BUI%2Bporgramming",
 		  "date"       : "2014-03-31 00:00:00 +0800",
 		  "shortdate"  : "March 31, 2014"
 		} ,
@@ -11,7 +11,7 @@
 		{
 		  "title"      : "Apple Club培训教程（一）：Objective-C",
 		  "category"   : "blog",
-		  "url"        : "http://localhost:4000/blog/Objective-C%2BIntroduction",
+		  "url"        : "http://jeason.me/blog/Objective-C%2BIntroduction",
 		  "date"       : "2014-03-28 00:00:00 +0800",
 		  "shortdate"  : "March 28, 2014"
 		} ,
@@ -19,7 +19,7 @@
 		{
 		  "title"      : "SE 数据结构课程总结",
 		  "category"   : "blog",
-		  "url"        : "http://localhost:4000/blog/DS%2BCourse%2BReview",
+		  "url"        : "http://jeason.me/blog/DS%2BCourse%2BReview",
 		  "date"       : "2014-03-08 00:00:00 +0800",
 		  "shortdate"  : "March 08, 2014"
 		} ,
@@ -27,7 +27,7 @@
 		{
 		  "title"      : "一种简单适配iOS开发中各种屏幕的投机取巧方法",
 		  "category"   : "blog",
-		  "url"        : "http://localhost:4000/blog/View%2Bin%2BView",
+		  "url"        : "http://jeason.me/blog/View%2Bin%2BView",
 		  "date"       : "2014-03-02 00:00:00 +0800",
 		  "shortdate"  : "March 02, 2014"
 		} ,
@@ -35,7 +35,7 @@
 		{
 		  "title"      : "漫游中大",
 		  "category"   : "album",
-		  "url"        : "http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7",
+		  "url"        : "http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7",
 		  "date"       : "2014-03-01 00:00:00 +0800",
 		  "shortdate"  : "March 01, 2014"
 		} 

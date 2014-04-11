@@ -2,40 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      
     <url>
-        <loc>http://localhost:4000/</loc>
+        <loc>http://jeason.me/</loc>
     </url> 
     <url>
-        <loc>http://localhost:4000/blog</loc>
+        <loc>http://jeason.me/blog</loc>
     </url> 
     <url>
-        <loc>http://localhost:4000/diary</loc>
+        <loc>http://jeason.me/diary</loc>
     </url> 
     <url>
-        <loc>http://localhost:4000/album</loc>
+        <loc>http://jeason.me/album</loc>
     </url> 
     <url>
-        <loc>http://localhost:4000/about</loc>
+        <loc>http://jeason.me/about</loc>
     </url>
     
     
     <url>
-        <loc>http://localhost:4000/blog/iOS%2BUI%2Bporgramming</loc>
+        <loc>http://jeason.me/blog/iOS%2BUI%2Bporgramming</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/blog/Objective-C%2BIntroduction</loc>
+        <loc>http://jeason.me/blog/Objective-C%2BIntroduction</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/blog/DS%2BCourse%2BReview</loc>
+        <loc>http://jeason.me/blog/DS%2BCourse%2BReview</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/blog/View%2Bin%2BView</loc>
+        <loc>http://jeason.me/blog/View%2Bin%2BView</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</loc>
+        <loc>http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</loc>
     </url>
     
 </urlset>
