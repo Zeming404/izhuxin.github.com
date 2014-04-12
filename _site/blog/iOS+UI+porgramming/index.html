@@ -13,16 +13,16 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Apple Club培训教程（二）：UI编程">
 <meta property="og:description" content="">
-<meta property="og:url" content="http://jeason.me/blog/iOS%2BUI%2Bporgramming">
+<meta property="og:url" content="http://localhost:4000/blog/iOS%2BUI%2Bporgramming">
 <meta property="og:site_name" content="Jeason">
-<meta property="og:image" content="http://jeason.me/images/iOSUIs.jpg">
+<meta property="og:image" content="http://localhost:4000/images/iOSUIs.jpg">
 
 
 
 
 
-<link rel="canonical" href="http://jeason.me/blog/iOS%2BUI%2Bporgramming">
-<link href="http://jeason.me/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+<link rel="canonical" href="http://localhost:4000/blog/iOS%2BUI%2Bporgramming">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
 
 
 <!-- http://t.co/dKP3o1e -->
@@ -31,8 +31,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/style.css" />
 
 <div class="search-wrapper">
     <div class="search-form">
@@ -47,28 +47,28 @@
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="http://jeason.me/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="http://jeason.me/favicon.png">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="http://jeason.me/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://jeason.me/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://jeason.me/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://jeason.me/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
-<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://jeason.me/images/iOSUIs.jpg)" itemscope itemtype="http://schema.org/Organization">
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/iOSUIs.jpg)" itemscope itemtype="http://schema.org/Organization">
 
 
     <div class="inner">
         <div class="container">
-            <a class="brand" href="http://jeason.me" role="banner" itemprop="url">
+            <a class="brand" href="http://localhost:4000" role="banner" itemprop="url">
 
-                <img itemprop="logo" src="http://jeason.me/images/logo.png" alt="Jeason Logo" />
+                <img itemprop="logo" src="http://localhost:4000/images/logo.png" alt="Jeason Logo" />
 
             <h1 class="blog-title light" itemprop="name">
                 Jeason
@@ -115,7 +115,7 @@
                         
                         <div class="post-info text-center small">
                             <span class="entry-date date published updated"><time datetime="2014-03-31T00:00:00+08:00" class="post-time" itemprop="datePublished">31 Mar 2014</time><span>
-                            in <span class="post-tags"><a href="http://jeason.me/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                            in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
                         </div>
                     </header>
                     <div class="post-body bordered-bottom" itemprop="description">
@@ -130,11 +130,19 @@
 <div id="drawer">
 <ul id="markdown-toc">
   <li><a href="#iosmvc">iOS的MVC设计模式</a></li>
-  <li><a href="#mainappdelegate">main函数和AppDelegate</a></li>
+  <li><a href="#app">App是如何组织起来的</a>    <ul>
+      <li><a href="#main">main函数</a></li>
+      <li><a href="#appdelegate">AppDelegate</a></li>
+      <li><a href="#noteviewcontroller">NoteViewController</a></li>
+    </ul>
+  </li>
   <li><a href="#uiviewcontroller-life-cycle">UIViewController Life Cycle</a></li>
-  <li><a href="#uiview">UIView概述</a></li>
-  <li><a href="#uikit-overview">UIKit Overview</a></li>
-  <li><a href="#section">总结</a></li>
+  <li><a href="#uiview">UIView概述</a>    <ul>
+      <li><a href="#section">代码</a></li>
+      <li><a href="#bulid--run">Bulid &amp; Run</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-1">总结</a></li>
   <li><a href="#assignment">Assignment</a></li>
 </ul>
 
@@ -147,7 +155,7 @@
 <p><code>这里主要讲的是iOS中的MVC</code>。它是iOS中最常用的设计模式中的一种，理解它，就会顺带提及很多其他的重要的设计模式的内容。废话不多说，先看下Stanford CS193p课程里的一张图</p>
 
 <figure>
-<a href="http://jeason.me/images/2014/03/31/2.gif"><img src="http://jeason.me/images/2014/03/31/2.gif" /></a>
+<a href="http://localhost:4000/images/2014/03/31/2.gif"><img src="http://localhost:4000/images/2014/03/31/2.gif" /></a>
 </figure>
 
 <p>Model是管理数据的，View是管理视图的。我们知道，当数据更新之后，View也应该相应地动态更新。但是MVC规定了，Model不允许直接跟View打交道。为了达到这一目标，就有了Controller这个中间桥梁。为了达到Model与Controller更好地分离，iOS就引入了Key－Value－Observing和Notification这两种设计模式（如上图所示）。这两个东西我们以后会具体讲到，现在简单来讲，就是实现了把M内的变化告知C，然后C再把变化反映到V上。</p>
@@ -156,14 +164,21 @@
 
 <p>好了忽悠了那么多，＝，＝说白了就是面向对象的思想：将各个模块封装成不同的类，然后去耦合。iOS里对应的就是你自己写的Model类（M），如Note，UIView类（V），UIViewController类（C），然后V内有着其他两种类的实例。虽然这种解释一点也不优雅＝。＝不过对于新手来说，这已经足够了。</p>
 
-<h2 id="mainappdelegate">main函数和AppDelegate</h2>
+<h2 id="app">App是如何组织起来的</h2>
+<p>接下来我们就开始具体的来看看一个iOS app是怎样组织起来的。先新建一个SigleView Application，项目名就为Note就好了。打开它，会看到有这么个组织结构:</p>
 
-<p>我们可以先来看一个普通的main函数是长啥样的。</p>
+<figure class="half">
+<a href="http://localhost:4000/images/2014/03/31/4.jpg"><img src="http://localhost:4000/images/2014/03/31/4.jpg" /></a>
+</figure>
+
+<h3 id="main">main函数</h3>
+
+<p>学过C语言的朋友都知道，来编程，不看main函数等于白来。（长沙臭豆腐( ´ ▽ ` )ﾉ）我们可以先来看iOS里普通的main函数是长啥样的。</p>
 
 <div class="highlight"><pre><code class="objective-c"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
     <span class="p">@</span><span class="n">autoreleasepool</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">UIApplicationMain</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="nb">nil</span><span class="p">,</span> <span class="n">NSStringFromClass</span><span class="p">([</span><span class="n">CitySpadeAppDelegate</span> <span class="n">class</span><span class="p">]));</span>
+        <span class="k">return</span> <span class="n">UIApplicationMain</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="nb">nil</span><span class="p">,</span> <span class="n">NSStringFromClass</span><span class="p">([</span><span class="n">NoteAppDelegate</span> <span class="n">class</span><span class="p">]));</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -177,12 +192,55 @@
 
 <p>这个相信英语4级能考过400的同学应该都可以读懂这个英文=-=。就这样，通过这个API，我们就成功地把程序的控制权交给了XXXAppDelegate这个类。</p>
 
+<h3 id="appdelegate">AppDelegate</h3>
+<p>打开NoteAppDelegate，可以看到这里给我们定义了很多在app打开，进入后台，结束时操作系统回调的接口函数供我们重写，因为这个非常重要且复杂，可能会需要大量的篇幅。所以就先在这里挖个坑，^_^……</p>
+
+<h3 id="noteviewcontroller">NoteViewController</h3>
+<p>我们再看这个项目，Main.storyboard提供了一个图形界面来帮我们像ps那样子完成view的布局（因为mainstory/xib 的使用很简单而且因为现在人们还是觉得他们的使用会带来一些团队合作上的不便，虽然我很喜欢，但这个可能我不会讲，同学们可以在其他教程里看到interface bulider的用法。）Main.storyboard里有一个有一个NoteViewController的实例，所以我们整个app的唯一的页面就由NoteViewController这个类管理着。</p>
+
+<p>我们来看看NoteViewController.m这个实现文件是长什么样子的</p>
+
+<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
+<span class="c1">//  NoteViewController.m</span>
+<span class="c1">//  Note</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 14-4-12.</span>
+<span class="c1">//  Copyright (c) 2014年 Jeason. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &quot;NoteViewController.h&quot;</span>
+
+<span class="k">@interface</span> <span class="nc">NoteViewController</span> <span class="p">()</span>
+
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">NoteViewController</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidLoad</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="n">viewDidLoad</span><span class="p">];</span>
+	<span class="c1">// Do any additional setup after loading the view, typically from a nib.</span>
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">didReceiveMemoryWarning</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="n">didReceiveMemoryWarning</span><span class="p">];</span>
+    <span class="c1">// Dispose of any resources that can be recreated.</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</code></pre></div>
+
+<p>基本上我们把app的运行过程这样组织起来：用户打开app，进入main然后把程序的控制权交给AppDelegate，然后操作系统调用Main.storyboard完成页面的加载，而这个Main.storyboard里有一个UIViewController的实例，在这个类里我们可以写一些函数来控制视图应该长什么样子。</p>
+
+<p>不过要读懂VC里的这几个函数都有什么意义，就要先了解一下一个叫做UIViewController Life Cycle的概念。</p>
+
 <h2 id="uiviewcontroller-life-cycle">UIViewController Life Cycle</h2>
 <p>翻译成中文叫做视图控制器生命周期，
 这是理解iOS UI编程的另一个重要的概念，先看一张图。</p>
 
 <figure>
-<a href="http://jeason.me/images/2014/03/31/1.jpg"><img src="http://jeason.me/images/2014/03/31/1.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/31/1.jpg"><img src="http://localhost:4000/images/2014/03/31/1.jpg" /></a>
 </figure>
 
 <ul>
@@ -221,12 +279,158 @@
 <p>这就是我们所说的UIViewController Life Cycle，其实还有一些方法比如viewWillLayoutSubview之类的，思路理解起来都是一样的，在恰当的时机被操作系统调用恰当的方法。</p>
 
 <h2 id="uiview">UIView概述</h2>
+<p>UIView是iOS里组成我们UI的基本单元，UI的基本功能我觉得就只有两个：提供内容和导航用户完成人机交互。为了实现不同的视觉效果和导航方式，iOS通过继承UIView为我们提供了近20种的原生控件，包括了简单的按钮，文字显示，还有一些复杂的View如UITableView。我们可以用这些控件一个个叠加组成我们需要的界面，就好像ps那样一个个图层（图层是有上下之分的，view与view之间也是）组成漂亮的图像,如图所示。</p>
 
-<h2 id="uikit-overview">UIKit Overview</h2>
+<figure>
+<a href="http://localhost:4000/images/2014/03/31/3.jpg"><img src="http://localhost:4000/images/2014/03/31/3.jpg" /></a>
+</figure>
 
-<h2 id="section">总结</h2>
+<h3 id="section">代码</h3>
+<p>哎，水了那么多理论性的概念，我觉得还是读代码最为经济实惠了，我们现在就看看怎么通过代码把这些控件P在一起吧。我们先把上次写完的Note类加进来,然后在NoteViewController.h里加入note这个property</p>
+
+<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
+<span class="c1">//  NoteViewController.h</span>
+<span class="c1">//  Note</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 14-4-12.</span>
+<span class="c1">//  Copyright (c) 2014年 Jeason. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="p">@</span><span class="n">import</span> <span class="n">UIKit</span><span class="p">;</span>
+<span class="k">@class</span> <span class="nc">Note</span>;
+
+<span class="k">@interface</span> <span class="nc">NoteViewController</span> : <span class="nc">UIViewController</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">Note</span> <span class="o">*</span><span class="n">note</span><span class="p">;</span>
+
+<span class="k">@end</span>
+</code></pre></div>
+
+<p>然后编辑NoteViewController.m</p>
+
+<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
+<span class="c1">//  NoteViewController.m</span>
+<span class="c1">//  Note</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 14-4-12.</span>
+<span class="c1">//  Copyright (c) 2014年 Jeason. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &quot;NoteViewController.h&quot;</span>
+<span class="cp">#import &quot;Note.h&quot;</span>
+<span class="c1">//1</span>
+<span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">statusBarHeight</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="k">static</span> <span class="k">const</span> <span class="n">CGFloat</span> <span class="n">dateFontSize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">static</span> <span class="k">const</span> <span class="n">CGFloat</span> <span class="n">buttonSize</span> <span class="o">=</span> <span class="mi">44</span><span class="p">;</span>
+<span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">inset</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="k">@interface</span> <span class="nc">NoteViewController</span> <span class="p">()</span>
+
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">NoteViewController</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidLoad</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="n">viewDidLoad</span><span class="p">];</span>
+	<span class="c1">// Do any additional setup after loading the view, typically from a nib.</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">note</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Note</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithText</span><span class="o">:</span><span class="s">@&quot;Apple Club lecture 2&quot;</span> <span class="n">NoteID</span><span class="o">:</span><span class="mi">0</span><span class="p">];</span>
+    <span class="n">NSDateFormatter</span> <span class="o">*</span><span class="n">formatter</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSDateFormatter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">formatter</span> <span class="n">setDateFormat</span><span class="o">:</span><span class="s">@&quot;yyyy年MM月dd日 HH:mm&quot;</span><span class="p">];</span>
+    <span class="c1">//2</span>
+    <span class="n">CGRect</span> <span class="n">labelFrame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">statusBarHeight</span><span class="p">,</span><span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span><span class="n">inset</span><span class="p">);</span>
+    <span class="n">UILabel</span> <span class="o">*</span><span class="n">dateLabel</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UILabel</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">labelFrame</span><span class="p">];</span>
+    <span class="n">dateLabel</span><span class="p">.</span><span class="n">font</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIFont</span> <span class="n">systemFontOfSize</span><span class="o">:</span><span class="n">dateFontSize</span><span class="p">];</span>
+    <span class="n">dateLabel</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="n">formatter</span> <span class="n">stringFromDate</span><span class="o">:</span><span class="n">_note</span><span class="p">.</span><span class="n">timestamp</span><span class="p">];</span>
+    <span class="n">dateLabel</span><span class="p">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">grayColor</span><span class="p">];</span>
+    <span class="n">dateLabel</span><span class="p">.</span><span class="n">textAlignment</span> <span class="o">=</span> <span class="n">NSTextAlignmentCenter</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">dateLabel</span><span class="p">];</span>
+    
+    <span class="c1">//3</span>
+    <span class="n">CGRect</span> <span class="n">textFrame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="n">inset</span><span class="p">,</span><span class="c1">//x</span>
+                                  <span class="n">inset</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="n">statusBarHeight</span><span class="p">,</span><span class="c1">//y</span>
+                                  <span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span><span class="c1">//width</span>
+                                  <span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="o">-</span><span class="n">inset</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">statusBarHeight</span><span class="o">-</span><span class="n">buttonSize</span><span class="p">);</span>
+    <span class="n">UITextView</span> <span class="o">*</span><span class="n">textView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UITextView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">textFrame</span><span class="p">];</span>
+    <span class="n">textView</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">_note</span><span class="p">.</span><span class="n">contents</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">textView</span><span class="p">];</span>
+    
+    <span class="c1">//4</span>
+    <span class="n">CGRect</span> <span class="n">buttonFrame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="n">inset</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">buttonSize</span> <span class="o">-</span> <span class="n">inset</span><span class="p">,</span> <span class="n">buttonSize</span><span class="p">,</span> <span class="n">buttonSize</span><span class="p">);</span>
+    <span class="n">UIButton</span> <span class="o">*</span><span class="n">button</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIButton</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">buttonFrame</span><span class="p">];</span>
+    
+    <span class="p">[</span><span class="n">button</span> <span class="n">setImage</span><span class="o">:</span><span class="p">[</span><span class="n">UIImage</span> <span class="n">imageNamed</span><span class="o">:</span><span class="s">@&quot;share-.jpg&quot;</span><span class="p">]</span>
+            <span class="nl">forState:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+    
+    <span class="p">[</span><span class="n">button</span> <span class="n">addTarget</span><span class="o">:</span><span class="n">self</span>
+               <span class="nl">action:</span><span class="k">@selector</span><span class="p">(</span><span class="n">pressShare</span><span class="o">:</span><span class="p">)</span>
+     <span class="nl">forControlEvents:</span><span class="n">UIControlEventTouchDragInside</span><span class="p">];</span>
+    
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">button</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">didReceiveMemoryWarning</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="n">didReceiveMemoryWarning</span><span class="p">];</span>
+    <span class="c1">// Dispose of any resources that can be recreated.</span>
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">pressShare:</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">sender</span> <span class="p">{</span>
+    <span class="c1">//5</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;press share btn!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</code></pre></div>
+
+<ol>
+  <li>
+    <p>首先我们在用代码布局一个页面的时候可以定义一些常量尺度来帮助我们</p>
+  </li>
+  <li>
+    <p>UILabel主要用于显示一些短文本，这里我们在页面顶部放个UILabel来显示当前时间,CGRect 定义了一个4元组的结构体用来表示坐标。然后我们还可以像ps里一样设置这个label的字体，内容，颜色，文字居中/居左/居右。当所有都设置完成后，将这个view（图层）叠加到self.view上（前面讲过，当view load完之后controller就会有一个view的实例对象，有点类似于画布）。</p>
+  </li>
+  <li>
+    <p>UITextView用于显示多样化的文字，特别是在iOS7以后有了UITextKit这个强大的库以后，基本上可以替代css来完成对文字效果的需求。我们页面的主要部分就是显示Note的内容，这个手工计算坐标的方式有点烦，不过画个图应该能轻松理解搞定。接下来就跟UILabel一样了，设置完内容然后叠加到画布上。</p>
+  </li>
+  <li>
+    <p>UIButton是按钮控件，我们在页面的底部放了一个分享按钮，我们可以对它进行设置，不过最主要的，就是增加一个action来控制当用户点击这个button时程序的响应。</p>
+  </li>
+  <li>
+    <p>当用户点击button之后，它就会来到这个函数这里，你可以在上面完成各种事件，比如说通过邮件发送，通过信息发送，甚至是截图分享到朋友圈＝。＝</p>
+  </li>
+</ol>
+
+<h3 id="bulid--run">Bulid &amp; Run</h3>
+
+<figure>
+<a href="http://localhost:4000/images/2014/03/31/5.jpg"><img src="http://localhost:4000/images/2014/03/31/5.jpg" /></a>
+</figure>
+
+<h2 id="section-1">总结</h2>
+<ul>
+  <li>
+    <p>iOS里实现了许多的设计模式，其中MVC模式贯穿了整个app。</p>
+  </li>
+  <li>
+    <p>一个app主要是由页面组成，而它是怎么运行起来的主要是靠Appdelegate来托管实现。</p>
+  </li>
+  <li>
+    <p>每个UIViewController都有自己的生命周期，我们可以通过重写方法来控制它的加载，显示和隐藏和销毁</p>
+  </li>
+  <li>
+    <p>我们主要是通过一个个UIView的子类来完成页面的构建。</p>
+  </li>
+  <li>
+    <p>iOS里还有很多很多的控件来帮助你搭建自己的页面，学习完他们需要很长的时间，多阅读Apple的文档是关键。</p>
+  </li>
+</ul>
 
 <h2 id="assignment">Assignment</h2>
+
+<ol>
+  <li>阅读<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UIKitUICatalog.pdf">Apple的《UIKitUICatalog》</a>对基本的控件都有一定的了解。</li>
+</ol>
 
                         <br>
                     <span class="entry-tags">
@@ -239,8 +443,8 @@
                     <footer class="post-footer entry-meta">
                         
                         <div class="post-author text-center">                       
-	        <img src="http://jeason.me/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
-	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://jeason.me/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
 	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
 </div> 
                         <div id="disqus_thread"></div><!-- /#disqus_thread -->
@@ -250,7 +454,7 @@
 </div>
 
 
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://jeason.me/images/iOSUIs.jpg)" >
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/iOSUIs.jpg)" >
 
 
     <div class="inner">
@@ -274,45 +478,45 @@
                     <i class="icon-github"></i>
                 </a>
             </li>
-            <li><a href="http://jeason.me/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+            <li><a href="http://localhost:4000/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
                     <i class="icon-rss"></i>
                 </a>
             </li>
 
         </ul>
             <p class="copy-text">
-                <a href="http://jeason.me/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+                <a href="http://localhost:4000/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
             </p>
 
             <ul class="menu-items">
             
             <li>
                 
-                    <a href="http://jeason.me/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
                  
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
                  
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
                  
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
                  
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
                  
             </li>
             
@@ -344,17 +548,17 @@
 
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://jeason.me/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://jeason.me/assets/js/scripts.min.js"></script>
-    <script type="text/javascript" src="http://jeason.me/assets/js/waypoints.min.js"></script>
-    <script type="text/javascript" src="http://jeason.me/assets/js/script.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/script.js"></script>
 
 
 <!-- Jekyll Simple Search option -->
 <script>
   $(document).ready(function() {
       $('.search-field').simpleJekyllSearch({
-          jsonFile : 'http://jeason.me/search.json',
+          jsonFile : 'http://localhost:4000/search.json',
           searchResults : '.search-results',
           template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
           noResults: '<p>Nothing found.</p>'

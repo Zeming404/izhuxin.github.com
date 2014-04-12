@@ -2,26 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Jeason</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://jeason.me/feed.xml" />
-<link rel="alternate" type="text/html" href="http://jeason.me" />
-<updated>2014-04-12T00:41:37+08:00</updated>
-<id>http://jeason.me/</id>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000" />
+<updated>2014-04-12T12:21:24+08:00</updated>
+<id>http://localhost:4000/</id>
 <author>
   <name>Jeason George</name>
-  <uri>http://jeason.me/</uri>
+  <uri>http://localhost:4000/</uri>
   <email>sysu.ss.jeason@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Apple Club培训教程（二）：UI编程]]></title>
-  <link>http://jeason.me/blog/iOS%2BUI%2Bporgramming</link>
-  <id>http://jeason.me/blog/iOS+UI+porgramming</id>
+  <link>http://localhost:4000/blog/iOS%2BUI%2Bporgramming</link>
+  <id>http://localhost:4000/blog/iOS+UI+porgramming</id>
   <published>2014-03-31T00:00:00+08:00</published>
   <updated>2014-03-31T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这是SYSU Apple Club系列培训的第二篇。&lt;a href=&quot;http://jeason.me/blog/Objective-C+Introduction/&quot;&gt;上一篇&lt;/a&gt;我们学习了Objective－C的基本语法，而且知道了Foundation库内的一些重要的数据结构。这篇教程主要是厘清一些基本概念，让你对iOS UI编程的内在机制有一定的了解。本文主要参考自我的理解和
@@ -34,11 +34,19 @@
 &lt;div id=&quot;drawer&quot;&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#iosmvc&quot;&gt;iOS的MVC设计模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#mainappdelegate&quot;&gt;main函数和AppDelegate&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#app&quot;&gt;App是如何组织起来的&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#main&quot;&gt;main函数&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#appdelegate&quot;&gt;AppDelegate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#noteviewcontroller&quot;&gt;NoteViewController&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#uiviewcontroller-life-cycle&quot;&gt;UIViewController Life Cycle&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#uiview&quot;&gt;UIView概述&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#uikit-overview&quot;&gt;UIKit Overview&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot;&gt;总结&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#uiview&quot;&gt;UIView概述&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#section&quot;&gt;代码&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#bulid--run&quot;&gt;Bulid &amp;amp; Run&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-1&quot;&gt;总结&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#assignment&quot;&gt;Assignment&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -51,7 +59,7 @@
 &lt;p&gt;&lt;code&gt;这里主要讲的是iOS中的MVC&lt;/code&gt;。它是iOS中最常用的设计模式中的一种，理解它，就会顺带提及很多其他的重要的设计模式的内容。废话不多说，先看下Stanford CS193p课程里的一张图&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/31/2.gif&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/2.gif&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/31/2.gif&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/2.gif&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Model是管理数据的，View是管理视图的。我们知道，当数据更新之后，View也应该相应地动态更新。但是MVC规定了，Model不允许直接跟View打交道。为了达到这一目标，就有了Controller这个中间桥梁。为了达到Model与Controller更好地分离，iOS就引入了Key－Value－Observing和Notification这两种设计模式（如上图所示）。这两个东西我们以后会具体讲到，现在简单来讲，就是实现了把M内的变化告知C，然后C再把变化反映到V上。&lt;/p&gt;
@@ -60,14 +68,21 @@
 
 &lt;p&gt;好了忽悠了那么多，＝，＝说白了就是面向对象的思想：将各个模块封装成不同的类，然后去耦合。iOS里对应的就是你自己写的Model类（M），如Note，UIView类（V），UIViewController类（C），然后V内有着其他两种类的实例。虽然这种解释一点也不优雅＝。＝不过对于新手来说，这已经足够了。&lt;/p&gt;
 
-&lt;h2 id=&quot;mainappdelegate&quot;&gt;main函数和AppDelegate&lt;/h2&gt;
+&lt;h2 id=&quot;app&quot;&gt;App是如何组织起来的&lt;/h2&gt;
+&lt;p&gt;接下来我们就开始具体的来看看一个iOS app是怎样组织起来的。先新建一个SigleView Application，项目名就为Note就好了。打开它，会看到有这么个组织结构:&lt;/p&gt;
 
-&lt;p&gt;我们可以先来看一个普通的main函数是长啥样的。&lt;/p&gt;
+&lt;figure class=&quot;half&quot;&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/31/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;main&quot;&gt;main函数&lt;/h3&gt;
+
+&lt;p&gt;学过C语言的朋友都知道，来编程，不看main函数等于白来。（长沙臭豆腐( ´ ▽ ` )ﾉ）我们可以先来看iOS里普通的main函数是长啥样的。&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoreleasepool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIApplicationMain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSStringFromClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CitySpadeAppDelegate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]));&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIApplicationMain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSStringFromClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NoteAppDelegate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]));&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -81,12 +96,55 @@
 
 &lt;p&gt;这个相信英语4级能考过400的同学应该都可以读懂这个英文=-=。就这样，通过这个API，我们就成功地把程序的控制权交给了XXXAppDelegate这个类。&lt;/p&gt;
 
+&lt;h3 id=&quot;appdelegate&quot;&gt;AppDelegate&lt;/h3&gt;
+&lt;p&gt;打开NoteAppDelegate，可以看到这里给我们定义了很多在app打开，进入后台，结束时操作系统回调的接口函数供我们重写，因为这个非常重要且复杂，可能会需要大量的篇幅。所以就先在这里挖个坑，^_^……&lt;/p&gt;
+
+&lt;h3 id=&quot;noteviewcontroller&quot;&gt;NoteViewController&lt;/h3&gt;
+&lt;p&gt;我们再看这个项目，Main.storyboard提供了一个图形界面来帮我们像ps那样子完成view的布局（因为mainstory/xib 的使用很简单而且因为现在人们还是觉得他们的使用会带来一些团队合作上的不便，虽然我很喜欢，但这个可能我不会讲，同学们可以在其他教程里看到interface bulider的用法。）Main.storyboard里有一个有一个NoteViewController的实例，所以我们整个app的唯一的页面就由NoteViewController这个类管理着。&lt;/p&gt;
+
+&lt;p&gt;我们来看看NoteViewController.m这个实现文件是长什么样子的&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  NoteViewController.m&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  Note&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  Created by Jeason on 14-4-12.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  Copyright (c) 2014年 Jeason. All rights reserved.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;NoteViewController.h&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NoteViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NoteViewController&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// Do any additional setup after loading the view, typically from a nib.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;didReceiveMemoryWarning&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;didReceiveMemoryWarning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Dispose of any resources that can be recreated.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;基本上我们把app的运行过程这样组织起来：用户打开app，进入main然后把程序的控制权交给AppDelegate，然后操作系统调用Main.storyboard完成页面的加载，而这个Main.storyboard里有一个UIViewController的实例，在这个类里我们可以写一些函数来控制视图应该长什么样子。&lt;/p&gt;
+
+&lt;p&gt;不过要读懂VC里的这几个函数都有什么意义，就要先了解一下一个叫做UIViewController Life Cycle的概念。&lt;/p&gt;
+
 &lt;h2 id=&quot;uiviewcontroller-life-cycle&quot;&gt;UIViewController Life Cycle&lt;/h2&gt;
 &lt;p&gt;翻译成中文叫做视图控制器生命周期，
 这是理解iOS UI编程的另一个重要的概念，先看一张图。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/31/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/31/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -125,26 +183,172 @@
 &lt;p&gt;这就是我们所说的UIViewController Life Cycle，其实还有一些方法比如viewWillLayoutSubview之类的，思路理解起来都是一样的，在恰当的时机被操作系统调用恰当的方法。&lt;/p&gt;
 
 &lt;h2 id=&quot;uiview&quot;&gt;UIView概述&lt;/h2&gt;
+&lt;p&gt;UIView是iOS里组成我们UI的基本单元，UI的基本功能我觉得就只有两个：提供内容和导航用户完成人机交互。为了实现不同的视觉效果和导航方式，iOS通过继承UIView为我们提供了近20种的原生控件，包括了简单的按钮，文字显示，还有一些复杂的View如UITableView。我们可以用这些控件一个个叠加组成我们需要的界面，就好像ps那样一个个图层（图层是有上下之分的，view与view之间也是）组成漂亮的图像,如图所示。&lt;/p&gt;
 
-&lt;h2 id=&quot;uikit-overview&quot;&gt;UIKit Overview&lt;/h2&gt;
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/31/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;总结&lt;/h2&gt;
+&lt;h3 id=&quot;section&quot;&gt;代码&lt;/h3&gt;
+&lt;p&gt;哎，水了那么多理论性的概念，我觉得还是读代码最为经济实惠了，我们现在就看看怎么通过代码把这些控件P在一起吧。我们先把上次写完的Note类加进来,然后在NoteViewController.h里加入note这个property&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  NoteViewController.h&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  Note&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  Created by Jeason on 14-4-12.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  Copyright (c) 2014年 Jeason. All rights reserved.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIKit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Note&lt;/span&gt;;
+
+&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NoteViewController&lt;/span&gt; : &lt;span class=&quot;nc&quot;&gt;UIViewController&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Note&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;然后编辑NoteViewController.m&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  NoteViewController.m&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  Note&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  Created by Jeason on 14-4-12.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  Copyright (c) 2014年 Jeason. All rights reserved.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;NoteViewController.h&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;Note.h&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;statusBarHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGFloat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dateFontSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGFloat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buttonSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NoteViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NoteViewController&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// Do any additional setup after loading the view, typically from a nib.&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Note&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initWithText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;Apple Club lecture 2&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NoteID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSDateFormatter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDateFormatter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setDateFormat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;yyyy年MM月dd日 HH:mm&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//2&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;CGRect&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labelFrame&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGRectMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;statusBarHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;UILabel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dateLabel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UILabel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initWithFrame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labelFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dateLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;font&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIFont&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;systemFontOfSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dateFontSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dateLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringFromDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timestamp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dateLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grayColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dateLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textAlignment&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSTextAlignmentCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dateLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;//3&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;CGRect&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;textFrame&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGRectMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//x&lt;/span&gt;
+                                  &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;statusBarHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//y&lt;/span&gt;
+                                  &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//width&lt;/span&gt;
+                                  &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;statusBarHeight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttonSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;UITextView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UITextView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initWithFrame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;//4&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;CGRect&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buttonFrame&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGRectMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buttonSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buttonSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buttonSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initWithFrame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttonFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIImage&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imageNamed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;share-.jpg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;forState:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlStateNormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addTarget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;
+               &lt;span class=&quot;nl&quot;&gt;action:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pressShare&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;forControlEvents:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchDragInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;didReceiveMemoryWarning&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;didReceiveMemoryWarning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Dispose of any resources that can be recreated.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pressShare:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//5&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;press share btn!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;首先我们在用代码布局一个页面的时候可以定义一些常量尺度来帮助我们&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;UILabel主要用于显示一些短文本，这里我们在页面顶部放个UILabel来显示当前时间,CGRect 定义了一个4元组的结构体用来表示坐标。然后我们还可以像ps里一样设置这个label的字体，内容，颜色，文字居中/居左/居右。当所有都设置完成后，将这个view（图层）叠加到self.view上（前面讲过，当view load完之后controller就会有一个view的实例对象，有点类似于画布）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;UITextView用于显示多样化的文字，特别是在iOS7以后有了UITextKit这个强大的库以后，基本上可以替代css来完成对文字效果的需求。我们页面的主要部分就是显示Note的内容，这个手工计算坐标的方式有点烦，不过画个图应该能轻松理解搞定。接下来就跟UILabel一样了，设置完内容然后叠加到画布上。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;UIButton是按钮控件，我们在页面的底部放了一个分享按钮，我们可以对它进行设置，不过最主要的，就是增加一个action来控制当用户点击这个button时程序的响应。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;当用户点击button之后，它就会来到这个函数这里，你可以在上面完成各种事件，比如说通过邮件发送，通过信息发送，甚至是截图分享到朋友圈＝。＝&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;bulid--run&quot;&gt;Bulid &amp;amp; Run&lt;/h3&gt;
+
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/31/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;总结&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;iOS里实现了许多的设计模式，其中MVC模式贯穿了整个app。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;一个app主要是由页面组成，而它是怎么运行起来的主要是靠Appdelegate来托管实现。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;每个UIViewController都有自己的生命周期，我们可以通过重写方法来控制它的加载，显示和隐藏和销毁&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;我们主要是通过一个个UIView的子类来完成页面的构建。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;iOS里还有很多很多的控件来帮助你搭建自己的页面，学习完他们需要很长的时间，多阅读Apple的文档是关键。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;assignment&quot;&gt;Assignment&lt;/h2&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/iOS%2BUI%2Bporgramming&quot;&gt;Apple Club培训教程（二）：UI编程&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 31, 2014.&lt;/p&gt;</content>
+&lt;ol&gt;
+  &lt;li&gt;阅读&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UIKitUICatalog.pdf&quot;&gt;Apple的《UIKitUICatalog》&lt;/a&gt;对基本的控件都有一定的了解。&lt;/li&gt;
+&lt;/ol&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/iOS%2BUI%2Bporgramming&quot;&gt;Apple Club培训教程（二）：UI编程&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 31, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Apple Club培训教程（一）：Objective-C]]></title>
-  <link>http://jeason.me/blog/Objective-C%2BIntroduction</link>
-  <id>http://jeason.me/blog/Objective-C+Introduction</id>
+  <link>http://localhost:4000/blog/Objective-C%2BIntroduction</link>
+  <id>http://localhost:4000/blog/Objective-C+Introduction</id>
   <published>2014-03-28T00:00:00+08:00</published>
   <updated>2014-03-28T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了&lt;a href=&quot;https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550&quot;&gt;Stanford‘的CS193p课程&lt;/a&gt;，已及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。&lt;/p&gt;
@@ -419,19 +623,19 @@
   &lt;li&gt;&lt;a href=&quot;https://gist.github.com/anonymous/9848844&quot;&gt;UserManager.cpp&lt;/a&gt; &lt;/li&gt;
 &lt;/ol&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Objective-C%2BIntroduction&quot;&gt;Apple Club培训教程（一）：Objective-C&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Objective-C%2BIntroduction&quot;&gt;Apple Club培训教程（一）：Objective-C&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SE 数据结构课程总结]]></title>
-  <link>http://jeason.me/blog/DS%2BCourse%2BReview</link>
-  <id>http://jeason.me/blog/DS+Course+Review</id>
+  <link>http://localhost:4000/blog/DS%2BCourse%2BReview</link>
+  <id>http://localhost:4000/blog/DS+Course+Review</id>
   <published>2014-03-08T00:00:00+08:00</published>
   <updated>2014-03-08T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这注定会是一篇很长的博文，可能我一次难以把它完全写好。本文主要是基于中山大学的《SE-221 数据结构与算法》这门课的课程内容而写，以后可能还有其他数据结构方面的补充与完善。&lt;/p&gt;
@@ -553,7 +757,7 @@
 &lt;p&gt;举个例子吧：关键字为{89,18,49,58,69}插入到一个散列表中的情况。此时线性探测的方法是取d_i=i。并假定取关键字除以10的余数为散列函数法则。&lt;/p&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;第一次碰撞发生在填装49的时候。地址为9的单元已经填装了89这个关键字，所以取i=1，往下查找一个单位，发现为空，所以将49填装在地址为0的空单元。插入58时，地址8处发生第一次碰撞，d = 1, 探测位置9，发生第二次碰撞，d= 2,探测位置1，位置1为空，将58插入位置1。69同理。
@@ -571,7 +775,7 @@
 &lt;h3 id=&quot;section-5&quot;&gt;单独链表法&lt;/h3&gt;
 &lt;p&gt;它的思想是将散列到同一个存储位置的所有元素保存在一个链表中。即为链接List的顺序List。对于有相同的f(key)的key值构成了一个链表，而所有的这些链表组成的数组就是单独链接法得到的哈希表，如下图所示:
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/6.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/6.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-6&quot;&gt;单独链表法的平均探测次数&lt;/h3&gt;
@@ -591,13 +795,13 @@
 &lt;h3 id=&quot;section-7&quot;&gt;满二叉树&lt;/h3&gt;
 &lt;p&gt;一棵深度为k，且有2^k-1个节点称之为满二叉树，如下图所示
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-8&quot;&gt;完全二叉树&lt;/h3&gt;
 &lt;p&gt;完全二叉树又叫做堆，它是深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中序号为1至n的节点对应时，称之为完全二叉树。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/2.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-9&quot;&gt;二叉树的遍历&lt;/h3&gt;
@@ -607,7 +811,7 @@
 后序遍历：左子树-&amp;gt;右子树-&amp;gt;根节点
 例如：求下面树的三种遍历
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;前序遍历：abdefgc&lt;/p&gt;
@@ -626,7 +830,7 @@
 &lt;/ul&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/7.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/7.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/7.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/7.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -634,18 +838,18 @@
 &lt;/ul&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/8.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/8.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;section-11&quot;&gt;图的遍历&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;p&gt;采用深度优先搜索和广度优先搜索的方法遍历图。（见下文：基本算法－基于图论的算法）&lt;/p&gt;
 
 &lt;h3 id=&quot;section-12&quot;&gt;拓扑排序&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/9.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/9.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h1 id=&quot;section-13&quot;&gt;基本算法&lt;/h1&gt;
@@ -1099,19 +1303,19 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/DS%2BCourse%2BReview&quot;&gt;SE 数据结构课程总结&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/DS%2BCourse%2BReview&quot;&gt;SE 数据结构课程总结&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[一种简单适配iOS开发中各种屏幕的投机取巧方法]]></title>
-  <link>http://jeason.me/blog/View%2Bin%2BView</link>
-  <id>http://jeason.me/blog/View+in+View</id>
+  <link>http://localhost:4000/blog/View%2Bin%2BView</link>
+  <id>http://localhost:4000/blog/View+in+View</id>
   <published>2014-03-02T00:00:00+08:00</published>
   <updated>2014-03-02T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;正如标题所说，Jeason想出来的这个方法是投机取巧式的，是有一定适用条件的。在这里，我不会将IOS中不同尺寸不同系统的适配问题统统讲完，不过会在后面给出其他适配方法的链接。&lt;/p&gt;
@@ -1158,13 +1362,13 @@
 &lt;p&gt;为了方便说明这个方法，我随手弄了一个小project，如下图所示，虽然丑了点，不过大概能表达出真实的情况。
   这是一个登录页面，上面有很多个必要的控件而且有一个iOS7风格的导航栏，还有背景图。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;现在这样在3.5寸，iOS7的模拟器上运行视觉上是OK的。（不要问我为什么会这么丑，这只是demo）问题主要是出现在当在iOS6上和4寸的模拟器上时，会出现比较大的问题，如下所示。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/2.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/2.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;正如第一张图所示，iOS6的self.view.frame的零点是在状态栏以下的位置，而iOS7的则是在整个屏幕的最左上方位置，两者纵坐标相差20px。而第二张图则说明了另一个问题，就是在依靠xib搭建的界面元素不会动态地去布局。&lt;/p&gt;
@@ -1175,7 +1379,7 @@
 
 &lt;h3 id=&quot;view&quot;&gt;引入内层View&lt;/h3&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -1189,7 +1393,7 @@
 &lt;h3 id=&quot;autolayout&quot;&gt;使用autolayout&lt;/h3&gt;
 &lt;p&gt;正如上面所说的，我们是要让内层view整体平移，所以只需在内层view上添加autolayout就可以了。首先不管是iOS6还是iOS7中，内层view的底/左/右端和外层view的底/左/右端的距离都为0。所以通过xib中添加这三个constrains就可以了，如下图所示。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;那个小红点是由我们只确定了下左右的constrains，而对上端没有约束造成的。对于内层view的上端和外层view的距离，我们希望它在iOS6中为－20px，即在iOS6中内层view上推20px，而在iOS7中为0px。这种动态效果是要靠代码中来实现的。&lt;/p&gt;
@@ -1239,7 +1443,7 @@
 
 &lt;p&gt;关于autolayout的使用，可以参考Apple中关于&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Introduction/Introduction.html&quot;&gt;autolayout的文档&lt;/a&gt;。现在，我们再运行一下模拟器，可以看到iOS6中已经可以显示正常了。不过在4寸屏幕上的问题仍然没有解决。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/6.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/6.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;p&gt;不过没有关系，我们有autolayout!&lt;/p&gt;
 
@@ -1247,13 +1451,13 @@
 &lt;p&gt;4寸屏幕主要是让背景图片可以伸缩填充整个屏幕，所以要在背景图片的imageView上添加高度为greater than current value的constrains，底部距离内层View为0px的constrains就可以了，如图所示。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/9.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/9.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;至此所有的适配工作已经完成，整个页面可以在iOS6/iOS7，3.5/4寸屏幕上显示基本正常。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/7.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/7.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/8.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/8.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-3&quot;&gt;总结&lt;/h2&gt;
@@ -1288,19 +1492,19 @@
 &lt;/ol&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 02, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 02, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[漫游中大]]></title>
-  <link>http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</link>
-  <id>http://jeason.me/album/漫游中大</id>
+  <link>http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</link>
+  <id>http://localhost:4000/album/漫游中大</id>
   <published>2014-03-01T00:00:00+08:00</published>
   <updated>2014-03-01T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;blockquote&gt;
@@ -1315,51 +1519,51 @@
 
 &lt;p&gt;1.广州的地铁几乎可以带你游遍广州任意角落。到康乐园，只需搭上八号线，然后从拥挤喧哗的鹭江地铁口出来，沿着马路直走100米左右，便可以到中大南校区的东门所在。走进门内，迎来的是另一个世界。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1990.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1990.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;2.在校道飞驰来往的车辆和两排稀稀落落的便利商店，似乎是宁静美丽的康乐园与嘈杂不堪的中间地带。这里链接着校园与外部，书香与尾气，宁静与浮华。校道的两旁,有着各式各样的涂鸦与横幅，彰显着校园的青春气息。
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1989.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1989.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1988.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1988.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1978.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1978.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1989.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1989.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1988.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1988.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1978.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1978.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;3.当你经过旁边的小路进入校园内部的时候，康乐园就开始忍不住像你展示它的美丽了。古树，红楼，美女；花香，鸟语，人闹。它就像是一个世外桃源一般，吸引着任何向往祥和的生灵。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1977.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1977.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1980.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1980.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1983.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1983.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1985.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1985.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1971.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1971.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;4.校园内几乎每一个关键的道路口都会有明确的标示，提醒人们不要被美不胜收的校园迷惑了方向。按照路牌指示，我向&lt;a href=&quot;http://library.sysu.edu.cn/web/guest/index&quot;&gt;图书馆&lt;/a&gt;前进。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1981.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1981.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1981.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1981.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;5.当然那么美丽的校园，图书馆自然不是读书的唯一去处，去图书馆借一本自己喜欢的小说，或坐在木椅或坐在草坪，那都是非常不错的选择。
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1974.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1974.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;6.终于，我沿着路旁参天的古树，来到了周围一片肃静的图书馆。凭着中山大学的校园卡刷卡入馆去了～。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1970.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1970.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1969.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1969.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;figure&gt;
 	&lt;figcaption&gt;漫步康乐园&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7&quot;&gt;漫游中大&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 01, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7&quot;&gt;漫游中大&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 01, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>
