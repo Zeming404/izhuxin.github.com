@@ -1,6 +1,22 @@
 [
 	
 		{
+		  "title"      : "Apple Club培训教程（四）：iOS网络",
+		  "category"   : "blog",
+		  "url"        : "http://localhost:4000/blog/Network",
+		  "date"       : "2014-05-05 00:00:00 +0800",
+		  "shortdate"  : "May 05, 2014"
+		} ,
+	
+		{
+		  "title"      : "Apple Club培训教程（三）：协议，代理",
+		  "category"   : "blog",
+		  "url"        : "http://localhost:4000/blog/TableView",
+		  "date"       : "2014-04-25 00:00:00 +0800",
+		  "shortdate"  : "April 25, 2014"
+		} ,
+	
+		{
 		  "title"      : "Apple Club培训教程（二）：UI编程",
 		  "category"   : "blog",
 		  "url"        : "http://localhost:4000/blog/iOS%2BUI%2Bporgramming",

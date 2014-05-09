@@ -4,13 +4,125 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-04-12T12:21:24+08:00</updated>
+<updated>2014-05-09T13:09:03+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Jeason George</name>
   <uri>http://localhost:4000/</uri>
   <email>sysu.ss.jeason@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Apple Club培训教程（四）：iOS网络]]></title>
+  <link>http://localhost:4000/blog/Network</link>
+  <id>http://localhost:4000/blog/Network</id>
+  <published>2014-05-05T00:00:00+08:00</published>
+  <updated>2014-05-05T00:00:00+08:00</updated>
+  <author>
+    <name>Jeason George</name>
+    <uri>http://localhost:4000</uri>
+    <email>sysu.ss.jeason@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;这是Apple Club的第四期培训教程,今天我们主要介绍iOS中的网络编程。更确切的说，是介绍iOS7中的NSURLSession这个新的API，参考自&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html&quot;&gt;URL Loading System Programming Guide&lt;/a&gt;,&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/Introduction/Introduction.html&quot;&gt;NSURLSession Class Reference&lt;/a&gt;和一些其他博文。&lt;/p&gt;
+
+&lt;section&gt;
+  &lt;header&gt;
+    &lt;h2&gt;目录&lt;/h2&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot;&gt;概述&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#nsurlsession&quot;&gt;NSURLSession&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#nsurlsessiontask&quot;&gt;NSURLSessionTask&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#block&quot;&gt;Block&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#nsurlsessionconfiguration&quot;&gt;NSURLSessionConfiguration&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;概述&lt;/h1&gt;
+&lt;p&gt;iOS7以前，Foundation里Apple提供的网络处理API是NSURLConnection，随着iOS7/OS X 10.9的发布，Apple也带来了一个新的网络处理的API。它在沿用原有的NSURL/NSURLRequest/NSURLResponse这些类及相关概念的基础上，新增了NSURLSession这个类以及与之相关联的NSURLSessionConfiguration和NSURLSessionTask这两个类。下面就来一一介绍这三个新增的类和他们是如何组织起来的。&lt;/p&gt;
+
+&lt;h2 id=&quot;nsurlsession&quot;&gt;NSURLSession&lt;/h2&gt;
+&lt;p&gt;NSURLSession提供了http网络会话的抽象，我们可以在上面创建多个单一会话任务（发送http请求，返回响应数据，暂停http请求，重置http请求，取消http请求等）。而Apple为这些会话任务提供了另一个抽象－－NSURLSessionTask。一个Session的创建需要制定它的“配置信息”，如&lt;/p&gt;
+
+&lt;h2 id=&quot;nsurlsessiontask&quot;&gt;NSURLSessionTask&lt;/h2&gt;
+
+&lt;p&gt;NSURLSessionTask是一个虚基类，在上面定义了一系列的函数接口，如：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someTask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resume&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;开始一个会话任务&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someTask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cancel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;取消一个会话任务&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someTask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;suspend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;挂起一个会话任务&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;为了特定的功能，Apple提供了三个它的非虚子类，分别是NSURLSessionDataTask，NSURLSessionDownloadTask和NSURLSessionUploadTask，他们的关系如下：&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/05/05/01.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/05/05/01.png&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;NSURLSessionDataTask一般用于处理数据，在它会话完成之后会返回响应的NSData以及一些其他信息（如错误）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NSURLSessionDownloadTask在它会话完成之后会返回下载好的文件存放的临时地址（NSURL）.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NSURLSessionUploadTask可以用来上传文件和数据，在它会话完成之后也会返回响应的NSData以及一些其他信息。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;创建这些xxTask，都是通过定义在NSURLSession上工厂模式的方法：
+&lt;code&gt;
+- [NSURLSessionObject dataTask/downloadTask/uploadTaskWithRequest:completionHandler]
+&lt;/code&gt;
+来创建的
+这些会话任务在完成之后都可以利用一个block来操作返回的结果，同时也可以用delegate的形式（NSURLSessionDelegate）来处理。可能在之前的培训里没有介绍到block这个概念，所以还是简单介绍一下吧&lt;/p&gt;
+
+&lt;h3 id=&quot;block&quot;&gt;Block&lt;/h3&gt;
+&lt;p&gt;Block其实是iOS里封装提供出来的函数闭包的概念，它是在iOS4以后被提出来取代delegate和call back模式的一种新的概念。
+ 对于闭包（block),有很多定义，其中闭包就是能够读取其它函数内部变量的函数，这个定义即接近本质又较好理解。对于刚接触Block的同学，会觉得有些绕，因为我们习惯写这样的程序main(){ funA();} funA(){funB();} funB(){…..}; 就是函数main调用函数A，函数A调用函数B… 函数们依次顺序执行，但现实中不全是这样的，例如Jeason的团队里是个PM的角色，手下有3个程序员经纶、经伦、径伦，当他给经伦安排实现功能F1时，他并不等着经伦完成之后，再去安排经纶去实现F2，而是安排给经纶功能F1，经伦功能F2，径伦功能F3，然后安排完了去约会，而当经伦遇到问题时，他会来找jeason，当经伦做完时，会通知jeason，这就是一个异步执行的例子。在这种情形下，Block便可大显身手，因为在Jeason给经伦安排工作时，同时会告诉经伦若果遇到困难，如何能找到他报告问题（例如打他手机号），这就是jeason给经伦的一个回调接口，要回调的操作，比如接到电话，百度一下后，返回网页内容给经伦，这就是一个Block，在jeason交待工作时，已经定义好，并且取得了F1的任务号（局部变量），却是在当经伦遇到问题时，才调用执行。&lt;/p&gt;
+
+&lt;p&gt;block在多线程编程和函数式编程（并不是函数式的语言才能面向函数的编程＝。＝）里都有着重要的应用，想对block更进一步了解的同学，可以看看唐巧的&lt;a href=&quot;http://blog.devtang.com/blog/2013/07/28/a-look-inside-blocks/&quot;&gt;这篇博文&lt;/a&gt;;&lt;/p&gt;
+
+&lt;h2 id=&quot;nsurlsessionconfiguration&quot;&gt;NSURLSessionConfiguration&lt;/h2&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Network&quot;&gt;Apple Club培训教程（四）：iOS网络&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; May 05, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Apple Club培训教程（三）：协议，代理]]></title>
+  <link>http://localhost:4000/blog/TableView</link>
+  <id>http://localhost:4000/blog/TableView</id>
+  <published>2014-04-25T00:00:00+08:00</published>
+  <updated>2014-04-25T00:00:00+08:00</updated>
+  <author>
+    <name>Jeason George</name>
+    <uri>http://localhost:4000</uri>
+    <email>sysu.ss.jeason@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;其实这算是对Objective－C语法介绍的一个补充，又是对UI编程的进一步&lt;/p&gt;
+
+&lt;section&gt;
+  &lt;header&gt;
+    &lt;h2&gt;目录&lt;/h2&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/TableView&quot;&gt;Apple Club培训教程（三）：协议，代理&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; April 25, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -301,7 +413,7 @@
     &lt;p&gt;UIButton是按钮控件，我们在页面的底部放了一个分享按钮，我们可以对它进行设置，不过最主要的，就是增加一个action来控制当用户点击这个button时程序的响应。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;当用户点击button之后，它就会来到这个函数这里，你可以在上面完成各种事件，比如说通过邮件发送，通过信息发送，甚至是截图分享到朋友圈＝。＝&lt;/p&gt;
+    &lt;p&gt;当用户点击button之后，它就会来到这个函数这里，你可以在上面完成各种事件，比如说通过邮件发送，通过信息发送，甚至是截图分享到朋友圈＝。＝不过那是你的事。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 

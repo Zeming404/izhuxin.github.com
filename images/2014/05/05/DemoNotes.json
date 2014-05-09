@@ -1,0 +1,15 @@
+---
+---
+[
+	{
+		"noteID"  :  "0",
+		"content" :  "Lecture1 -Objective-C\r\r1. 概述\r\r2. 类的编写\r  2.1. 类的声明\r  2.2. 类的实现\r\r3. FoundationOverView\r\r4. 总结",
+		"imageURL" : "/images/2014/05/05/cry.jpg"
+	},
+	{
+		"noteID"  : "1",
+		"content" : "Lecture2 -UI programming\r\r这是SYSU Apple Club系列培训的第二篇。上一篇我们学习了Objective－C的基本语法，而且知道了Foundation库内的一些重要的数据结构。这篇教程主要是厘清一些基本概念，让你对iOS UI编程的内在机制有一定的了解。本文主要参考自我的理解和 Apple的《UIKitCatalog》，如果有什么不对的地方，也希望大家能指出来。",
+		"imageURL" : "/images/2014/05/05/love.jpg"
+
+	}
+]

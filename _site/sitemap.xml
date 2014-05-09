@@ -19,6 +19,14 @@
     
     
     <url>
+        <loc>http://localhost:4000/blog/Network</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/TableView</loc>
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/blog/iOS%2BUI%2Bporgramming</loc>
     </url>
     
