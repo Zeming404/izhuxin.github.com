@@ -67,7 +67,7 @@ TCP（Transmission Control Protocol）是一种两个socket之间必须建立连
 {% endhighlight %}
 
 {% highlight C %}
-    Note2：UDP和TCP协议的内容以及具体实现非常复杂，不在本文讨论的范围内，有兴趣的可以看看[RFC768](http://tools.ietf.org/html/rfc768)（UDP协议），[RFC793](http://tools.ietf.org/html/rfc793)和[RFC1323](http://tools.ietf.org/html/rfc1323)(TPC协议)。
+    Note2：UDP和TCP协议的内容以及具体实现非常复杂，不在本文讨论的范围内，有兴趣的可以看看RFC78（UDP协议文档），RFC793和RFC1323(TPC协议文档)。
 {% endhighlight %}
 
 {% highlight C %}
