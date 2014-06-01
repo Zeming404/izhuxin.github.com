@@ -79,7 +79,7 @@ TCP（Transmission Control Protocol）是一种两个socket之间必须建立连
 
 {% highlight C %}
     Note：在实际应用中，我们可以直接使用操作系统实现好的HTTP协议，也可以自己定义并实现其他协议，例如嵌入式系统中可能没有实现HTTP协议但实现了TPC,UDP协议，这时我们可以在上面规定我们自己的协议：如以8个字节的长度为包头，包头记录了包体的长度，接收数据时先检查其是否是包头，若是则读出包体长度，再读包体。 
-{% end highlight %}
+{% endhighlight %}
 
 ##结语
 现在，你应该对于socket网络有了一定的了解，接下来我们会以[CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket)这个项目作为分析样本，来解释Socket网络编程的具体实现细节，希望这会是一个很好的帮助你我学习的专题。
