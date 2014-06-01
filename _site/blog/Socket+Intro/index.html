@@ -2,26 +2,26 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Apple Club培训教程（三）：协议，代理 &#8211; Jeason</title>
+<title>CocoaSocket实践（一）:Socket简介 &#8211; Jeason</title>
 <meta name="description" content="">
-<meta name="keywords" content="IOS Developer">
+<meta name="keywords" content="OS">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Apple Club培训教程（三）：协议，代理">
+<meta property="og:title" content="CocoaSocket实践（一）:Socket简介">
 <meta property="og:description" content="">
-<meta property="og:url" content="http://localhost:4000/blog/TableView">
+<meta property="og:url" content="http://localhost:4000/blog/Socket%2BIntro">
 <meta property="og:site_name" content="Jeason">
-<meta property="og:image" content="http://localhost:4000/images/objective_tutorial.jpg">
+<meta property="og:image" content="http://localhost:4000/images/children'sDay.jpg">
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/blog/TableView">
+<link rel="canonical" href="http://localhost:4000/blog/Socket%2BIntro">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
 
 
@@ -61,7 +61,7 @@
 
 </head>
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
-<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/objective_tutorial.jpg)" itemscope itemtype="http://schema.org/Organization">
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/children'sDay.jpg)" itemscope itemtype="http://schema.org/Organization">
 
 
     <div class="inner">
@@ -111,30 +111,39 @@
              
                     <header class="post-header entry-header">
                         
-                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">Apple Club培训教程（三）：协议，代理</h1>
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">CocoaSocket实践（一）:Socket简介</h1>
                         
                         <div class="post-info text-center small">
-                            <span class="entry-date date published updated"><time datetime="2014-04-25T00:00:00+08:00" class="post-time" itemprop="datePublished">25 Apr 2014</time><span>
+                            <span class="entry-date date published updated"><time datetime="2014-06-01T00:00:00+08:00" class="post-time" itemprop="datePublished">01 Jun 2014</time><span>
                             in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
                         </div>
                     </header>
                     <div class="post-body bordered-bottom" itemprop="description">
                         
-                        <p>其实这算是对Objective－C语法介绍的一个补充，又是对UI编程的进一步</p>
+                        <p>这是本站关于CocoaSocket编程实践专题的第一篇文章，本文力图用1个小时以内的时间为读者介绍Socket以及对应的TCP/UDP协议等网络知识，所讲内容多为个人理解和外文搬运，对于socket编程只是很浅的一个入门，更多的内容可以参考其他关于socket的书籍。</p>
 
 <section>
   <header>
-    <h2>目录</h2>
+    <h1>目录</h1>
   </header>
 <div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#section">概述</a></li>
+</ul>
 
   </div>
 </section>
 
+<h2 id="section">概述</h2>
+<p>如果你之前有过使用基于文件传输的协议来进行网络通信的实践（如HTTP，FTP），那么使用基于socket传输的协议（TCP，UDP）来进行网络通信将会是一种更靠近底层的工作，但使用socket却能有很大的性能上的提升。事实上，在<a href="http://baike.baidu.com/link?url=yGUAWSFEonLlu2TwBpCCWUsI9b2i64CcNKeqZ2U-u3Cw3ZNiOlhS2vmxscu_OIRLAvREGHxl0KfGVK2qWlIee_#4">ISO/OSI网络体系结构</a>中, HTTP等协议位于应用层，而TCP协议位于传输层，如下图所示。</p>
+<figure>
+<a href="http://localhost:4000/images/2014/06/01/1.jpg"><img src="http://localhost:4000/images/2014/06/01/1.jpg" /></a>
+</figure>
+
                         <br>
                     <span class="entry-tags">
                     <p>
-                        <i class="icon-tags"></i>&nbsp;Tagged with IOS Developer
+                        <i class="icon-tags"></i>&nbsp;Tagged with OS
                     </p>
                     </span>
                     </div>
@@ -153,7 +162,7 @@
 </div>
 
 
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/objective_tutorial.jpg)" >
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/children'sDay.jpg)" >
 
 
     <div class="inner">
