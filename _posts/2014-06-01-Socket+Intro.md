@@ -67,7 +67,7 @@ TCP（Transmission Control Protocol）是一种两个socket之间必须建立连
 {% endhighlight %}
 
 {% highlight C %}
-    Note2：UDP和TCP协议的内容以及具体实现非常复杂，不在本文讨论的范围内，有兴趣的可以看看[RFC768](http://tools.ietf.org/html/rfc768)（UDP协议），[RFC793](http://tools.ietf.org/html/rfc793)和[RFC1323](http://tools.ietf.org/html/rfc1323)(TPC协议)。
+    Note2：UDP和TCP协议的内容以及具体实现非常复杂，不在本文讨论的范围内，有兴趣的可以看看RFC78（UDP协议文档），RFC793和RFC1323(TPC协议文档)。
 {% endhighlight %}
 
 {% highlight C %}
@@ -77,8 +77,9 @@ TCP（Transmission Control Protocol）是一种两个socket之间必须建立连
 ###应用层的协议
 现在我们有了UDP，可以快速发送数据，有了TCP，可以准确的发送数据，而这发送的数据都只是数据流而已，接收数据的一方要怎么去解析这个数据呢？举个例子：我通过QQ向A同学发送了一句“六一节快乐！”，然后再发了一句“哈哈哈”。那么它接收到的可能是0101010101010100101010101010,那么它怎么知道“六一节快乐”应该是哪一部分的数据串？要记住，TCP发送的数据只是一个数据流而已。而解决这个问题就是需要定义应用层的协议。例如HTTP协议，它就定义了HTTP头的数据结构，在发送的数据中以两个换行符标识，它会扫描传输层接收的数据，找到两个换行符，把这之前的数据解析成HTTP头，在HTTP头里记录了HTTP-BODY的长度信息，这样就可以实现数据的解析了。
 
->&quot;
-    Note：在实际应用中，我们可以直接使用操作系统实现好的HTTP协议，也可以自己定义并实现其他协议，例如嵌入式系统中可能没有实现HTTP协议但实现了TPC,UDP协议，这时我们可以在上面规定我们自己的协议：如以8个字节的长度为包头，包头记录了包体的长度，接收数据时先检查其是否是包头，若是则读出包体长度，再读包体。&quot;
+{% highlight C %}
+    Note：在实际应用中，我们可以直接使用操作系统实现好的HTTP协议，也可以自己定义并实现其他协议，例如嵌入式系统中可能没有实现HTTP协议但实现了TPC,UDP协议，这时我们可以在上面规定我们自己的协议：如以8个字节的长度为包头，包头记录了包体的长度，接收数据时先检查其是否是包头，若是则读出包体长度，再读包体。 
+{% endhighlight %}
 
 ##结语
 现在，你应该对于socket网络有了一定的了解，接下来我们会以[CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket)这个项目作为分析样本，来解释Socket网络编程的具体实现细节，希望这会是一个很好的帮助你我学习的专题。
