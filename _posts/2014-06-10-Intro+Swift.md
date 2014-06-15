@@ -5,7 +5,7 @@ description: ""
 category: blog
 tags: [IOS Developer]
 image: 
-  feature: objective_tutorial.jpg
+  feature: swift.jpg
 comments: true
 diary: 今年6月3日，Apple发布了新的语言－－Swift，一下子周围的兄弟都欢腾了＝＝我也要搞搞动静才行，应邀去给师弟师妹吹水关于Swift的介绍，所以就想先把忽悠的内容写一下。这里所讲的只是我的个人理解，而且非常的不详细，如果有明显错误，希望大家能指出来。
 
