@@ -13,16 +13,16 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="CocoaSocket实践（一）:Socket简介">
 <meta property="og:description" content="">
-<meta property="og:url" content="http://localhost:4000/blog/Socket%2BIntro">
+<meta property="og:url" content="http://jeason.me/blog/Socket%2BIntro">
 <meta property="og:site_name" content="Jeason">
-<meta property="og:image" content="http://localhost:4000/images/children'sDay.jpg">
+<meta property="og:image" content="http://jeason.me/images/children'sDay.jpg">
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/blog/Socket%2BIntro">
-<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+<link rel="canonical" href="http://jeason.me/blog/Socket%2BIntro">
+<link href="http://jeason.me/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
 
 
 <!-- http://t.co/dKP3o1e -->
@@ -31,8 +31,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/style.css" />
 
 <div class="search-wrapper">
     <div class="search-form">
@@ -47,28 +47,28 @@
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<link rel="shortcut icon" href="http://jeason.me/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<link rel="shortcut icon" href="http://jeason.me/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="http://jeason.me/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://jeason.me/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://jeason.me/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://jeason.me/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
-<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/children'sDay.jpg)" itemscope itemtype="http://schema.org/Organization">
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://jeason.me/images/children'sDay.jpg)" itemscope itemtype="http://schema.org/Organization">
 
 
     <div class="inner">
         <div class="container">
-            <a class="brand" href="http://localhost:4000" role="banner" itemprop="url">
+            <a class="brand" href="http://jeason.me" role="banner" itemprop="url">
 
-                <img itemprop="logo" src="http://localhost:4000/images/logo.png" alt="Jeason Logo" />
+                <img itemprop="logo" src="http://jeason.me/images/logo.png" alt="Jeason Logo" />
 
             <h1 class="blog-title light" itemprop="name">
                 Jeason
@@ -115,7 +115,7 @@
                         
                         <div class="post-info text-center small">
                             <span class="entry-date date published updated"><time datetime="2014-06-01T00:00:00+08:00" class="post-time" itemprop="datePublished">01 Jun 2014</time><span>
-                            in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                            in <span class="post-tags"><a href="http://jeason.me/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
                         </div>
                     </header>
                     <div class="post-body bordered-bottom" itemprop="description">
@@ -146,7 +146,7 @@
 <h2 id="section">概述</h2>
 <p>如果你之前有过使用基于文件传输的协议来进行网络通信的实践（如HTTP，FTP），那么使用基于socket传输的协议（TCP，UDP）来进行网络通信将会是一种更靠近底层的工作，但使用socket却能有很大的性能上的提升。事实上，在<a href="http://baike.baidu.com/link?url=yGUAWSFEonLlu2TwBpCCWUsI9b2i64CcNKeqZ2U-u3Cw3ZNiOlhS2vmxscu_OIRLAvREGHxl0KfGVK2qWlIee_#4">ISO/OSI网络体系结构</a>中, HTTP等协议位于应用层，而TCP协议位于传输层，如下图所示。
 <figure class="half">
-<a href="http://localhost:4000/images/2014/06/01/1.jpg"><img src="http://localhost:4000/images/2014/06/01/1.jpg" /></a>
+<a href="http://jeason.me/images/2014/06/01/1.jpg"><img src="http://jeason.me/images/2014/06/01/1.jpg" /></a>
 </figure></p>
 
 <h2 id="sockt">Sockt是一个端点</h2>
@@ -182,7 +182,7 @@
 <div class="highlight"><pre><code class="c">    <span class="n">Note1</span><span class="err">：如果将两个进程的网络通信比作两个人在交流，那么</span><span class="n">TCP</span><span class="err">就适用于新室友见面的场景：两个人先进行自我介绍，告诉双方名字，联系方式，然后开始讨论待会吃什么好，而</span><span class="n">UDP</span><span class="err">就适用于在路上搭讪女孩子的场景：“小姐，我的表坏了，我可以问下时间吗”</span><span class="p">......</span>
 </code></pre></div>
 
-<div class="highlight"><pre><code class="c">    <span class="n">Note2</span><span class="err">：</span><span class="n">UDP</span><span class="err">和</span><span class="n">TCP</span><span class="err">协议的内容以及具体实现非常复杂，不在本文讨论的范围内，有兴趣的可以看看</span><span class="p">[</span><span class="n">RFC768</span><span class="p">](</span><span class="n">http</span><span class="o">:</span><span class="c1">//tools.ietf.org/html/rfc768)（UDP协议），[RFC793](http://tools.ietf.org/html/rfc793)和[RFC1323](http://tools.ietf.org/html/rfc1323)(TPC协议)。</span>
+<div class="highlight"><pre><code class="c">    <span class="n">Note2</span><span class="err">：</span><span class="n">UDP</span><span class="err">和</span><span class="n">TCP</span><span class="err">协议的内容以及具体实现非常复杂，不在本文讨论的范围内，有兴趣的可以看看</span><span class="n">RFC78</span><span class="err">（</span><span class="n">UDP</span><span class="err">协议文档），</span><span class="n">RFC793</span><span class="err">和</span><span class="n">RFC1323</span><span class="p">(</span><span class="n">TPC</span><span class="err">协议文档</span><span class="p">)</span><span class="err">。</span>
 </code></pre></div>
 
 <div class="highlight"><pre><code class="c">    <span class="nl">Note3:</span> <span class="err">操作系统的</span><span class="n">socket</span> <span class="n">API</span><span class="err">（之前</span><span class="n">man</span> <span class="n">socket</span><span class="err">的内容）已经实现了</span><span class="n">TPC</span><span class="err">和</span><span class="n">UPC</span><span class="err">协议的内容。</span>
@@ -191,10 +191,8 @@
 <h3 id="section-3">应用层的协议</h3>
 <p>现在我们有了UDP，可以快速发送数据，有了TCP，可以准确的发送数据，而这发送的数据都只是数据流而已，接收数据的一方要怎么去解析这个数据呢？举个例子：我通过QQ向A同学发送了一句“六一节快乐！”，然后再发了一句“哈哈哈”。那么它接收到的可能是0101010101010100101010101010,那么它怎么知道“六一节快乐”应该是哪一部分的数据串？要记住，TCP发送的数据只是一个数据流而已。而解决这个问题就是需要定义应用层的协议。例如HTTP协议，它就定义了HTTP头的数据结构，在发送的数据中以两个换行符标识，它会扫描传输层接收的数据，找到两个换行符，把这之前的数据解析成HTTP头，在HTTP头里记录了HTTP-BODY的长度信息，这样就可以实现数据的解析了。</p>
 
-<blockquote>
-  <p>"
-    Note：在实际应用中，我们可以直接使用操作系统实现好的HTTP协议，也可以自己定义并实现其他协议，例如嵌入式系统中可能没有实现HTTP协议但实现了TPC,UDP协议，这时我们可以在上面规定我们自己的协议：如以8个字节的长度为包头，包头记录了包体的长度，接收数据时先检查其是否是包头，若是则读出包体长度，再读包体。"</p>
-</blockquote>
+<div class="highlight"><pre><code class="c">    <span class="n">Note</span><span class="err">：在实际应用中，我们可以直接使用操作系统实现好的</span><span class="n">HTTP</span><span class="err">协议，也可以自己定义并实现其他协议，例如嵌入式系统中可能没有实现</span><span class="n">HTTP</span><span class="err">协议但实现了</span><span class="n">TPC</span><span class="p">,</span><span class="n">UDP</span><span class="err">协议，这时我们可以在上面规定我们自己的协议：如以</span><span class="mi">8</span><span class="err">个字节的长度为包头，包头记录了包体的长度，接收数据时先检查其是否是包头，若是则读出包体长度，再读包体。</span> 
+</code></pre></div>
 
 <h2 id="section-4">结语</h2>
 <p>现在，你应该对于socket网络有了一定的了解，接下来我们会以<a href="https://github.com/robbiehanson/CocoaAsyncSocket">CocoaAsyncSocket</a>这个项目作为分析样本，来解释Socket网络编程的具体实现细节，希望这会是一个很好的帮助你我学习的专题。</p>
@@ -210,8 +208,8 @@
                     <footer class="post-footer entry-meta">
                         
                         <div class="post-author text-center">                       
-	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
-	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	        <img src="http://jeason.me/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://jeason.me/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
 	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
 </div> 
                         <div id="disqus_thread"></div><!-- /#disqus_thread -->
@@ -221,7 +219,7 @@
 </div>
 
 
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/children'sDay.jpg)" >
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://jeason.me/images/children'sDay.jpg)" >
 
 
     <div class="inner">
@@ -245,45 +243,45 @@
                     <i class="icon-github"></i>
                 </a>
             </li>
-            <li><a href="http://localhost:4000/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+            <li><a href="http://jeason.me/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
                     <i class="icon-rss"></i>
                 </a>
             </li>
 
         </ul>
             <p class="copy-text">
-                <a href="http://localhost:4000/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+                <a href="http://jeason.me/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
             </p>
 
             <ul class="menu-items">
             
             <li>
                 
-                    <a href="http://localhost:4000/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                    <a href="http://jeason.me/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
                  
             </li>
             
             <li>
                 
-                    <a href="http://localhost:4000/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                    <a href="http://jeason.me/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
                  
             </li>
             
             <li>
                 
-                    <a href="http://localhost:4000/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                    <a href="http://jeason.me/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
                  
             </li>
             
             <li>
                 
-                    <a href="http://localhost:4000/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                    <a href="http://jeason.me/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
                  
             </li>
             
             <li>
                 
-                    <a href="http://localhost:4000/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
+                    <a href="http://jeason.me/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
                  
             </li>
             
@@ -315,17 +313,17 @@
 
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
-    <script type="text/javascript" src="http://localhost:4000/assets/js/waypoints.min.js"></script>
-    <script type="text/javascript" src="http://localhost:4000/assets/js/script.js"></script>
+<script>window.jQuery || document.write('<script src="http://jeason.me/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://jeason.me/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://jeason.me/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://jeason.me/assets/js/script.js"></script>
 
 
 <!-- Jekyll Simple Search option -->
 <script>
   $(document).ready(function() {
       $('.search-field').simpleJekyllSearch({
-          jsonFile : 'http://localhost:4000/search.json',
+          jsonFile : 'http://jeason.me/search.json',
           searchResults : '.search-results',
           template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
           noResults: '<p>Nothing found.</p>'

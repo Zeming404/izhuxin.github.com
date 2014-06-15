@@ -2,26 +2,139 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Jeason</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-06-01T18:00:41+08:00</updated>
-<id>http://localhost:4000/</id>
+<link rel="self" type="application/atom+xml" href="http://jeason.me/feed.xml" />
+<link rel="alternate" type="text/html" href="http://jeason.me" />
+<updated>2014-06-15T09:13:59+08:00</updated>
+<id>http://jeason.me/</id>
 <author>
   <name>Jeason George</name>
-  <uri>http://localhost:4000/</uri>
+  <uri>http://jeason.me/</uri>
   <email>sysu.ss.jeason@gmail.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[Swift简介]]></title>
+  <link>http://jeason.me/blog/Intro%2BSwift</link>
+  <id>http://jeason.me/blog/Intro+Swift</id>
+  <published>2014-06-10T00:00:00+08:00</published>
+  <updated>2014-06-10T00:00:00+08:00</updated>
+  <author>
+    <name>Jeason George</name>
+    <uri>http://jeason.me</uri>
+    <email>sysu.ss.jeason@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;今年6月3日，Apple发布了新的语言－－Swift，一下子周围的兄弟都欢腾了＝＝我也要搞搞动静才行，应邀去给师弟师妹吹水关于Swift的介绍，所以就想先把忽悠的内容写一下。这里所讲的只是我的个人理解，而且非常的不详细，如果有明显错误，希望大家能指出来。&lt;/p&gt;
+
+&lt;section&gt;
+  &lt;header&gt;
+    &lt;h2&gt;目录&lt;/h2&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot;&gt;概述&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-1&quot;&gt;编写一个类&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-2&quot;&gt;小结&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;概述&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Swift，按照Apple的说法，其主要是为了替代年老的Objective－C，集合了众多现代语言的特性之后创造出来的一门新的语言。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;我更想把它当作脚本语言来对待，因为它可以一行代码就表示为一个完整的程序，而且在Playground里可以支持实时编译甚至实时运行！&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Swift可以跟C，Objective－C一起和谐的相处，这是因为作为一门新语言，bug肯定多，所以还需要长辈帮一把。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;编写一个类&lt;/h2&gt;
+
+&lt;p&gt;枯燥的语法学起来实在是无味，所以还是打算从一个完整的类的编写来概述其语法（本来swift是为了让青年人能更好的从0开始学编程，但是本文还是很不识趣的默认读者至少学过一种编程语言，理解面向对象的思想）。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//0&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Page&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//1&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]()&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;//2&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Int&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;//3&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;//4&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;insertData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;otherdata&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;success&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//5&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;otherdata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Insert fail: \(self.data.count - self.size) bytes exceed!&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//6&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;otherdata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;otherdata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//data += otherdata&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;success&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;success&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//7&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testPage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;h&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;e&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;l&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;l&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;o&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;success&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;insertData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloArray&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;success&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//8&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;success&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;insertData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloArray&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;0, 我们可以看到，定义一个类是class关键字＋类名再加一对大括号组成的（这里跟C＋＋的区别就是最后没有分号&lt;/p&gt;
+
+&lt;p&gt;1， 在swift里定义一个变量就跟在js里是一样的，支持像这样的隐式地确定变量类型&lt;/p&gt;
+
+&lt;p&gt;2， let关键字相当于定义了一个常量，不论变量还是常量，可以用”:+类型名“来显式地指定类型，但这里的常量没有赋初值，所以会有提示语法错误，只有我们在后面对它赋了初值才会认为语法正确。Swift里的变量/常量的常用类型包括：Bool，Character， Int， Double，String， Array， Dictionary等等 &lt;/p&gt;
+
+&lt;p&gt;3， 每个类都会有一个init方法（如果你有OC经验自然是不必说，若果没有的话，这可以看作有点类似于C＋＋的构造函数）Swift里函数接受参数的格式是“参数名：类型”这样，在init方法里可以对之前定义的一些变量和常量赋值&lt;/p&gt;
+
+&lt;p&gt;4， swift里定义一个函数是一func关键字开头的，除了接受参数以外，其还有一个返回类型，通过“-&amp;gt;＋类型名”来指定&lt;/p&gt;
+
+&lt;p&gt;5， swift里的条件判断包括if，switch，if的写法跟C里的区别就只是少了一对圆括号而已&lt;/p&gt;
+
+&lt;p&gt;6， swift里的循环包括了for，while等，for的写法多种多样，这里是用了“for something in Array”这样的写法，0..otherData.count 相当于是定义了一个［0，otherData.count）的数组。而0…otherData.count－1则是定义了一个［0，otherData.count－1］的数组&lt;/p&gt;
+
+&lt;p&gt;7,  定义一个类的实例，就跟普通的常量，变量没有太大区别，就是要在初始化时指定哪个形参接受的实参。&lt;/p&gt;
+
+&lt;p&gt;8,  while循环，跟C里的却别就只是少了一对圆括号而已&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;小结&lt;/h2&gt;
+&lt;p&gt;好吧，通过刚才的学习，你大概看到了一个完整的类的写法，我觉得这种方法最为直观，当然就是非常的不全面，对于学习一门语言来说会比较的不系统，如果你是打算从头开始好好研究这门的语言的话，Apple的&lt;a href=&quot;https://itunes.apple.com/us/book/swift-programming-language/id881256329?mt=11&amp;amp;uo=8&amp;amp;at=11ld4k&amp;amp;uo=8&amp;amp;at=11ld4k&amp;amp;uo=8&amp;amp;at=11ld4k&quot;&gt;这门教程&lt;/a&gt;会非常适合你。&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Intro%2BSwift&quot;&gt;Swift简介&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; June 10, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[CocoaSocket实践（一）:Socket简介]]></title>
-  <link>http://localhost:4000/blog/Socket%2BIntro</link>
-  <id>http://localhost:4000/blog/Socket+Intro</id>
+  <link>http://jeason.me/blog/Socket%2BIntro</link>
+  <id>http://jeason.me/blog/Socket+Intro</id>
   <published>2014-06-01T00:00:00+08:00</published>
   <updated>2014-06-01T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这是本站关于CocoaSocket编程实践专题的第一篇文章，这个专题并不是为了探讨如何使用CocoaAsynSocket库来实现一个iOS客户端或者是OS X服务器，而是为了研究这个库的具体实现细节以及其所采用的技术。本文力图用1个小时以内的时间为读者介绍Socket以及对应的TCP/UDP协议等网络知识，所讲内容多为个人理解和外文搬运，对于socket编程只是很浅的一个入门，更多的内容可以参考其他关于socket的书籍。&lt;/p&gt;
@@ -50,7 +163,7 @@
 &lt;h2 id=&quot;section&quot;&gt;概述&lt;/h2&gt;
 &lt;p&gt;如果你之前有过使用基于文件传输的协议来进行网络通信的实践（如HTTP，FTP），那么使用基于socket传输的协议（TCP，UDP）来进行网络通信将会是一种更靠近底层的工作，但使用socket却能有很大的性能上的提升。事实上，在&lt;a href=&quot;http://baike.baidu.com/link?url=yGUAWSFEonLlu2TwBpCCWUsI9b2i64CcNKeqZ2U-u3Cw3ZNiOlhS2vmxscu_OIRLAvREGHxl0KfGVK2qWlIee_#4&quot;&gt;ISO/OSI网络体系结构&lt;/a&gt;中, HTTP等协议位于应用层，而TCP协议位于传输层，如下图所示。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/06/01/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/06/01/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/06/01/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/06/01/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;sockt&quot;&gt;Sockt是一个端点&lt;/h2&gt;
@@ -86,7 +199,7 @@
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;    &lt;span class=&quot;n&quot;&gt;Note1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;：如果将两个进程的网络通信比作两个人在交流，那么&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TCP&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;就适用于新室友见面的场景：两个人先进行自我介绍，告诉双方名字，联系方式，然后开始讨论待会吃什么好，而&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UDP&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;就适用于在路上搭讪女孩子的场景：“小姐，我的表坏了，我可以问下时间吗”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;......&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;    &lt;span class=&quot;n&quot;&gt;Note2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;：&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UDP&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;和&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TCP&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;协议的内容以及具体实现非常复杂，不在本文讨论的范围内，有兴趣的可以看看&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RFC768&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//tools.ietf.org/html/rfc768)（UDP协议），[RFC793](http://tools.ietf.org/html/rfc793)和[RFC1323](http://tools.ietf.org/html/rfc1323)(TPC协议)。&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;    &lt;span class=&quot;n&quot;&gt;Note2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;：&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UDP&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;和&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TCP&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;协议的内容以及具体实现非常复杂，不在本文讨论的范围内，有兴趣的可以看看&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RFC78&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UDP&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;协议文档），&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RFC793&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;和&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RFC1323&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TPC&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;协议文档&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;。&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;    &lt;span class=&quot;nl&quot;&gt;Note3:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;操作系统的&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;socket&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;API&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（之前&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;man&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;socket&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的内容）已经实现了&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TPC&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;和&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UPC&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;协议的内容。&lt;/span&gt;
@@ -95,27 +208,25 @@
 &lt;h3 id=&quot;section-3&quot;&gt;应用层的协议&lt;/h3&gt;
 &lt;p&gt;现在我们有了UDP，可以快速发送数据，有了TCP，可以准确的发送数据，而这发送的数据都只是数据流而已，接收数据的一方要怎么去解析这个数据呢？举个例子：我通过QQ向A同学发送了一句“六一节快乐！”，然后再发了一句“哈哈哈”。那么它接收到的可能是0101010101010100101010101010,那么它怎么知道“六一节快乐”应该是哪一部分的数据串？要记住，TCP发送的数据只是一个数据流而已。而解决这个问题就是需要定义应用层的协议。例如HTTP协议，它就定义了HTTP头的数据结构，在发送的数据中以两个换行符标识，它会扫描传输层接收的数据，找到两个换行符，把这之前的数据解析成HTTP头，在HTTP头里记录了HTTP-BODY的长度信息，这样就可以实现数据的解析了。&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;
-    Note：在实际应用中，我们可以直接使用操作系统实现好的HTTP协议，也可以自己定义并实现其他协议，例如嵌入式系统中可能没有实现HTTP协议但实现了TPC,UDP协议，这时我们可以在上面规定我们自己的协议：如以8个字节的长度为包头，包头记录了包体的长度，接收数据时先检查其是否是包头，若是则读出包体长度，再读包体。&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;    &lt;span class=&quot;n&quot;&gt;Note&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;：在实际应用中，我们可以直接使用操作系统实现好的&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HTTP&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;协议，也可以自己定义并实现其他协议，例如嵌入式系统中可能没有实现&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HTTP&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;协议但实现了&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TPC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UDP&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;协议，这时我们可以在上面规定我们自己的协议：如以&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;个字节的长度为包头，包头记录了包体的长度，接收数据时先检查其是否是包头，若是则读出包体长度，再读包体。&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;section-4&quot;&gt;结语&lt;/h2&gt;
 &lt;p&gt;现在，你应该对于socket网络有了一定的了解，接下来我们会以&lt;a href=&quot;https://github.com/robbiehanson/CocoaAsyncSocket&quot;&gt;CocoaAsyncSocket&lt;/a&gt;这个项目作为分析样本，来解释Socket网络编程的具体实现细节，希望这会是一个很好的帮助你我学习的专题。&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Socket%2BIntro&quot;&gt;CocoaSocket实践（一）:Socket简介&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; June 01, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Socket%2BIntro&quot;&gt;CocoaSocket实践（一）:Socket简介&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; June 01, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Apple Club培训教程（四）：iOS网络]]></title>
-  <link>http://localhost:4000/blog/Network</link>
-  <id>http://localhost:4000/blog/Network</id>
+  <link>http://jeason.me/blog/Network</link>
+  <id>http://jeason.me/blog/Network</id>
   <published>2014-05-05T00:00:00+08:00</published>
   <updated>2014-05-05T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这是Apple Club的第四期培训教程,今天我们主要介绍iOS中的网络编程。更确切的说，是介绍iOS7中的NSURLSession这个新的API，参考自&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html&quot;&gt;URL Loading System Programming Guide&lt;/a&gt;,&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/Introduction/Introduction.html&quot;&gt;NSURLSession Class Reference&lt;/a&gt;和一些其他博文。&lt;/p&gt;
@@ -170,7 +281,7 @@
 &lt;p&gt;为了特定的功能，Apple提供了三个它的非虚子类，分别是NSURLSessionDataTask，NSURLSessionDownloadTask和NSURLSessionUploadTask，他们的关系如下：&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/05/05/01.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/05/05/01.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/05/05/01.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/01.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -210,7 +321,7 @@
 &lt;p&gt;－ + backgroundSessionConfiguration：独特之处在于，它会创建一个后台会话。后台会话不同于常规的会话，它甚至可以在应用程序挂起，退出，崩溃的情况下运行上传和下载任务。初始化时指定的标识符（有点类似于操作系统里的PCB），被用于向任何可能在进程外恢复后台传输的进程提供上下文。&lt;/p&gt;
 
 &lt;h1 id=&quot;coding-time&quot;&gt;Coding Time&lt;/h1&gt;
-&lt;p&gt;这里，我们继续我们之前的项目，让我们的Note的内容可以来源于网络，在&lt;a href=&quot;http://localhost:4000/images/2014/05/05/Note.zip&quot;&gt;这里&lt;/a&gt;可以下载到之前的项目。&lt;/p&gt;
+&lt;p&gt;这里，我们继续我们之前的项目，让我们的Note的内容可以来源于网络，在&lt;a href=&quot;http://jeason.me/images/2014/05/05/Note.zip&quot;&gt;这里&lt;/a&gt;可以下载到之前的项目。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;编写网络引擎&lt;/h2&gt;
 
@@ -416,19 +527,19 @@
     &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Network&quot;&gt;Apple Club培训教程（四）：iOS网络&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; May 05, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Network&quot;&gt;Apple Club培训教程（四）：iOS网络&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; May 05, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Apple Club培训教程（二）：UI编程]]></title>
-  <link>http://localhost:4000/blog/iOS%2BUI%2Bporgramming</link>
-  <id>http://localhost:4000/blog/iOS+UI+porgramming</id>
+  <link>http://jeason.me/blog/iOS%2BUI%2Bporgramming</link>
+  <id>http://jeason.me/blog/iOS+UI+porgramming</id>
   <published>2014-03-31T00:00:00+08:00</published>
   <updated>2014-03-31T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这是SYSU Apple Club系列培训的第二篇。&lt;a href=&quot;http://jeason.me/blog/Objective-C+Introduction/&quot;&gt;上一篇&lt;/a&gt;我们学习了Objective－C的基本语法，而且知道了Foundation库内的一些重要的数据结构。这篇教程主要是厘清一些基本概念，让你对iOS UI编程的内在机制有一定的了解。本文主要参考自我的理解和
@@ -466,7 +577,7 @@
 &lt;p&gt;&lt;code&gt;这里主要讲的是iOS中的MVC&lt;/code&gt;。它是iOS中最常用的设计模式中的一种，理解它，就会顺带提及很多其他的重要的设计模式的内容。废话不多说，先看下Stanford CS193p课程里的一张图&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/31/2.gif&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/2.gif&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/31/2.gif&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/2.gif&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Model是管理数据的，View是管理视图的。我们知道，当数据更新之后，View也应该相应地动态更新。但是MVC规定了，Model不允许直接跟View打交道。为了达到这一目标，就有了Controller这个中间桥梁。为了达到Model与Controller更好地分离，iOS就引入了Key－Value－Observing和Notification这两种设计模式（如上图所示）。这两个东西我们以后会具体讲到，现在简单来讲，就是实现了把M内的变化告知C，然后C再把变化反映到V上。&lt;/p&gt;
@@ -479,7 +590,7 @@
 &lt;p&gt;接下来我们就开始具体的来看看一个iOS app是怎样组织起来的。先新建一个SigleView Application，项目名就为Note就好了。打开它，会看到有这么个组织结构:&lt;/p&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/31/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/31/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;main&quot;&gt;main函数&lt;/h3&gt;
@@ -551,7 +662,7 @@
 这是理解iOS UI编程的另一个重要的概念，先看一张图。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/31/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/31/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -593,7 +704,7 @@
 &lt;p&gt;UIView是iOS里组成我们UI的基本单元，UI的基本功能我觉得就只有两个：提供内容和导航用户完成人机交互。为了实现不同的视觉效果和导航方式，iOS通过继承UIView为我们提供了近20种的原生控件，包括了简单的按钮，文字显示，还有一些复杂的View如UITableView。我们可以用这些控件一个个叠加组成我们需要的界面，就好像ps那样一个个图层（图层是有上下之分的，view与view之间也是）组成漂亮的图像,如图所示。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/31/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/31/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;section&quot;&gt;代码&lt;/h3&gt;
@@ -715,7 +826,7 @@
 &lt;h3 id=&quot;bulid--run&quot;&gt;Bulid &amp;amp; Run&lt;/h3&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/31/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/31/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;总结&lt;/h2&gt;
@@ -743,19 +854,19 @@
   &lt;li&gt;阅读&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UIKitUICatalog.pdf&quot;&gt;Apple的《UIKitUICatalog》&lt;/a&gt;对基本的控件都有一定的了解。&lt;/li&gt;
 &lt;/ol&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/iOS%2BUI%2Bporgramming&quot;&gt;Apple Club培训教程（二）：UI编程&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 31, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/iOS%2BUI%2Bporgramming&quot;&gt;Apple Club培训教程（二）：UI编程&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 31, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Apple Club培训教程（一）：Objective-C]]></title>
-  <link>http://localhost:4000/blog/Objective-C%2BIntroduction</link>
-  <id>http://localhost:4000/blog/Objective-C+Introduction</id>
+  <link>http://jeason.me/blog/Objective-C%2BIntroduction</link>
+  <id>http://jeason.me/blog/Objective-C+Introduction</id>
   <published>2014-03-28T00:00:00+08:00</published>
   <updated>2014-03-28T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了&lt;a href=&quot;https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550&quot;&gt;Stanford‘的CS193p课程&lt;/a&gt;，已及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。&lt;/p&gt;
@@ -1030,19 +1141,19 @@
   &lt;li&gt;&lt;a href=&quot;https://gist.github.com/anonymous/9848844&quot;&gt;UserManager.cpp&lt;/a&gt; &lt;/li&gt;
 &lt;/ol&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Objective-C%2BIntroduction&quot;&gt;Apple Club培训教程（一）：Objective-C&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Objective-C%2BIntroduction&quot;&gt;Apple Club培训教程（一）：Objective-C&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SE 数据结构课程总结]]></title>
-  <link>http://localhost:4000/blog/DS%2BCourse%2BReview</link>
-  <id>http://localhost:4000/blog/DS+Course+Review</id>
+  <link>http://jeason.me/blog/DS%2BCourse%2BReview</link>
+  <id>http://jeason.me/blog/DS+Course+Review</id>
   <published>2014-03-08T00:00:00+08:00</published>
   <updated>2014-03-08T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这注定会是一篇很长的博文，可能我一次难以把它完全写好。本文主要是基于中山大学的《SE-221 数据结构与算法》这门课的课程内容而写，以后可能还有其他数据结构方面的补充与完善。&lt;/p&gt;
@@ -1164,7 +1275,7 @@
 &lt;p&gt;举个例子吧：关键字为{89,18,49,58,69}插入到一个散列表中的情况。此时线性探测的方法是取d_i=i。并假定取关键字除以10的余数为散列函数法则。&lt;/p&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;第一次碰撞发生在填装49的时候。地址为9的单元已经填装了89这个关键字，所以取i=1，往下查找一个单位，发现为空，所以将49填装在地址为0的空单元。插入58时，地址8处发生第一次碰撞，d = 1, 探测位置9，发生第二次碰撞，d= 2,探测位置1，位置1为空，将58插入位置1。69同理。
@@ -1182,7 +1293,7 @@
 &lt;h3 id=&quot;section-5&quot;&gt;单独链表法&lt;/h3&gt;
 &lt;p&gt;它的思想是将散列到同一个存储位置的所有元素保存在一个链表中。即为链接List的顺序List。对于有相同的f(key)的key值构成了一个链表，而所有的这些链表组成的数组就是单独链接法得到的哈希表，如下图所示:
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/6.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/6.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-6&quot;&gt;单独链表法的平均探测次数&lt;/h3&gt;
@@ -1202,13 +1313,13 @@
 &lt;h3 id=&quot;section-7&quot;&gt;满二叉树&lt;/h3&gt;
 &lt;p&gt;一棵深度为k，且有2^k-1个节点称之为满二叉树，如下图所示
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-8&quot;&gt;完全二叉树&lt;/h3&gt;
 &lt;p&gt;完全二叉树又叫做堆，它是深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中序号为1至n的节点对应时，称之为完全二叉树。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-9&quot;&gt;二叉树的遍历&lt;/h3&gt;
@@ -1218,7 +1329,7 @@
 后序遍历：左子树-&amp;gt;右子树-&amp;gt;根节点
 例如：求下面树的三种遍历
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;前序遍历：abdefgc&lt;/p&gt;
@@ -1237,7 +1348,7 @@
 &lt;/ul&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/7.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/7.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/7.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/7.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -1245,18 +1356,18 @@
 &lt;/ul&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/8.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/8.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;section-11&quot;&gt;图的遍历&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;p&gt;采用深度优先搜索和广度优先搜索的方法遍历图。（见下文：基本算法－基于图论的算法）&lt;/p&gt;
 
 &lt;h3 id=&quot;section-12&quot;&gt;拓扑排序&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/9.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/9.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h1 id=&quot;section-13&quot;&gt;基本算法&lt;/h1&gt;
@@ -1710,19 +1821,19 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/DS%2BCourse%2BReview&quot;&gt;SE 数据结构课程总结&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/DS%2BCourse%2BReview&quot;&gt;SE 数据结构课程总结&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[一种简单适配iOS开发中各种屏幕的投机取巧方法]]></title>
-  <link>http://localhost:4000/blog/View%2Bin%2BView</link>
-  <id>http://localhost:4000/blog/View+in+View</id>
+  <link>http://jeason.me/blog/View%2Bin%2BView</link>
+  <id>http://jeason.me/blog/View+in+View</id>
   <published>2014-03-02T00:00:00+08:00</published>
   <updated>2014-03-02T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;正如标题所说，Jeason想出来的这个方法是投机取巧式的，是有一定适用条件的。在这里，我不会将IOS中不同尺寸不同系统的适配问题统统讲完，不过会在后面给出其他适配方法的链接。&lt;/p&gt;
@@ -1769,13 +1880,13 @@
 &lt;p&gt;为了方便说明这个方法，我随手弄了一个小project，如下图所示，虽然丑了点，不过大概能表达出真实的情况。
   这是一个登录页面，上面有很多个必要的控件而且有一个iOS7风格的导航栏，还有背景图。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;现在这样在3.5寸，iOS7的模拟器上运行视觉上是OK的。（不要问我为什么会这么丑，这只是demo）问题主要是出现在当在iOS6上和4寸的模拟器上时，会出现比较大的问题，如下所示。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/2.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;正如第一张图所示，iOS6的self.view.frame的零点是在状态栏以下的位置，而iOS7的则是在整个屏幕的最左上方位置，两者纵坐标相差20px。而第二张图则说明了另一个问题，就是在依靠xib搭建的界面元素不会动态地去布局。&lt;/p&gt;
@@ -1786,7 +1897,7 @@
 
 &lt;h3 id=&quot;view&quot;&gt;引入内层View&lt;/h3&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -1800,7 +1911,7 @@
 &lt;h3 id=&quot;autolayout&quot;&gt;使用autolayout&lt;/h3&gt;
 &lt;p&gt;正如上面所说的，我们是要让内层view整体平移，所以只需在内层view上添加autolayout就可以了。首先不管是iOS6还是iOS7中，内层view的底/左/右端和外层view的底/左/右端的距离都为0。所以通过xib中添加这三个constrains就可以了，如下图所示。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;那个小红点是由我们只确定了下左右的constrains，而对上端没有约束造成的。对于内层view的上端和外层view的距离，我们希望它在iOS6中为－20px，即在iOS6中内层view上推20px，而在iOS7中为0px。这种动态效果是要靠代码中来实现的。&lt;/p&gt;
@@ -1850,7 +1961,7 @@
 
 &lt;p&gt;关于autolayout的使用，可以参考Apple中关于&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Introduction/Introduction.html&quot;&gt;autolayout的文档&lt;/a&gt;。现在，我们再运行一下模拟器，可以看到iOS6中已经可以显示正常了。不过在4寸屏幕上的问题仍然没有解决。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/6.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/6.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;p&gt;不过没有关系，我们有autolayout!&lt;/p&gt;
 
@@ -1858,13 +1969,13 @@
 &lt;p&gt;4寸屏幕主要是让背景图片可以伸缩填充整个屏幕，所以要在背景图片的imageView上添加高度为greater than current value的constrains，底部距离内层View为0px的constrains就可以了，如图所示。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/9.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/9.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;至此所有的适配工作已经完成，整个页面可以在iOS6/iOS7，3.5/4寸屏幕上显示基本正常。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/7.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/7.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/8.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/8.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-3&quot;&gt;总结&lt;/h2&gt;
@@ -1899,19 +2010,19 @@
 &lt;/ol&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 02, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 02, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[漫游中大]]></title>
-  <link>http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</link>
-  <id>http://localhost:4000/album/漫游中大</id>
+  <link>http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</link>
+  <id>http://jeason.me/album/漫游中大</id>
   <published>2014-03-01T00:00:00+08:00</published>
   <updated>2014-03-01T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;blockquote&gt;
@@ -1926,51 +2037,51 @@
 
 &lt;p&gt;1.广州的地铁几乎可以带你游遍广州任意角落。到康乐园，只需搭上八号线，然后从拥挤喧哗的鹭江地铁口出来，沿着马路直走100米左右，便可以到中大南校区的东门所在。走进门内，迎来的是另一个世界。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1990.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1990.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;2.在校道飞驰来往的车辆和两排稀稀落落的便利商店，似乎是宁静美丽的康乐园与嘈杂不堪的中间地带。这里链接着校园与外部，书香与尾气，宁静与浮华。校道的两旁,有着各式各样的涂鸦与横幅，彰显着校园的青春气息。
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1989.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1989.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1988.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1988.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1978.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1978.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1989.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1989.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1988.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1988.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1978.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1978.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;3.当你经过旁边的小路进入校园内部的时候，康乐园就开始忍不住像你展示它的美丽了。古树，红楼，美女；花香，鸟语，人闹。它就像是一个世外桃源一般，吸引着任何向往祥和的生灵。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1977.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1977.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1980.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1980.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1983.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1983.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1985.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1985.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1971.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1971.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;4.校园内几乎每一个关键的道路口都会有明确的标示，提醒人们不要被美不胜收的校园迷惑了方向。按照路牌指示，我向&lt;a href=&quot;http://library.sysu.edu.cn/web/guest/index&quot;&gt;图书馆&lt;/a&gt;前进。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1981.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1981.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1981.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1981.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;5.当然那么美丽的校园，图书馆自然不是读书的唯一去处，去图书馆借一本自己喜欢的小说，或坐在木椅或坐在草坪，那都是非常不错的选择。
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1974.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1974.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;6.终于，我沿着路旁参天的古树，来到了周围一片肃静的图书馆。凭着中山大学的校园卡刷卡入馆去了～。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1970.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1970.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1969.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1969.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;figure&gt;
 	&lt;figcaption&gt;漫步康乐园&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7&quot;&gt;漫游中大&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 01, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7&quot;&gt;漫游中大&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 01, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>
