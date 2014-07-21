@@ -1,0 +1,34 @@
+---
+permalink: /test/index.html
+---
+<html>
+<head>
+<title>小情灯Wi-Fi连接设置</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<center>
+	<img src="{{site.url}}/images/ALOGO.png"></img>
+</center>
+<br />
+<center>
+	请输入您家里的WIFI用户名和密码，小情灯保存后将自动连接。
+</center>
+<br />
+<center>
+	<form name=login onSubmit="return checkvalue();" action="/login" method=post>
+	<center>
+		<input type="text" name="Wi-Fi" style="width:200;height:30" placeholder="Wi-Fi名">
+	</center>
+	<br />
+	<center>	
+		<input type="text" name="Password" style="width:200;height:30" placeholder="密码">
+	</center>
+	<br />
+	<center>
+			<input type="submit" value="保存" style="width:75;height:45">
+	</center>
+	</form>
+</center>
+</body>
+</html>
