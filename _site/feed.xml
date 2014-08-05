@@ -4,13 +4,256 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-07-21T21:40:55+08:00</updated>
+<updated>2014-08-05T16:44:53+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Jeason George</name>
   <uri>http://localhost:4000/</uri>
   <email>sysu.ss.jeason@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Java开发入门]]></title>
+  <link>http://localhost:4000/blog/Java%2BIntro</link>
+  <id>http://localhost:4000/blog/Java+Intro</id>
+  <published>2014-08-04T00:00:00+08:00</published>
+  <updated>2014-08-04T00:00:00+08:00</updated>
+  <author>
+    <name>Jeason George</name>
+    <uri>http://localhost:4000</uri>
+    <email>sysu.ss.jeason@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;最近因为实训和编译原理课程的缘故所以开始要看一下java的内容。因为知道XCode以及其一套开发套件对我学习OC的帮助有多大，所以快速的搭建好自己的Java开发环境就至关重要。所以就整理一下，方便有需要的同学可以参考一下。本文适合那些:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;有过一定编程经验，了解OOP，有过一定的小型工程经验的同学;&lt;/li&gt;
+  &lt;li&gt;习惯了在OS X上写代码，突然之间想学一下Java的同学;&lt;/li&gt;
+  &lt;li&gt;觉得那些开发套件只是工具，我要做的只是怎么更好地利用这些工具帮助我的同学;&lt;/li&gt;
+  &lt;li&gt;将要参加中大软院的中级实训的同学。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;section&gt;
+  &lt;header&gt;
+    &lt;h2&gt;目录&lt;/h2&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#java&quot;&gt;Java基本语法&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#java-1&quot;&gt;Java编辑器&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ant&quot;&gt;工程管理Ant&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#ant-1&quot;&gt;一个简单的Ant脚本&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#junit&quot;&gt;单元测试Junit&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#section&quot;&gt;一个简单的测试代码&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#sonarqube&quot;&gt;用SonarQube分析你的代码&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-1&quot;&gt;总结&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;h2 id=&quot;java&quot;&gt;Java基本语法&lt;/h2&gt;
+
+&lt;p&gt;当然我不可能在这里长篇大论Java语法，我只是说几点:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Java和OC的比较.貌似挺多人有问过这种问题→_→估计这起源于Google和Apple之争，好吧，从我这两天的学习经历来看，两者好像完全没什么好比的，OC和C++几乎产生于同代，Java是对C++的完善，两者完全就是不同时代的产物。&lt;/li&gt;
+  &lt;li&gt;Java的运行效率看起来好像比较低，不过它的强大在于跨平台和丰富的包（后面会提到），有种python的静态版的感觉，强大而且灵活。&lt;/li&gt;
+  &lt;li&gt;Java可以方便的与浏览器勾搭在一起，通过一种叫applet的形式，因此在现代Web技术方面仍有一席之地，而且因为Java程序只需要一个Java虚拟机就可以运行，所以很适合作为科研目的的开发（如编写一个编译器）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;再来就是推荐几个快速学习的网站，这些网站可能不是最好的，不过对于我这种只是想在几个小时或一天内入门的同学来说，其实差不了很多:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Java基本程序设计: &lt;a href=&quot;http://www.learnjavaonline.org&quot;&gt;http://www.learnjavaonline.org&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Java Swing组件:   &lt;a href=&quot;http://zetcode.com/tutorials/javaswingtutorial/&quot;&gt;http://zetcode.com/tutorials/javaswingtutorial/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;参考手册: &lt;a href=&quot;http://www.w3cschool.cc/java/java-tutorial.html&quot;&gt;http://www.w3cschool.cc/java/java-tutorial.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我参考的其他的文档还有JDK的API，这也是我最常用也最实用的学习文档。&lt;/p&gt;
+
+&lt;h2 id=&quot;java-1&quot;&gt;Java编辑器&lt;/h2&gt;
+&lt;p&gt;在了解了Java语法，下载了最新的JDK和JVM后，就可以考虑来写写代码了，我一开始想直接用XCode来写，发现XCode4以后就不支持Java开发了＝。＝&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/08/05/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/08/05/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;我马上想到了用Emacs，不过我的Emacs已经被我配置成一个C/C++ IDE了，要把java开发也配置得那么顺心，实在懒得再折腾，之后试了下在sublime下写了一会，发现实在不够顺手，最后装了个gVim勉强还能写一点小程序。Vim得快捷键+命令什么的，虽然感觉挺方便挺强大，但是对于习惯了Emacs快捷键，会一直不停的按C+X, C+S的我来说，实在是噩梦，所以我写完了几个程序之后就放弃了Vim。最后的最后我找到了一个叫NetBean的IDE，可以把它的编辑器改成Emacs的快捷键绑定，也能方便的查看JDK的文档和方便的写单元测试，也算是能基本满足我的要求了，只是因为它是用纯Java写成的，会有一点小卡……&lt;/p&gt;
+
+&lt;p&gt;当然很多人会推荐Eclipse，只是因为我当时的校园网实在太慢，8KB每秒的速度，下个JDK都要挂一个晚上，我手头又刚好有个下载好了的NetBean的安装包（好像是当年看别人推荐就去下了然后一直放着没喷＝＝），所以就先凑合着用呗，暂时还是很满意的。&lt;/p&gt;
+
+&lt;h2 id=&quot;ant&quot;&gt;工程管理Ant&lt;/h2&gt;
+&lt;p&gt;在用IDE之前，我想要编译和链接有多个文件，或者是想要编译一个工程的时候，发现直接在命令行里用JDK的javac实在太麻烦了，所以我想到需要一个脚本来帮忙管理工程，比如说Makefile什么的。查了下，发现有个叫做Ant的，它就像是Makefile一样，可以指定生成一个项目Target需要的tasks，task与task之间有着依赖关系，说了那么多，不如看个实例学的快些。&lt;/p&gt;
+
+&lt;h3 id=&quot;ant-1&quot;&gt;一个简单的Ant脚本&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--注释0--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--注释1--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;project&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;default=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;dist&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Project Argon&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;A simple Java project&lt;span class=&quot;nt&quot;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;c&quot;&gt;&amp;lt;!--注释2--&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;srcDir&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;location=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;src&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;buildDir&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;location=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;build&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;distDir&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;location=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;dist&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;c&quot;&gt;&amp;lt;!--注释3.1--&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;target&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;init&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+       &lt;span class=&quot;nt&quot;&gt;&amp;lt;tstamp/&amp;gt;&lt;/span&gt;
+       &lt;span class=&quot;nt&quot;&gt;&amp;lt;mkdir&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;dir=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;${buildDir}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+       &lt;span class=&quot;nt&quot;&gt;&amp;lt;mkdir&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;dir=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;${distDir}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/target&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--注释3.2--&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;target&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;compile&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;depends=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;init&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+       &lt;span class=&quot;nt&quot;&gt;&amp;lt;javac&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;srcdir=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;${srcDir}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;destdir=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;${buildDir}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/target&amp;gt;&lt;/span&gt;
+ 
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;target&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;dist&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;depends=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;compile&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+       &lt;span class=&quot;nt&quot;&gt;&amp;lt;jar&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;destfile=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;${distDir}/package-${DSTAMP}.jar&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;basedir=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;${buildDir}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;manifest&amp;gt;&lt;/span&gt;
+           &lt;span class=&quot;nt&quot;&gt;&amp;lt;attribute&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Built-By&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;${user.name}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+           &lt;span class=&quot;nt&quot;&gt;&amp;lt;attribute&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Main-Class&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;package.Main&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;/manifest&amp;gt;&lt;/span&gt;
+       &lt;span class=&quot;nt&quot;&gt;&amp;lt;/jar&amp;gt;&lt;/span&gt;
+       &lt;span class=&quot;nt&quot;&gt;&amp;lt;jar&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;destfile=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;${distDir}/package-src-${DSTAMP}.jar&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;basedir=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;${srcDir}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/target&amp;gt;&lt;/span&gt;
+ 
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;target&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;clean&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;delete&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;dir=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;${buildDir}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;delete&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;dir=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;${distDir}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/target&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/project&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;0 一眼看去，很明显这是一个XML格式的文件，嗯，没错，就好像Makefile脚本一样，ant脚本的名字需命名为build.xml&lt;/p&gt;
+
+&lt;p&gt;1 第一个tag是ant定义的tag，叫做project，default指定了它默认执行的target，name则指定了这个工程的名字。&lt;/p&gt;
+
+&lt;p&gt;2 property标签可以定义一个变量，这样在后面的时候就可以直接用$(propertyName)来引用这个变量了，这一点和Makefile一样。&lt;/p&gt;
+
+&lt;p&gt;3.1  target标签可以定义一个任务，比如我们在编译一个工程的源代码之前，要先新建好文件夹来放编译好的文件.&lt;/p&gt;
+
+&lt;p&gt;3.2  target与target之间往往有着一定的依赖关系，比如我们在生成一个项目的时候，总是先产生目标文件夹，编译源代码，然后把目标文件打包至目标文件夹，这时就要用depends属性来指定生成target之间的依赖关系。
+这里我们的目标文件是一个jar文件，jar文件有点类似于OC里的framework，就是把一堆类打包起来然后方便给其他项目使用。&lt;/p&gt;
+
+&lt;h2 id=&quot;junit&quot;&gt;单元测试Junit&lt;/h2&gt;
+&lt;p&gt;好了，接下来就是如何提高自己的代码质量的问题了。我觉得多思考自己写的代码，然后多写一些单元测试来测试代码还是很重要的，因为这会强制要求我们在做项目时回到工程的级别上来，而不只是在当搬砖工。这时候就会用到一个叫Junit的库。翻了下Junit的项目地址，貌似下载链接被墙了＝，＝一般Java IDE都会配置有Junit，如果大家想不用IDE就先用着我&lt;a href=&quot;http://localhost:4000/images/2014/08/05/junit.jar&quot;&gt;这个版本的Junit&lt;/a&gt;吧.&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;一个简单的测试代码&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;* SYSU-SS GridWorld Case Study Demo:&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;* CalculatorTest.java&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;* Copyright(c) 2014 Jeason (http://jeason.me)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;* This code is free software; you can redistribute it and/or modify&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;* it under the terms of the GNU General Public License as published by&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;* the Free Software Foundation.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;* This code is distributed in the hope that it will be useful,&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;* but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;* GNU General Public License for more details.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;* @author Jeason&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;*/&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.junit.Test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;junit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.*;&lt;/span&gt;
+
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CalculatorTest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * Test of main method, of class Calculator.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//1&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testMain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Test main&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Calculator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * Test of checkDigitStr method, of class Calculator.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testCheckDigitStr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Test checkDigitStr&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;case 1: 12.34&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;12.34&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//2&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expResult&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Calculator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;checkDigitStr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//3&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expResult&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+      
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Case 2: abc&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;abc&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;expResult&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Calculator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;checkDigitStr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expResult&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;被测试的类在&lt;a href=&quot;https://gist.github.com/izhuxin/6855a30ac44a5accfb6e&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;对于高版本的Junit（忘了是从几点几开始的），可以直接用&lt;code&gt;@Test&lt;/code&gt;标记来指明你的测试函数是哪个，在@Test之后下一个函数即为测试函数，Junit的TestRunner类会直接找到它并且运行这一个函数的代码。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;想要测试自己的某个函数，只需要定义好自己期望的结果并计算这个函数运行后的结果然后保存起来就好了。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;assertEquals函数就会检测两个结果是不是一致，若一致则现实Success，否则则提示False，另外类似的还有assertArrayEquals, assertNotNull等等。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;sonarqube&quot;&gt;用SonarQube分析你的代码&lt;/h2&gt;
+&lt;p&gt;一般的重量级IDE都会有分析代码的工具，比如XCode，MS VisualStudio，分析的主要目的是检测你代码的藕合度，复杂度，代码重复率等，以方便你可以决定是否对工程进行重构以便于维护。这里主要介绍SonarQube，它是一个开源的代码质量管理平台，使用的是 LGPL V3 软件许可，你可以在github上翻到其项目地址。&lt;/p&gt;
+
+&lt;p&gt;其使用起来也是很方便（后来发现它可以和Eclipse配合联调，可惜我没装Eclipse）只需要：
+1.  先&lt;a href=&quot;http://www.sonarqube.org/downloads/&quot;&gt;下载其发行版&lt;/a&gt;, 然后将其解压至某一个文件夹,然后cd到解压存放文件夹/bin/[OS]/，然后执行 sonar.sh start即可启动它了。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;然后下载&lt;a href=&quot;http://www.sonarsource.org/downloads/&quot;&gt;SonarQube Runner&lt;/a&gt;并解压到某一文件夹，然后在你要测试的工程文件夹里面创建sonar的配置文件,例如:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#required metadata&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#projectKey是唯一标示符，可以随便取&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sonar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;projectKey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10389179&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sonar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;projectName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10389179&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sonar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;projectVersion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sonar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sourceEncoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UTF&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sonar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;modules&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sonar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;projectName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GridWorld&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moudle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sonar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sonar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sources&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#假设项目的源文件放在src文件夹内&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sonar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;projectBaseDir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;然后再在这个文件夹目录下执行&lt;code&gt;你解压的文件夹/bin/sonar-runner&lt;/code&gt;命令，就可以分析你的代码了，然后打开http://localhost:9000就可以看到你的分析结果啦，如果出现下面的页面，就说明你已经完成了SonarQube的配置啦：&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/08/05/2.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/08/05/2.png&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;总结&lt;/h2&gt;
+&lt;p&gt;至此，总算是可以开始用Java大干一场来开发东西啦，当然本文没有详细地介绍各个工具安装和使用的步骤，只是简单总结一下Java开发需要配置的东西，剩下的就靠大家自己去搜索解决吧(´･_･`)。&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Java%2BIntro&quot;&gt;Java开发入门&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; August 04, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>

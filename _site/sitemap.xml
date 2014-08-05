@@ -19,6 +19,10 @@
     
     
     <url>
+        <loc>http://localhost:4000/blog/Java%2BIntro</loc>
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/blog/Agenda</loc>
     </url>
     

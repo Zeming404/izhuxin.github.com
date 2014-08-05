@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Java开发入门",
+		  "category"   : "blog",
+		  "url"        : "http://localhost:4000/blog/Java%2BIntro",
+		  "date"       : "2014-08-04 00:00:00 +0800",
+		  "shortdate"  : "August 04, 2014"
+		} ,
+	
+		{
 		  "title"      : "Agenda项目设计思想与部分实现",
 		  "category"   : "blog",
 		  "url"        : "http://localhost:4000/blog/Agenda",

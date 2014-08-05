@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Java开发入门 &#8211; Jeason</title>
+<meta name="description" content="">
+<meta name="keywords" content="Course">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java开发入门">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://localhost:4000/blog/Java%2BIntro">
+<meta property="og:site_name" content="Jeason">
+<meta property="og:image" content="http://localhost:4000/images/java.jpg">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/Java%2BIntro">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/style.css" />
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search...">
+        <i class="icon-remove-sign"></i>
+        <ul class="search-results post-list"></ul><!-- /.search-results -->
+    </div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/java.jpg)" itemscope itemtype="http://schema.org/Organization">
+
+
+    <div class="inner">
+        <div class="container">
+            <a class="brand" href="http://localhost:4000" role="banner" itemprop="url">
+
+                <img itemprop="logo" src="http://localhost:4000/images/logo.png" alt="Jeason Logo" />
+
+            <h1 class="blog-title light" itemprop="name">
+                Jeason
+            </h1>
+                
+            </a>
+        </div>
+    </div>
+    
+    
+    <div class="decor-wrapper">
+        <svg id="header-decor" class="decor bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+            <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+            <path class="medium left" d="M0 100 L50 50 L0 33.3" fill="rgba(255,255,255, .3)"></path>
+            <path class="medium right" d="M100 100 L50 50 L100 33.3" fill="rgba(255,255,255, .3)"></path>
+
+            <path class="small left" d="M0 100 L50 50 L0 66.6" fill="rgba(255,255,255, .5)"></path>
+            <path class="small right" d="M100 100 L50 50 L100 66.6" fill="rgba(255,255,255, .5)"></path>
+
+            <path d="M0 99.9 L50 49.9 L100 99.9 L0 99.9" fill="rgba(255,255,255, 1)"></path>
+
+            <path d="M48 52 L50 49 L52 52 L48 52" fill="rgba(255,255,255, 1)"></path>
+
+        </svg>
+    </div>
+    
+</header>
+<div id="main" class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+    <div class="container">
+        <div class="row">
+            <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            
+            
+            
+                
+            
+             
+             
+                    <header class="post-header entry-header">
+                        
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">Java开发入门</h1>
+                        
+                        <div class="post-info text-center small">
+                            <span class="entry-date date published updated"><time datetime="2014-08-04T00:00:00+08:00" class="post-time" itemprop="datePublished">04 Aug 2014</time><span>
+                            in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                        </div>
+                    </header>
+                    <div class="post-body bordered-bottom" itemprop="description">
+                        
+                        <p>最近因为实训和编译原理课程的缘故所以开始要看一下java的内容。因为知道XCode以及其一套开发套件对我学习OC的帮助有多大，所以快速的搭建好自己的Java开发环境就至关重要。所以就整理一下，方便有需要的同学可以参考一下。本文适合那些:</p>
+
+<ul>
+  <li>有过一定编程经验，了解OOP，有过一定的小型工程经验的同学;</li>
+  <li>习惯了在OS X上写代码，突然之间想学一下Java的同学;</li>
+  <li>觉得那些开发套件只是工具，我要做的只是怎么更好地利用这些工具帮助我的同学;</li>
+  <li>将要参加中大软院的中级实训的同学。</li>
+</ul>
+
+<section>
+  <header>
+    <h2>目录</h2>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#java">Java基本语法</a></li>
+  <li><a href="#java-1">Java编辑器</a></li>
+  <li><a href="#ant">工程管理Ant</a>    <ul>
+      <li><a href="#ant-1">一个简单的Ant脚本</a></li>
+    </ul>
+  </li>
+  <li><a href="#junit">单元测试Junit</a>    <ul>
+      <li><a href="#section">一个简单的测试代码</a></li>
+    </ul>
+  </li>
+  <li><a href="#sonarqube">用SonarQube分析你的代码</a></li>
+  <li><a href="#section-1">总结</a></li>
+</ul>
+
+  </div>
+</section>
+
+<h2 id="java">Java基本语法</h2>
+
+<p>当然我不可能在这里长篇大论Java语法，我只是说几点:</p>
+
+<ul>
+  <li>Java和OC的比较.貌似挺多人有问过这种问题→_→估计这起源于Google和Apple之争，好吧，从我这两天的学习经历来看，两者好像完全没什么好比的，OC和C++几乎产生于同代，Java是对C++的完善，两者完全就是不同时代的产物。</li>
+  <li>Java的运行效率看起来好像比较低，不过它的强大在于跨平台和丰富的包（后面会提到），有种python的静态版的感觉，强大而且灵活。</li>
+  <li>Java可以方便的与浏览器勾搭在一起，通过一种叫applet的形式，因此在现代Web技术方面仍有一席之地，而且因为Java程序只需要一个Java虚拟机就可以运行，所以很适合作为科研目的的开发（如编写一个编译器）。</li>
+</ul>
+
+<p>再来就是推荐几个快速学习的网站，这些网站可能不是最好的，不过对于我这种只是想在几个小时或一天内入门的同学来说，其实差不了很多:</p>
+
+<ul>
+  <li>Java基本程序设计: <a href="http://www.learnjavaonline.org">http://www.learnjavaonline.org</a></li>
+  <li>Java Swing组件:   <a href="http://zetcode.com/tutorials/javaswingtutorial/">http://zetcode.com/tutorials/javaswingtutorial/</a></li>
+  <li>参考手册: <a href="http://www.w3cschool.cc/java/java-tutorial.html">http://www.w3cschool.cc/java/java-tutorial.html</a></li>
+</ul>
+
+<p>我参考的其他的文档还有JDK的API，这也是我最常用也最实用的学习文档。</p>
+
+<h2 id="java-1">Java编辑器</h2>
+<p>在了解了Java语法，下载了最新的JDK和JVM后，就可以考虑来写写代码了，我一开始想直接用XCode来写，发现XCode4以后就不支持Java开发了＝。＝</p>
+
+<figure>
+<a href="http://localhost:4000/images/2014/08/05/1.jpg"><img src="http://localhost:4000/images/2014/08/05/1.jpg" /></a>
+</figure>
+
+<p>我马上想到了用Emacs，不过我的Emacs已经被我配置成一个C/C++ IDE了，要把java开发也配置得那么顺心，实在懒得再折腾，之后试了下在sublime下写了一会，发现实在不够顺手，最后装了个gVim勉强还能写一点小程序。Vim得快捷键+命令什么的，虽然感觉挺方便挺强大，但是对于习惯了Emacs快捷键，会一直不停的按C+X, C+S的我来说，实在是噩梦，所以我写完了几个程序之后就放弃了Vim。最后的最后我找到了一个叫NetBean的IDE，可以把它的编辑器改成Emacs的快捷键绑定，也能方便的查看JDK的文档和方便的写单元测试，也算是能基本满足我的要求了，只是因为它是用纯Java写成的，会有一点小卡……</p>
+
+<p>当然很多人会推荐Eclipse，只是因为我当时的校园网实在太慢，8KB每秒的速度，下个JDK都要挂一个晚上，我手头又刚好有个下载好了的NetBean的安装包（好像是当年看别人推荐就去下了然后一直放着没喷＝＝），所以就先凑合着用呗，暂时还是很满意的。</p>
+
+<h2 id="ant">工程管理Ant</h2>
+<p>在用IDE之前，我想要编译和链接有多个文件，或者是想要编译一个工程的时候，发现直接在命令行里用JDK的javac实在太麻烦了，所以我想到需要一个脚本来帮忙管理工程，比如说Makefile什么的。查了下，发现有个叫做Ant的，它就像是Makefile一样，可以指定生成一个项目Target需要的tasks，task与task之间有着依赖关系，说了那么多，不如看个实例学的快些。</p>
+
+<h3 id="ant-1">一个简单的Ant脚本</h3>
+
+<div class="highlight"><pre><code class="html"><span class="c">&lt;!--注释0--&gt;</span>
+<span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="c">&lt;!--注释1--&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">default=</span><span class="s">&quot;dist&quot;</span> <span class="na">name=</span><span class="s">&quot;Project Argon&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;description&gt;</span>A simple Java project<span class="nt">&lt;/description&gt;</span>
+ <span class="c">&lt;!--注释2--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;srcDir&quot;</span> <span class="na">location=</span><span class="s">&quot;src&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;buildDir&quot;</span> <span class="na">location=</span><span class="s">&quot;build&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;distDir&quot;</span> <span class="na">location=</span><span class="s">&quot;dist&quot;</span><span class="nt">/&gt;</span>
+ <span class="c">&lt;!--注释3.1--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;init&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;tstamp/&gt;</span>
+       <span class="nt">&lt;mkdir</span> <span class="na">dir=</span><span class="s">&quot;${buildDir}&quot;</span><span class="nt">/&gt;</span>
+       <span class="nt">&lt;mkdir</span> <span class="na">dir=</span><span class="s">&quot;${distDir}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+<span class="c">&lt;!--注释3.2--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;compile&quot;</span> <span class="na">depends=</span><span class="s">&quot;init&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;javac</span> <span class="na">srcdir=</span><span class="s">&quot;${srcDir}&quot;</span> <span class="na">destdir=</span><span class="s">&quot;${buildDir}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+ 
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;dist&quot;</span> <span class="na">depends=</span><span class="s">&quot;compile&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;jar</span> <span class="na">destfile=</span><span class="s">&quot;${distDir}/package-${DSTAMP}.jar&quot;</span> <span class="na">basedir=</span><span class="s">&quot;${buildDir}&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;manifest&gt;</span>
+           <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">&quot;Built-By&quot;</span> <span class="na">value=</span><span class="s">&quot;${user.name}&quot;</span><span class="nt">/&gt;</span>
+           <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">&quot;Main-Class&quot;</span> <span class="na">value=</span><span class="s">&quot;package.Main&quot;</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;/manifest&gt;</span>
+       <span class="nt">&lt;/jar&gt;</span>
+       <span class="nt">&lt;jar</span> <span class="na">destfile=</span><span class="s">&quot;${distDir}/package-src-${DSTAMP}.jar&quot;</span> <span class="na">basedir=</span><span class="s">&quot;${srcDir}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+ 
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;clean&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;delete</span> <span class="na">dir=</span><span class="s">&quot;${buildDir}&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;delete</span> <span class="na">dir=</span><span class="s">&quot;${distDir}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div>
+
+<p>0 一眼看去，很明显这是一个XML格式的文件，嗯，没错，就好像Makefile脚本一样，ant脚本的名字需命名为build.xml</p>
+
+<p>1 第一个tag是ant定义的tag，叫做project，default指定了它默认执行的target，name则指定了这个工程的名字。</p>
+
+<p>2 property标签可以定义一个变量，这样在后面的时候就可以直接用$(propertyName)来引用这个变量了，这一点和Makefile一样。</p>
+
+<p>3.1  target标签可以定义一个任务，比如我们在编译一个工程的源代码之前，要先新建好文件夹来放编译好的文件.</p>
+
+<p>3.2  target与target之间往往有着一定的依赖关系，比如我们在生成一个项目的时候，总是先产生目标文件夹，编译源代码，然后把目标文件打包至目标文件夹，这时就要用depends属性来指定生成target之间的依赖关系。
+这里我们的目标文件是一个jar文件，jar文件有点类似于OC里的framework，就是把一堆类打包起来然后方便给其他项目使用。</p>
+
+<h2 id="junit">单元测试Junit</h2>
+<p>好了，接下来就是如何提高自己的代码质量的问题了。我觉得多思考自己写的代码，然后多写一些单元测试来测试代码还是很重要的，因为这会强制要求我们在做项目时回到工程的级别上来，而不只是在当搬砖工。这时候就会用到一个叫Junit的库。翻了下Junit的项目地址，貌似下载链接被墙了＝，＝一般Java IDE都会配置有Junit，如果大家想不用IDE就先用着我<a href="http://localhost:4000/images/2014/08/05/junit.jar">这个版本的Junit</a>吧.</p>
+
+<h3 id="section">一个简单的测试代码</h3>
+
+<div class="highlight"><pre><code class="java"><span class="cm">/*</span>
+<span class="cm">* SYSU-SS GridWorld Case Study Demo:</span>
+<span class="cm">* CalculatorTest.java</span>
+<span class="cm">* Copyright(c) 2014 Jeason (http://jeason.me)</span>
+<span class="cm">*</span>
+<span class="cm">* This code is free software; you can redistribute it and/or modify</span>
+<span class="cm">* it under the terms of the GNU General Public License as published by</span>
+<span class="cm">* the Free Software Foundation.</span>
+<span class="cm">*</span>
+<span class="cm">* This code is distributed in the hope that it will be useful,</span>
+<span class="cm">* but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm">* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="cm">* GNU General Public License for more details.</span>
+<span class="cm">*</span>
+<span class="cm">* @author Jeason</span>
+<span class="cm">*/</span>
+
+<span class="kn">package</span> <span class="n">S1</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.*;</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CalculatorTest</span> <span class="o">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Test of main method, of class Calculator.</span>
+<span class="cm">     */</span>
+    <span class="nd">@Test</span>
+    <span class="c1">//1</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testMain</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Test main&quot;</span><span class="o">);</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">args</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">Calculator</span><span class="o">.</span><span class="na">main</span><span class="o">(</span><span class="n">args</span><span class="o">);</span>
+
+    <span class="o">}</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Test of checkDigitStr method, of class Calculator.</span>
+<span class="cm">     */</span>
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testCheckDigitStr</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Test checkDigitStr&quot;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;case 1: 12.34&quot;</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;12.34&quot;</span><span class="o">;</span>
+        <span class="c1">//2</span>
+        <span class="kt">boolean</span> <span class="n">expResult</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="kt">boolean</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Calculator</span><span class="o">.</span><span class="na">checkDigitStr</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+        <span class="c1">//3</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expResult</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+      
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Case 2: abc&quot;</span><span class="o">);</span>
+        <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;abc&quot;</span><span class="o">;</span>
+        <span class="n">expResult</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">Calculator</span><span class="o">.</span><span class="na">checkDigitStr</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expResult</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p>被测试的类在<a href="https://gist.github.com/izhuxin/6855a30ac44a5accfb6e">这里</a></p>
+
+<ol>
+  <li>
+    <p>对于高版本的Junit（忘了是从几点几开始的），可以直接用<code>@Test</code>标记来指明你的测试函数是哪个，在@Test之后下一个函数即为测试函数，Junit的TestRunner类会直接找到它并且运行这一个函数的代码。</p>
+  </li>
+  <li>
+    <p>想要测试自己的某个函数，只需要定义好自己期望的结果并计算这个函数运行后的结果然后保存起来就好了。</p>
+  </li>
+  <li>
+    <p>assertEquals函数就会检测两个结果是不是一致，若一致则现实Success，否则则提示False，另外类似的还有assertArrayEquals, assertNotNull等等。</p>
+  </li>
+</ol>
+
+<h2 id="sonarqube">用SonarQube分析你的代码</h2>
+<p>一般的重量级IDE都会有分析代码的工具，比如XCode，MS VisualStudio，分析的主要目的是检测你代码的藕合度，复杂度，代码重复率等，以方便你可以决定是否对工程进行重构以便于维护。这里主要介绍SonarQube，它是一个开源的代码质量管理平台，使用的是 LGPL V3 软件许可，你可以在github上翻到其项目地址。</p>
+
+<p>其使用起来也是很方便（后来发现它可以和Eclipse配合联调，可惜我没装Eclipse）只需要：
+1.  先<a href="http://www.sonarqube.org/downloads/">下载其发行版</a>, 然后将其解压至某一个文件夹,然后cd到解压存放文件夹/bin/[OS]/，然后执行 sonar.sh start即可启动它了。</p>
+
+<ol>
+  <li>然后下载<a href="http://www.sonarsource.org/downloads/">SonarQube Runner</a>并解压到某一文件夹，然后在你要测试的工程文件夹里面创建sonar的配置文件,例如:</li>
+</ol>
+
+<div class="highlight"><pre><code class="c"><span class="cp">#required metadata</span>
+<span class="cp">#projectKey是唯一标示符，可以随便取</span>
+<span class="n">sonar</span><span class="p">.</span><span class="n">projectKey</span><span class="o">=</span><span class="mi">10389179</span>
+<span class="n">sonar</span><span class="p">.</span><span class="n">projectName</span><span class="o">=</span><span class="mi">10389179</span>
+<span class="n">sonar</span><span class="p">.</span><span class="n">projectVersion</span><span class="o">=</span><span class="mf">1.0</span>
+<span class="n">sonar</span><span class="p">.</span><span class="n">sourceEncoding</span><span class="o">=</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">sonar</span><span class="p">.</span><span class="n">modules</span><span class="o">=</span><span class="n">java</span><span class="o">-</span><span class="n">module</span>
+
+<span class="n">java</span><span class="o">-</span><span class="n">module</span><span class="p">.</span><span class="n">sonar</span><span class="p">.</span><span class="n">projectName</span><span class="o">=</span><span class="n">GridWorld</span>
+<span class="n">java</span><span class="o">-</span><span class="n">moudle</span><span class="p">.</span><span class="n">sonar</span><span class="p">.</span><span class="n">language</span><span class="o">=</span><span class="n">java</span>
+
+<span class="n">java</span><span class="o">-</span><span class="n">module</span><span class="p">.</span><span class="n">sonar</span><span class="p">.</span><span class="n">sources</span><span class="o">=</span><span class="p">.</span>
+<span class="cp">#假设项目的源文件放在src文件夹内</span>
+<span class="n">java</span><span class="o">-</span><span class="n">module</span><span class="p">.</span><span class="n">sonar</span><span class="p">.</span><span class="n">projectBaseDir</span><span class="o">=</span><span class="n">src</span>
+</code></pre></div>
+
+<p>然后再在这个文件夹目录下执行<code>你解压的文件夹/bin/sonar-runner</code>命令，就可以分析你的代码了，然后打开http://localhost:9000就可以看到你的分析结果啦，如果出现下面的页面，就说明你已经完成了SonarQube的配置啦：</p>
+
+<figure>
+<a href="http://localhost:4000/images/2014/08/05/2.png"><img src="http://localhost:4000/images/2014/08/05/2.png" /></a>
+</figure>
+
+<h2 id="section-1">总结</h2>
+<p>至此，总算是可以开始用Java大干一场来开发东西啦，当然本文没有详细地介绍各个工具安装和使用的步骤，只是简单总结一下Java开发需要配置的东西，剩下的就靠大家自己去搜索解决吧(´･_･`)。</p>
+
+                        <br>
+                    <span class="entry-tags">
+                    <p>
+                        <i class="icon-tags"></i>&nbsp;Tagged with Course
+                    </p>
+                    </span>
+                    </div>
+        </div>
+                    <footer class="post-footer entry-meta">
+                        
+                        <div class="post-author text-center">                       
+	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
+</div> 
+                        
+                    </footer>
+            </article>
+    </div>
+</div>
+
+
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/java.jpg)" >
+
+
+    <div class="inner">
+        <div class="container">
+
+            <ul class="social-icons">
+            
+            
+            
+            
+            
+            <li>
+                <a href="http://weibo.com/u/2966878797" data-toggle="tooltip" title="Jeason George on Sina Weibo" target = "_blank">
+                    <i class="icon-weibo"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="http://github.com/izhuxin" data-toggle="tooltip" title="Jeason George on Github" target="_blank">
+                    <i class="icon-github"></i>
+                </a>
+            </li>
+            <li><a href="http://localhost:4000/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+                    <i class="icon-rss"></i>
+                </a>
+            </li>
+
+        </ul>
+            <p class="copy-text">
+                <a href="http://localhost:4000/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+            </p>
+
+            <ul class="menu-items">
+            
+            <li>
+                
+                    <a href="http://localhost:4000/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li class="dosearch"><i class="icon-search"></i> 站内搜索</li>
+        </ul>
+        </div>
+    </div>
+    
+        <div class="decor-wrapper">
+            <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+                <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+                <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+                <path class="medium left" d="M0 0 L50 50 L0 66.6" fill="rgba(255,255,255, .3)"></path>
+                <path class="medium right" d="M100 0 L50 50 L100 66.6" fill="rgba(255,255,255, .3)"></path>
+
+                <path class="small left" d="M0 0 L50 50 L0 33.3" fill="rgba(255,255,255, .5)"></path>
+                <path class="small right" d="M100 0 L50 50 L100 33.3" fill="rgba(255,255,255, .5)"></path>
+
+                <path d="M0 0 L50 50 L100 0 L0 0" fill="rgba(255,255,255, 1)"></path>
+
+                <path d="M48 48 L50 51 L52 48 L48 48" fill="rgba(255,255,255, 1)"></path>
+
+            </svg>
+        </div>
+    
+</footer>
+
+    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/script.js"></script>
+
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://localhost:4000/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-48042789-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+ 
+</body>
+</html>
