@@ -24,7 +24,7 @@ iOS之前的Emoji部分，是用了[这个文件夹里的类](https://gist.githu
 ##我的方案
 我想到安卓的同学之所以没办法搞到Apple Color Emoji的编码表，是因为这个字体只在苹果系上才有，所以不如我来搞定那个编码表吧，把Emoji的unicode编码和图片对应起来，然后在每次Model传数据给View的时候，将图片名解析成unicode编码，然后在保存至Model的时候将unicode编码转换成图片名就好了，这样子只需要设置字体的大小就能控制emoji表情的大小了，而且以前的代码几乎不用修改。
 
-方法很简单，但就是花时间，所以才特地整理了这篇文章可以省大家的力气。我先是将所有的emoji Code和Emoji表情打印到[文件](https://gist.github.com/732bc2b5f7dca13fe630.git)里，然后跟图片文件进行比对，整理出了他们的[映射表](https://gist.github.com/b812ab0bf87093907e26.git).
+方法很简单，但就是花时间，所以才特地整理了这篇文章可以省大家的力气。我先是将所有的emoji Code和Emoji表情打印到[文件](https://gist.github.com/732bc2b5f7dca13fe630)里，然后跟图片文件进行比对，整理出了他们的[映射表](https://gist.github.com/b812ab0bf87093907e26).
 
 然后就需要跟服务器和安卓的同学约定好Emoji开始的字符和结束的字符就好了，我们的定义如下:
 
@@ -217,7 +217,7 @@ someChatMsg = [someChatMsg encodeString];
 someChatMsg = [someChatMsg decodeString];
 </code>
 
-而且，在Emoji.m里为每个Emoji查找一次看有没有对应的文件名来筛选出可以在iOS跟安卓通用的Emoji表情啦！完整的项目Demo在[这里](https://github.com/JeasonGeorge/EmojiAdapter)
+而且，在Emoji.m里为每个Emoji查找一次看有没有对应的文件名来筛选出可以在iOS跟安卓通用的Emoji表情啦！完整的项目Demo在[这里](https://github.com/izhuxin/EmojiAdapter)
 
 ##补充一句
 为什么要筛选只有180个表情呢，因为发现不论是手Q还是微信还是自带的Emoji键盘，它都是每行有7个表情，一页有3行，最后一个是删除键，这样子180个表情就有180 ／ （7*3-1） ＝ 9页啦，所以180个已经是非常足够了的，太多页也会让用户失去耐心~
