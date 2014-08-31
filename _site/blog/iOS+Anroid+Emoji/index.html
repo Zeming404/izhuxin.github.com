@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>iOS和Android的Emoji表情同步方案 &#8211; Jeason</title>
+<meta name="description" content="">
+<meta name="keywords" content="IOS Developer">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS和Android的Emoji表情同步方案">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://localhost:4000/blog/iOS%2BAnroid%2BEmoji">
+<meta property="og:site_name" content="Jeason">
+<meta property="og:image" content="http://localhost:4000/images/emoji.jpg">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/iOS%2BAnroid%2BEmoji">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/style.css" />
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search...">
+        <i class="icon-remove-sign"></i>
+        <ul class="search-results post-list"></ul><!-- /.search-results -->
+    </div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/emoji.jpg)" itemscope itemtype="http://schema.org/Organization">
+
+
+    <div class="inner">
+        <div class="container">
+            <a class="brand" href="http://localhost:4000" role="banner" itemprop="url">
+
+                <img itemprop="logo" src="http://localhost:4000/images/logo.png" alt="Jeason Logo" />
+
+            <h1 class="blog-title light" itemprop="name">
+                Jeason
+            </h1>
+                
+            </a>
+        </div>
+    </div>
+    
+    
+    <div class="decor-wrapper">
+        <svg id="header-decor" class="decor bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+            <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+            <path class="medium left" d="M0 100 L50 50 L0 33.3" fill="rgba(255,255,255, .3)"></path>
+            <path class="medium right" d="M100 100 L50 50 L100 33.3" fill="rgba(255,255,255, .3)"></path>
+
+            <path class="small left" d="M0 100 L50 50 L0 66.6" fill="rgba(255,255,255, .5)"></path>
+            <path class="small right" d="M100 100 L50 50 L100 66.6" fill="rgba(255,255,255, .5)"></path>
+
+            <path d="M0 99.9 L50 49.9 L100 99.9 L0 99.9" fill="rgba(255,255,255, 1)"></path>
+
+            <path d="M48 52 L50 49 L52 52 L48 52" fill="rgba(255,255,255, 1)"></path>
+
+        </svg>
+    </div>
+    
+</header>
+<div id="main" class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+    <div class="container">
+        <div class="row">
+            <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            
+            
+            
+                
+            
+             
+             
+                    <header class="post-header entry-header">
+                        
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">iOS和Android的Emoji表情同步方案</h1>
+                        
+                        <div class="post-info text-center small">
+                            <span class="entry-date date published updated"><time datetime="2014-08-24T00:00:00+08:00" class="post-time" itemprop="datePublished">24 Aug 2014</time><span>
+                            in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                        </div>
+                    </header>
+                    <div class="post-body bordered-bottom" itemprop="description">
+                        
+                        <p>最近在做一个聊天的应用，有一个问题就是iOS跟Android的Emoji字符不对应导致显示不正常。因为iOS这部分是先做的，所以便让负责安卓的同学想办法兼容iOS的编码表，不过安卓的同学想尽办法也没办法搞到Apple Color Emoji的编码表，不过他却找到了有几百张Emoji表情的图片，后来经过整理剩下180张是完整的放在项目里的，图片下载在<a href="http://pan.baidu.com/s/1o6qMC22">这里</a>.于是，我就利用这些图片来想办法跟现有的项目兼容。</p>
+
+<h2 id="section">之前的情况</h2>
+<p>iOS之前的Emoji部分，是用了<a href="https://gist.github.com/izhuxin/bbb2a4895f150e0648f1">这个文件夹里的类</a>来产生所有的Emoji表情的unicode字符的，主要是做了一个映射和一定的排序和筛选，来使这些表情不会太杂乱。内部的实现可以说是看起来比较复杂但是思路很简单的，就不做详细赘述了.安卓的同学说安卓有一个可以图文混排的View，叫做<a href="http://developer.android.com/reference/android/widget/EditText.html">EditText</a>的.</p>
+
+<p>于是，安卓的同学就希望我将iOS这边也是改成图文混排的方式，发送表情的时候就只是发送图片的名字，然后我们再约定每个图片的名字以一个特殊的字符开始并以一个特殊的字符结束，不过想到现有的方案要推倒重来实在不妥，而且用图片很难保证在每个分辨率的手机上都能有很好的效果。似乎手Q就是用的这种方案，因为我在看安卓手机发来的emoji表情的时候有很明显的锯齿…</p>
+
+<p>另外在服务器方面，之前iOS发送Emoji表情跟发送文字是一起的，即是以unicode的方式发送和存储的。</p>
+
+<h2 id="section-1">我的方案</h2>
+<p>我想到安卓的同学之所以没办法搞到Apple Color Emoji的编码表，是因为这个字体只在苹果系上才有，所以不如我来搞定那个编码表吧，把Emoji的unicode编码和图片对应起来，然后在每次Model传数据给View的时候，将图片名解析成unicode编码，然后在保存至Model的时候将unicode编码转换成图片名就好了，这样子只需要设置字体的大小就能控制emoji表情的大小了，而且以前的代码几乎不用修改。</p>
+
+<p>方法很简单，但就是花时间，所以才特地整理了这篇文章可以省大家的力气。我先是将所有的emoji Code和Emoji表情打印到<a href="https://gist.github.com/732bc2b5f7dca13fe630.git">文件</a>里，然后跟图片文件进行比对，整理出了他们的<a href="https://gist.github.com/b812ab0bf87093907e26.git">映射表</a>.</p>
+
+<p>然后就需要跟服务器和安卓的同学约定好Emoji开始的字符和结束的字符就好了，我们的定义如下:</p>
+
+<div class="highlight"><pre><code class="c"><span class="cp">#define EmojiBegin                      0x02</span>
+<span class="cp">#define EmojiEnd                        0x03</span>
+</code></pre></div>
+
+<p>接下来就是解析工作了，还是很简单的，我是写了一个category来完成这些工作，代码如下:</p>
+
+<p>NSString+Emoji.h</p>
+
+<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
+<span class="c1">//  NSString+Emoji.h</span>
+<span class="c1">//  EmojiAdapter</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 14-8-11.</span>
+<span class="c1">//  Copyright (c) 2014年 EmojiAdapter. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &lt;Foundation/Foundation.h&gt;</span>
+
+<span class="k">@interface</span> <span class="nc">NSString</span> <span class="nl">(Emoji)</span>
+
+<span class="cm">/**</span>
+<span class="cm"> *  Encode a string contains emoji string to a string contains emoji filename.</span>
+<span class="cm"> *  Just encode each substring to filename, if it hs no associating filename, it will return nil.</span>
+<span class="cm"> *  @return the encoded string</span>
+<span class="cm"> */</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">encodeString</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> *  Decode the string contains file names to String contains emoji string.</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @return the result string</span>
+<span class="cm"> */</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">decodeString</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> *  Generate the encode dictionary to encode an emoji string to filename</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @return the encode dictionary</span>
+<span class="cm"> */</span>
+<span class="k">+</span> <span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nf">encodeDictionary</span><span class="p">;</span>
+
+<span class="k">@end</span>
+</code></pre></div>
+
+<p>NSString+Emoji.m</p>
+
+<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
+<span class="c1">//  NSString+Emoji.m</span>
+<span class="c1">//  EmojiAdapter</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 14-8-11.</span>
+<span class="c1">//  Copyright (c) 2014年 EmojiAdapter. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &quot;NSString+Emoji.h&quot;</span>
+<span class="cp">#import &quot;Emoji.h&quot;</span>
+
+<span class="cp">#define EmojiBegin 0x02</span>
+<span class="cp">#define EmojiEnd   0x03</span>
+
+<span class="k">@implementation</span> <span class="nc">NSString</span> <span class="nl">(Emoji)</span>
+
+<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">decodeString</span> <span class="p">{</span>
+    <span class="n">__block</span> <span class="kt">BOOL</span> <span class="n">isEmojiBegin</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">__block</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">emojiFileName</span> <span class="o">=</span> <span class="s">@&quot;&quot;</span><span class="p">;</span>      <span class="c1">//temp var to store the file name</span>
+    <span class="n">__block</span> <span class="n">NSMutableString</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSMutableString</span> <span class="n">stringWithString</span><span class="o">:</span><span class="s">@&quot;&quot;</span><span class="p">];</span>
+    
+    <span class="p">[</span><span class="n">self</span> <span class="n">enumerateSubstringsInRange</span><span class="o">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="n">self</span> <span class="n">length</span><span class="p">])</span>
+                               <span class="nl">options:</span><span class="n">NSStringEnumerationByComposedCharacterSequences</span> <span class="c1">//setperate as composed character</span>
+                            <span class="nl">usingBlock:</span><span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">substring</span><span class="p">,</span> <span class="n">NSRange</span> <span class="n">substringRange</span><span class="p">,</span> <span class="n">NSRange</span> <span class="n">enclosingRange</span><span class="p">,</span> <span class="kt">BOOL</span> <span class="o">*</span><span class="n">stop</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">utf8Str</span> <span class="o">=</span> <span class="p">[</span><span class="n">substring</span> <span class="n">UTF8String</span><span class="p">];</span>
+                                <span class="kt">char</span> <span class="n">aChar</span> <span class="o">=</span> <span class="p">[</span><span class="n">substring</span> <span class="n">characterAtIndex</span><span class="o">:</span><span class="mi">0</span><span class="p">];</span> <span class="c1">//a unicode substr&#39;s length is 2</span>
+                                <span class="k">if</span> <span class="p">(</span> <span class="n">aChar</span> <span class="o">==</span> <span class="n">EmojiBegin</span> <span class="o">&amp;&amp;</span> <span class="n">strlen</span><span class="p">(</span><span class="n">utf8Str</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span> <span class="c1">//卧槽，句号的unicode编码刚好第一个字符就是0x02</span>
+                                    <span class="n">isEmojiBegin</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
+                                <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">aChar</span> <span class="o">==</span> <span class="n">EmojiEnd</span> <span class="o">&amp;&amp;</span> <span class="n">strlen</span><span class="p">(</span><span class="n">utf8Str</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>   <span class="c1">//if it is in end</span>
+                                    <span class="n">isEmojiBegin</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span>
+                                    <span class="n">NSString</span> <span class="o">*</span><span class="n">emoji</span> <span class="o">=</span> <span class="p">[</span><span class="n">emojiFileName</span> <span class="n">decodeEmojiString</span><span class="p">];</span>    <span class="c1">//decode the filename</span>
+                                    <span class="k">if</span> <span class="p">(</span> <span class="n">emoji</span> <span class="o">!=</span> <span class="nb">nil</span> <span class="p">)</span> <span class="p">{</span>   <span class="c1">//if decode succ</span>
+                                        <span class="p">[</span><span class="n">result</span> <span class="n">appendString</span><span class="o">:</span><span class="n">emoji</span><span class="p">];</span>    <span class="c1">//add to result</span>
+                                    <span class="p">}</span>
+                                    <span class="n">emojiFileName</span> <span class="o">=</span> <span class="s">@&quot;&quot;</span><span class="p">;</span>    <span class="c1">//clear file name</span>
+                                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                                    <span class="k">if</span> <span class="p">(</span> <span class="n">isEmojiBegin</span> <span class="p">)</span> <span class="p">{</span>   <span class="c1">//the next substring is part of filename</span>
+                                        <span class="n">emojiFileName</span> <span class="o">=</span> <span class="p">[</span><span class="n">emojiFileName</span> <span class="n">stringByAppendingString</span><span class="o">:</span><span class="n">substring</span><span class="p">];</span>
+                                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>    <span class="c1">//the next substring is the normal string</span>
+                                        <span class="p">[</span><span class="n">result</span> <span class="n">appendString</span><span class="o">:</span><span class="n">substring</span><span class="p">];</span>
+                                    <span class="p">}</span>
+                                <span class="p">}</span>
+                            <span class="p">}];</span>
+    
+    <span class="k">return</span> <span class="p">[</span><span class="n">NSString</span> <span class="n">stringWithString</span><span class="o">:</span><span class="n">result</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> *  Decode a single file name to emoji string</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @return the decode emoji string</span>
+<span class="cm"> */</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">decodeEmojiString</span> <span class="p">{</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">plistName</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="p">[</span><span class="n">self</span> <span class="n">length</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="p">)</span> <span class="p">{</span> <span class="c1">//if the filename is valid</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="p">[</span><span class="n">self</span> <span class="n">characterAtIndex</span><span class="o">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;f&#39;</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="p">[</span><span class="n">self</span> <span class="n">characterAtIndex</span><span class="o">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;l&#39;</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="c1">//flower</span>
+                <span class="n">plistName</span> <span class="o">=</span> <span class="s">@&quot;EmojiFlower&quot;</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">//face</span>
+                <span class="n">plistName</span> <span class="o">=</span> <span class="s">@&quot;EmojiFace&quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="p">[</span><span class="n">self</span> <span class="n">characterAtIndex</span><span class="o">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;s&#39;</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="p">[</span><span class="n">self</span> <span class="n">characterAtIndex</span><span class="o">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;t&#39;</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="c1">//status</span>
+                <span class="n">plistName</span> <span class="o">=</span> <span class="s">@&quot;EmojiStatus&quot;</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">//symbol</span>
+                <span class="n">plistName</span> <span class="o">=</span> <span class="s">@&quot;EmojiSymbol&quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="p">[</span><span class="n">self</span> <span class="n">characterAtIndex</span><span class="o">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;m&#39;</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//meal</span>
+            <span class="n">plistName</span> <span class="o">=</span> <span class="s">@&quot;EmojiMeal&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">NSString</span> <span class="o">*</span><span class="n">filePath</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSBundle</span> <span class="n">mainBundle</span><span class="p">]</span> <span class="n">pathForResource</span><span class="o">:</span><span class="n">plistName</span> <span class="n">ofType</span><span class="o">:</span><span class="s">@&quot;plist&quot;</span><span class="p">];</span>
+        <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">decodeDict</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSDictionary</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="n">filePath</span><span class="p">];</span><span class="c1">//read the plist file</span>
+        <span class="n">NSInteger</span> <span class="n">emojiCode</span> <span class="o">=</span> <span class="p">[[</span><span class="n">decodeDict</span> <span class="n">objectForKey</span><span class="o">:</span><span class="n">self</span><span class="p">]</span> <span class="n">intValue</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Emoji</span> <span class="n">emojiWithCode</span><span class="o">:</span><span class="n">emojiCode</span><span class="p">];</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">@&quot;&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">+</span> <span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nf">encodeDictionary</span> <span class="p">{</span>
+    <span class="n">NSArray</span> <span class="o">*</span><span class="n">plistNames</span> <span class="o">=</span> <span class="p">@[</span><span class="s">@&quot;ToEmojiFace&quot;</span><span class="p">,</span> <span class="s">@&quot;ToEmojiFlower&quot;</span><span class="p">,</span> <span class="s">@&quot;ToEmojiStatus&quot;</span><span class="p">,</span> <span class="s">@&quot;ToEmojiSymbol&quot;</span><span class="p">,</span> <span class="s">@&quot;ToEmojiMeal&quot;</span><span class="p">];</span>
+    <span class="n">NSMutableDictionary</span> <span class="o">*</span><span class="n">toEmojiDict</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSMutableDictionary</span> <span class="n">dictionary</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">pName</span> <span class="k">in</span> <span class="n">plistNames</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSString</span> <span class="o">*</span><span class="n">filePath</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSBundle</span> <span class="n">mainBundle</span><span class="p">]</span> <span class="n">pathForResource</span><span class="o">:</span><span class="n">pName</span> <span class="n">ofType</span><span class="o">:</span><span class="s">@&quot;plist&quot;</span><span class="p">];</span>
+        <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSDictionary</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="n">filePath</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">toEmojiDict</span> <span class="n">addEntriesFromDictionary</span><span class="o">:</span><span class="n">dict</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">toEmojiDict</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">encodeString</span> <span class="p">{</span>
+    
+    <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">toEmojiDict</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="n">encodeDictionary</span><span class="p">];</span>
+    
+    <span class="n">__block</span> <span class="n">NSMutableString</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSMutableString</span> <span class="n">stringWithString</span><span class="o">:</span><span class="s">@&quot;&quot;</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">self</span> <span class="n">enumerateSubstringsInRange</span><span class="o">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="n">self</span> <span class="n">length</span><span class="p">])</span>
+                             <span class="nl">options:</span><span class="n">NSStringEnumerationByComposedCharacterSequences</span>
+                          <span class="nl">usingBlock:</span><span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">substring</span><span class="p">,</span> <span class="n">NSRange</span> <span class="n">substringRange</span><span class="p">,</span> <span class="n">NSRange</span> <span class="n">enclosingRange</span><span class="p">,</span> <span class="kt">BOOL</span> <span class="o">*</span><span class="n">stop</span><span class="p">)</span> <span class="p">{</span>
+                              <span class="n">NSString</span> <span class="o">*</span><span class="n">encodeStr</span> <span class="o">=</span> <span class="n">toEmojiDict</span><span class="p">[</span><span class="n">substring</span><span class="p">];</span>
+                              <span class="n">encodeStr</span> <span class="o">=</span> <span class="n">encodeStr</span> <span class="o">==</span> <span class="nb">nil</span> <span class="o">?</span> <span class="n">substring</span> <span class="o">:</span> <span class="p">[</span><span class="n">encodeStr</span> <span class="n">encodeEmojiString</span><span class="p">];</span>
+                              <span class="p">[</span><span class="n">result</span> <span class="n">appendString</span><span class="o">:</span><span class="n">encodeStr</span><span class="p">];</span>
+                          <span class="p">}];</span>
+    
+    <span class="k">return</span> <span class="p">[</span><span class="n">NSString</span> <span class="n">stringWithString</span><span class="o">:</span><span class="n">result</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> *  Encode emoji string with a prefix and a postfix</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @return the encoded emoji string</span>
+<span class="cm"> */</span>
+<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">encodeEmojiString</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">NSString</span> <span class="n">stringWithFormat</span><span class="o">:</span><span class="s">@&quot;%c%@%c&quot;</span><span class="p">,</span><span class="n">EmojiBegin</span><span class="p">,</span> <span class="n">self</span><span class="p">,</span> <span class="n">EmojiEnd</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</code></pre></div>
+
+<p>这样子，就可以在需要写数据库和发送网络的时候调用
+<code>
+someChatMsg = [someChatMsg encodeString];
+</code></p>
+
+<p>然后在想要显示UI的部分调用
+<code>
+someChatMsg = [someChatMsg decodeString];
+</code></p>
+
+<p>而且，在Emoji.m里为每个Emoji查找一次看有没有对应的文件名来筛选出可以在iOS跟安卓通用的Emoji表情啦！完整的项目Demo在<a href="https://github.com/JeasonGeorge/EmojiAdapter">这里</a></p>
+
+<h2 id="section-2">补充一句</h2>
+<p>为什么要筛选只有180个表情呢，因为发现不论是手Q还是微信还是自带的Emoji键盘，它都是每行有7个表情，一页有3行，最后一个是删除键，这样子180个表情就有180 ／ （7*3-1） ＝ 9页啦，所以180个已经是非常足够了的，太多页也会让用户失去耐心~</p>
+
+                        <br>
+                    <span class="entry-tags">
+                    <p>
+                        <i class="icon-tags"></i>&nbsp;Tagged with IOS Developer
+                    </p>
+                    </span>
+                    </div>
+        </div>
+                    <footer class="post-footer entry-meta">
+                        
+                        <div class="post-author text-center">                       
+	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
+</div> 
+                        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+                    </footer>
+            </article>
+    </div>
+</div>
+
+
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/emoji.jpg)" >
+
+
+    <div class="inner">
+        <div class="container">
+
+            <ul class="social-icons">
+            
+            
+            
+            
+            
+            <li>
+                <a href="http://weibo.com/u/2966878797" data-toggle="tooltip" title="Jeason George on Sina Weibo" target = "_blank">
+                    <i class="icon-weibo"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="http://github.com/izhuxin" data-toggle="tooltip" title="Jeason George on Github" target="_blank">
+                    <i class="icon-github"></i>
+                </a>
+            </li>
+            <li><a href="http://localhost:4000/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+                    <i class="icon-rss"></i>
+                </a>
+            </li>
+
+        </ul>
+            <p class="copy-text">
+                <a href="http://localhost:4000/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+            </p>
+
+            <ul class="menu-items">
+            
+            <li>
+                
+                    <a href="http://localhost:4000/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
+                 
+            </li>
+            
+            <li class="dosearch"><i class="icon-search"></i> 站内搜索</li>
+        </ul>
+        </div>
+    </div>
+    
+        <div class="decor-wrapper">
+            <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+                <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+                <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+                <path class="medium left" d="M0 0 L50 50 L0 66.6" fill="rgba(255,255,255, .3)"></path>
+                <path class="medium right" d="M100 0 L50 50 L100 66.6" fill="rgba(255,255,255, .3)"></path>
+
+                <path class="small left" d="M0 0 L50 50 L0 33.3" fill="rgba(255,255,255, .5)"></path>
+                <path class="small right" d="M100 0 L50 50 L100 33.3" fill="rgba(255,255,255, .5)"></path>
+
+                <path d="M0 0 L50 50 L100 0 L0 0" fill="rgba(255,255,255, 1)"></path>
+
+                <path d="M48 48 L50 51 L52 48 L48 48" fill="rgba(255,255,255, 1)"></path>
+
+            </svg>
+        </div>
+    
+</footer>
+
+    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/script.js"></script>
+
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://localhost:4000/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-48042789-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'Jeason'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+</body>
+</html>
