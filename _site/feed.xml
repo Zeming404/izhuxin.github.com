@@ -4,13 +4,81 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-08-31T10:57:46+08:00</updated>
+<updated>2014-10-05T23:21:36+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Jeason George</name>
   <uri>http://localhost:4000/</uri>
   <email>sysu.ss.jeason@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[算法课程解题之动态规划]]></title>
+  <link>http://localhost:4000/blog/%E7%AE%97%E6%B3%95%E8%AF%BE%E7%A8%8B%E8%A7%A3%E9%A2%98%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92</link>
+  <id>http://localhost:4000/blog/算法课程解题之动态规划</id>
+  <published>2014-10-01T00:00:00+08:00</published>
+  <updated>2014-10-01T00:00:00+08:00</updated>
+  <author>
+    <name>Jeason George</name>
+    <uri>http://localhost:4000</uri>
+    <email>sysu.ss.jeason@gmail.com</email>
+  </author>
+  <content type="html">&lt;section&gt;
+  &lt;header&gt;
+    &lt;h2&gt;目录&lt;/h2&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot;&gt;入门级&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#sicily-1176-two-ends&quot;&gt;1. Sicily 1176. Two Ends&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;入门级&lt;/h2&gt;
+
+&lt;h4 id=&quot;sicily-1176-two-ends&quot;&gt;1. Sicily 1176. Two Ends&lt;/h4&gt;
+
+&lt;p&gt;两个人从两边拿卡片，自顶向下的DP, &lt;a href=&quot;soj.me/1176&quot;&gt;出处&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;大概是说两个人从一堆有2K个卡片的卡堆里拿卡片，一个人可以用任意策略（先手），另一个人固定使用贪心策略，求两人获得分数的最大差。&lt;/p&gt;
+
+&lt;p&gt;核心算法大概如下:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;从&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;到&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;所取得的最大分数&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;当&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;＝&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;，&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;＝&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;－&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;时为解&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cards&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//player 取left&lt;/span&gt;
+	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scoreLeft&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;c1&quot;&gt;//AI 取left+1&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;scoreLeft&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;c1&quot;&gt;//AI 取right&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;scoreLeft&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;	
+	&lt;span class=&quot;c1&quot;&gt;//player 取right&lt;/span&gt;
+	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rightScore&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;....&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//同理&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;因为其实数据会比较大，直接递归求解会超时，所以用DP，把&lt;code&gt;子问题的解先保存起来，然后每次要求子问题的解的时候，先看看之前有没有解过&lt;/code&gt;，用空间（保存子问题的解）来交换时间。&lt;/p&gt;
+
+&lt;p&gt;具体代码如下:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/izhuxin/879fb43aff1b1248636c.js&quot;&gt;&lt;/script&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/%E7%AE%97%E6%B3%95%E8%AF%BE%E7%A8%8B%E8%A7%A3%E9%A2%98%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&quot;&gt;算法课程解题之动态规划&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; October 01, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -36,7 +104,7 @@
 &lt;h2 id=&quot;section-1&quot;&gt;我的方案&lt;/h2&gt;
 &lt;p&gt;我想到安卓的同学之所以没办法搞到Apple Color Emoji的编码表，是因为这个字体只在苹果系上才有，所以不如我来搞定那个编码表吧，把Emoji的unicode编码和图片对应起来，然后在每次Model传数据给View的时候，将图片名解析成unicode编码，然后在保存至Model的时候将unicode编码转换成图片名就好了，这样子只需要设置字体的大小就能控制emoji表情的大小了，而且以前的代码几乎不用修改。&lt;/p&gt;
 
-&lt;p&gt;方法很简单，但就是花时间，所以才特地整理了这篇文章可以省大家的力气。我先是将所有的emoji Code和Emoji表情打印到&lt;a href=&quot;https://gist.github.com/732bc2b5f7dca13fe630.git&quot;&gt;文件&lt;/a&gt;里，然后跟图片文件进行比对，整理出了他们的&lt;a href=&quot;https://gist.github.com/b812ab0bf87093907e26.git&quot;&gt;映射表&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;方法很简单，但就是花时间，所以才特地整理了这篇文章可以省大家的力气。我先是将所有的emoji Code和Emoji表情打印到&lt;a href=&quot;https://gist.github.com/732bc2b5f7dca13fe630&quot;&gt;文件&lt;/a&gt;里，然后跟图片文件进行比对，整理出了他们的&lt;a href=&quot;https://gist.github.com/b812ab0bf87093907e26&quot;&gt;映射表&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;然后就需要跟服务器和安卓的同学约定好Emoji开始的字符和结束的字符就好了，我们的定义如下:&lt;/p&gt;
 
@@ -219,7 +287,7 @@ someChatMsg = [someChatMsg encodeString];
 someChatMsg = [someChatMsg decodeString];
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;而且，在Emoji.m里为每个Emoji查找一次看有没有对应的文件名来筛选出可以在iOS跟安卓通用的Emoji表情啦！完整的项目Demo在&lt;a href=&quot;https://github.com/JeasonGeorge/EmojiAdapter&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;而且，在Emoji.m里为每个Emoji查找一次看有没有对应的文件名来筛选出可以在iOS跟安卓通用的Emoji表情啦！完整的项目Demo在&lt;a href=&quot;https://github.com/izhuxin/EmojiAdapter&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;补充一句&lt;/h2&gt;
 &lt;p&gt;为什么要筛选只有180个表情呢，因为发现不论是手Q还是微信还是自带的Emoji键盘，它都是每行有7个表情，一页有3行，最后一个是删除键，这样子180个表情就有180 ／ （7*3-1） ＝ 9页啦，所以180个已经是非常足够了的，太多页也会让用户失去耐心~&lt;/p&gt;
@@ -468,31 +536,6 @@ someChatMsg = [someChatMsg decodeString];
 &lt;p&gt;至此，总算是可以开始用Java大干一场来开发东西啦，当然本文没有详细地介绍各个工具安装和使用的步骤，只是简单总结一下Java开发需要配置的东西，剩下的就靠大家自己去搜索解决吧(´･_･`)。&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Java%2BIntro&quot;&gt;Java开发入门&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; August 04, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Agenda项目设计思想与部分实现]]></title>
-  <link>http://localhost:4000/blog/Agenda</link>
-  <id>http://localhost:4000/blog/Agenda</id>
-  <published>2014-06-30T00:00:00+08:00</published>
-  <updated>2014-06-30T00:00:00+08:00</updated>
-  <author>
-    <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
-    <email>sysu.ss.jeason@gmail.com</email>
-  </author>
-  <content type="html">&lt;section&gt;
-  &lt;header&gt;
-    &lt;h1&gt;目录&lt;/h1&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-
-
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Agenda&quot;&gt;Agenda项目设计思想与部分实现&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; June 30, 2014.&lt;/p&gt;</content>
 </entry>
 
 

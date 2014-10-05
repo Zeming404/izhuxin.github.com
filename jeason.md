@@ -28,6 +28,6 @@ image:
 - 如果大家对文章有什么疑惑的话，欢迎在文章后面的评论中与我交流。在页面下面也有我的联系方式。
 
 <div class="span7 text-center" markdown="0">
-<a markdown="0" href="http://www.sysu.edu.cn/2012/cn/zdgk/zdgk01/index.htm" class="btn btn-danger btn-large">  中大简介</a> <a markdown="0" href="http://ss.sysu.edu.cn" class="btn btn-success btn-large">	 中大软院</a> <a markdown="0" href="http://www.applesysu.com/products/home.html" class="btn btn-info btn-large"> SYSU APPLE CLUB</a></div> 
+<a markdown="0" href="http://www.sysu.edu.cn/2012/cn/zdgk/zdgk01/index.htm" class="btn btn-danger btn-large">  中大简介</a> <a markdown="0" href="http://ss.sysu.edu.cn" class="btn btn-success btn-large">	 中大软院</a> <a markdown="0" href="http://www.applesysu.com/products/home.html" class="btn btn-info btn-large"> SYSU APPLE CLUB</a></div>
 <br>
 <br>
