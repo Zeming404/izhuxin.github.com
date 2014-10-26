@@ -4,11 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<<<<<<< HEAD
-<updated>2014-10-26T15:32:27+08:00</updated>
-=======
-<updated>2014-10-05T23:21:36+08:00</updated>
->>>>>>> FETCH_HEAD
+<updated>2014-10-26T18:52:40+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Jeason George</name>
@@ -45,7 +41,7 @@
 
 &lt;h2 id=&quot;section&quot;&gt;入门级&lt;/h2&gt;
 
-&lt;h4 id=&quot;sicily-1176-two-ends&quot;&gt;1. Sicily 1176. Two Ends&lt;/h4&gt;
+&lt;h3 id=&quot;sicily-1176-two-ends&quot;&gt;1. Sicily 1176. Two Ends&lt;/h3&gt;
 
 &lt;p&gt;两个人从两边拿卡片，自顶向下的DP, &lt;a href=&quot;soj.me/1176&quot;&gt;出处&lt;/a&gt;.&lt;/p&gt;
 
@@ -544,11 +540,7 @@ someChatMsg = [someChatMsg decodeString];
 
 
 <entry>
-<<<<<<< HEAD
   <title type="html"><![CDATA[Swift的面向对象和面向函数的程序设计]]></title>
-=======
-  <title type="html"><![CDATA[Swift简介]]></title>
->>>>>>> FETCH_HEAD
   <link>http://localhost:4000/blog/Intro%2BSwift</link>
   <id>http://localhost:4000/blog/Intro+Swift</id>
   <published>2014-06-10T00:00:00+08:00</published>
@@ -580,6 +572,7 @@ someChatMsg = [someChatMsg decodeString];
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-8&quot;&gt;扩展的概念&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#hw-assignment&quot;&gt;HW Assignment&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
   &lt;/div&gt;
@@ -617,6 +610,13 @@ someChatMsg = [someChatMsg decodeString];
 &quot;
 &lt;small&gt;&lt;cite title=&quot;Jeason&quot;&gt;引用自我之前的文章&lt;/cite&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;Swift中对闭包也有了自己的实现，swift中闭包的写法是非常灵活的，一种最为中规中矩的写法就是：
+&lt;script src=&quot;https://gist.github.com/izhuxin/9d1b26cf1bf841af0841.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看到，sort接受的参数是一个函数，而我们则可以传入一个闭包，由花括号括起来的部分，接下来的下一行是闭包的行参和它的返回值，in关键词后面的则对应了函数的函数体，这种写法，除了闭包是匿名的之外，其他的跟函数的写法都是一一对应的，当然你可以写的更加风骚一点，比如像这样：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;let sortedStrings = animals.sorted({ $0 &amp;gt; $1 })&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-4&quot;&gt;类的概念&lt;/h2&gt;
 
@@ -668,6 +668,18 @@ someChatMsg = [someChatMsg decodeString];
 &lt;/code&gt;，而这两次的实际执行的代码是不一样的。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-8&quot;&gt;扩展的概念&lt;/h2&gt;
+
+&lt;p&gt;如果你之前学过Objective-C,那么你应该知道有Category这个概念，它可以扩展一些类（包括库的类），为这些类增加一些方法。同时，Objective－C也有protocol的概念，它提供了一种类似于Java的Interface的概念。一个类可以选择实现一个或者多个protocol。这些Protocol的代码会导致一个类变得非常臃肿，为此我们常常需要分离一些代码来分别实现这些协议来脱耦合，详细请看objc.io的&lt;a href=&quot;http://www.objc.io/issue-1&quot;&gt;#isssue1&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;而在Swift中，这两个概念则被联系到了一起：为一个Class增加扩展，这个扩展可以是某个协议的实现。当然了，扩展也可以不实现任何协议，就只是为类增加某些方法和属性（这一点跟Category只能增加方法不同）。来看一个具体的实例吧：
+&lt;script src=&quot;https://gist.github.com/izhuxin/5f5775933f3c34277dbb.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;在Swift中， protocol以@objc protocol开头，之后跟着的是协议的名字，花括号里面的是具体的方法接口
+当我们希望某个类来实现这个协议时，可以用extension来扩展它的时候在类名后面加上“: ‘protocol’ ”然后再提供一些接口的方法就好了。当然，这不是唯一的方式，只是有了extension可以让我们很方便地把协议相关的代码分离出来，使逻辑更加清晰。&lt;/p&gt;
+
+&lt;h2 id=&quot;hw-assignment&quot;&gt;HW Assignment&lt;/h2&gt;
+
+&lt;p&gt;完成《Swift By Tutorials》第三章的Demo&lt;/p&gt;
 
 
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Intro%2BSwift&quot;&gt;Swift的面向对象和面向函数的程序设计&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; June 10, 2014.&lt;/p&gt;</content>

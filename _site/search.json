@@ -25,11 +25,7 @@
 		} ,
 	
 		{
-<<<<<<< HEAD
 		  "title"      : "Swift的面向对象和面向函数的程序设计",
-=======
-		  "title"      : "Swift简介",
->>>>>>> FETCH_HEAD
 		  "category"   : "blog",
 		  "url"        : "http://localhost:4000/blog/Intro%2BSwift",
 		  "date"       : "2014-06-10 00:00:00 +0800",
