@@ -17,15 +17,7 @@
 		} ,
 	
 		{
-		  "title"      : "Agenda项目设计思想与部分实现",
-		  "category"   : "blog",
-		  "url"        : "http://localhost:4000/blog/Agenda",
-		  "date"       : "2014-06-30 00:00:00 +0800",
-		  "shortdate"  : "June 30, 2014"
-		} ,
-	
-		{
-		  "title"      : "Swift简介",
+		  "title"      : "Swift的面向对象和面向函数的程序设计",
 		  "category"   : "blog",
 		  "url"        : "http://localhost:4000/blog/Intro%2BSwift",
 		  "date"       : "2014-06-10 00:00:00 +0800",

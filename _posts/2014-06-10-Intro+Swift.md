@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Swift简介"
+title: "Swift的面向对象和面向函数的程序设计"
 description: ""
 category: blog
 tags: [IOS Developer]
@@ -11,7 +11,7 @@ diary: 今年6月3日，Apple发布了新的语言－－Swift，一下子周围�
 
 mathjax: 
 ---
-今年6月3日，Apple发布了新的语言－－Swift，一下子周围的兄弟都欢腾了＝＝我也要搞搞动静才行，应邀去给师弟师妹吹水关于Swift的介绍，所以就想先把忽悠的内容写一下。这里所讲的只是我的个人理解，而且非常的不详细，如果有明显错误，希望大家能指出来。
+本文假设你已经对Swift的基本的数据类型，变量等都有一定的了解，有过面向对象和面向函数的编程经验自然是最好的了。
 
 <section>
   <header>
@@ -23,80 +23,104 @@ mathjax:
 </div>
 </section>
 
-##概述
+##函数的概念
 
-- Swift，按照Apple的说法，其主要是为了替代年老的Objective－C，集合了众多现代语言的特性之后创造出来的一门新的语言。在语法方面，Swift 迁移到了业界公认的非常先进的语法体系，其中包含了闭包，多返回，泛型和大量的函数式编程的理念，函数也终于成为一等公民可以作为变量保存了（虽然具体实现和用法上来看和 js 那种传统意义的好像不太一样）。初步看下来语法上借鉴了很多 Ruby 的人性化的设计，但是借助于 Apple 自己手中 强大的 LLVM，性能上必须要甩开 Ruby 不止一两个量级。
+首先我们先来看看Swift的函数的概念。函数是把一段操作（包括定义变量，以及对这些变量进行其他函数操作）封装起来的黑盒子。黑盒子的左边是输入的参数，盒子的右边是函数的返回值。所以，在面向函数的程序设计里，会把一个个函数作为我们编程的单元，用这些函数来构建出我们的程序。我们可以来看看一个函数的写法：（你可以打开的playground然后输入下面的代码）
+<script src="https://gist.github.com/izhuxin/28f79cf5ed077c0e7a8c.js"></script>
 
-- Apple称这不是脚本语言，因为所以Swift代码都会被LLVM 编译为 native code，运行效率极高（速度是python的9倍）。但我更想把它当作脚本语言来对待，因为它可以一行代码就表示为一个完整的程序，而且在Playground里可以支持实时编译甚至实时运行！
+每个函数都有func关键词作为开头，来表明接下来的是一个函数的定义，接下来是函数的名字，之后由括号括起来的是函数的行参以及其类型，之后由肩头指向函数的返回值，最后由花括号讲函数体括起来，而函数体将会在执行到return语句时停止。
 
-- Swift可以跟C，Objective－C一起和谐的相处，我想这是因为作为一门新语言，bug肯定多，所以还需要长辈帮一把。但是，不同于 objc 和 c++ 或者 c 在同一个 .mm 文件中的混编，swift 文件不能和 objc 代码写在同一个文件中，你需要将两种代码分开
+###函数是一等公民
 
-##编写一个类
+在Swift（以及其他支持函数式编程的语言）中，函数可以赋予给一个变量，可以把它们传给其他函数或者从其他函数返回（想想一个函数的返回值是一个函数，学过Haskell的你应该不会陌生）。
 
-枯燥的语法学起来实在是无味，所以还是打算从一个完整的类的编写来概述其语法（本来swift是为了让青年人能更好的从0开始学编程，但是本文还是很不识趣的默认读者至少学过一种编程语言，理解面向对象的思想）。
+###函数的类型
+
+函数的类型由函数的参数个数，参数类型和它的返回类型共同决定。比如刚才的square函数，它的类型表示为(Double) -> Double，
+
+###External parameter names(我英文不好，翻译不出来..)
+
+如果你是Objective-C的粉丝，那么你肯定喜欢Objective-C那种一拿上来一个函数就可以用英文读出来的感觉。而C/C++的函数则显得比较难懂一些，Swift作为C语言的一个超集，既可以像C语言一样调用函数，又可以用External parameter names的方式来使函数可以像在OC中一样易读懂，来看看下面这个例子：
+<script src="https://gist.github.com/izhuxin/0e8fa3f71d10eea68130.js"></script>
+
+嘿，你会发现在你不查看函数定义之前，你根本不知道是谁减谁，而使用了External parameter names的方式则允许你使用下面这样的方式来调用：
+<script src="https://gist.github.com/izhuxin/4d927aed685f3ab4f871.js"></script>
+
+这是我觉得最酷的方式，因为你只需要在行参前面加上一个#号。当然你也可以用其他的方式来使用External parameter names，详情参考Apple的Swift Tutorial，这里就不再赘述啦。
+
+##匿名函数－－闭包
+>&quot;Block其实是iOS里封装提供出来的函数闭包的概念，它是在iOS4以后被提出来取代delegate和call back模式的一种新的概念。
+ 对于闭包（block),有很多定义，其中闭包就是能够读取其它函数内部变量的函数，这个定义即接近本质又较好理解。对于刚接触Block的同学，会觉得有些绕，因为我们习惯写这样的程序main(){ funA();} funA(){funB();} funB(){.....}; 就是函数main调用函数A，函数A调用函数B... 函数们依次顺序执行，但现实中不全是这样的，例如Jeason在团队里是个PM的角色，手下有3个程序员：经纶、经伦、径伦，当他给经伦安排实现功能F1时，他并不等着经伦完成之后，再去安排经纶去实现F2，而是安排给经纶功能F1，经伦功能F2，径伦功能F3，然后安排完了去约会，而当经伦遇到问题时，他会来找jeason，当经伦做完时，会通知jeason，这就是一个异步执行的例子。在这种情形下，Block便可大显身手，因为在Jeason给经伦安排工作时，同时会告诉经伦若果遇到困难，如何能找到他报告问题（例如打他手机号），这就是jeason给经伦的一个回调接口，要回调的操作，比如接到电话，百度一下后，返回网页内容给经伦，这就是一个Block，在jeason交待工作时，已经定义好，并且取得了F1的任务号（局部变量），却是在当经伦遇到问题时，才调用执行。block在多线程编程和函数式编程（并不是函数式的语言才能面向函数的编程＝。＝）里都有着重要的应用，想对block更进一步了解的同学，可以看看唐巧的[这篇博文](http://blog.devtang.com/blog/2013/07/28/a-look-inside-blocks/);
+&quot;
+><small><cite title="Jeason">引用自我之前的文章</cite></small>
+
+Swift中对闭包也有了自己的实现，swift中闭包的写法是非常灵活的，一种最为中规中矩的写法就是：
+<script src="https://gist.github.com/izhuxin/9d1b26cf1bf841af0841.js"></script>
+
+可以看到，sort接受的参数是一个函数，而我们则可以传入一个闭包，由花括号括起来的部分，接下来的下一行是闭包的行参和它的返回值，in关键词后面的则对应了函数的函数体，这种写法，除了闭包是匿名的之外，其他的跟函数的写法都是一一对应的，当然你可以写的更加风骚一点，比如像这样：
+
+<code>let sortedStrings = animals.sorted({ $0 > $1 })</code>
+
+##类的概念
+
+类的定义有点多，我们可以简单的把类理解为将函数和变量捆绑起来的一种结构，它封装了某个具体的事物的属性以及它能执行的操作。在面向对象的程序设计里，我们会把一个个的类作为我们编程的单元，用这些类的实例（也就是对象）来构建出我们的程序。我们可以来看看一个类的写法：（同样的，在playground里键入下面的代码）
+<script src="https://gist.github.com/izhuxin/7c408694ff9b4f3d2001.js"></script>
+
+每个类都由class关键词开头，之后的便是类名，括号里面的是类的body。就像刚才说的，类的body由一些成员函数和成员变量（我们姑且把常量和变量一起笼统的称为成员
+变量）组成。其中，每个类都有一个init成员函数，它类似于C++里面的默认构造函数，在这里我们可以对类的成员变量进行初始化。当然你也可以定义其他的构造函数，这时候就要加上一个convenience关键词，并且在这些函数里面调用默认构造函数。而当我们要使用这些类来编程时，就需要创建一个实例，并且调用它里面的方法。
 
 {% highlight javascript %}
-//0
-class Page {
-    //1
-    var data = Character[]()
-    
-    //2
-    let size: Int
-    
-    //3
-    init( size:Int ){
-        self.size = size
-    }
-    
-    //4
-    func insertData( otherdata:Array<Character> ) -> Bool {
-        var success = false
-        //5
-        if self.data.count + otherdata.count > self.size {
-            println( "Insert fail: \(self.data.count - self.size) bytes exceed!" )
-        } else {
-            //6
-            for i in 0..otherdata.count {
-                data += otherdata[i]
-            }
-            //data += otherdata
-            success = true
-        }
-        return success
-    }
-    
-}
-
-func test() {
-    //7
-    let testPage = Page( size: 4 * 1024 )
-    let helloArray:Array<Character> = ["h","e","l","l","o"]
-    var success = testPage.insertData( helloArray )
-    while success { //8
-        success = testPage.insertData( helloArray )
-    }
-}
-
+一个本人的小理解：其实我们会发现面向对象和面向函数的最本质区别就是抽象的层次不一样，类的复用很明显比函数的复用要局限的多，比如Treasure类只能用于有关“宝藏”这一级的抽象，而square则可以用于任意层次的抽象，比如某个“几何形的宝藏”，比如寻找的“路径”等等。
 {% endhighlight %}
 
-0, 我们可以看到，定义一个类是class关键字＋类名再加一对大括号组成的（这里跟C＋＋的区别就是最后没有分号
+当然，我们刚才对类的简单定义是不够的，如果你有学过C++，那你应该知道struct也是一种可以把函数和变量捆绑起来的一种结构。事实上，我们完全可以将上面的代码改写成：
+<script src="https://gist.github.com/izhuxin/3935a5d3d0a28ab85255.js"></script>
 
-1， 在swift里定义一个变量就跟在js里是一样的，支持像这样的隐式地确定变量类型
+没错，这仅仅是把class关键词改成struct关键词而已。而作为类，还有另外一些基于面向对象的特性，这些事struct所没有的，接下来我们就一一介绍：
 
-2， let关键字相当于定义了一个常量，不论变量还是常量，可以用":+类型名“来显式地指定类型，但这里的常量没有赋初值，所以会有提示语法错误，只有我们在后面对它赋了初值才会认为语法正确。Swift里的变量/常量的常用类型包括：Bool，Character， Int， Double，String， Array， Dictionary等等 
+###访问控制
 
-3， 每个类都会有一个init方法（如果你有OC经验自然是不必说，若果没有的话，这可以看作有点类似于C＋＋的构造函数）Swift里函数接受参数的格式是“参数名：类型”这样，在init方法里可以对之前定义的一些变量和常量赋值
+如果你之前学过C++或者Java，那你应该会知道类的每个成员都有访问控制的关键词来指明它可以被什么对象来访问，在Swift里面，有三种访问控制关键词：
 
-4， swift里定义一个函数是一func关键字开头的，除了接受参数以外，其还有一个返回类型，通过“->＋类型名”来指定
+- Public: 任何的代码都可以获得这个成员的访问权
 
-5， swift里的条件判断包括if，switch，if的写法跟C里的区别就只是少了一对圆括号而已
+- Internal: 只有在同一个进程里的代码可以获得它的访问权（default）
 
-6， swift里的循环包括了for，while等，for的写法多种多样，这里是用了“for something in Array”这样的写法，0..otherData.count 相当于是定义了一个［0，otherData.count）的数组。而0...otherData.count－1则是定义了一个［0，otherData.count－1］的数组
+- Private: 只有在同一个文件里的代码可以获得它的访问权（打开playground，在describe前面加上private试试，结果是不是跟你预期的不太一样呢？）
 
-7,  定义一个类的实例，就跟普通的常量，变量没有太大区别，就是要在初始化时指定哪个形参接受的实参。
+###继承
 
-8,  while循环，跟C里的却别就只是少了一对圆括号而已
+我们可以用一个类来继承另外一个类，从而获得它的成员变量和成员函数，同时还可以增加新的成员变量，成员函数，或者是重写旧的成员函数，像下面所示：(打开playground，在刚才的地方后面加入以下代码)
+<script src="https://gist.github.com/izhuxin/0ddeb7aca59a4aebce8a.js"></script>
 
-##小结
-好吧，通过刚才的学习，你大概看到了一个完整的类的写法，我觉得这种方法最为直观，当然就是非常的不全面，对于学习一门语言来说会比较的不系统，如果你是打算从头开始好好研究这门的语言的话，Apple的[这门教程](https://itunes.apple.com/us/book/swift-programming-language/id881256329?mt=11&uo=8&at=11ld4k&uo=8&at=11ld4k&uo=8&at=11ld4k)会非常适合你。
+当我们想要指明A类继承自B类时，只需要在A类名后面加上“: B”即可，当我们需要重写B类的一些方法时，需要在func前面加上override的关键词，当我们要在类内决定调用的是子类的函数，还是父类的函数时，则可以用self和super来指明。
+
+继承是一种“is-a”的关系，比如我们想要描述动物园里的各种动物，我们有一个类称为“Animal”，它封装了动物的吃喝拉撒睡等一般行为。为了描述🐒这个具体的动物的其他行为，我们可以编写一个类“Monkey”继承自“Animal”，这个Monkey是动物的一种，所以我们说 Monkey is an Animal.因此，在Swift中，Animal的reference即可以指Animal实例，又可以指Monkey实例。
+
+###多态和动态绑定
+
+上面说到的现象称为多态，即对于一个父类的方法（虚函数），每个子类可以有自己的实现方式。而且当由父类的reference或者是pointer来调用这个方法时，具体执行哪个实现方式，则是在运行时决定的。写成代码如下：(打开playground，在刚才的地方后面加入以下代码)
+<script src="https://gist.github.com/izhuxin/5319ea4351be9a6bf1e7.js"></script>
+
+在这里，我们调用了两次<code>basic.describe()
+</code>，而这两次的实际执行的代码是不一样的。
+
+##扩展的概念
+
+如果你之前学过Objective-C,那么你应该知道有Category这个概念，它可以扩展一些类（包括库的类），为这些类增加一些方法。同时，Objective－C也有protocol的概念，它提供了一种类似于Java的Interface的概念。一个类可以选择实现一个或者多个protocol。这些Protocol的代码会导致一个类变得非常臃肿，为此我们常常需要分离一些代码来分别实现这些协议来脱耦合，详细请看objc.io的[#isssue1](http://www.objc.io/issue-1)。
+
+而在Swift中，这两个概念则被联系到了一起：为一个Class增加扩展，这个扩展可以是某个协议的实现。当然了，扩展也可以不实现任何协议，就只是为类增加某些方法和属性（这一点跟Category只能增加方法不同）。来看一个具体的实例吧：
+<script src="https://gist.github.com/izhuxin/5f5775933f3c34277dbb.js"></script>
+
+在Swift中， protocol以@objc protocol开头，之后跟着的是协议的名字，花括号里面的是具体的方法接口
+当我们希望某个类来实现这个协议时，可以用extension来扩展它的时候在类名后面加上“: ‘protocol’ ”然后再提供一些接口的方法就好了。当然，这不是唯一的方式，只是有了extension可以让我们很方便地把协议相关的代码分离出来，使逻辑更加清晰。
+
+##HW Assignment
+
+完成《Swift By Tutorials》第三章的Demo
+
+
+
+
+
+

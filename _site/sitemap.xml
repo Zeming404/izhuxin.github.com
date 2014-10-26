@@ -27,10 +27,6 @@
     </url>
     
     <url>
-        <loc>http://localhost:4000/blog/Agenda</loc>
-    </url>
-    
-    <url>
         <loc>http://localhost:4000/blog/Intro%2BSwift</loc>
     </url>
     
