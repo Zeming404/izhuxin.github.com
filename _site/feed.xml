@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-10-26T18:52:40+08:00</updated>
+<updated>2014-10-30T11:41:24+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Jeason George</name>
@@ -14,11 +14,11 @@
 
 
 <entry>
-  <title type="html"><![CDATA[算法课程解题之动态规划]]></title>
-  <link>http://localhost:4000/blog/%E7%AE%97%E6%B3%95%E8%AF%BE%E7%A8%8B%E8%A7%A3%E9%A2%98%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92</link>
-  <id>http://localhost:4000/blog/算法课程解题之动态规划</id>
-  <published>2014-10-01T00:00:00+08:00</published>
-  <updated>2014-10-01T00:00:00+08:00</updated>
+  <title type="html"><![CDATA[嵌入式系统结构设计报告(一)]]></title>
+  <link>http://localhost:4000/blog/SOJ1151</link>
+  <id>http://localhost:4000/blog/SOJ1151</id>
+  <published>2014-10-29T00:00:00+08:00</published>
+  <updated>2014-10-29T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
     <uri>http://localhost:4000</uri>
@@ -30,8 +30,19 @@
   &lt;/header&gt;
 &lt;div id=&quot;drawer&quot;&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot;&gt;入门级&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#sicily-1176-two-ends&quot;&gt;1. Sicily 1176. Two Ends&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot;&gt;实验目的&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-1&quot;&gt;实验内容&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-2&quot;&gt;实验结果&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#rtl&quot;&gt;RTL电路图:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-3&quot;&gt;仿真波形图&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-4&quot;&gt;开发板显示效果图&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-5&quot;&gt;实验感想&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-6&quot;&gt;代码清单&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-7&quot;&gt;实现文件&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-8&quot;&gt;测试文件&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-9&quot;&gt;管脚约束文件&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -39,45 +50,91 @@
   &lt;/div&gt;
 &lt;/section&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;入门级&lt;/h2&gt;
+&lt;h1 id=&quot;section&quot;&gt;实验目的&lt;/h1&gt;
 
-&lt;h3 id=&quot;sicily-1176-two-ends&quot;&gt;1. Sicily 1176. Two Ends&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;学习使用ISE软件设计并仿真&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;学会程序下载至开发板上面&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;两个人从两边拿卡片，自顶向下的DP, &lt;a href=&quot;soj.me/1176&quot;&gt;出处&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&quot;section-1&quot;&gt;实验内容&lt;/h1&gt;
 
-&lt;p&gt;大概是说两个人从一堆有2K个卡片的卡堆里拿卡片，一个人可以用任意策略（先手），另一个人固定使用贪心策略，求两人获得分数的最大差。&lt;/p&gt;
+&lt;figure class=&quot;third&quot;&gt;
+        &lt;a href=&quot;http://localhost:4000/images/2014/10/30/1.png&quot;&gt;
+          &lt;img src=&quot;http://localhost:4000/images/2014/10/30/1.png&quot; alt=&quot;figure 1-1&quot; itemprop=&quot;image&quot; /&gt;
+        &lt;/a&gt;
+        &lt;figcaption&gt;图 1-1所示电路包含 6个不同的逻辑门,本实验中用 Verilog语句来描述,根据图1-1所示电路实现代码，运行仿真测试并在开发板综合与实现。
+		&lt;/figcaption&gt;
+&lt;/figure&gt;
 
-&lt;p&gt;核心算法大概如下:&lt;/p&gt;
+&lt;h1 id=&quot;section-2&quot;&gt;实验结果&lt;/h1&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;从&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;到&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;所取得的最大分数&lt;/span&gt;
+&lt;p&gt;实验结果如图所示：&lt;/p&gt;
 
-&lt;span class=&quot;err&quot;&gt;当&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;＝&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;，&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;＝&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;－&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;时为解&lt;/span&gt;
+&lt;h3 id=&quot;rtl&quot;&gt;RTL电路图:&lt;/h3&gt;
 
-&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cards&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;//player 取left&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scoreLeft&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;c1&quot;&gt;//AI 取left+1&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;scoreLeft&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;c1&quot;&gt;//AI 取right&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;scoreLeft&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;	
-	&lt;span class=&quot;c1&quot;&gt;//player 取right&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rightScore&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;....&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//同理&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/10/30/2.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/10/30/2.png&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
 
-&lt;p&gt;因为其实数据会比较大，直接递归求解会超时，所以用DP，把&lt;code&gt;子问题的解先保存起来，然后每次要求子问题的解的时候，先看看之前有没有解过&lt;/code&gt;，用空间（保存子问题的解）来交换时间。&lt;/p&gt;
+&lt;h3 id=&quot;section-3&quot;&gt;仿真波形图&lt;/h3&gt;
 
-&lt;p&gt;具体代码如下:&lt;/p&gt;
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/10/30/3.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/10/30/3.png&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
 
-&lt;script src=&quot;https://gist.github.com/izhuxin/879fb43aff1b1248636c.js&quot;&gt;&lt;/script&gt;
+&lt;h3 id=&quot;section-4&quot;&gt;开发板显示效果图&lt;/h3&gt;
+
+&lt;figure class=&quot;third&quot;&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/10/30/a0b0.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/10/30/a0b0.jpg&quot; /&gt;&lt;/a&gt;
+
+&lt;a href=&quot;http://localhost:4000/images/2014/10/30/a0b1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/10/30/a0b1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;左图为当a=0，b=0时开发板的显示效果，其中z[0],z[2],z[4]为1，其余为0.右图为当a=0,b=1时的效果，其中z[1],z[3],z[4]为1，其余为0.符合预期的效果。&lt;/p&gt;
+
+&lt;figure class=&quot;third&quot;&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/10/30/a1b0.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/10/30/a1b0.jpg&quot; /&gt;&lt;/a&gt;
+
+&lt;a href=&quot;http://localhost:4000/images/2014/10/30/a1b1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/10/30/a1b1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;左图为当a=1, b=0时开发板的效果，其中z[1],z[3],z[4]为1，其余为0.右图为当a=1,b=1时的效果，其中z[0],z[3],z[4]为1，其余为0.符合预期效果。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;实验感想&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;这次实验做的还是比较兴奋的，因为做的这些仿真可以直接烧到板子里看效果，想想也是酷炫。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;虽然是在做硬件实现，但是跟软件开发还是有很大想通的地方的，比如任何一个工程都主要由功能实现和单元测试这两部分组成，所以理解整个实验步骤也比较容易。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;但是因为对Verilog HDL语言比较不熟悉而且也没有细看NEXYS 3的文档，所以想自己做个小项目暂时还没有思路。而本次实验也只是让我们熟悉一下基本的开发工具而已，慢慢啃书啃文档吧。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;代码清单&lt;/h1&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;实现文件&lt;/h3&gt;
+
+&lt;script src=&quot;https://gist.github.com/izhuxin/d14a8b3f21ec37c08007.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;section-8&quot;&gt;测试文件&lt;/h3&gt;
+
+&lt;script src=&quot;https://gist.github.com/izhuxin/d4963550575efcddfe34.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;section-9&quot;&gt;管脚约束文件&lt;/h3&gt;
+
+&lt;script src=&quot;https://gist.github.com/izhuxin/1bcfbdd1fdb88c42f714.js&quot;&gt;&lt;/script&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/%E7%AE%97%E6%B3%95%E8%AF%BE%E7%A8%8B%E8%A7%A3%E9%A2%98%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&quot;&gt;算法课程解题之动态规划&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; October 01, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/SOJ1151&quot;&gt;嵌入式系统结构设计报告(一)&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; October 29, 2014.&lt;/p&gt;</content>
 </entry>
 
 

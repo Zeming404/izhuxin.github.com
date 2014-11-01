@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>算法课程解题之动态规划 &#8211; Jeason</title>
+<title>嵌入式系统结构设计报告(一) &#8211; Jeason</title>
 <meta name="description" content="">
 <meta name="keywords" content="Course">
 
@@ -11,17 +11,17 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法课程解题之动态规划">
+<meta property="og:title" content="嵌入式系统结构设计报告(一)">
 <meta property="og:description" content="">
-<meta property="og:url" content="http://localhost:4000/blog/%E7%AE%97%E6%B3%95%E8%AF%BE%E7%A8%8B%E8%A7%A3%E9%A2%98%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">
+<meta property="og:url" content="http://localhost:4000/blog/SOJ1151">
 <meta property="og:site_name" content="Jeason">
-<meta property="og:image" content="http://localhost:4000/images/java.jpg">
+<meta property="og:image" content="http://localhost:4000/images/white.png">
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/blog/%E7%AE%97%E6%B3%95%E8%AF%BE%E7%A8%8B%E8%A7%A3%E9%A2%98%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">
+<link rel="canonical" href="http://localhost:4000/blog/SOJ1151">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
 
 
@@ -61,7 +61,7 @@
 
 </head>
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
-<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/java.jpg)" itemscope itemtype="http://schema.org/Organization">
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/white.png)" itemscope itemtype="http://schema.org/Organization">
 
 
     <div class="inner">
@@ -111,10 +111,10 @@
              
                     <header class="post-header entry-header">
                         
-                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">算法课程解题之动态规划</h1>
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">嵌入式系统结构设计报告(一)</h1>
                         
                         <div class="post-info text-center small">
-                            <span class="entry-date date published updated"><time datetime="2014-10-01T00:00:00+08:00" class="post-time" itemprop="datePublished">01 Oct 2014</time><span>
+                            <span class="entry-date date published updated"><time datetime="2014-10-29T00:00:00+08:00" class="post-time" itemprop="datePublished">29 Oct 2014</time><span>
                             in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
                         </div>
                     </header>
@@ -126,8 +126,19 @@
   </header>
 <div id="drawer">
 <ul id="markdown-toc">
-  <li><a href="#section">入门级</a>    <ul>
-      <li><a href="#sicily-1176-two-ends">1. Sicily 1176. Two Ends</a></li>
+  <li><a href="#section">实验目的</a></li>
+  <li><a href="#section-1">实验内容</a></li>
+  <li><a href="#section-2">实验结果</a>    <ul>
+      <li><a href="#rtl">RTL电路图:</a></li>
+      <li><a href="#section-3">仿真波形图</a></li>
+      <li><a href="#section-4">开发板显示效果图</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-5">实验感想</a></li>
+  <li><a href="#section-6">代码清单</a>    <ul>
+      <li><a href="#section-7">实现文件</a></li>
+      <li><a href="#section-8">测试文件</a></li>
+      <li><a href="#section-9">管脚约束文件</a></li>
     </ul>
   </li>
 </ul>
@@ -135,42 +146,88 @@
   </div>
 </section>
 
-<h2 id="section">入门级</h2>
+<h1 id="section">实验目的</h1>
 
-<h3 id="sicily-1176-two-ends">1. Sicily 1176. Two Ends</h3>
+<ul>
+  <li>
+    <p>学习使用ISE软件设计并仿真</p>
+  </li>
+  <li>
+    <p>学会程序下载至开发板上面</p>
+  </li>
+</ul>
 
-<p>两个人从两边拿卡片，自顶向下的DP, <a href="soj.me/1176">出处</a>.</p>
+<h1 id="section-1">实验内容</h1>
 
-<p>大概是说两个人从一堆有2K个卡片的卡堆里拿卡片，一个人可以用任意策略（先手），另一个人固定使用贪心策略，求两人获得分数的最大差。</p>
+<figure class="third">
+        <a href="http://localhost:4000/images/2014/10/30/1.png">
+          <img src="http://localhost:4000/images/2014/10/30/1.png" alt="figure 1-1" itemprop="image" />
+        </a>
+        <figcaption>图 1-1所示电路包含 6个不同的逻辑门,本实验中用 Verilog语句来描述,根据图1-1所示电路实现代码，运行仿真测试并在开发板综合与实现。
+		</figcaption>
+</figure>
 
-<p>核心算法大概如下:</p>
+<h1 id="section-2">实验结果</h1>
 
-<div class="highlight"><pre><code class="c"><span class="n">d</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span> <span class="o">=</span> <span class="err">从</span><span class="n">left</span><span class="err">到</span><span class="n">right</span><span class="err">所取得的最大分数</span>
+<p>实验结果如图所示：</p>
 
-<span class="err">当</span><span class="n">left</span> <span class="err">＝</span> <span class="mi">0</span><span class="err">，</span> <span class="n">right</span> <span class="err">＝</span> <span class="n">n</span><span class="err">－</span><span class="mi">1</span><span class="err">时为解</span>
+<h3 id="rtl">RTL电路图:</h3>
 
-<span class="n">d</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="p">(</span> <span class="n">left</span> <span class="o">==</span> <span class="n">right</span> <span class="p">)</span> <span class="k">return</span> <span class="n">cards</span><span class="p">[</span><span class="n">left</span><span class="p">];</span>
-	<span class="c1">//player 取left</span>
-	<span class="kt">int</span> <span class="n">scoreLeft</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="k">if</span> <span class="p">(</span> <span class="n">left</span><span class="o">+</span><span class="mi">1</span> <span class="o">&gt;=</span> <span class="n">right</span> <span class="p">)</span> <span class="p">{</span>
-		<span class="c1">//AI 取left+1</span>
-		<span class="n">scoreLeft</span> <span class="o">=</span> <span class="n">d</span><span class="p">(</span><span class="n">left</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span> <span class="o">+</span> <span class="n">dis</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">left</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-		<span class="c1">//AI 取right</span>
-		<span class="n">scoreLeft</span> <span class="o">=</span> <span class="n">d</span><span class="p">(</span><span class="n">left</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">dis</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
-	<span class="p">}</span>	
-	<span class="c1">//player 取right</span>
-	<span class="kt">int</span> <span class="n">rightScore</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="p">....</span>	<span class="c1">//同理</span>
-<span class="p">}</span>
-</code></pre></div>
+<figure>
+<a href="http://localhost:4000/images/2014/10/30/2.png"><img src="http://localhost:4000/images/2014/10/30/2.png" /></a>
+</figure>
 
-<p>因为其实数据会比较大，直接递归求解会超时，所以用DP，把<code>子问题的解先保存起来，然后每次要求子问题的解的时候，先看看之前有没有解过</code>，用空间（保存子问题的解）来交换时间。</p>
+<h3 id="section-3">仿真波形图</h3>
 
-<p>具体代码如下:</p>
+<figure>
+<a href="http://localhost:4000/images/2014/10/30/3.png"><img src="http://localhost:4000/images/2014/10/30/3.png" /></a>
+</figure>
 
-<script src="https://gist.github.com/izhuxin/879fb43aff1b1248636c.js"></script>
+<h3 id="section-4">开发板显示效果图</h3>
+
+<figure class="third">
+<a href="http://localhost:4000/images/2014/10/30/a0b0.jpg"><img src="http://localhost:4000/images/2014/10/30/a0b0.jpg" /></a>
+
+<a href="http://localhost:4000/images/2014/10/30/a0b1.jpg"><img src="http://localhost:4000/images/2014/10/30/a0b1.jpg" /></a>
+</figure>
+
+<p>左图为当a=0，b=0时开发板的显示效果，其中z[0],z[2],z[4]为1，其余为0.右图为当a=0,b=1时的效果，其中z[1],z[3],z[4]为1，其余为0.符合预期的效果。</p>
+
+<figure class="third">
+<a href="http://localhost:4000/images/2014/10/30/a1b0.jpg"><img src="http://localhost:4000/images/2014/10/30/a1b0.jpg" /></a>
+
+<a href="http://localhost:4000/images/2014/10/30/a1b1.jpg"><img src="http://localhost:4000/images/2014/10/30/a1b1.jpg" /></a>
+</figure>
+
+<p>左图为当a=1, b=0时开发板的效果，其中z[1],z[3],z[4]为1，其余为0.右图为当a=1,b=1时的效果，其中z[0],z[3],z[4]为1，其余为0.符合预期效果。</p>
+
+<h1 id="section-5">实验感想</h1>
+
+<ol>
+  <li>
+    <p>这次实验做的还是比较兴奋的，因为做的这些仿真可以直接烧到板子里看效果，想想也是酷炫。</p>
+  </li>
+  <li>
+    <p>虽然是在做硬件实现，但是跟软件开发还是有很大想通的地方的，比如任何一个工程都主要由功能实现和单元测试这两部分组成，所以理解整个实验步骤也比较容易。</p>
+  </li>
+  <li>
+    <p>但是因为对Verilog HDL语言比较不熟悉而且也没有细看NEXYS 3的文档，所以想自己做个小项目暂时还没有思路。而本次实验也只是让我们熟悉一下基本的开发工具而已，慢慢啃书啃文档吧。</p>
+  </li>
+</ol>
+
+<h1 id="section-6">代码清单</h1>
+
+<h3 id="section-7">实现文件</h3>
+
+<script src="https://gist.github.com/izhuxin/d14a8b3f21ec37c08007.js"></script>
+
+<h3 id="section-8">测试文件</h3>
+
+<script src="https://gist.github.com/izhuxin/d4963550575efcddfe34.js"></script>
+
+<h3 id="section-9">管脚约束文件</h3>
+
+<script src="https://gist.github.com/izhuxin/1bcfbdd1fdb88c42f714.js"></script>
 
 
                         <br>
@@ -188,14 +245,14 @@
 	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
 	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
 </div> 
-                        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+                        
                     </footer>
             </article>
     </div>
 </div>
 
 
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/java.jpg)" >
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/white.png)" >
 
 
     <div class="inner">
@@ -352,25 +409,6 @@
   })();
 </script>
 
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'Jeason'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+ 
 </body>
 </html>

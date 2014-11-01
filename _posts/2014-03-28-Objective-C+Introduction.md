@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "Apple Club培训教程（一）：Objective-C"
+title: "iOS开发入门教程：Objective-C"
 description: ""
 category: blog
 tags: [IOS Developer]
-image: 
+image:
   feature: objective_tutorial.jpg
 comments: true
 diary: 因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了Stanford‘的CS193p课程以及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。
 
-mathjax: 
+mathjax:
 ---
 
 因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了[Stanford‘的CS193p课程](https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550)，已及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。
@@ -25,12 +25,11 @@ mathjax:
 </div>
 </section>
 
-
 ##概述
 
 - Objective-C是C语言的一个超集，即所有符合C语言语法的代码都可以直接通过OC的编译器。这一点跟C++十分类似（因为我之前是学C++的，学习OC的时候就把里面的很多语法都跟C++进行了联系和对比），它以另外一种不同于C++的语法实现了面向对象。
 
-- 虽然OC现在几乎只运用于Apple系的操作系统上，但OC最初源于NeXTSTEP操作系统（乔帮主离开Apple那段时间创立的公司），后来NeXTSTEP被Apple收购，但并没有怎么修改NeXTSTEP留下的重要的Foundation库，所以我们现在的OC里的大部分类，枚举，结构体的名字都有个NS（NeXTSTEP的缩写）作为前缀。
+- 虽然OC现在几乎只运用于Apple系的操作系统上，但OC最初源于NeXTSTEP操作系统（乔帮主离开Apple那段时间创立的公司创造的），后来NeXTSTEP被Apple收购，但并没有怎么修改NeXTSTEP留下的重要的Foundation库，所以我们现在的OC里的大部分类，枚举，结构体的名字都有个NS（NeXTSTEP的缩写）作为前缀。
 
 - Objective-C最大的特色是承自Smalltalk的信息传递模型，此机制与今日C++式之主流风格差异甚大。向一个函数传递参数只是向这个函数传递了一个模糊的信息，所有的信息处理都是直到runtime才会动态地决定(有点类似于C++的dynamic blinding)。
 
@@ -86,7 +85,7 @@ mathjax:
 	#define XXX
 	#endif
 	{% endhighlight %}
-	
+
 这样的宏来判断是否重复包含，#import就实现这个宏的功能来避免重复包含。之所以把它注释掉，是因为在IOS7中，更推荐的用法是下面那一行：<code>@import Foundation;</code>，@import不是让编译器导入一堆的库文件，而是让编译器link一个已经编译好的"module"，这样就极大地减少了编译的时间。
 
 2,
@@ -152,7 +151,7 @@ mathjax:
 	//4
     // split into lines
     NSArray* lines = [self.contents componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
-    
+
     // return the first
     return lines[0];
 }
@@ -194,11 +193,11 @@ mathjax:
 
 	- 字符串常量：@"stringContent"来表示常字符串，C语言中是""
 
-	- 字符串格式控制: + (id)stringWithFormat:(NSString *)format... 和 - (id)initWithFormat:(NSString *)format... 
+	- 字符串格式控制: + (id)stringWithFormat:(NSString *)format... 和 - (id)initWithFormat:(NSString *)format...
 
 	- format的对应: %@代表NSString, 其余跟C语言的一样。
 
-	- 字符串扩展: – stringByAppendingFormat: 
+	- 字符串扩展: – stringByAppendingFormat:
 
 	- NSMutableString继承了NSString, 是可以改变内容的字符串，就相当于C++语言里的string。
 
@@ -254,5 +253,5 @@ mathjax:
 
 1.  [User.h](https://gist.github.com/anonymous/9848769)
 2.  [User.cpp](https://gist.github.com/anonymous/9848824)
-3.  [UserManager.h](https://gist.github.com/anonymous/9848876)     
-4.  [UserManager.cpp](https://gist.github.com/anonymous/9848844) 
+3.  [UserManager.h](https://gist.github.com/anonymous/9848876)
+4.  [UserManager.cpp](https://gist.github.com/anonymous/9848844)

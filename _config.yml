@@ -26,24 +26,24 @@ owner:
   description:    创作，只是为了让我不会对浮躁的社会无话可说
   # Social networking links used in footer. Update and remove as you like.
   # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
-  twitter:        
-  facebook:       
+  twitter:
+  facebook:
   github:         izhuxin
   weibo:          u/2966878797
   stackexchange:  users/3993969/jeason
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
-  hmfaysalsocial: 
+  linkedin:
+  instagram:
+  flickr:
+  tumblr:
+  hmfaysalsocial:
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    
+  google_plus:
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:  UA-48042789-1
-google_verify:      
+google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+bing_verify:
 
 # Links to include in footer navigation
 # For external links add external: true
