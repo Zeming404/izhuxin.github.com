@@ -1,14 +1,6 @@
 [
 	
 		{
-		  "title"      : "嵌入式系统结构设计报告(一)",
-		  "category"   : "blog",
-		  "url"        : "http://localhost:4000/blog/SOJ1151",
-		  "date"       : "2014-10-29 00:00:00 +0800",
-		  "shortdate"  : "October 29, 2014"
-		} ,
-	
-		{
 		  "title"      : "iOS和Android的Emoji表情同步方案",
 		  "category"   : "blog",
 		  "url"        : "http://localhost:4000/blog/iOS%2BAnroid%2BEmoji",
@@ -25,7 +17,7 @@
 		} ,
 	
 		{
-		  "title"      : "Swift的面向对象和面向函数的程序设计",
+		  "title"      : "iOS开发入门：Swift",
 		  "category"   : "blog",
 		  "url"        : "http://localhost:4000/blog/Intro%2BSwift",
 		  "date"       : "2014-06-10 00:00:00 +0800",
@@ -57,7 +49,7 @@
 		} ,
 	
 		{
-		  "title"      : "Apple Club培训教程（一）：Objective-C",
+		  "title"      : "iOS开发入门教程：Objective-C",
 		  "category"   : "blog",
 		  "url"        : "http://localhost:4000/blog/Objective-C%2BIntroduction",
 		  "date"       : "2014-03-28 00:00:00 +0800",

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Apple Club培训教程（一）：Objective-C &#8211; Jeason</title>
+<title>iOS开发入门教程：Objective-C &#8211; Jeason</title>
 <meta name="description" content="">
 <meta name="keywords" content="IOS Developer">
 
@@ -11,7 +11,7 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Apple Club培训教程（一）：Objective-C">
+<meta property="og:title" content="iOS开发入门教程：Objective-C">
 <meta property="og:description" content="">
 <meta property="og:url" content="http://localhost:4000/blog/Objective-C%2BIntroduction">
 <meta property="og:site_name" content="Jeason">
@@ -111,7 +111,7 @@
              
                     <header class="post-header entry-header">
                         
-                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">Apple Club培训教程（一）：Objective-C</h1>
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">iOS开发入门教程：Objective-C</h1>
                         
                         <div class="post-info text-center small">
                             <span class="entry-date date published updated"><time datetime="2014-03-28T00:00:00+08:00" class="post-time" itemprop="datePublished">28 Mar 2014</time><span>
@@ -129,9 +129,11 @@
 <div id="drawer">
 <ul id="markdown-toc">
   <li><a href="#section">概述</a></li>
-  <li><a href="#section-1">类的编写</a>    <ul>
-      <li><a href="#section-2">类的声明</a></li>
-      <li><a href="#section-3">类的实现</a></li>
+  <li><a href="#section-1">方法的编写</a></li>
+  <li><a href="#section-2">匿名函数</a></li>
+  <li><a href="#section-3">类的编写</a>    <ul>
+      <li><a href="#section-4">类的声明</a></li>
+      <li><a href="#section-5">类的实现</a></li>
     </ul>
   </li>
   <li><a href="#foundation-overview">Foundation Overview</a>    <ul>
@@ -141,7 +143,9 @@
       <li><a href="#nsdictionary">NSDictionary</a></li>
     </ul>
   </li>
-  <li><a href="#section-4">总结</a></li>
+  <li><a href="#protocol">Protocol</a></li>
+  <li><a href="#category">Category</a></li>
+  <li><a href="#section-6">总结</a></li>
   <li><a href="#assignment">Assignment</a></li>
 </ul>
 
@@ -155,132 +159,77 @@
     <p>Objective-C是C语言的一个超集，即所有符合C语言语法的代码都可以直接通过OC的编译器。这一点跟C++十分类似（因为我之前是学C++的，学习OC的时候就把里面的很多语法都跟C++进行了联系和对比），它以另外一种不同于C++的语法实现了面向对象。</p>
   </li>
   <li>
-    <p>虽然OC现在几乎只运用于Apple系的操作系统上，但OC最初源于NeXTSTEP操作系统（乔帮主离开Apple那段时间创立的公司），后来NeXTSTEP被Apple收购，但并没有怎么修改NeXTSTEP留下的重要的Foundation库，所以我们现在的OC里的大部分类，枚举，结构体的名字都有个NS（NeXTSTEP的缩写）作为前缀。</p>
+    <p>虽然OC现在几乎只运用于Apple系的操作系统上，但OC最初源于NeXTSTEP操作系统（乔帮主离开Apple那段时间创立的公司创造的），后来NeXTSTEP被Apple收购，但并没有怎么修改NeXTSTEP留下的重要的Foundation库，所以我们现在的OC里的大部分类，枚举，结构体的名字都有个NS（NeXTSTEP的缩写）作为前缀。</p>
   </li>
   <li>
     <p>Objective-C最大的特色是承自Smalltalk的信息传递模型，此机制与今日C++式之主流风格差异甚大。向一个函数传递参数只是向这个函数传递了一个模糊的信息，所有的信息处理都是直到runtime才会动态地决定(有点类似于C++的dynamic blinding)。</p>
   </li>
 </ul>
 
-<h2 id="section-1">类的编写</h2>
+<h2 id="section-1">方法的编写</h2>
+<p>好吧，我没有写函数，是因为Objective-C的函数几乎只有写在类里面才有效，所以在接下来的叙述中不会刻意强调方法和函数的区别，默认他们都指代方法。 因为相比于Swift，OC的函数的写法则比较接近于C++，我们可以看看之前Swift教程的函数对应的OC版本:</p>
+
+<script src="https://gist.github.com/izhuxin/fe9620894fe387ab834e.js"></script>
+
+<p>我们会看到，由于编码风格的习惯，Objective-C和绝大多数编程语言不同的是，它的函数名总是像英文一样可以随口读出来，所以这会让最开始接触OC的感到比较别扭。
+我们会看到与Swift把返回值写在声明的最后不同，OC把返回值写在了最开头。</p>
+
+<h2 id="section-2">匿名函数</h2>
+
+<p>相比于Swift闭包的灵活飘逸，OC的闭包（block）则比较刻板一些：</p>
+
+<script src="https://gist.github.com/izhuxin/60394942f2bd83483764.js"></script>
+
+<p>我们会发现因为不支持类型推断，所以如果想要把一个block赋给一个变量就必须要指定的它的类型（在这里，是<code>NSComparisonResult (^)(NSString *a, NSString *b)</code>。这是非常痛苦的，所以我们一般会运用一下typedef来减轻我们的负担，比如说上面的代码可以改写成：</p>
+
+<script src="https://gist.github.com/izhuxin/8a220b3f691d2f9f3040.js"></script>
+
+<p>OC作为一种以面向对象为主的语言，对闭包的实现可以说是比较拘谨的：即在block里面对外部变量的值是只读的，当我们想要改变外部变量的值时，我们要在这个变量前面加上__block的关键字修饰。
+像下面这样:</p>
+
+<script src="https://gist.github.com/izhuxin/753366a37eafc8adcb3e.js"></script>
+
+<h2 id="section-3">类的编写</h2>
 
 <p>既然是面向对象的语言，那么最重要的就是类的编写方法了，学习的最好方式，就是看代码。</p>
 
-<h3 id="section-2">类的声明</h3>
+<h3 id="section-4">类的声明</h3>
 
-<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
-<span class="c1">//  CENote.h</span>
-<span class="c1">//  TextKitNotepad</span>
-<span class="c1">//</span>
-<span class="c1">//  Created by Jeason on 28/03/2014.</span>
-<span class="c1">//  Copyright (c) 2013 Jeason. All rights reserved.</span>
-<span class="c1">//</span>
+<script src="https://gist.github.com/izhuxin/39f0b218de9ee14d4062.js"></script>
 
-<span class="c1">//#import &lt;Foundation/Foundation.h&gt;</span>
-<span class="c1">//1</span>
-<span class="p">@</span><span class="n">import</span> <span class="n">Foundation</span><span class="p">;</span>
+<pre><code>如果你足够细心的话，你应该发现了在这个类的声明里，涉及到对象的几乎都是表示成指针的形式。的确，OC里的所有对象都是采用指针来访问的，而所有的对象的内存都是在堆里面产生的，而不象C++那样是可以通过栈产生。
+</code></pre>
 
-<span class="c1">//2</span>
-<span class="k">@interface</span> <span class="nc">Note</span> : <span class="nc">NSObject</span>
+<p>1, #import&lt;Foundation/Foundation.h&gt;，如果你之前学过C++，那你肯定都能猜出这个语句的意思，它有点类似于C++里的#include<cstdlib>，就是把头文件导入进来，但它不需要像C/C++那样，要加上:</cstdlib></p>
 
-<span class="c1">//3</span>
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSString</span><span class="o">*</span> <span class="n">contents</span><span class="p">;</span>
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSDate</span><span class="o">*</span> <span class="n">timestamp</span><span class="p">;</span>
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSData</span> <span class="o">*</span><span class="n">imageData</span><span class="p">;</span>
-
-<span class="c1">// an automatically generated not title, based on the first few words</span>
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">title</span><span class="p">;</span>
-
-<span class="k">@property</span> <span class="n">NSUInteger</span> <span class="n">NoteID</span><span class="p">;</span>
-
-<span class="c1">//4</span>
-<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithText:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span> <span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span><span class="p">;</span>
-
-<span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">noteWithText:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span> <span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span><span class="p">;</span>
-
-<span class="k">@end</span>
-</code></pre></div>
-
-<div class="highlight"><pre><code class="c++"><span class="err">如果你足够细心的话，你应该发现了在这个类的声明里，涉及到对象的几乎都是表示成指针的形式。的确，</span><span class="n">OC</span><span class="err">里的所有对象都是采用指针来访问的，而所有的对象的内存都是在堆里面产生的，而不象</span><span class="n">C</span><span class="o">++</span><span class="err">那样是可以通过棧产生。</span>
-</code></pre></div>
-
-<p>1, #import&lt;Foundation/Foundation.h&gt;，如果你之前学过C++，那你肯定都能猜出这个语句的意思，它有点类似于C++里的#include<cstdlib>，就是把头文件导入进来，但它不需要像C/C++那样，要加上</cstdlib></p>
-
-<div class="highlight"><pre><code class="c">	<span class="err">#</span><span class="n">ifndef</span> <span class="n">XXX</span>
-	<span class="err">#</span><span class="n">define</span> <span class="n">XXX</span>
-	<span class="err">#</span><span class="n">endif</span>
-	
-</code></pre></div>
+<pre><code>#ifndef XXX
+#define XXX
+#endif
+</code></pre>
 
 <p>这样的宏来判断是否重复包含，#import就实现这个宏的功能来避免重复包含。之所以把它注释掉，是因为在IOS7中，更推荐的用法是下面那一行：<code>@import Foundation;</code>，@import不是让编译器导入一堆的库文件，而是让编译器link一个已经编译好的”module”，这样就极大地减少了编译的时间。</p>
 
 <p>2,
-<code>@interface Note : NSObject ... @end</code>, 这个看字面意思就可以看懂，就是声明了Note这个类的接口(interface)，”:”后面跟的是Note这个类继承的类“NSObject”，NSObject几乎是你所编写的所有OC类的子类，它定义了很多通用的方法（如isEuqalTo:，init之类的，现在先不管他）。</p>
+<code>@interface Note : NSObject ... @end</code>, 这个看字面意思就可以看懂，就是声明了Note这个类的接口(interface)。</p>
 
-<p>3, @proerty，如果把它翻译成中文，可以说是属性吧，它是OC里的一个重要但不容易理解的语法。如果你之前写过C++，那你肯定写过一堆无聊的getter，setter来读/写这些成员变量，对于新人来说，可以认为property就相当于C++一个类内的成员变量，它的实例名字就是下划线＋somePropertyName,如<code>_contents</code>。而且@property还自动为我们生成了这些变量的getter和setter函数，他们默认的名字是setXXX和XXX。我们看到，@property后面可以跟有一堆的关键字，而且正如你所看到的那样，以后我们写的大部分property后面跟的都是(nonatomic, strong)，我本来应该把所有的关键字都列出来然后一一给你说明，但我不想那样子做，我只是遇到一些解释一些这样，因为通过不同的例子这样才有可能记得住这些关键字的具体含义和区别</p>
+<p>3, “:”后面跟的是Note这个类继承的类“NSObject”，NSObject几乎是你所编写的所有OC类的子类，它定义了很多通用的方法（如isEuqalTo:，init之类的，现在先不管他）。</p>
+
+<p>4, @proerty，如果把它翻译成中文，可以说是属性吧，它是OC里的一个重要但不容易理解的语法。如果你之前写过C++，那你肯定写过一堆无聊的getter，setter来读/写这些成员变量，对于新人来说，可以认为property就相当于C++一个类内的成员变量，它的实例名字就是下划线＋somePropertyName,如<code>_contents</code>。而且@property还自动为我们生成了这些变量的getter和setter函数，他们默认的名字是setXXX和XXX。我们看到，@property后面可以跟有一堆的关键字，而且正如你所看到的那样，以后我们写的大部分property后面跟的都是(nonatomic, strong)，我本来应该把所有的关键字都列出来然后一一给你说明，但我不想那样子做，我只是遇到一些解释一些这样，因为通过不同的例子这样才有可能记得住这些关键字的具体含义和区别</p>
 
 <pre><code>- nonatomic: 非原子性，要想理解它，就得先明白atomic,即原子性。原子性就是指当有两个以上的线程都在读/写这个property时，一个线程对它的操作会锁住其他线程，这样就保证了这个property的值在每个线程上都是合法的。而nonatomic不会锁住其他线程。但是因为atomic会带来极差的用户体验，而真的要考虑线程安全的情况又少，所以一般来说会选择牺牲线程安全性来保证性能。
 
 - strong: 在介绍这个之前，要先搞懂一下OC里的内存管理机制。之前说过，OC里的对象都是在堆里产生的，C++里每new一个对象出来，都需要把它delete掉才会将内存回收，而OC里引入了Automic Reference Counting的技术。就是启用了ARC，操作系统就会对指向这个对象的，拥有这个对象的所有权的指针进行计数，当计数器为0时，这个对象自动被释放。对这个指针进行赋值，则这个指针拥有了该指针指向的对象的所有权(owenership)，即该对象的引用计数器＋1；与之相对的weak关键字声明的指针就不会让引用计数器+1.
 
-- readonly: 这个应该容易理解，就是只读性，有点类似于C++的const指针。在这里，它是在头文件里定义的，我们可以说这个对象对客户来说是只读的。
+- readonly: 这个应该容易理解，就是只读性，有点类似于C++的const指针。在这里，它是在头文件里定义的，我们可以说这个对象对客户来说是只读的。如果没有特殊声明，属性默认的缺省的是readwrite，即可读可写。
 </code></pre>
-
-<p>4, 接下来就是一些函数的声明了。OC的函数声明的样子对于C/C++的程序员来说是非常的别扭的，不妨你用英语把它读出来？</p>
 
 <p>其中－和＋分别代表了实例方法和类方法，括号里的是函数的返回类型，instancetype表示这个返回的是这个类的类型，比如这里的Note。(这是iOS7新增的，以前人们都习惯于写id，id是一个可以指向任何对象的指针，也可以把它理解为”C++里的void*“ ？，在iOS7以后凡是init方法的返回类型都推荐采用instancetype)而冒号后面跟的是参数的类型和参数名。</p>
 
-<h3 id="section-3">类的实现</h3>
+<h3 id="section-5">类的实现</h3>
 
 <p>接下来我们就来实现这个类，注意，OC的类实现文件的后缀是.m</p>
 
-<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
-<span class="c1">//  CENote.m</span>
-<span class="c1">//  TextKitNotepad</span>
-<span class="c1">//</span>
-<span class="c1">//  Created by Jeason on 28/03/2014.</span>
-<span class="c1">//  Copyright (c) 2013 Jeason. All rights reserved.</span>
-<span class="c1">//</span>
-
-<span class="c1">//1</span>
-<span class="cp">#import &quot;Note.h&quot;</span>
-
-<span class="k">@interface</span> <span class="nc">Note</span> <span class="p">()</span>
-<span class="c1">//2</span>
-<span class="k">@end</span>
-
-<span class="k">@implementation</span> <span class="nc">Note</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithText:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span> <span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span> <span class="p">{</span>
-    <span class="c1">//3</span>
-    <span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">super</span> <span class="n">init</span><span class="p">];</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">self</span>  <span class="o">!=</span> <span class="nb">nil</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">text</span><span class="p">;</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">NoteID</span> <span class="o">=</span> <span class="n">noteid</span><span class="p">;</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">noteWithText:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span> <span class="p">{</span>
-    <span class="n">Note</span><span class="o">*</span> <span class="n">note</span> <span class="o">=</span> <span class="p">[</span><span class="n">Note</span> <span class="n">new</span><span class="p">];</span>
-    <span class="n">note</span><span class="p">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">text</span><span class="p">;</span>
-    <span class="n">note</span><span class="p">.</span><span class="n">NoteID</span> <span class="o">=</span> <span class="n">noteid</span><span class="p">;</span>
-    <span class="n">note</span><span class="p">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
-    <span class="k">return</span> <span class="n">note</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">title</span> <span class="p">{</span>
-	<span class="c1">//4</span>
-    <span class="c1">// split into lines</span>
-    <span class="n">NSArray</span><span class="o">*</span> <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">contents</span> <span class="n">componentsSeparatedByCharactersInSet</span><span class="o">:</span> <span class="p">[</span><span class="n">NSCharacterSet</span> <span class="n">newlineCharacterSet</span><span class="p">]];</span>
-    
-    <span class="c1">// return the first</span>
-    <span class="k">return</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="p">}</span>
-
-<span class="k">@end</span>
-</code></pre></div>
+<script src="https://gist.github.com/izhuxin/a8e72a9d1621e7e42d5d.js"></script>
 
 <p>1, 在这里又遇到了#import，复习一下，它就相当于实现了防止重复包含的#include.</p>
 
@@ -320,11 +269,11 @@
 
 - 字符串常量：@"stringContent"来表示常字符串，C语言中是""
 
-- 字符串格式控制: + (id)stringWithFormat:(NSString *)format... 和 - (id)initWithFormat:(NSString *)format... 
+- 字符串格式控制: + (id)stringWithFormat:(NSString *)format... 和 - (id)initWithFormat:(NSString *)format...
 
 - format的对应: %@代表NSString, 其余跟C语言的一样。
 
-- 字符串扩展: – stringByAppendingFormat: 
+- 字符串扩展: – stringByAppendingFormat:
 
 - NSMutableString继承了NSString, 是可以改变内容的字符串，就相当于C++语言里的string。
 </code></pre>
@@ -364,7 +313,42 @@
 - NSMutableDictionary继承了NSDictionary， 是可以改变内容的字典。
 </code></pre>
 
-<h2 id="section-4">总结</h2>
+<h2 id="protocol">Protocol</h2>
+
+<p>像Swift一样，Objective-C里也有protocol的概念（很遗憾，OC一直都没有虚函数或者虚基类的概念，你只能通过注释来告诉客户你的这个方式是抽象的）。一个protocol的写法是这样的：(在Note.h的里的<code>@interface Note : NSObject</code>前面
+加上下面这段代码)</p>
+
+<script src="https://gist.github.com/izhuxin/644d8d272fe84173a490.js"></script>
+
+<p>每个协议都是由@protocol开头的，之后的是协议名，可以看到一个协议也可以是某个协议的超集，比如这里JGAddable是NSObject协议的超集（NSObject既是类，又是协议，that‘s amazing）</p>
+
+<p><code>@required</code>表明接下来的是实现这个协议的类必须要实现的方法。</p>
+
+<p><code>@optional</code>表明接下来的是实现这个协议的类可有可无的方法。</p>
+
+<p>可以看到protocol就相当于定义了一个类的接口约束</p>
+
+<h2 id="category">Category</h2>
+
+<p>Category其实就是扩展的概念，与Swift中的extension是一致的，我们现在就来扩展我们的Note来实现这个协议:右键=&gt;newfile=&gt;objective-c file=&gt;命名为Addable,类型是Category，Class为Note =&gt; Done.</p>
+
+<p>然后在Note+Addable.h里指明要实现Addable协议:</p>
+
+<pre><code>@interface Note (Addable)&lt;JGAddable&gt;
+</code></pre>
+
+<p>接下来在Note+Addable.m里实现这个协议就好了，如下所示:</p>
+
+<script src="https://gist.github.com/izhuxin/a77dd89cdcc58956c383.js"></script>
+
+<p>之后我们需要使用addanother的时候，就只需要</p>
+
+<pre><code>#import "Note+Addable.h"
+</code></pre>
+
+<p>然后再在需要的地方调用<code>[someNote addAnother: anotherNote]</code>就可以啦</p>
+
+<h2 id="section-6">总结</h2>
 <ol>
   <li>
     <p>现在你应该已经懂得了一个OC里的一个类该怎么编写，而且还粗略地知道了Foundation库里的一些重要的数据结构。</p>
@@ -375,22 +359,15 @@
   <li>
     <p>如果你之前有过OOP基础，那相信你应该可以编写出很多很有用的类了。</p>
   </li>
-  <li>
-    <p>相信你接触OC的目的不是为了写那些在命令行里运行的程序，而是想要写出足够触动人心的App应用然后改变世界。不急，我们会在接下来的一段时间里为大家带来iOS开发的基础培训教程。</p>
-  </li>
 </ol>
-
-<p>敬请期待。。</p>
 
 <h2 id="assignment">Assignment</h2>
-<p>将下面的Agenda中的User和UserManager类翻译成Objective－C</p>
 
-<ol>
-  <li><a href="https://gist.github.com/anonymous/9848769">User.h</a></li>
-  <li><a href="https://gist.github.com/anonymous/9848824">User.cpp</a></li>
-  <li><a href="https://gist.github.com/anonymous/9848876">UserManager.h</a>     </li>
-  <li><a href="https://gist.github.com/anonymous/9848844">UserManager.cpp</a> </li>
-</ol>
+<p>完成《iOS iOS_Apprentice_1_Getting_Started》的Demo，Enjoy your game :-)</p>
+
+<figure>
+<a href="http://localhost:4000/images/2014/10/30/1.png"><img src="http://localhost:4000/images/2014/10/30/1.png" /></a>
+</figure>
 
                         <br>
                     <span class="entry-tags">

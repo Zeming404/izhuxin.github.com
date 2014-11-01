@@ -1,4 +1,4 @@
----
+<!-----
 layout: post
 title: "iOS开发入门教程：Objective-C"
 description: ""
@@ -10,12 +10,14 @@ comments: true
 diary: 因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了Stanford‘的CS193p课程以及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。
 
 mathjax:
----
+----->
+<center><h1>iOS开发入门教程：Objective-C</h1></center>
+<p align="right">AppleClub 2014-11-1</p>
 
-因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了[Stanford‘的CS193p课程](https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550)，已及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。
+因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了[Stanford‘的CS193p课程](https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550)，以及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。
 
 
-<section>
+<!--<section>
   <header>
     <h2>目录</h2>
   </header>
@@ -24,7 +26,7 @@ mathjax:
 {:toc}
 </div>
 </section>
-
+-->
 
 ##概述
 
@@ -203,8 +205,7 @@ Category其实就是扩展的概念，与Swift中的extension是一致的，我�
 之后我们需要使用addanother的时候，就只需要
 	
 	#import "Note+Addable.h"
-	
-然后再在需要的地方调用<code>[someNote addAnother: anotherNote]</code>就可以啦
+然后再在需要的地方调用<code>[someNote addAnother: anotherNote]</code>就可以啦。当然了Category最主要的威力还是为Cocoa的库增加多更方便的函数从而使他们能够更好的fix我们的project。
 
 
 ##总结
@@ -213,12 +214,9 @@ Category其实就是扩展的概念，与Swift中的extension是一致的，我�
 2.  当然我的介绍是相当不完整的，我觉得学习一门语言我觉得最主要的是意淫的能力，意淫某个Foundation库的类有着某个函数而不是自己去写大量的hardcode来实现简单的功能。
 
 3.  如果你之前有过OOP基础，那相信你应该可以编写出很多很有用的类了。
-
-
+ 
 ##Assignment
-
 完成《iOS iOS_Apprentice_1_Getting_Started》的Demo，Enjoy your game :-)
-
 <figure>
-<a href="{{ site.url }}/images/2014/10/30/1.png"><img src="{{ site.url }}/images/2014/10/30/1.png" /></a>
+<a href="1.png"><img src="1.png" /></a>
 </figure>
