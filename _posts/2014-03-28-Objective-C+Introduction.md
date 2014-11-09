@@ -37,7 +37,13 @@ mathjax:
 ##方法的编写
 好吧，我没有写函数，是因为Objective-C的函数几乎只有写在类里面才有效，所以在接下来的叙述中不会刻意强调方法和函数的区别，默认他们都指代方法。 因为相比于Swift，OC的函数的写法则比较接近于C++，我们可以看看之前Swift教程的函数对应的OC版本:
 
-<script src="https://gist.github.com/izhuxin/fe9620894fe387ab834e.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/fe9620894fe387ab834e.js"></script>
+-->
+{% highlight objective-c %}
+- (double)squareForNumber:(double)number {
+    return number * number;
+}
+{% endhighlight %}
 
 我们会看到，由于编码风格的习惯，Objective-C和绝大多数编程语言不同的是，它的函数名总是像英文一样可以随口读出来，所以这会让最开始接触OC的感到比较别扭。
 我们会看到与Swift把返回值写在声明的最后不同，OC把返回值写在了最开头。
@@ -46,16 +52,36 @@ mathjax:
 
 相比于Swift闭包的灵活飘逸，OC的闭包（block）则比较刻板一些：
 
-<script src="https://gist.github.com/izhuxin/60394942f2bd83483764.js"></script>
-
+<!--<script src="https://gist.github.com/izhuxin/60394942f2bd83483764.js"></script>
+-->
+{% highlight objective-c %}
+    NSComparisonResult (^cmp) (NSString *a,NSString *b) = ^(NSString *a,NSString *b){
+        return [a compare:b];
+    };
+{% endhighlight %}
 我们会发现因为不支持类型推断，所以如果想要把一个block赋给一个变量就必须要指定的它的类型（在这里，是<code>NSComparisonResult (^)(NSString *a, NSString *b)</code>。这是非常痛苦的，所以我们一般会运用一下typedef来减轻我们的负担，比如说上面的代码可以改写成：
 
-<script src="https://gist.github.com/izhuxin/8a220b3f691d2f9f3040.js"></script>
+{% highlight objective-c %}
+typedef NSComparisonResult (^compareBlock)(NSString *a, NSString *b);
+compareBlock cmp = ^(NSString *a,NSString *b){
+    return [a compare:b];
+};
+{% endhighlight %}
 
+<!--<script src="https://gist.github.com/izhuxin/8a220b3f691d2f9f3040.js"></script>
+-->
 OC作为一种以面向对象为主的语言，对闭包的实现可以说是比较拘谨的：即在block里面对外部变量的值是只读的，当我们想要改变外部变量的值时，我们要在这个变量前面加上__block的关键字修饰。
 像下面这样:
 
-<script src="https://gist.github.com/izhuxin/753366a37eafc8adcb3e.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/753366a37eafc8adcb3e.js"></script>
+-->
+{% highlight objective-c %}
+    typedef NSComparisonResult (^compareBlock)(NSString*, NSString*);
+    __block NSComparisonResult result = 0;
+    compareBlock cmp = ^(NSString *a,NSString *b){
+        return result = [a compare:b];
+    };
+{% endhighlight %}
 
 ##类的编写
 
@@ -63,8 +89,42 @@ OC作为一种以面向对象为主的语言，对闭包的实现可以说是比
 
 ###类的声明
 
-<script src="https://gist.github.com/izhuxin/39f0b218de9ee14d4062.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/39f0b218de9ee14d4062.js"></script>
+-->
+{% highlight objective-c %}
+//
+//  CENote.h
+//  TextKitNotepad
+//
+//  Created by Jeason on 28/03/2014.
+//  Copyright (c) 2013 Jeason. All rights reserved.
+//
+ 
+//#import <Foundation/Foundation.h>
+//1
+@import Foundation;
+ 
+//2
+@interface Note : NSObject
+ 
+//3
+@property (nonatomic, strong) NSString* contents;
+@property (nonatomic, strong) NSDate* timestamp;
+@property (nonatomic, strong) NSData *imageData;
+ 
+// an automatically generated not title, based on the first few words
+@property (nonatomic, readonly) NSString *title;
+ 
+@property NSUInteger NoteID;
+ 
+//4
+- (instancetype)initWithText:(NSString*)text NoteID: (NSUInteger)noteid;
+ 
++ (instancetype)noteWithText:(NSString *)text NoteID: (NSUInteger)noteid;
+ 
+@end
 
+{% endhighlight %}
 
 	如果你足够细心的话，你应该发现了在这个类的声明里，涉及到对象的几乎都是表示成指针的形式。的确，OC里的所有对象都是采用指针来访问的，而所有的对象的内存都是在堆里面产生的，而不象C++那样是可以通过栈产生。
 
@@ -99,7 +159,59 @@ OC作为一种以面向对象为主的语言，对闭包的实现可以说是比
 
 接下来我们就来实现这个类，注意，OC的类实现文件的后缀是.m
 
-<script src="https://gist.github.com/izhuxin/a8e72a9d1621e7e42d5d.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/a8e72a9d1621e7e42d5d.js"></script>
+-->
+
+{% highlight objective-c %}
+//
+//  CENote.m
+//  TextKitNotepad
+//
+//  Created by Jeason on 28/03/2014.
+//  Copyright (c) 2013 Jeason. All rights reserved.
+//
+ 
+//1
+#import "Note.h"
+ 
+@interface Note ()
+//2
+@end
+ 
+@implementation Note
+ 
+- (instancetype)initWithText:(NSString*)text NoteID: (NSUInteger)noteid {
+    //3
+    self = [super init];
+    if ( self  != nil ) {
+        self.contents = text;
+        self.NoteID = noteid;
+        self.timestamp = [NSDate date];
+    }
+    return self;
+}
+ 
++ (instancetype)noteWithText:(NSString *)text NoteID:(NSUInteger)noteid {
+    Note* note = [Note new];
+    note.contents = text;
+    note.NoteID = noteid;
+    note.timestamp = [NSDate date];
+    return note;
+}
+ 
+- (NSString *)title {
+	//4
+    // split into lines
+    NSArray* lines = [self.contents componentsSeparatedByCharactersInSet:
+    			[NSCharacterSet newlineCharacterSet]];
+ 
+    // return the first
+    return lines[0];
+}
+ 
+@end
+
+{% endhighlight %}
 
 1, 在这里又遇到了#import，复习一下，它就相当于实现了防止重复包含的#include.
 
@@ -178,7 +290,58 @@ OC作为一种以面向对象为主的语言，对闭包的实现可以说是比
 像Swift一样，Objective-C里也有protocol的概念（很遗憾，OC一直都没有虚函数或者虚基类的概念，你只能通过注释来告诉客户你的这个方式是抽象的）。一个protocol的写法是这样的：(在Note.h的里的<code>@interface Note : NSObject</code>前面
 加上下面这段代码)
 
-<script src="https://gist.github.com/izhuxin/644d8d272fe84173a490.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/644d8d272fe84173a490.js"></script>
+-->
+{% highlight objective-c %}
+//
+//  CENote.m
+//  TextKitNotepad
+//
+//  Created by Jeason on 28/03/2014.
+//  Copyright (c) 2013 Jeason. All rights reserved.
+//
+ 
+//1
+#import "Note.h"
+ 
+@interface Note ()
+//2
+@end
+ 
+@implementation Note
+ 
+- (instancetype)initWithText:(NSString*)text NoteID: (NSUInteger)noteid {
+    //3
+    self = [super init];
+    if ( self  != nil ) {
+        self.contents = text;
+        self.NoteID = noteid;
+        self.timestamp = [NSDate date];
+    }
+    return self;
+}
+ 
++ (instancetype)noteWithText:(NSString *)text NoteID:(NSUInteger)noteid {
+    Note* note = [Note new];
+    note.contents = text;
+    note.NoteID = noteid;
+    note.timestamp = [NSDate date];
+    return note;
+}
+ 
+- (NSString *)title {
+	//4
+    // split into lines
+    NSArray* lines = [self.contents componentsSeparatedByCharactersInSet:
+    			[NSCharacterSet newlineCharacterSet]];
+ 
+    // return the first
+    return lines[0];
+}
+ 
+@end
+
+{% endhighlight %}
 
 每个协议都是由@protocol开头的，之后的是协议名，可以看到一个协议也可以是某个协议的超集，比如这里JGAddable是NSObject协议的超集（NSObject既是类，又是协议，that‘s amazing）
 
@@ -198,7 +361,38 @@ Category其实就是扩展的概念，与Swift中的extension是一致的，我�
 	
 接下来在Note+Addable.m里实现这个协议就好了，如下所示:
 
-<script src="https://gist.github.com/izhuxin/a77dd89cdcc58956c383.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/a77dd89cdcc58956c383.js"></script>
+-->
+
+{% highlight objective-c %}
+//
+//  Note+Addable.m
+//  Note
+//
+//  Created by Jeason on 14/11/1.
+//  Copyright (c) 2014年 Jeason. All rights reserved.
+//
+ 
+#import "Note+Addable.h"
+ 
+@implementation Note (Addable)
+ 
+- (instancetype)addAnother:(id)another {
+    if ( [another isKindOfClass:[Note class]] ) {
+        Note *anotherNote = (Note *)another;
+        NSString *addedContents = [self.contents stringByAppendingString:anotherNote.contents];
+        return [Note noteWithText:addedContents NoteID:self.NoteID];
+    }
+    return [self zeroValue];
+}
+ 
+- (instancetype)zeroValue {
+    return nil;
+}
+ 
+@end
+
+{% endhighlight %}
 
 之后我们需要使用addanother的时候，就只需要
 	

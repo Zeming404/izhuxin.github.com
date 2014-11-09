@@ -169,7 +169,13 @@
 <h2 id="section-1">方法的编写</h2>
 <p>好吧，我没有写函数，是因为Objective-C的函数几乎只有写在类里面才有效，所以在接下来的叙述中不会刻意强调方法和函数的区别，默认他们都指代方法。 因为相比于Swift，OC的函数的写法则比较接近于C++，我们可以看看之前Swift教程的函数对应的OC版本:</p>
 
-<script src="https://gist.github.com/izhuxin/fe9620894fe387ab834e.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/fe9620894fe387ab834e.js"></script>
+-->
+
+<div class="highlight"><pre><code class="objective-c"><span class="k">-</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="nf">squareForNumber:</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="nv">number</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">number</span> <span class="o">*</span> <span class="n">number</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>我们会看到，由于编码风格的习惯，Objective-C和绝大多数编程语言不同的是，它的函数名总是像英文一样可以随口读出来，所以这会让最开始接触OC的感到比较别扭。
 我们会看到与Swift把返回值写在声明的最后不同，OC把返回值写在了最开头。</p>
@@ -178,16 +184,36 @@
 
 <p>相比于Swift闭包的灵活飘逸，OC的闭包（block）则比较刻板一些：</p>
 
-<script src="https://gist.github.com/izhuxin/60394942f2bd83483764.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/60394942f2bd83483764.js"></script>
+-->
+
+<div class="highlight"><pre><code class="objective-c">    <span class="n">NSComparisonResult</span> <span class="p">(</span><span class="o">^</span><span class="n">cmp</span><span class="p">)</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="n">NSString</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="n">NSString</span> <span class="o">*</span><span class="n">b</span><span class="p">){</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">a</span> <span class="n">compare</span><span class="o">:</span><span class="n">b</span><span class="p">];</span>
+    <span class="p">};</span>
+</code></pre></div>
 
 <p>我们会发现因为不支持类型推断，所以如果想要把一个block赋给一个变量就必须要指定的它的类型（在这里，是<code>NSComparisonResult (^)(NSString *a, NSString *b)</code>。这是非常痛苦的，所以我们一般会运用一下typedef来减轻我们的负担，比如说上面的代码可以改写成：</p>
 
-<script src="https://gist.github.com/izhuxin/8a220b3f691d2f9f3040.js"></script>
+<div class="highlight"><pre><code class="objective-c"><span class="k">typedef</span> <span class="nf">NSComparisonResult</span> <span class="p">(</span><span class="o">^</span><span class="n">compareBlock</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">b</span><span class="p">);</span>
+<span class="n">compareBlock</span> <span class="n">cmp</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="n">NSString</span> <span class="o">*</span><span class="n">b</span><span class="p">){</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">a</span> <span class="n">compare</span><span class="o">:</span><span class="n">b</span><span class="p">];</span>
+<span class="p">};</span>
+</code></pre></div>
 
+<!--<script src="https://gist.github.com/izhuxin/8a220b3f691d2f9f3040.js"></script>
+-->
 <p>OC作为一种以面向对象为主的语言，对闭包的实现可以说是比较拘谨的：即在block里面对外部变量的值是只读的，当我们想要改变外部变量的值时，我们要在这个变量前面加上__block的关键字修饰。
 像下面这样:</p>
 
-<script src="https://gist.github.com/izhuxin/753366a37eafc8adcb3e.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/753366a37eafc8adcb3e.js"></script>
+-->
+
+<div class="highlight"><pre><code class="objective-c">    <span class="k">typedef</span> <span class="nf">NSComparisonResult</span> <span class="p">(</span><span class="o">^</span><span class="n">compareBlock</span><span class="p">)(</span><span class="n">NSString</span><span class="o">*</span><span class="p">,</span> <span class="n">NSString</span><span class="o">*</span><span class="p">);</span>
+    <span class="n">__block</span> <span class="n">NSComparisonResult</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">compareBlock</span> <span class="n">cmp</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="n">NSString</span> <span class="o">*</span><span class="n">b</span><span class="p">){</span>
+        <span class="k">return</span> <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="n">compare</span><span class="o">:</span><span class="n">b</span><span class="p">];</span>
+    <span class="p">};</span>
+</code></pre></div>
 
 <h2 id="section-3">类的编写</h2>
 
@@ -195,7 +221,41 @@
 
 <h3 id="section-4">类的声明</h3>
 
-<script src="https://gist.github.com/izhuxin/39f0b218de9ee14d4062.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/39f0b218de9ee14d4062.js"></script>
+-->
+
+<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
+<span class="c1">//  CENote.h</span>
+<span class="c1">//  TextKitNotepad</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 28/03/2014.</span>
+<span class="c1">//  Copyright (c) 2013 Jeason. All rights reserved.</span>
+<span class="c1">//</span>
+ 
+<span class="c1">//#import &lt;Foundation/Foundation.h&gt;</span>
+<span class="c1">//1</span>
+<span class="p">@</span><span class="n">import</span> <span class="n">Foundation</span><span class="p">;</span>
+ 
+<span class="c1">//2</span>
+<span class="k">@interface</span> <span class="nc">Note</span> : <span class="nc">NSObject</span>
+ 
+<span class="c1">//3</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSString</span><span class="o">*</span> <span class="n">contents</span><span class="p">;</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSDate</span><span class="o">*</span> <span class="n">timestamp</span><span class="p">;</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSData</span> <span class="o">*</span><span class="n">imageData</span><span class="p">;</span>
+ 
+<span class="c1">// an automatically generated not title, based on the first few words</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">title</span><span class="p">;</span>
+ 
+<span class="k">@property</span> <span class="n">NSUInteger</span> <span class="n">NoteID</span><span class="p">;</span>
+ 
+<span class="c1">//4</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithText:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span> <span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span><span class="p">;</span>
+ 
+<span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">noteWithText:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span> <span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span><span class="p">;</span>
+ 
+<span class="k">@end</span>
+</code></pre></div>
 
 <pre><code>如果你足够细心的话，你应该发现了在这个类的声明里，涉及到对象的几乎都是表示成指针的形式。的确，OC里的所有对象都是采用指针来访问的，而所有的对象的内存都是在堆里面产生的，而不象C++那样是可以通过栈产生。
 </code></pre>
@@ -229,7 +289,57 @@
 
 <p>接下来我们就来实现这个类，注意，OC的类实现文件的后缀是.m</p>
 
-<script src="https://gist.github.com/izhuxin/a8e72a9d1621e7e42d5d.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/a8e72a9d1621e7e42d5d.js"></script>
+-->
+
+<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
+<span class="c1">//  CENote.m</span>
+<span class="c1">//  TextKitNotepad</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 28/03/2014.</span>
+<span class="c1">//  Copyright (c) 2013 Jeason. All rights reserved.</span>
+<span class="c1">//</span>
+ 
+<span class="c1">//1</span>
+<span class="cp">#import &quot;Note.h&quot;</span>
+ 
+<span class="k">@interface</span> <span class="nc">Note</span> <span class="p">()</span>
+<span class="c1">//2</span>
+<span class="k">@end</span>
+ 
+<span class="k">@implementation</span> <span class="nc">Note</span>
+ 
+<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithText:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span> <span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span> <span class="p">{</span>
+    <span class="c1">//3</span>
+    <span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">super</span> <span class="n">init</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">self</span>  <span class="o">!=</span> <span class="nb">nil</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">text</span><span class="p">;</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">NoteID</span> <span class="o">=</span> <span class="n">noteid</span><span class="p">;</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
+<span class="p">}</span>
+ 
+<span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">noteWithText:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span> <span class="p">{</span>
+    <span class="n">Note</span><span class="o">*</span> <span class="n">note</span> <span class="o">=</span> <span class="p">[</span><span class="n">Note</span> <span class="n">new</span><span class="p">];</span>
+    <span class="n">note</span><span class="p">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">text</span><span class="p">;</span>
+    <span class="n">note</span><span class="p">.</span><span class="n">NoteID</span> <span class="o">=</span> <span class="n">noteid</span><span class="p">;</span>
+    <span class="n">note</span><span class="p">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
+    <span class="k">return</span> <span class="n">note</span><span class="p">;</span>
+<span class="p">}</span>
+ 
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">title</span> <span class="p">{</span>
+	<span class="c1">//4</span>
+    <span class="c1">// split into lines</span>
+    <span class="n">NSArray</span><span class="o">*</span> <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">contents</span> <span class="n">componentsSeparatedByCharactersInSet</span><span class="o">:</span>
+    			<span class="p">[</span><span class="n">NSCharacterSet</span> <span class="n">newlineCharacterSet</span><span class="p">]];</span>
+ 
+    <span class="c1">// return the first</span>
+    <span class="k">return</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span>
+ 
+<span class="k">@end</span>
+</code></pre></div>
 
 <p>1, 在这里又遇到了#import，复习一下，它就相当于实现了防止重复包含的#include.</p>
 
@@ -318,7 +428,57 @@
 <p>像Swift一样，Objective-C里也有protocol的概念（很遗憾，OC一直都没有虚函数或者虚基类的概念，你只能通过注释来告诉客户你的这个方式是抽象的）。一个protocol的写法是这样的：(在Note.h的里的<code>@interface Note : NSObject</code>前面
 加上下面这段代码)</p>
 
-<script src="https://gist.github.com/izhuxin/644d8d272fe84173a490.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/644d8d272fe84173a490.js"></script>
+-->
+
+<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
+<span class="c1">//  CENote.m</span>
+<span class="c1">//  TextKitNotepad</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 28/03/2014.</span>
+<span class="c1">//  Copyright (c) 2013 Jeason. All rights reserved.</span>
+<span class="c1">//</span>
+ 
+<span class="c1">//1</span>
+<span class="cp">#import &quot;Note.h&quot;</span>
+ 
+<span class="k">@interface</span> <span class="nc">Note</span> <span class="p">()</span>
+<span class="c1">//2</span>
+<span class="k">@end</span>
+ 
+<span class="k">@implementation</span> <span class="nc">Note</span>
+ 
+<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithText:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span> <span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span> <span class="p">{</span>
+    <span class="c1">//3</span>
+    <span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">super</span> <span class="n">init</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">self</span>  <span class="o">!=</span> <span class="nb">nil</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">text</span><span class="p">;</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">NoteID</span> <span class="o">=</span> <span class="n">noteid</span><span class="p">;</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
+<span class="p">}</span>
+ 
+<span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">noteWithText:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">NoteID:</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">noteid</span> <span class="p">{</span>
+    <span class="n">Note</span><span class="o">*</span> <span class="n">note</span> <span class="o">=</span> <span class="p">[</span><span class="n">Note</span> <span class="n">new</span><span class="p">];</span>
+    <span class="n">note</span><span class="p">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">text</span><span class="p">;</span>
+    <span class="n">note</span><span class="p">.</span><span class="n">NoteID</span> <span class="o">=</span> <span class="n">noteid</span><span class="p">;</span>
+    <span class="n">note</span><span class="p">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
+    <span class="k">return</span> <span class="n">note</span><span class="p">;</span>
+<span class="p">}</span>
+ 
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">title</span> <span class="p">{</span>
+	<span class="c1">//4</span>
+    <span class="c1">// split into lines</span>
+    <span class="n">NSArray</span><span class="o">*</span> <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">contents</span> <span class="n">componentsSeparatedByCharactersInSet</span><span class="o">:</span>
+    			<span class="p">[</span><span class="n">NSCharacterSet</span> <span class="n">newlineCharacterSet</span><span class="p">]];</span>
+ 
+    <span class="c1">// return the first</span>
+    <span class="k">return</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span>
+ 
+<span class="k">@end</span>
+</code></pre></div>
 
 <p>每个协议都是由@protocol开头的，之后的是协议名，可以看到一个协议也可以是某个协议的超集，比如这里JGAddable是NSObject协议的超集（NSObject既是类，又是协议，that‘s amazing）</p>
 
@@ -339,7 +499,36 @@
 
 <p>接下来在Note+Addable.m里实现这个协议就好了，如下所示:</p>
 
-<script src="https://gist.github.com/izhuxin/a77dd89cdcc58956c383.js"></script>
+<!--<script src="https://gist.github.com/izhuxin/a77dd89cdcc58956c383.js"></script>
+-->
+
+<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
+<span class="c1">//  Note+Addable.m</span>
+<span class="c1">//  Note</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Jeason on 14/11/1.</span>
+<span class="c1">//  Copyright (c) 2014年 Jeason. All rights reserved.</span>
+<span class="c1">//</span>
+ 
+<span class="cp">#import &quot;Note+Addable.h&quot;</span>
+ 
+<span class="k">@implementation</span> <span class="nc">Note</span> <span class="nl">(Addable)</span>
+ 
+<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">addAnother:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">another</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="p">[</span><span class="n">another</span> <span class="n">isKindOfClass</span><span class="o">:</span><span class="p">[</span><span class="n">Note</span> <span class="n">class</span><span class="p">]]</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">Note</span> <span class="o">*</span><span class="n">anotherNote</span> <span class="o">=</span> <span class="p">(</span><span class="n">Note</span> <span class="o">*</span><span class="p">)</span><span class="n">another</span><span class="p">;</span>
+        <span class="n">NSString</span> <span class="o">*</span><span class="n">addedContents</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">contents</span> <span class="n">stringByAppendingString</span><span class="o">:</span><span class="n">anotherNote</span><span class="p">.</span><span class="n">contents</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Note</span> <span class="n">noteWithText</span><span class="o">:</span><span class="n">addedContents</span> <span class="n">NoteID</span><span class="o">:</span><span class="n">self</span><span class="p">.</span><span class="n">NoteID</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">self</span> <span class="n">zeroValue</span><span class="p">];</span>
+<span class="p">}</span>
+ 
+<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">zeroValue</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">nil</span><span class="p">;</span>
+<span class="p">}</span>
+ 
+<span class="k">@end</span>
+</code></pre></div>
 
 <p>之后我们需要使用addanother的时候，就只需要</p>
 

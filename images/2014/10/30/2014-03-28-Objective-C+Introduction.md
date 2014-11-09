@@ -14,6 +14,10 @@ mathjax:
 <center><h1>iOS开发入门教程：Objective-C</h1></center>
 <p align="right">AppleClub 2014-11-1</p>
 
+<link rel="stylesheet" href="/path/to/styles/default.css">
+<script src="/path/to/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了[Stanford‘的CS193p课程](https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550)，以及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。
 
 
@@ -35,6 +39,76 @@ mathjax:
 - 虽然OC现在几乎只运用于Apple系的操作系统上，但OC最初源于NeXTSTEP操作系统（乔帮主离开Apple那段时间创立的公司创造的），后来NeXTSTEP被Apple收购，但并没有怎么修改NeXTSTEP留下的重要的Foundation库，所以我们现在的OC里的大部分类，枚举，结构体的名字都有个NS（NeXTSTEP的缩写）作为前缀。
 
 - Objective-C最大的特色是承自Smalltalk的信息传递模型，此机制与今日C++式之主流风格差异甚大。向一个函数传递参数只是向这个函数传递了一个模糊的信息，所有的信息处理都是直到runtime才会动态地决定(有点类似于C++的dynamic blinding)。
+
+<pre style='color:#d1d1d1;background:#000000;'><html><body style='color:#d1d1d1; background:#000000; '><pre>
+<span style='color:#ffffff; background:#dd0000; '>`timescale</span> <span style='color:#ffffff; background:#dd0000; '>1ns</span> <span style='color:#ffffff; background:#dd0000; '>/</span> <span style='color:#ffffff; background:#dd0000; '>1ps</span>
+ 
+<span style='color:#9999a9; '>////////////////////////////////////////////////////////////////////////////////</span>
+<span style='color:#9999a9; '>// Company: </span>
+<span style='color:#9999a9; '>// Engineer:</span>
+<span style='color:#9999a9; '>//</span>
+<span style='color:#9999a9; '>// Create Date:   10:54:10 10/29/2014</span>
+<span style='color:#9999a9; '>// Design Name:   gates</span>
+<span style='color:#9999a9; '>// Module Name:   C:/Users/Jeason/Documents/ISE Project/gates/gates_ts.v</span>
+<span style='color:#9999a9; '>// Project Name:  gates</span>
+<span style='color:#9999a9; '>// Target Device:  </span>
+<span style='color:#9999a9; '>// Tool versions:  </span>
+<span style='color:#9999a9; '>// Description: </span>
+<span style='color:#9999a9; '>//</span>
+<span style='color:#9999a9; '>// Verilog Test Fixture created by ISE for module: gates</span>
+<span style='color:#9999a9; '>//</span>
+<span style='color:#9999a9; '>// Dependencies:</span>
+<span style='color:#9999a9; '>// </span>
+<span style='color:#9999a9; '>// Revision:</span>
+<span style='color:#9999a9; '>// Revision 0.01 - File Created</span>
+<span style='color:#9999a9; '>// Additional Comments:</span>
+<span style='color:#9999a9; '>// </span>
+<span style='color:#9999a9; '>////////////////////////////////////////////////////////////////////////////////</span>
+ 
+<span style='color:#e66170; font-weight:bold; '>module gates_ts</span><span style='color:#d2cd86; '>;</span>
+ 
+<span style='color:#9999a9; '>// Inputs</span>
+<span style='color:#e66170; font-weight:bold; '>reg</span> a<span style='color:#e66170; font-weight:bold; '>;</span>
+<span style='color:#e66170; font-weight:bold; '>reg</span> b<span style='color:#e66170; font-weight:bold; '>;</span>
+ 
+<span style='color:#9999a9; '>// Outputs</span>
+<span style='color:#e66170; font-weight:bold; '>wire</span> <span style='color:#d2cd86; '>[</span><span style='color:#00a800; '>0</span><span style='color:#d2cd86; '>:</span><span style='color:#00a800; '>5</span><span style='color:#d2cd86; '>]</span> z<span style='color:#e66170; font-weight:bold; '>;</span>
+ 
+<span style='color:#9999a9; '>// Instantiate the Unit Under Test (UUT)</span>
+	gates uut <span style='color:#d2cd86; '>(</span>
+<span style='color:#d2cd86; '>.</span>a<span style='color:#d2cd86; '>(</span>a<span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>,</span> 
+<span style='color:#d2cd86; '>.</span>b<span style='color:#d2cd86; '>(</span>b<span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>,</span> 
+<span style='color:#d2cd86; '>.</span>z<span style='color:#d2cd86; '>(</span>z<span style='color:#d2cd86; '>)</span>
+<span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>;</span>
+ 
+	initial <span style='color:#e66170; font-weight:bold; '>begin</span>
+		<span style='color:#9999a9; '>// Initialize Inputs</span>
+		a <span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>0</span><span style='color:#d2cd86; '>;</span>
+		b <span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>0</span><span style='color:#d2cd86; '>;</span>
+ 
+		<span style='color:#9999a9; '>// Wait 100 ns for global reset to finish</span>
+		#<span style='color:#00a800; '>100</span><span style='color:#d2cd86; '>;</span>
+        
+		<span style='color:#9999a9; '>// Add stimulus here</span>
+		#<span style='color:#00a800; '>200</span>
+			a <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>0</span><span style='color:#d2cd86; '>;</span>
+			b <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>0</span><span style='color:#d2cd86; '>;</span>
+		
+		#<span style='color:#00a800; '>200</span>
+			a <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>0</span><span style='color:#d2cd86; '>;</span>
+			b <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>1</span><span style='color:#d2cd86; '>;</span>
+		
+		#<span style='color:#00a800; '>200</span>
+			a <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>1</span><span style='color:#d2cd86; '>;</span>
+			b <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>0</span><span style='color:#d2cd86; '>;</span>
+		
+		#<span style='color:#00a800; '>200</span>
+			a <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>1</span><span style='color:#d2cd86; '>;</span>
+			b <span style='color:#d2cd86; '>&lt;</span><span style='color:#d2cd86; '>=</span> <span style='color:#00a800; '>1</span><span style='color:#d2cd86; '>;</span>
+	<span style='color:#e66170; font-weight:bold; '>end</span>
+      
+<span style='color:#e66170; font-weight:bold; '>endmodule</span>
+</pre>
 
 ##方法的编写
 好吧，我没有写函数，是因为Objective-C的函数几乎只有写在类里面才有效，所以在接下来的叙述中不会刻意强调方法和函数的区别，默认他们都指代方法。 因为相比于Swift，OC的函数的写法则比较接近于C++，我们可以看看之前Swift教程的函数对应的OC版本:
