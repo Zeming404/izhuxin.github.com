@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>对二值图像去噪：搜索与随机算法结合 &#8211; Jeason</title>
+<meta name="description" content="">
+<meta name="keywords" content="Course">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对二值图像去噪：搜索与随机算法结合">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://localhost:4000/blog/Denoise%2BBinary%2BImage">
+<meta property="og:site_name" content="Jeason">
+<meta property="og:image" content="http://localhost:4000/images/objective_tutorial.jpg">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/Denoise%2BBinary%2BImage">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/style.css" />
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search...">
+        <i class="icon-remove-sign"></i>
+        <ul class="search-results post-list"></ul><!-- /.search-results -->
+    </div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/objective_tutorial.jpg)" itemscope itemtype="http://schema.org/Organization">
+
+
+    <div class="inner">
+        <div class="container">
+            <a class="brand" href="http://localhost:4000" role="banner" itemprop="url">
+
+                <img itemprop="logo" src="http://localhost:4000/images/logo.png" alt="Jeason Logo" />
+
+            <h1 class="blog-title light" itemprop="name">
+                Jeason
+            </h1>
+                
+            </a>
+        </div>
+    </div>
+    
+    
+    <div class="decor-wrapper">
+        <svg id="header-decor" class="decor bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+            <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+            <path class="medium left" d="M0 100 L50 50 L0 33.3" fill="rgba(255,255,255, .3)"></path>
+            <path class="medium right" d="M100 100 L50 50 L100 33.3" fill="rgba(255,255,255, .3)"></path>
+
+            <path class="small left" d="M0 100 L50 50 L0 66.6" fill="rgba(255,255,255, .5)"></path>
+            <path class="small right" d="M100 100 L50 50 L100 66.6" fill="rgba(255,255,255, .5)"></path>
+
+            <path d="M0 99.9 L50 49.9 L100 99.9 L0 99.9" fill="rgba(255,255,255, 1)"></path>
+
+            <path d="M48 52 L50 49 L52 52 L48 52" fill="rgba(255,255,255, 1)"></path>
+
+        </svg>
+    </div>
+    
+</header>
+<div id="main" class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+    <div class="container">
+        <div class="row">
+            <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            
+            
+            
+                
+            
+             
+             
+                    <header class="post-header entry-header">
+                        
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">对二值图像去噪：搜索与随机算法结合</h1>
+                        
+                        <div class="post-info text-center small">
+                            <span class="entry-date date published updated"><time datetime="2014-11-20T00:00:00+08:00" class="post-time" itemprop="datePublished">20 Nov 2014</time><span>
+                            in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                        </div>
+                    </header>
+                    <div class="post-body bordered-bottom" itemprop="description">
+                        
+                        <section>
+  <header>
+    <h2>目录</h2>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#section">问题描述</a></li>
+  <li><a href="#section-1">模型</a>    <ul>
+      <li><a href="#section-2">二值图像模型</a></li>
+      <li><a href="#section-3">加噪模型</a></li>
+      <li><a href="#section-4">爬山法模型</a></li>
+      <li><a href="#section-5">能量计算模型</a></li>
+      <li><a href="#section-6">模拟退火算法模型</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-7">算法</a>    <ul>
+      <li><a href="#section-8">二值化算法</a></li>
+      <li><a href="#section-9">加噪算法</a></li>
+      <li><a href="#section-10">取反算法</a></li>
+      <li><a href="#section-11">爬山法实现的降噪算法：</a></li>
+      <li><a href="#section-12">调整后的二级爬山法实现的降噪算法</a></li>
+      <li><a href="#section-13">一级爬山法+二级爬山法组合并随机选取路径算法</a></li>
+      <li><a href="#section-14">模拟退火实现的降噪算法:</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-15">实验结果</a>    <ul>
+      <li><a href="#section-16">一级爬山法</a></li>
+      <li><a href="#section-17">二级爬山法</a></li>
+      <li><a href="#section-18">一级爬山法+二级爬山法+随即选取路径算法</a></li>
+      <li><a href="#section-19">模拟退火算法</a></li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
+</section>
+
+<h1 id="section">问题描述</h1>
+<p>–
+对于一幅真彩图片，我们先通过一个恰当的方法将其转换为二值图像，之后并对其随机地加上10%的噪点，生成一幅含有噪点的图像。而我们的目的便是寻找一个恰当的方法和算法，对其进行去噪处理，生成一幅恢复后的图像来尽量的逼近原来的加噪前的图像。为了评定算法的优劣，我们将恢复后的图像与原图像进行每个位置的像素点的比较，计算其恢复率。</p>
+
+<h1 id="section-1">模型</h1>
+
+<h3 id="section-2">二值图像模型</h3>
+<p>对于一幅N位位图（1、4、8、16、24及32位等），我们为了将其二值化时尽量保存其边界信息，于是对于每个像素的某个通道的值，当它大于127时，我们都统一将其扩大为255，否则则降低为0。</p>
+
+<h3 id="section-3">加噪模型</h3>
+<p>对于一幅二值图像，我们先根据其像素点的总个数（图像长度*图像宽度，记其为S）计算出噪点个数，记其为M。通过随机函数产生M个随机数A，其中Ai &lt;= S(i=1,2,3…M)。对于每个由Ai确定的像素点，我们对其进行模糊操作（对于二值图像，便是取反操作）。</p>
+
+<h3 id="section-4">爬山法模型</h3>
+<center>
+<img src="http://localhost:4000/images/2014/11/20/somepic.jpg" />
+</center>
+
+<p>爬山法是一个搜索算法，根据一个elevation（评价函数），评价函数的意义（决定寻找的是最大值还是最小值），在状态空间中寻找一个最能满足要求的状态。爬山法每次move只会往前看一步，并不会生成一个搜索树，只保存当前的状态以及对应的评价函数的值。导致的后果就是爬山法往往只能找到一个局部最大值，其最大的缺点就是不能下山。如图所示，current state会逐渐走到local maximum上面而不是global maximum。</p>
+
+<h3 id="section-5">能量计算模型</h3>
+<p>对于一个点(x,y)，以及在这个点的像素值为R，分别计算其周围的若干个点的像素值，若其值为R（或者接近）的比例越大，则其能量越小。</p>
+
+<h3 id="section-6">模拟退火算法模型</h3>
+<p>模拟退火算法是在爬山法的基础上进行改良而得到的。爬山法是完完全全的贪心法，每次都鼠目寸光的选择一个当前最优解，因此只能搜索到局部的最优值。模拟退火其实也是一种贪心算法，但是它的搜索过程引入了随机因素。模拟退火算法以一定的概率来接受一个比当前解要差的解，因此有可能会跳出这个局部的最优解，达到全局的最优解。模拟退火算法的流程框图如下:</p>
+<center>
+<img src="http://localhost:4000/images/2014/11/20/FlowChart.jpg" />
+</center>
+
+<h1 id="section-7">算法</h1>
+
+<h3 id="section-8">二值化算法</h3>
+<p>对于一幅普通的彩色图像，我们对其所有像素点进行遍历扫描。对于每个像素点，我们选取它的Red通道值作为参考：当Red的值大于127时，我们将其扩大为255，当Red的值小于或等于127时，我们将其缩小为0，之后再将修改后的像素值保存为图像。可以写出伪代码如下：</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">/// @describe binary the normal image to a binary image</span>
+<span class="c1">///</span>
+<span class="c1">/// @para inputImage the normal imgae</span>
+<span class="c1">/// @return outputImage image after binaryzation</span>
+<span class="nx">func</span> <span class="nx">binaryzation</span><span class="p">(</span><span class="nx">inputImage</span><span class="p">)</span><span class="o">-&gt;</span><span class="nx">outputImage</span>
+	<span class="kd">let</span> <span class="nx">pointArray</span> <span class="o">=</span> <span class="nx">arrayFromImage</span><span class="p">(</span><span class="nx">inputImage</span><span class="p">)</span>
+	
+	<span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">pointArray</span> <span class="k">do</span>
+		<span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">getRChannel</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nx">r</span> <span class="o">&gt;</span> <span class="mi">127</span>
+			<span class="nx">r</span> <span class="o">=</span> <span class="mi">255</span>
+		<span class="k">else</span>
+			<span class="nx">r</span> <span class="o">=</span> <span class="mi">0</span>
+			
+	<span class="k">return</span> <span class="nx">imageFromArray</span><span class="p">(</span><span class="nx">pointArray</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="section-9">加噪算法</h3>
+<p>对于一幅二值图像，我们随即选取出10%个像素点，然后对这些像素点进行取反操作。之后再将修改后的像素值保存为图像。可以写出伪代码如下：</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">/// @describe add noice to a binary image</span>
+<span class="c1">///</span>
+<span class="c1">/// @para inputImage a binary image</span>
+<span class="c1">/// @return noice image</span>
+<span class="nx">func</span> <span class="nx">addNoice</span><span class="p">(</span><span class="nx">inputImage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">outputImage</span>
+	<span class="kd">let</span> <span class="nx">pointArray</span> <span class="o">=</span> <span class="nx">arrayFromImage</span><span class="p">(</span><span class="nx">inputImage</span><span class="p">)</span>
+	<span class="kd">let</span> <span class="nx">randomArray</span> <span class="o">=</span> <span class="nx">random</span> <span class="nx">select</span> <span class="mi">10</span><span class="o">%</span> <span class="nx">points</span> <span class="nx">from</span> <span class="nx">pointArray</span>
+	
+	<span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">randomArray</span> <span class="k">do</span>
+		<span class="nx">revert</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+		
+	<span class="k">return</span> <span class="nx">imageFromArray</span><span class="p">(</span><span class="nx">pointArray</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="section-10">取反算法</h3>
+<p>对于每一个点，我们选取它的Red通道值，当Red为0时，将Red置为255;当Red为255时，将其置为0，之后再将修改后的像素值保存为图像。可以写出伪代码如下：</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">/// @describe revert a point</span>
+<span class="c1">/// </span>
+<span class="c1">/// @para point the input point</span>
+<span class="c1">/// @return the revered point</span>
+<span class="nx">func</span> <span class="nx">revert</span><span class="p">(</span><span class="nx">point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">reveredPoint</span>
+	<span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">getRedChannel</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">r</span> <span class="o">==</span> <span class="mi">255</span>
+		<span class="nx">r</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">else</span>
+		<span class="nx">r</span> <span class="o">=</span> <span class="mi">255</span>
+	<span class="k">return</span> <span class="nx">redToPoint</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> 
+</code></pre></div>
+
+<h3 id="section-11">爬山法实现的降噪算法：</h3>
+<p>首先需要定义一个能量评价函数（能量越低越好的），可以根据先验知识知道： 
+ - 一个点会跟周围的点具有相同的值，即图形一般都是有形状的，而不是以散点形式存在在图片上的。
+ - 由于噪点只有10%，大多数的点都是完好无损的，所以在将颜色反转前应当考虑是否真的是噪点，即每个像素点总是想保持原有状态的。</p>
+
+<p>所以根据这些可以写出能量计算模型的伪代码如下：</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">/// @describe Caculate energy for input point</span>
+<span class="c1">///</span>
+<span class="c1">/// @para input The point input</span>
+<span class="c1">/// @return the energy calculate from the 8 points near the input point</span>
+<span class="nx">func</span> <span class="nx">energy</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">energy</span> <span class="nx">of</span> <span class="nx">input</span>
+	<span class="kd">let</span> <span class="nx">E</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="kd">let</span> <span class="nx">W1</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="kd">let</span> <span class="nx">neighborArray</span> <span class="o">=</span> <span class="nx">select</span> <span class="nx">neighbor</span> <span class="p">(</span><span class="nx">W1</span><span class="o">*</span><span class="nx">W1</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="nx">points</span> <span class="k">for</span> <span class="nx">input</span>
+	<span class="k">for</span> <span class="nx">point</span> <span class="k">in</span> <span class="nx">neighborArray</span> <span class="k">do</span>
+		<span class="k">if</span> <span class="nx">input</span> <span class="o">==</span> <span class="nx">point</span>
+			<span class="nx">increase</span><span class="p">(</span><span class="nx">E</span><span class="p">)</span>
+			
+	<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nx">E</span>
+</code></pre></div>
+
+<p>接下来就是扫描的工作，针对每一个像素点，把它设为黑和白，然后比较两种情况下的能量函数的取值，选取能够使能量变小的那个取值设为该像素点的值。
+伪代码如下：</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">/// @describe Denoise an noised image using climbing algorithm</span>
+<span class="c1">///</span>
+<span class="c1">/// @para inputImage The noised image</span>
+<span class="c1">/// @return outputImage An image after denoise</span>
+<span class="nx">func</span> <span class="nx">denoise</span><span class="p">(</span><span class="nx">inputImage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">outputImage</span>
+	<span class="kd">let</span> <span class="nx">pointArray</span> <span class="o">=</span> <span class="nx">arrayFromImage</span><span class="p">(</span><span class="nx">inputImage</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">pointArray</span> <span class="k">do</span>
+   		<span class="kd">let</span> <span class="nx">E1</span> <span class="o">=</span> <span class="nx">energy</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+   		<span class="kd">let</span> <span class="nx">Ri</span> <span class="o">=</span> <span class="nx">revert</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+   		<span class="kd">let</span> <span class="nx">E2</span> <span class="o">=</span> <span class="nx">energy</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+   		<span class="k">if</span> <span class="nx">E1</span> <span class="o">&gt;</span> <span class="nx">E2</span>
+   			<span class="nx">i</span> <span class="o">=</span> <span class="nx">Ri</span> 	
+	<span class="k">return</span> <span class="nx">imageFromArray</span><span class="p">(</span><span class="nx">pointArray</span><span class="p">)</span>
+</code></pre></div>
+
+<p>这就是普通的爬山法在降噪算法中的运用，我们将其命名为一级爬山法。</p>
+
+<h3 id="section-12">调整后的二级爬山法实现的降噪算法</h3>
+<p>我们在实验过程中发现，对于普通的爬山算法，我们去噪的效果并不好，仍然会有不少的噪点无法有效的消去。（见实验结果图1～4）</p>
+
+<p>为此我们经过思考和讨论后认为，这是因为对于每一个点，我们考虑的点只有其周围的8个点，有时候并不能很好的将其判断为“噪点”，所以我们尝试将其考虑范围扩大。在经过多次试验比较后，我们改为考虑其周围5*5－1共24个点，根据24个点的值来决定这个点的取值，这样能最大程度的把我们增加的噪点消除。现在的能量计算伪代码如下：</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">/// @describe Caculate energy for input point</span>
+<span class="c1">///</span>
+<span class="c1">/// @para input The point input</span>
+<span class="c1">/// @return the energy calculate from the 24 points near the input point</span>
+<span class="nx">func</span> <span class="nx">energy</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">energy</span>
+	<span class="kd">let</span> <span class="nx">E</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="kd">let</span> <span class="nx">W2</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="kd">let</span> <span class="nx">neighborArray</span> <span class="o">=</span> <span class="nx">select</span> <span class="nx">neighbor</span> <span class="p">(</span><span class="nx">W2</span><span class="o">*</span><span class="nx">W2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="nx">points</span> <span class="k">for</span> <span class="nx">input</span>
+	<span class="k">for</span> <span class="nx">point</span> <span class="k">in</span> <span class="nx">neighborArray</span> <span class="k">do</span>
+		<span class="k">if</span> <span class="nx">input</span> <span class="o">==</span> <span class="nx">point</span>
+			<span class="nx">increase</span><span class="p">(</span><span class="nx">E</span><span class="p">)</span>
+	<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nx">E</span>
+</code></pre></div>
+
+<p>这就是训练了参数weight后的爬山法，我们将其命名为二级爬山法。</p>
+
+<h3 id="section-13">一级爬山法+二级爬山法组合并随机选取路径算法</h3>
+<p>我们在实验的时候也发现，经过改良后的二级爬山法虽然能消除大部分增加的噪点，但它却会很容易将原来图像里的孤立的点（如在图像边缘的点，见实验结果图5）。同时我们发现，这个现象在一级爬山法里并不会出现。于是我们经过讨论和思考后认为：这是因为对于一级爬山法，每一个点只考虑距离其最近的8个点，这8个点的距离相同，所以比重一样。而二级爬山法对于周围24个点，距离并不是都是一样的，所以我们认为应该是最近的8个点的权重应该高于次近的16个点的距离。于是可以写出新的能量计算部分伪代码如下:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">/// @describe Caculate energy for input point</span>
+<span class="c1">///</span>
+<span class="c1">/// @para input The point input</span>
+<span class="c1">/// @return the energy calculate from the 24 points near the input point</span>
+<span class="nx">func</span> <span class="nx">energy</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">energy</span>
+	<span class="kd">let</span> <span class="nx">E</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="kd">let</span> <span class="nx">W1</span> <span class="o">=</span> <span class="mi">3</span>
+	<span class="kd">let</span> <span class="nx">W2</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="kd">let</span> <span class="nx">neighborArray1</span> <span class="o">=</span> <span class="nx">select</span> <span class="nx">neighbor</span> <span class="p">(</span><span class="nx">W1</span><span class="o">*</span><span class="nx">W1</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="nx">points</span> <span class="k">for</span> <span class="nx">input</span>
+	<span class="kd">let</span> <span class="nx">neighborArray2</span> <span class="o">=</span> <span class="nx">select</span> <span class="nx">neighbor</span> <span class="p">(</span><span class="nx">W2</span><span class="o">*</span><span class="nx">W2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="nx">points</span> <span class="k">for</span> <span class="nx">input</span>
+
+	<span class="k">for</span> <span class="nx">point</span> <span class="k">in</span> <span class="nx">neighborArray1</span> <span class="k">do</span>
+		<span class="k">if</span> <span class="nx">input</span> <span class="o">==</span> <span class="nx">point</span>
+			<span class="nx">increase</span><span class="p">(</span><span class="nx">E</span><span class="p">)</span>
+			<span class="nx">increase</span><span class="p">(</span><span class="nx">E</span><span class="p">)</span>	<span class="c1">//increase twice</span>
+
+	<span class="k">for</span> <span class="nx">point</span> <span class="k">in</span> <span class="nx">neighborArray1</span> <span class="k">do</span>
+		<span class="k">if</span> <span class="nx">input</span> <span class="o">==</span> <span class="nx">point</span>
+			<span class="nx">increase</span><span class="p">(</span><span class="nx">E</span><span class="p">)</span>	<span class="c1">//increase once</span>
+	
+	<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nx">E</span>
+</code></pre></div>
+
+<p>同时，我们还注意到因为顺序选取点的话，会导致递归影响的现象，即如果点1被认为是黑的，那么与它临近的点2被认为是黑的概率就会比较大，这又会导致点3被认为是黑的概率比较大……以此类推。于是，我们每次选取的点都通过一个随机函数来获得，以尽量消除这种影响。现在的降噪部分伪代码如下:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">/// @describe Denoise an noised image using climbing algorith with random select a path</span>
+<span class="c1">/// @inputImage The noised image</span>
+<span class="c1">/// @return An image after denoise</span>
+<span class="nx">func</span> <span class="nx">denoise</span><span class="p">(</span><span class="nx">inputImage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">outputImage</span>
+    <span class="kd">let</span> <span class="nx">randomArray</span> <span class="o">=</span> <span class="nx">randomArrayFromImage</span><span class="p">(</span><span class="nx">inputImage</span><span class="p">)</span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">randomArray</span> <span class="k">do</span>
+        <span class="kd">let</span> <span class="nx">E1</span> <span class="o">=</span> <span class="nx">energy</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+        <span class="nx">Ri</span> <span class="o">=</span> <span class="nx">revert</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nx">E2</span> <span class="o">=</span> <span class="nx">energy</span><span class="p">(</span><span class="nx">Ri</span><span class="p">)</span> 
+        <span class="k">if</span> <span class="nx">E1</span> <span class="o">&lt;=</span> <span class="nx">E2</span>
+            <span class="nx">i</span> <span class="o">=</span> <span class="nx">Ri</span>
+
+    <span class="k">return</span> <span class="nx">imageFromArray</span><span class="p">(</span><span class="nx">randomArray</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="section-14">模拟退火实现的降噪算法:</h3>
+
+<p>经过改良后的这种算法可以说效果已经达到了近乎完美的地步。通过训练参数weight、weight1、weight2也让我们注意到了随机算法可以让整体的结果提升，于是我们考虑加入模拟退火算法来优化爬山法的不足。</p>
+
+<p>在退火之前我们有一个初始温度T，对于一个点，我们考虑其在变化之后的能量变化，若果其能量变小了，则100%接受改变，若能量变大了，则有一定的概率R接受改变。并且每次接受能量变大的改变，T的值和R的值都会按照一定的系数减小。写成伪代码如下:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">/// @describe Denoise an noised image using simulate annealing algorithm</span>
+<span class="c1">/// @inputImage The noised image</span>
+<span class="c1">/// @return An image after denoise</span>
+<span class="nx">func</span> <span class="nx">denoise</span><span class="p">(</span><span class="nx">inputImage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">outputImage</span>
+    <span class="kd">let</span> <span class="nx">T</span> <span class="o">=</span> <span class="nx">T0</span>
+    <span class="kd">let</span> <span class="nx">control</span> <span class="o">=</span> <span class="nx">a</span> <span class="kr">float</span> <span class="nx">number</span> <span class="nx">from</span> <span class="mi">0</span> <span class="nx">to</span> <span class="mi">1</span>
+    <span class="kd">let</span> <span class="nx">randomArray</span> <span class="o">=</span> <span class="nx">randomArrayFromImage</span><span class="p">(</span><span class="nx">inputImage</span><span class="p">)</span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">randomArray</span> <span class="k">do</span>
+        <span class="kd">let</span> <span class="nx">E1</span> <span class="o">=</span> <span class="nx">energy</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+        <span class="nx">Ri</span> <span class="o">=</span> <span class="nx">revert</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nx">E2</span> <span class="o">=</span> <span class="nx">energy</span><span class="p">(</span><span class="nx">Ri</span><span class="p">)</span>
+    
+        <span class="k">if</span> <span class="nx">E1</span> <span class="o">&lt;=</span> <span class="nx">E2</span>
+            <span class="nx">i</span> <span class="o">=</span> <span class="nx">Ri</span>
+        <span class="k">else</span>
+            <span class="kd">let</span> <span class="nx">probability</span> <span class="o">=</span> <span class="nx">calculate</span> <span class="nx">probability</span> <span class="nx">from</span> <span class="nx">T</span>
+            <span class="nx">T</span> <span class="o">=</span> <span class="nx">control</span> <span class="o">*</span> <span class="nx">T</span>
+            <span class="k">if</span> <span class="nx">hit</span> <span class="nx">the</span> <span class="nx">probability</span>
+                <span class="nx">i</span> <span class="o">=</span> <span class="nx">Ri</span>
+    <span class="k">return</span> <span class="nx">imageFromArray</span><span class="p">(</span><span class="nx">randomArray</span><span class="p">)</span>
+</code></pre></div>
+
+<h1 id="section-15">实验结果</h1>
+<p>–</p>
+
+<h3 id="section-16">一级爬山法</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>图1、实验原图</th>
+      <th>图2、二值化后的图像</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="http://localhost:4000/images/2014/11/20/AI.png" alt="" /></td>
+      <td><img src="http://localhost:4000/images/2014/11/20/binaryzation.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>图3、加噪后的图像</th>
+      <th>图4、一级爬山法的效果图</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="http://localhost:4000/images/2014/11/20/addNoice.png" alt="" /></td>
+      <td><img src="http://localhost:4000/images/2014/11/20/denoice(1).png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>可以看到，一级爬山法很明显有一些噪点并不能有效的去除，经过100次的加噪、去噪之后，恢复的结果稳定在原图的99.2%左右。</p>
+
+<h3 id="section-17">二级爬山法</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>图5、二级爬山法的效果图</th>
+      <th>实验结果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="http://localhost:4000/images/2014/11/20/denoice(2).png" alt="" /></td>
+      <td><img src="http://localhost:4000/images/2014/11/20/result(2).png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>可以看到，二级爬山法能有效的去除之前增加的噪点，但在图像边缘的点会被当作噪点也去除了，所以恢复的结果跟一级爬山法接近，在原图的99.25%左右。</p>
+
+<h3 id="section-18">一级爬山法+二级爬山法+随即选取路径算法</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>图6、一级爬山法+二级爬山法+随即选取路径效果图</th>
+      <th>实验结果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="http://localhost:4000/images/2014/11/20/denoice(3).png" alt="" /></td>
+      <td><img src="http://localhost:4000/images/2014/11/20/result(3).png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>可以看到，经过进一步优化后的算法，实现的效果既能有效的去除噪点，又能更好地保留边缘信息，可以说效果是相当不错的，结果稳定在原图的99.4%左右。</p>
+
+<h3 id="section-19">模拟退火算法</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>图7、模拟退火算法改良后的效果图</th>
+      <th>实验结果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="http://localhost:4000/images/2014/11/20/denoice(4).png" alt="" /></td>
+      <td><img src="http://localhost:4000/images/2014/11/20/result(4).png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>使用了模拟退火算法改良后，效果进一步加强，大部分结果都在99.4%以上。</p>
+
+
+                        <br>
+                    <span class="entry-tags">
+                    <p>
+                        <i class="icon-tags"></i>&nbsp;Tagged with Course
+                    </p>
+                    </span>
+                    </div>
+        </div>
+                    <footer class="post-footer entry-meta">
+                        
+                        <div class="post-author text-center">                       
+	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
+</div> 
+                        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+                    </footer>
+            </article>
+    </div>
+</div>
+
+
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/objective_tutorial.jpg)" >
+
+
+    <div class="inner">
+        <div class="container">
+
+            <ul class="social-icons">
+            
+            
+            
+            
+            <li>
+                <a href="http://stackoverflow.com/users/3993969/jeason" data-toggle="tooltip" title="Jeason George on StackOverflow" target="_blank">
+                    <i class="icon-stackexchange"></i>
+                </a>
+            </li>
+            <li>
+                <a href="http://weibo.com/u/2966878797" data-toggle="tooltip" title="Jeason George on Sina Weibo" target = "_blank">
+                    <i class="icon-weibo"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="http://github.com/izhuxin" data-toggle="tooltip" title="Jeason George on Github" target="_blank">
+                    <i class="icon-github"></i>
+                </a>
+            </li>
+            <li><a href="http://localhost:4000/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+                    <i class="icon-rss"></i>
+                </a>
+            </li>
+
+        </ul>
+            <p class="copy-text">
+                <a href="http://localhost:4000/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+            </p>
+
+            <ul class="menu-items">
+            
+            <li>
+                
+                    <a href="http://localhost:4000/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                
+            </li>
+            
+            <li>
+                
+                    <a href="http://localhost:4000/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
+                
+            </li>
+            
+            <li class="dosearch"><i class="icon-search"></i> 站内搜索</li>
+        </ul>
+        </div>
+    </div>
+    
+        <div class="decor-wrapper">
+            <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+                <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba(255,255,255, .1)"></path>
+                <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba(255,255,255, .1)"></path>
+
+                <path class="medium left" d="M0 0 L50 50 L0 66.6" fill="rgba(255,255,255, .3)"></path>
+                <path class="medium right" d="M100 0 L50 50 L100 66.6" fill="rgba(255,255,255, .3)"></path>
+
+                <path class="small left" d="M0 0 L50 50 L0 33.3" fill="rgba(255,255,255, .5)"></path>
+                <path class="small right" d="M100 0 L50 50 L100 33.3" fill="rgba(255,255,255, .5)"></path>
+
+                <path d="M0 0 L50 50 L100 0 L0 0" fill="rgba(255,255,255, 1)"></path>
+
+                <path d="M48 48 L50 51 L52 48 L48 48" fill="rgba(255,255,255, 1)"></path>
+
+            </svg>
+        </div>
+    
+</footer>
+
+
+    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/script.js"></script>
+
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : 'http://localhost:4000/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-48042789-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'Jeason'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+</body>
+</html>

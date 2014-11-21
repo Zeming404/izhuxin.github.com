@@ -19,6 +19,10 @@
     
     
     <url>
+        <loc>http://localhost:4000/blog/Denoise%2BBinary%2BImage</loc>
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/blog/iOS%2BAnroid%2BEmoji</loc>
     </url>
     

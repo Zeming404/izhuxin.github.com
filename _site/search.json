@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "对二值图像去噪：搜索与随机算法结合",
+		  "category"   : "blog",
+		  "url"        : "http://localhost:4000/blog/Denoise%2BBinary%2BImage",
+		  "date"       : "2014-11-20 00:00:00 +0800",
+		  "shortdate"  : "November 20, 2014"
+		} ,
+	
+		{
 		  "title"      : "iOS和Android的Emoji表情同步方案",
 		  "category"   : "blog",
 		  "url"        : "http://localhost:4000/blog/iOS%2BAnroid%2BEmoji",
