@@ -152,14 +152,15 @@
 
 <p>首先我们先来看看Swift的函数的概念。函数是把一段操作（包括定义变量，以及对这些变量进行其他函数操作）封装起来的黑盒子。黑盒子的左边是输入的参数，盒子的右边是函数的返回值。所以，在面向函数的程序设计里，会把一个个函数作为我们编程的单元，用这些函数来构建出我们的程序。我们可以来看看一个函数的写法：（你可以打开的playground然后输入下面的代码）</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">func</span> <span class="nx">square</span><span class="p">(</span><span class="nx">number</span><span class="o">:</span> <span class="nx">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">Double</span> <span class="p">{</span> 
-    <span class="k">return</span> <span class="nx">number</span> <span class="o">*</span> <span class="nx">number</span><span class="p">;</span>
-<span class="p">}</span>
+<pre><code class="language-swift">
+func square(number: Double) -&gt; Double { 
+    return number * number;
+}
  
-<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mf">4.0</span>
-<span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">sqrt</span><span class="p">(</span><span class="nx">square</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">+</span> <span class="nx">square</span><span class="p">(</span><span class="nx">b</span><span class="p">))</span> 
-<span class="nx">println</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
-</code></pre></div>
+let a = 3.0, b = 4.0
+let c = sqrt(square(a) + square(b)) 
+println(c)
+</code></pre>
 
 <p>每个函数都有func关键词作为开头，来表明接下来的是一个函数的定义，接下来是函数的名字，之后由括号括起来的是函数的实参以及其类型，之后由剪头指向函数的返回值，最后由花括号讲函数体括起来，而函数体将会在执行到return语句时停止。</p>
 
@@ -176,21 +177,26 @@
 <p>如果你是Objective-C的粉丝，那么你肯定喜欢Objective-C那种一拿上来一个函数就可以用英文读出来的感觉。而C/C++的函数则显得比较难懂一些，Swift作为C语言的一个超集，既可以像C语言一样调用函数，又可以用外置参数名 names的方式来使函数可以像在OC中一样易读懂，来看看下面这个例子：
 <!--<script src="https://gist.github.com/izhuxin/0e8fa3f71d10eea68130.js"></script>
 --></p>
+<pre><code class="language-swift">
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">func</span> <span class="nx">sub</span><span class="p">(</span> <span class="nx">jianshu</span><span class="o">:</span> <span class="nx">Int</span><span class="p">,</span> <span class="nx">beijianshu</span><span class="o">:</span> <span class="nx">Int</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">Int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">beijianshu</span> <span class="o">-</span> <span class="nx">jianshu</span>
-<span class="p">}</span>
-<span class="nx">sub</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span> <span class="p">)</span>
-</code></pre></div>
+func sub( jianshu: Int, beijianshu: Int ) -&gt; Int {
+    return beijianshu - jianshu
+}
+sub( 3, 5 )
+
+</code></pre>
 
 <p>嘿，你会发现在你不查看函数定义之前，你根本不知道是谁减谁，而使用了External parameter names的方式则允许你使用下面这样的方式来调用：</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">func</span> <span class="nx">sub2</span><span class="p">(</span> <span class="err">#</span><span class="nx">jianshu</span><span class="o">:</span> <span class="nx">Int</span><span class="p">,</span> <span class="err">#</span><span class="nx">beijianshu</span><span class="o">:</span> <span class="nx">Int</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">Int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">beijianshu</span> <span class="o">-</span> <span class="nx">jianshu</span>
-<span class="p">}</span>
+<pre><code class="language-swift">
+
+func sub2( #jianshu: Int, #beijianshu: Int ) -&gt; Int {
+    return beijianshu - jianshu
+}
  
-<span class="nx">sub2</span><span class="p">(</span><span class="nx">jianshu</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">beijianshu</span><span class="o">:</span> <span class="mi">5</span><span class="p">)</span>
-</code></pre></div>
+sub2(jianshu: 3, beijianshu: 5)
+
+</code></pre>
 
 <!--<script src="https://gist.github.com/izhuxin/4d927aed685f3ab4f871.js"></script>
 -->
@@ -206,17 +212,21 @@
 
 <p>Swift中对闭包也有了自己的实现，swift中闭包的写法是非常灵活的，一种最为中规中矩的写法就是：
 <!--<script src="https://gist.github.com/izhuxin/9d1b26cf1bf841af0841.js"></script>
---></p>
-
-<div class="highlight"><pre><code class="javascript"><span class="kd">let</span> <span class="nx">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;fish&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;chicken&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">]</span>
+-->
+<!--
+<div class="highlight"><pre><code class="javascript"><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;language-swift&quot;</span><span class="o">&gt;</span>
+<span class="kd">let</span> <span class="nx">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;fish&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;chicken&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">]</span>
 <span class="kd">let</span> <span class="nx">sortedStrings</span> <span class="o">=</span> <span class="nx">animals</span><span class="p">.</span><span class="nx">sorted</span><span class="p">({</span>
     <span class="p">(</span><span class="nx">one</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">two</span><span class="o">:</span> <span class="nb">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">Bool</span> <span class="k">in</span>
         <span class="k">return</span> <span class="nx">one</span> <span class="o">&gt;</span> <span class="nx">two</span>
     <span class="p">})</span>
 <span class="nx">println</span><span class="p">(</span><span class="nx">sortedStrings</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+<span class="c">&lt;!--</span>
 </code></pre></div>
-
-<p>可以看到，sort接受的参数是一个函数，而我们则可以传入一个闭包，由花括号括起来的部分，接下来的下一行是闭包的行参和它的返回值，in关键词后面的则对应了函数的函数体，这种写法，除了闭包是匿名的之外，其他的跟函数的写法都是一一对应的，当然你可以写的更加风骚一点，比如像这样：</p>
+-->
+可以看到，sort接受的参数是一个函数，而我们则可以传入一个闭包，由花括号括起来的部分，接下来的下一行是闭包的行参和它的返回值，in关键词后面的则对应了函数的函数体，这种写法，除了闭包是匿名的之外，其他的跟函数的写法都是一一对应的，当然你可以写的更加风骚一点，比如像这样：</p>
 
 <p><code>let sortedStrings = animals.sorted({ $0 &gt; $1 })</code></p>
 
@@ -225,33 +235,34 @@
 <p>类的定义有点多，我们可以简单的把类理解为将函数和变量捆绑起来的一种结构，它封装了某个具体的事物的属性以及它能执行的操作。在面向对象的程序设计里，我们会把一个个的类作为我们编程的单元，用这些类的实例（也就是对象）来构建出我们的程序。我们可以来看看一个类的写法：（同样的，在playground里键入下面的代码）
 <!--<script src="https://gist.github.com/izhuxin/7c408694ff9b4f3d2001.js"></script>
 --></p>
-
-<div class="highlight"><pre><code class="javascript"> 
-<span class="kr">class</span> <span class="nx">Treasure</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">what</span><span class="o">:</span> <span class="nb">String</span>
-    <span class="kd">let</span> <span class="nx">latitude</span><span class="o">:</span> <span class="nx">Double</span>
-    <span class="kd">let</span> <span class="nx">longitude</span><span class="o">:</span> <span class="nx">Double</span>
-    
-    <span class="nx">init</span><span class="p">(</span><span class="nx">what</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">latitude</span><span class="o">:</span> <span class="nx">Double</span><span class="p">,</span> <span class="nx">longitude</span><span class="o">:</span> <span class="nx">Double</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">what</span> <span class="o">=</span> <span class="nx">what</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">latitude</span> <span class="o">=</span> <span class="nx">latitude</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">longitude</span> <span class="o">=</span> <span class="nx">longitude</span>
-    <span class="p">}</span>
-    
-    <span class="nx">convenience</span> <span class="nx">init</span><span class="p">(</span> <span class="nx">what</span><span class="o">:</span> <span class="nb">String</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span> <span class="nx">what</span><span class="o">:</span> <span class="nx">what</span><span class="p">,</span> <span class="nx">latitude</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">longitude</span><span class="o">:</span> <span class="mi">0</span> <span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="nx">convenience</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span> <span class="nx">what</span><span class="o">:</span> <span class="s2">&quot;Nothing&quot;</span><span class="p">,</span> <span class="nx">latitude</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">longitude</span><span class="o">:</span> <span class="mi">0</span> <span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="nx">func</span> <span class="nx">describe</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s2">&quot;Treasure \(what) is in ( \(latitude), \(longitude) )&quot;</span>
-    <span class="p">}</span>
+<pre><code class="language-swift">
  
-<span class="p">}</span>
-</code></pre></div>
+class Treasure {
+    let what: String
+    let latitude: Double
+    let longitude: Double
+    
+    init(what: String, latitude: Double, longitude: Double) {
+        self.what = what
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+    
+    convenience init( what: String ) {
+        self.init( what: what, latitude: 0, longitude: 0 )
+    }
+    
+    convenience init() {
+        self.init( what: "Nothing", latitude: 0, longitude: 0 )
+    }
+    
+    func describe() -&gt; String {
+        return "Treasure \(what) is in ( \(latitude), \(longitude) )"
+    }
+ 
+}
+
+</code></pre>
 
 <p>每个类都由class关键词开头，之后的便是类名，括号里面的是类的body。就像刚才说的，类的body由一些成员函数和成员变量（我们姑且把常量和变量一起笼统的称为成员
 变量）组成。其中，每个类都有一个init成员函数，它类似于C++里面的默认构造函数，在这里我们可以对类的成员变量进行初始化。当然你也可以定义其他的构造函数，这时候就要加上一个convenience关键词，并且在这些函数里面调用默认构造函数。而当我们要使用这些类来编程时，就需要创建一个实例，并且调用它里面的方法。</p>
@@ -263,21 +274,24 @@
 <!--<script src="https://gist.github.com/izhuxin/3935a5d3d0a28ab85255.js"></script>
 --></p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">struct</span> <span class="nx">Treasure</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">what</span><span class="o">:</span> <span class="nb">String</span>
-    <span class="kd">let</span> <span class="nx">latitude</span><span class="o">:</span> <span class="nx">Double</span>
-    <span class="kd">let</span> <span class="nx">longitude</span><span class="o">:</span> <span class="nx">Double</span>
+<pre><code class="language-swift">
+
+struct Treasure {
+    let what: String
+    let latitude: Double
+    let longitude: Double
     
-    <span class="nx">init</span><span class="p">(</span><span class="nx">what</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">latitude</span><span class="o">:</span> <span class="nx">Double</span><span class="p">,</span> <span class="nx">longitude</span><span class="o">:</span> <span class="nx">Double</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">what</span> <span class="o">=</span> <span class="nx">what</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">latitude</span> <span class="o">=</span> <span class="nx">latitude</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">longitude</span> <span class="o">=</span> <span class="nx">longitude</span>
-    <span class="p">}</span>
-    <span class="nx">func</span> <span class="nx">describe</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s2">&quot;Treasure \(what) is in ( \(latitude), \(longitude) )&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+    init(what: String, latitude: Double, longitude: Double) {
+        self.what = what
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+    func describe() -&gt; String {
+        return "Treasure \(what) is in ( \(latitude), \(longitude) )"
+    }
+}
+
+</code></pre>
 
 <p>没错，这仅仅是把class关键词改成struct关键词而已。而作为类，还有另外一些基于面向对象的特性，这些事struct所没有的，接下来我们就一一介绍：</p>
 
@@ -302,20 +316,21 @@
 <p>我们可以用一个类来继承另外一个类，从而获得它的成员变量和成员函数，同时还可以增加新的成员变量，成员函数，或者是重写旧的成员函数，像下面所示：(打开playground，在刚才的地方后面加入以下代码)
 <!--<script src="https://gist.github.com/izhuxin/0ddeb7aca59a4aebce8a.js"></script>
 --></p>
+<pre><code class="language-swift">
+class HistoryTreasure: Treasure {
+    let year: Int
+    
+    init(what: String, latitude: Double, longitude: Double, year: Int) {
+        self.year = year;
+        super.init(what: what, latitude: latitude, longitude: longitude);
+    }
+    
+    override func describe() -&gt; String {
+        return "History treasure \(self.what) at \(self.year) is in (\(self.latitude), \(self.longitude))"
+    }
+}
 
-<div class="highlight"><pre><code class="javascript"><span class="kr">class</span> <span class="nx">HistoryTreasure</span><span class="o">:</span> <span class="nx">Treasure</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">year</span><span class="o">:</span> <span class="nx">Int</span>
-    
-    <span class="nx">init</span><span class="p">(</span><span class="nx">what</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">latitude</span><span class="o">:</span> <span class="nx">Double</span><span class="p">,</span> <span class="nx">longitude</span><span class="o">:</span> <span class="nx">Double</span><span class="p">,</span> <span class="nx">year</span><span class="o">:</span> <span class="nx">Int</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">year</span> <span class="o">=</span> <span class="nx">year</span><span class="p">;</span>
-        <span class="kr">super</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">what</span><span class="o">:</span> <span class="nx">what</span><span class="p">,</span> <span class="nx">latitude</span><span class="o">:</span> <span class="nx">latitude</span><span class="p">,</span> <span class="nx">longitude</span><span class="o">:</span> <span class="nx">longitude</span><span class="p">);</span>
-    <span class="p">}</span>
-    
-    <span class="nx">override</span> <span class="nx">func</span> <span class="nx">describe</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s2">&quot;History treasure \(self.what) at \(self.year) is in (\(self.latitude), \(self.longitude))&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+</code></pre>
 
 <p>当我们想要指明A类继承自B类时，只需要在A类名后面加上“: B”即可，当我们需要重写B类的一些方法时，需要在func前面加上override的关键词，当我们要在类内决定调用的是子类的函数，还是父类的函数时，则可以用self和super来指明。</p>
 
@@ -326,14 +341,15 @@
 <p>上面说到的现象称为多态，即对于一个父类的方法（虚函数），每个子类可以有自己的实现方式。而且当由父类的reference或者是pointer来调用这个方法时，具体执行哪个实现方式，则是在运行时决定的。写成代码如下：(打开playground，在刚才的地方后面加入以下代码)
 <!--<script src="https://gist.github.com/izhuxin/5319ea4351be9a6bf1e7.js"></script>
 --></p>
-
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">basic</span> <span class="o">:</span> <span class="nx">Treasure</span><span class="o">!</span>
-<span class="nx">basic</span> <span class="o">=</span> <span class="nx">Treasure</span><span class="p">(</span> <span class="nx">what</span><span class="o">:</span> <span class="s2">&quot;Apple&quot;</span><span class="p">,</span> <span class="nx">latitude</span><span class="o">:</span> <span class="mf">10.0</span><span class="p">,</span> <span class="nx">longitude</span><span class="o">:</span> <span class="mf">10.0</span> <span class="p">)</span>
-<span class="nx">basic</span><span class="p">.</span><span class="nx">describe</span><span class="p">()</span>
+<pre><code class="language-swift">
+var basic : Treasure!
+basic = Treasure( what: "Apple", latitude: 10.0, longitude: 10.0 )
+basic.describe()
  
-<span class="nx">basic</span> <span class="o">=</span> <span class="nx">HistoryTreasure</span><span class="p">(</span> <span class="nx">what</span><span class="o">:</span> <span class="s2">&quot;Apple&quot;</span><span class="p">,</span> <span class="nx">latitude</span><span class="o">:</span> <span class="mf">10.0</span><span class="p">,</span> <span class="nx">longitude</span><span class="o">:</span> <span class="mf">10.0</span><span class="p">,</span> <span class="nx">year</span><span class="o">:</span> <span class="mi">1993</span> <span class="p">)</span>
-<span class="nx">basic</span><span class="p">.</span><span class="nx">describe</span><span class="p">()</span>
-</code></pre></div>
+basic = HistoryTreasure( what: "Apple", latitude: 10.0, longitude: 10.0, year: 1993 )
+basic.describe()
+
+</code></pre>
 
 <p>在这里，我们调用了两次<code>basic.describe()
 </code>，而这两次的实际执行的代码是不一样的。</p>
@@ -345,24 +361,25 @@
 <p>而在Swift中，这两个概念则被联系到了一起：为一个Class增加扩展，这个扩展可以是某个协议的实现。当然了，扩展也可以不实现任何协议，就只是为类增加某些方法和属性（这一点跟Category只能增加方法不同）。来看一个具体的实例吧：
 <!--<script src="https://gist.github.com/izhuxin/5f5775933f3c34277dbb.js"></script>
 --></p>
+<pre><code class="language-swift">
+@objc protocol Addable {
+    func addAnother(a:Addable) -&gt; NSObject
+}
+ 
+class JEInt : NSObject {
+    var value: Int = 0
+}
+ 
+extension JEInt: Addable {
+    func addAnother(a: Addable) -&gt; NSObject {
+        if let another = a as? JEInt {
+            self.value += another.value
+        }
+        return self
+    }
+}
 
-<div class="highlight"><pre><code class="javascript"><span class="err">@</span><span class="nx">objc</span> <span class="nx">protocol</span> <span class="nx">Addable</span> <span class="p">{</span>
-    <span class="nx">func</span> <span class="nx">addAnother</span><span class="p">(</span><span class="nx">a</span><span class="o">:</span><span class="nx">Addable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">NSObject</span>
-<span class="p">}</span>
- 
-<span class="kr">class</span> <span class="nx">JEInt</span> <span class="o">:</span> <span class="nx">NSObject</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">value</span><span class="o">:</span> <span class="nx">Int</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="p">}</span>
- 
-<span class="nx">extension</span> <span class="nx">JEInt</span><span class="o">:</span> <span class="nx">Addable</span> <span class="p">{</span>
-    <span class="nx">func</span> <span class="nx">addAnother</span><span class="p">(</span><span class="nx">a</span><span class="o">:</span> <span class="nx">Addable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">NSObject</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nx">another</span> <span class="o">=</span> <span class="nx">a</span> <span class="nx">as</span><span class="o">?</span> <span class="nx">JEInt</span> <span class="p">{</span>
-            <span class="nx">self</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="nx">another</span><span class="p">.</span><span class="nx">value</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="nx">self</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+</code></pre>
 
 <p>在Swift中， protocol以@objc protocol开头，之后跟着的是协议的名字，花括号里面的是具体的方法接口
 当我们希望某个类来实现这个协议时，可以用extension来扩展它的时候在类名后面加上“: ‘protocol’ ”然后再提供一些接口的方法就好了。当然，这不是唯一的方式，只是有了extension可以让我们很方便地把协议相关的代码分离出来，使逻辑更加清晰。</p>

@@ -26,8 +26,9 @@ mathjax:
 ##函数的概念
 
 首先我们先来看看Swift的函数的概念。函数是把一段操作（包括定义变量，以及对这些变量进行其他函数操作）封装起来的黑盒子。黑盒子的左边是输入的参数，盒子的右边是函数的返回值。所以，在面向函数的程序设计里，会把一个个函数作为我们编程的单元，用这些函数来构建出我们的程序。我们可以来看看一个函数的写法：（你可以打开的playground然后输入下面的代码）
-{% highlight javascript %}
 
+
+<pre><code class="language-swift">
 func square(number: Double) -> Double { 
     return number * number;
 }
@@ -35,8 +36,7 @@ func square(number: Double) -> Double {
 let a = 3.0, b = 4.0
 let c = sqrt(square(a) + square(b)) 
 println(c)
-
-{% endhighlight %}
+</code></pre>
 
 每个函数都有func关键词作为开头，来表明接下来的是一个函数的定义，接下来是函数的名字，之后由括号括起来的是函数的实参以及其类型，之后由剪头指向函数的返回值，最后由花括号讲函数体括起来，而函数体将会在执行到return语句时停止。
 
@@ -53,18 +53,18 @@ println(c)
 如果你是Objective-C的粉丝，那么你肯定喜欢Objective-C那种一拿上来一个函数就可以用英文读出来的感觉。而C/C++的函数则显得比较难懂一些，Swift作为C语言的一个超集，既可以像C语言一样调用函数，又可以用外置参数名 names的方式来使函数可以像在OC中一样易读懂，来看看下面这个例子：
 <!--<script src="https://gist.github.com/izhuxin/0e8fa3f71d10eea68130.js"></script>
 -->
-{% highlight javascript %}
+<pre><code class="language-swift">
 
 func sub( jianshu: Int, beijianshu: Int ) -> Int {
     return beijianshu - jianshu
 }
 sub( 3, 5 )
 
-{% endhighlight %}
+</code></pre>
 
 嘿，你会发现在你不查看函数定义之前，你根本不知道是谁减谁，而使用了External parameter names的方式则允许你使用下面这样的方式来调用：
 
-{% highlight javascript %}
+<pre><code class="language-swift">
 
 func sub2( #jianshu: Int, #beijianshu: Int ) -> Int {
     return beijianshu - jianshu
@@ -72,7 +72,7 @@ func sub2( #jianshu: Int, #beijianshu: Int ) -> Int {
  
 sub2(jianshu: 3, beijianshu: 5)
 
-{% endhighlight %}
+</code></pre>
 
 <!--<script src="https://gist.github.com/izhuxin/4d927aed685f3ab4f871.js"></script>
 -->
@@ -87,16 +87,17 @@ sub2(jianshu: 3, beijianshu: 5)
 Swift中对闭包也有了自己的实现，swift中闭包的写法是非常灵活的，一种最为中规中矩的写法就是：
 <!--<script src="https://gist.github.com/izhuxin/9d1b26cf1bf841af0841.js"></script>
 -->
-{% highlight javascript %}
-
+<!--{% highlight javascript %}
+-->
+<pre><code class="language-swift">
 let animals = ["fish", "cat", "chicken", "dog"]
 let sortedStrings = animals.sorted({
     (one: String, two: String) -> Bool in
         return one > two
     })
 println(sortedStrings)
-
-{% endhighlight %}
+</code></pre>
+<!--{% endhighlight %}-->
 可以看到，sort接受的参数是一个函数，而我们则可以传入一个闭包，由花括号括起来的部分，接下来的下一行是闭包的行参和它的返回值，in关键词后面的则对应了函数的函数体，这种写法，除了闭包是匿名的之外，其他的跟函数的写法都是一一对应的，当然你可以写的更加风骚一点，比如像这样：
 
 <code>let sortedStrings = animals.sorted({ $0 > $1 })</code>
@@ -106,7 +107,7 @@ println(sortedStrings)
 类的定义有点多，我们可以简单的把类理解为将函数和变量捆绑起来的一种结构，它封装了某个具体的事物的属性以及它能执行的操作。在面向对象的程序设计里，我们会把一个个的类作为我们编程的单元，用这些类的实例（也就是对象）来构建出我们的程序。我们可以来看看一个类的写法：（同样的，在playground里键入下面的代码）
 <!--<script src="https://gist.github.com/izhuxin/7c408694ff9b4f3d2001.js"></script>
 -->
-{% highlight javascript %}
+<pre><code class="language-swift">
  
 class Treasure {
     let what: String
@@ -133,7 +134,7 @@ class Treasure {
  
 }
 
-{% endhighlight %}
+</code></pre>
 
 每个类都由class关键词开头，之后的便是类名，括号里面的是类的body。就像刚才说的，类的body由一些成员函数和成员变量（我们姑且把常量和变量一起笼统的称为成员
 变量）组成。其中，每个类都有一个init成员函数，它类似于C++里面的默认构造函数，在这里我们可以对类的成员变量进行初始化。当然你也可以定义其他的构造函数，这时候就要加上一个convenience关键词，并且在这些函数里面调用默认构造函数。而当我们要使用这些类来编程时，就需要创建一个实例，并且调用它里面的方法。
@@ -146,7 +147,7 @@ class Treasure {
 <!--<script src="https://gist.github.com/izhuxin/3935a5d3d0a28ab85255.js"></script>
 -->
 
-{% highlight javascript %}
+<pre><code class="language-swift">
 
 struct Treasure {
     let what: String
@@ -163,7 +164,8 @@ struct Treasure {
     }
 }
 
-{% endhighlight %}
+</code></pre>
+
 没错，这仅仅是把class关键词改成struct关键词而已。而作为类，还有另外一些基于面向对象的特性，这些事struct所没有的，接下来我们就一一介绍：
 
 ###访问控制
@@ -181,7 +183,7 @@ struct Treasure {
 我们可以用一个类来继承另外一个类，从而获得它的成员变量和成员函数，同时还可以增加新的成员变量，成员函数，或者是重写旧的成员函数，像下面所示：(打开playground，在刚才的地方后面加入以下代码)
 <!--<script src="https://gist.github.com/izhuxin/0ddeb7aca59a4aebce8a.js"></script>
 -->
-{% highlight javascript %}
+<pre><code class="language-swift">
 class HistoryTreasure: Treasure {
     let year: Int
     
@@ -195,7 +197,8 @@ class HistoryTreasure: Treasure {
     }
 }
 
-{% endhighlight %}
+</code></pre>
+
 当我们想要指明A类继承自B类时，只需要在A类名后面加上“: B”即可，当我们需要重写B类的一些方法时，需要在func前面加上override的关键词，当我们要在类内决定调用的是子类的函数，还是父类的函数时，则可以用self和super来指明。
 
 继承是一种“is-a”的关系，比如我们想要描述动物园里的各种动物，我们有一个类称为“Animal”，它封装了动物的吃喝拉撒睡等一般行为。为了描述🐒这个具体的动物的其他行为，我们可以编写一个类“Monkey”继承自“Animal”，这个Monkey是动物的一种，所以我们说 Monkey is an Animal.因此，在Swift中，Animal的reference即可以指Animal实例，又可以指Monkey实例。
@@ -205,7 +208,7 @@ class HistoryTreasure: Treasure {
 上面说到的现象称为多态，即对于一个父类的方法（虚函数），每个子类可以有自己的实现方式。而且当由父类的reference或者是pointer来调用这个方法时，具体执行哪个实现方式，则是在运行时决定的。写成代码如下：(打开playground，在刚才的地方后面加入以下代码)
 <!--<script src="https://gist.github.com/izhuxin/5319ea4351be9a6bf1e7.js"></script>
 -->
-{% highlight javascript %}
+<pre><code class="language-swift">
 var basic : Treasure!
 basic = Treasure( what: "Apple", latitude: 10.0, longitude: 10.0 )
 basic.describe()
@@ -213,7 +216,8 @@ basic.describe()
 basic = HistoryTreasure( what: "Apple", latitude: 10.0, longitude: 10.0, year: 1993 )
 basic.describe()
 
-{% endhighlight %}
+</code></pre>
+
 在这里，我们调用了两次<code>basic.describe()
 </code>，而这两次的实际执行的代码是不一样的。
 
@@ -224,7 +228,7 @@ basic.describe()
 而在Swift中，这两个概念则被联系到了一起：为一个Class增加扩展，这个扩展可以是某个协议的实现。当然了，扩展也可以不实现任何协议，就只是为类增加某些方法和属性（这一点跟Category只能增加方法不同）。来看一个具体的实例吧：
 <!--<script src="https://gist.github.com/izhuxin/5f5775933f3c34277dbb.js"></script>
 -->
-{% highlight javascript %}
+<pre><code class="language-swift">
 @objc protocol Addable {
     func addAnother(a:Addable) -> NSObject
 }
@@ -242,7 +246,8 @@ extension JEInt: Addable {
     }
 }
 
-{% endhighlight %}
+</code></pre>
+
 在Swift中， protocol以@objc protocol开头，之后跟着的是协议的名字，花括号里面的是具体的方法接口
 当我们希望某个类来实现这个协议时，可以用extension来扩展它的时候在类名后面加上“: ‘protocol’ ”然后再提供一些接口的方法就好了。当然，这不是唯一的方式，只是有了extension可以让我们很方便地把协议相关的代码分离出来，使逻辑更加清晰。
 
