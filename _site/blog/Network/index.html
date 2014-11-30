@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Apple Club培训教程（四）：iOS网络 &#8211; Jeason</title>
+<title>iOS入门（四）：iOS网络 &#8211; Jeason</title>
 <meta name="description" content="">
 <meta name="keywords" content="IOS Developer">
 
@@ -11,18 +11,18 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Apple Club培训教程（四）：iOS网络">
+<meta property="og:title" content="iOS入门（四）：iOS网络">
 <meta property="og:description" content="">
-<meta property="og:url" content="http://localhost:4000/blog/Network">
+<meta property="og:url" content="http://jeason.me/blog/Network">
 <meta property="og:site_name" content="Jeason">
-<meta property="og:image" content="http://localhost:4000/images/objective_tutorial.jpg">
+<meta property="og:image" content="http://jeason.me/images/objective_tutorial.jpg">
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/blog/Network">
-<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+<link rel="canonical" href="http://jeason.me/blog/Network">
+<link href="http://jeason.me/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
 
 
 <!-- http://t.co/dKP3o1e -->
@@ -31,8 +31,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/style.css" />
 
 <div class="search-wrapper">
     <div class="search-form">
@@ -47,28 +47,28 @@
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<link rel="shortcut icon" href="http://jeason.me/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<link rel="shortcut icon" href="http://jeason.me/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="http://jeason.me/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://jeason.me/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://jeason.me/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://jeason.me/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
-<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/objective_tutorial.jpg)" itemscope itemtype="http://schema.org/Organization">
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://jeason.me/images/objective_tutorial.jpg)" itemscope itemtype="http://schema.org/Organization">
 
 
     <div class="inner">
         <div class="container">
-            <a class="brand" href="http://localhost:4000" role="banner" itemprop="url">
+            <a class="brand" href="http://jeason.me" role="banner" itemprop="url">
 
-                <img itemprop="logo" src="http://localhost:4000/images/logo.png" alt="Jeason Logo" />
+                <img itemprop="logo" src="http://jeason.me/images/logo.png" alt="Jeason Logo" />
 
             <h1 class="blog-title light" itemprop="name">
                 Jeason
@@ -111,16 +111,16 @@
              
                     <header class="post-header entry-header">
                         
-                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">Apple Club培训教程（四）：iOS网络</h1>
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">iOS入门（四）：iOS网络</h1>
                         
                         <div class="post-info text-center small">
                             <span class="entry-date date published updated"><time datetime="2014-05-05T00:00:00+08:00" class="post-time" itemprop="datePublished">05 May 2014</time><span>
-                            in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                            in <span class="post-tags"><a href="http://jeason.me/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
                         </div>
                     </header>
                     <div class="post-body bordered-bottom" itemprop="description">
                         
-                        <p>这是Apple Club的第四期培训教程,今天我们主要介绍iOS中的网络编程。更确切的说，是介绍iOS7中的NSURLSession这个新的API，参考自<a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html">URL Loading System Programming Guide</a>,<a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/Introduction/Introduction.html">NSURLSession Class Reference</a>和一些其他博文。</p>
+                        <p>今天我们主要介绍iOS中的网络编程。更确切的说，是介绍iOS7中的NSURLSession这个新的API，参考自<a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html">URL Loading System Programming Guide</a>,<a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/Introduction/Introduction.html">NSURLSession Class Reference</a>和一些其他博文。</p>
 
 <section>
   <header>
@@ -129,50 +129,60 @@
 <div id="drawer">
 <ul id="markdown-toc">
   <li><a href="#section">概述</a>    <ul>
+      <li><a href="#httpp">HTTPP语义下的网络</a></li>
+    </ul>
+  </li>
+  <li><a href="#url-loading">URL Loading</a>    <ul>
       <li><a href="#nsurlsession">NSURLSession</a></li>
-      <li><a href="#nsurlsessiontask">NSURLSessionTask</a>        <ul>
-          <li><a href="#block">Block</a></li>
-        </ul>
-      </li>
-      <li><a href="#nsurlsessionconfiguration">NSURLSessionConfiguration</a></li>
+      <li><a href="#nsurlsessiontask">NSURLSessionTask</a></li>
     </ul>
   </li>
-  <li><a href="#coding-time">Coding Time</a>    <ul>
-      <li><a href="#section-1">编写网络引擎</a>        <ul>
-          <li><a href="#requesthandlerh">RequestHandler.h</a></li>
-          <li><a href="#requsethandlerm">RequsetHandler.m</a></li>
-        </ul>
-      </li>
-      <li><a href="#appdelegatenote">修改AppDelegate里的Note数据来源</a></li>
-      <li><a href="#notelistviewcontrollernote">修改NoteListViewController里的Note来源</a></li>
-      <li><a href="#noteview">为NoteView添加图片</a></li>
+  <li><a href="#configuration-management">Configuration Management</a></li>
+  <li><a href="#cache-management">Cache Management</a></li>
+  <li><a href="#demo-time">Demo Time</a>    <ul>
+      <li><a href="#start">Start</a></li>
+      <li><a href="#protocol">Protocol</a></li>
+      <li><a href="#model">Model</a></li>
+      <li><a href="#engine">Engine</a></li>
     </ul>
   </li>
+  <li><a href="#view">View</a></li>
+  <li><a href="#assignment">Assignment</a></li>
 </ul>
 
   </div>
 </section>
 
 <h1 id="section">概述</h1>
-<p>iOS7以前，Foundation里Apple提供的网络处理API是NSURLConnection，随着iOS7/OS X 10.9的发布，Apple也带来了一个新的网络处理的API。它在沿用原有的NSURL/NSURLRequest/NSURLResponse这些类及相关概念的基础上，新增了NSURLSession这个类以及与之相关联的NSURLSessionConfiguration和NSURLSessionTask这两个类。下面就来一一介绍这三个新增的类和他们是如何组织起来的。</p>
+<p>我们可以看到，在URL Load System中，我们看到NSURL这一系列的系统都是被设计成可以处理多个协议的——包括 FTP、HTTP、HTTPS——所以我们这里讲的是内容本是协议无关的。但是为了更好地说明，我们采用HTTP为例的方式来说明这个系统是怎么运作的。</p>
+
+<figure>
+<a href="http://jeason.me/images/2014/05/05/01.png"><img src="http://jeason.me/images/2014/05/05/table.png" /></a>
+</figure>
+
+<h2 id="httpp">HTTPP语义下的网络</h2>
+
+<p>HTTP是一个客户端终端（用户）和服务器端（网站）请求和应答的标准,是一个基于<b>文本传输</b>的协议。通常，由HTTP客户端发起一个请求，建立一个到服务器指定端口（默认是80端口）的TCP连接。HTTP服务器则在那个端口监听客户端的请求。一旦收到请求，服务器会向客户端返回一个状态，比如”HTTP/1.1 200 OK”，以及返回的内容，如请求的文件、错误消息、或者其它信息。</p>
+
+<h1 id="url-loading">URL Loading</h1>
+<p>iOS7以前，Foundation里Apple提供的网络处理API是NSURLConnection，随着iOS7/OS X 10.9的发布，Apple也带来了一个新的网络处理的API。它在沿用原有的NSURL/NSURLRequest/NSURLResponse这些类及相关概念的基础上，新增了NSURLSession这个类以及与之相关联的NSURLSessionConfiguration和NSURLSessionTask这两个类。</p>
 
 <h2 id="nsurlsession">NSURLSession</h2>
-<p>NSURLSession提供了http网络会话的抽象，我们可以在上面创建多个单一会话任务（发送http请求，返回响应数据，暂停http请求，重置http请求，取消http请求等）。而Apple为这些会话任务提供了另一个抽象－－NSURLSessionTask。一个Session的创建需要制定它的“配置信息”，如每个会话的缓存，cookie和证书验证等等，这个配置信息抽象为NSURLSessionConfiguration.在确定了配置信息之后，一个session可以通过NSURLSession的一个类方法
-<code>[NSURLSession sessionWithConfiguration:someConfig]</code>来创建.</p>
+<p>NSURLSession提供了http网络会话的抽象，我们可以在上面创建多个单一会话任务（发送http请求，返回响应数据，暂停http请求，重置http请求，取消http请求等）。而Apple为这些会话任务提供了另一个抽象－－NSURLSessionTask。</p>
 
 <h2 id="nsurlsessiontask">NSURLSessionTask</h2>
 
 <p>NSURLSessionTask是一个虚基类，在上面定义了一系列的函数接口，如：</p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="o">-</span> <span class="p">[</span><span class="n">someTask</span> <span class="n">resume</span><span class="p">]</span><span class="o">:</span> <span class="err">开始一个会话任务</span>
-<span class="o">-</span> <span class="p">[</span><span class="n">someTask</span> <span class="n">cancel</span><span class="p">]</span><span class="o">:</span> <span class="err">取消一个会话任务</span>
-<span class="o">-</span> <span class="p">[</span><span class="n">someTask</span> <span class="n">suspend</span><span class="p">]</span><span class="o">:</span> <span class="err">挂起一个会话任务</span>
-</code></pre></div>
+<pre><code class="language-objectivec">
+[someTask resume];      //开始一个会话任务
+[someTask cancel];      //取消一个会话任务
+[someTask suspend];     //挂起一个会话任务
+</code></pre>
 
 <p>为了特定的功能，Apple提供了三个它的非虚子类，分别是NSURLSessionDataTask，NSURLSessionDownloadTask和NSURLSessionUploadTask，他们的关系如下：</p>
 
 <figure>
-<a href="http://localhost:4000/images/2014/05/05/01.png"><img src="http://localhost:4000/images/2014/05/05/01.png" /></a>
+<a href="http://jeason.me/images/2014/05/05/01.png"><img src="http://jeason.me/images/2014/05/05/01.png" /></a>
 </figure>
 
 <ul>
@@ -190,233 +200,394 @@
 <p>创建这些xxTask，都是通过定义在NSURLSession上工厂模式的方法：
 <code>
 - [NSURLSessionObject dataTask/downloadTask/uploadTaskWithRequest:completionHandler:]
-</code>
-来创建的
-在这里，CompletionHanlder接受的时一个block对象，用来处理和操作返回的信息。可能在之前的培训里没有介绍到block这个概念，所以还是简单介绍一下吧</p>
+</code></p>
+<pre><code>
+工厂模式一般用于“生产”一个类族，用一个工厂类的类方法来新建对象，而不是通过new。
+</code></pre>
+<p>来创建的。在这里，CompletionHanlder接受的是一个block，用来处理和操作返回的信息。可以看到NSURLSession这一系列的网络请求都是异步执行的，而不是同步执行。</p>
 
-<h3 id="block">Block</h3>
+<h1 id="configuration-management">Configuration Management</h1>
 
-<p>Block其实是iOS里封装提供出来的函数闭包的概念，它是在iOS4以后被提出来取代delegate和call back模式的一种新的概念。
- 对于闭包（block),有很多定义，其中闭包就是能够读取其它函数内部变量的函数，这个定义即接近本质又较好理解。对于刚接触Block的同学，会觉得有些绕，因为我们习惯写这样的程序main(){ funA();} funA(){funB();} funB(){…..}; 就是函数main调用函数A，函数A调用函数B… 函数们依次顺序执行，但现实中不全是这样的，例如Jeason在团队里是个PM的角色，手下有3个程序员：经纶、经伦、径伦，当他给经伦安排实现功能F1时，他并不等着经伦完成之后，再去安排经纶去实现F2，而是安排给经纶功能F1，经伦功能F2，径伦功能F3，然后安排完了去约会，而当经伦遇到问题时，他会来找jeason，当经伦做完时，会通知jeason，这就是一个异步执行的例子。在这种情形下，Block便可大显身手，因为在Jeason给经伦安排工作时，同时会告诉经伦若果遇到困难，如何能找到他报告问题（例如打他手机号），这就是jeason给经伦的一个回调接口，要回调的操作，比如接到电话，百度一下后，返回网页内容给经伦，这就是一个Block，在jeason交待工作时，已经定义好，并且取得了F1的任务号（局部变量），却是在当经伦遇到问题时，才调用执行。</p>
+<p>一个Session的创建需要制定它的“配置信息”，如每个会话的缓存，cookie和证书验证等等，这个配置信息抽象为NSURLSessionConfiguration.在确定了配置信息之后，一个session可以通过NSURLSession的一个类方法(工厂模式)
+<code>[NSURLSession sessionWithConfiguration:someConfig]</code>来创建.
+NSURLSessionConfiguration有三个类构造函数，这很好地说明了NSURLSession是为不同的用例而设计的。</p>
 
-<p>block在多线程编程和函数式编程（并不是函数式的语言才能面向函数的编程＝。＝）里都有着重要的应用，想对block更进一步了解的同学，可以看看唐巧的<a href="http://blog.devtang.com/blog/2013/07/28/a-look-inside-blocks/">这篇博文</a>;</p>
+<pre><code>
++ defaultSessionConfiguration返回标准配置，这实际上与NSURLConnection的网络协议栈是一样的，具有相同的共享NSHTTPCookieStorage，共享NSURLCache和共享NSURLCredentialStorage。
 
-<h2 id="nsurlsessionconfiguration">NSURLSessionConfiguration</h2>
++ ephemeralSessionConfiguration返回一个预设配置，没有持久性存储的缓存，Cookie或证书。这对于实现像秘密浏览功能的App来说，是很理想的。
 
-<p>NSURLSessionConfiguration有三个类构造函数，这很好地说明了NSURLSession是为不同的用例而设计的。</p>
++ backgroundSessionConfiguration：独特之处在于，它会创建一个后台会话。后台会话不同于常规的会话，它甚至可以在应用程序挂起，退出，崩溃的情况下运行上传和下载任务。初始化时指定的标识符（有点类似于操作系统里的PCB），被用于向任何可能在进程外恢复后台传输的进程提供上下文。
 
-<p>－ + defaultSessionConfiguration返回标准配置，这实际上与NSURLConnection的网络协议栈是一样的，具有相同的共享NSHTTPCookieStorage，共享NSURLCache和共享NSURLCredentialStorage。</p>
+</code></pre>
 
-<p>－ + ephemeralSessionConfiguration返回一个预设配置，没有持久性存储的缓存，Cookie或证书。这对于实现像秘密浏览功能的App来说，是很理想的。</p>
+<p>所以当我们想要请求一个互联网上的文件时，我们的一般做法是:根据实际的情况，新建一个符合需求的NSURLSessionConfiguration,例如:</p>
+<pre><code class="language-objectivec">
+NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+</code></pre>
 
-<p>－ + backgroundSessionConfiguration：独特之处在于，它会创建一个后台会话。后台会话不同于常规的会话，它甚至可以在应用程序挂起，退出，崩溃的情况下运行上传和下载任务。初始化时指定的标识符（有点类似于操作系统里的PCB），被用于向任何可能在进程外恢复后台传输的进程提供上下文。</p>
+<p>之后我们再用这个配置类去配置我们的会话工厂NSURLSession，像下面这样:</p>
+<pre><code class="language-objectivec">
+NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+</code></pre>
 
-<h1 id="coding-time">Coding Time</h1>
-<p>这里，我们继续我们之前的项目，让我们的Note的内容可以来源于网络，在<a href="http://localhost:4000/images/2014/05/05/Note.zip">这里</a>可以下载到之前的项目。</p>
+<p>接下来我们就可以利用session来产生我们的请求对象并开始我们的网络请求啦:</p>
+<pre><code class="language-objectivec">
+NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
-<h2 id="section-1">编写网络引擎</h2>
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request 
+completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    //handle response here
+};
 
-<p>首先先点击File-&gt;New-&gt;File…-&gt;Objective-C Class,名字就取RequestHandler，继承自NSObject</p>
+[dataTask resume];
+</code></pre>
 
-<h3 id="requesthandlerh">RequestHandler.h</h3>
+<h1 id="cache-management">Cache Management</h1>
 
-<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
-<span class="c1">//  RequestHandler.h</span>
-<span class="c1">//  Note</span>
-<span class="c1">//</span>
-<span class="c1">//  Created by Jeason on 14-5-8.</span>
-<span class="c1">//  Copyright (c) 2014年 Jeason. All rights reserved.</span>
-<span class="c1">//</span>
+<p>网络缓存减少了需要向服务器发送请求的次数，同时也提升了离线或在低速网络中使用应用的体验。
+当一个请求完成下载来自服务器的回应，一个缓存的回应将在本地保存。下一次同一个请求再发起时，本地保存的回应就会马上返回，不需要连接服务器。试想一下如果没有缓存数据，我们对于每个文件可能都要重复的进行多次请求/响应的操作，这在一些没有实时性的应用里面是非常糟糕的。所以我们需要对一些不常改变而又非常大的文件数据进行适当的缓存。之后的网络请求模式就变成了如下的图所示:</p>
 
-<span class="cp">#import &lt;Foundation/Foundation.h&gt;</span>
+<figure>
+<a href="http://jeason.me/images/2014/05/05/ERD.png"><img src="http://jeason.me/images/2014/05/05/ERD.png" /></a>
+</figure>
 
-<span class="k">@interface</span> <span class="nc">RequestHandler</span> : <span class="nc">NSObject</span>
+<p>我们可以看到这里的Cache只是一级缓存，实际上我们可以做更多级的缓存（如硬盘缓存和内存缓存结合）。我们可以利用NSURLCache来实现内存缓存，而硬盘缓存往往需要我们针对不同的文件格式来设计不同的缓存策略和压缩方案。</p>
 
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">host</span><span class="p">;</span>
+<h1 id="demo-time">Demo Time</h1>
 
-<span class="c1">//1</span>
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">requestNotesWithAppendPath:</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">path</span> <span class="nf">WithCompletionHandler:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">notes</span><span class="p">))</span> <span class="n">completionHandler</span><span class="p">;</span>
+<h2 id="start">Start</h2>
+<p>这次的Demo来自于我之前在听<a href="http://music.163.com/#/song?id=316908">杨千嬅的一首歌</a>的时候看到评论里大家都在讨论一个(就是传说中韩寒监制那个＝＝)里面的一篇文章。</p>
 
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">downloadImageWithAppendPath:</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">path</span> <span class="nf">WithCompletionHandler:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSData</span> <span class="o">*</span><span class="n">imageData</span><span class="p">))</span> <span class="n">completionHandler</span><span class="p">;</span>
+<figure>
+<a href="http://jeason.me/images/2014/05/05/one.png"><img src="http://jeason.me/images/2014/05/05/one.png" /></a>
+</figure>
 
-<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithHost:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">host</span><span class="p">;</span>
+<p>但是当我想去一个里看11月10号的文章时，我发现它App里面最多只能回滚到上一周……所以就有了这个Demo，你可以选择日期然后就可以阅读这个日期里的文章。效果图如下:</p>
 
-<span class="k">@end</span>
-</code></pre></div>
+<figure class="half">
 
-<ol>
-  <li>可以看到block的基本声明写法，(void (^)(NSArray *notes)) completionHandler，其中void表示block的返回类型，(NSArray *notes)是block接受的参数，completionHandler是block的名字,它看起来就像是传递了一个函数指针进来一样，没错，作为C语言的超集，OC里的Block其实就是函数指针实现的一种抽象。</li>
-</ol>
+<a href="http://jeason.me/images/2014/05/05/final1.png"><img src="http://jeason.me/images/2014/05/05/final1.png" /></a>
 
-<h3 id="requsethandlerm">RequsetHandler.m</h3>
+<a href="http://jeason.me/images/2014/05/05/final2.png"><img src="http://jeason.me/images/2014/05/05/final2.png" /></a>
 
-<div class="highlight"><pre><code class="objective-c"><span class="c1">//</span>
-<span class="c1">//  RequestHandler.m</span>
-<span class="c1">//  Note</span>
-<span class="c1">//</span>
-<span class="c1">//  Created by Jeason on 14-5-8.</span>
-<span class="c1">//  Copyright (c) 2014年 Jeason. All rights reserved.</span>
-<span class="c1">//</span>
+</figure>
 
-<span class="cp">#import &quot;RequestHandler.h&quot;</span>
+<h2 id="protocol">Protocol</h2>
 
-<span class="k">@interface</span> <span class="nc">RequestHandler</span><span class="p">()</span>
+<p>在通过对一个App抓包分析后，大概分析出几条协议与接口信息如下:</p>
 
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSURLSession</span> <span class="o">*</span><span class="n">session</span><span class="p">;</span>
+<p>1, Host:211.152.49.185:8001 这个告诉我们这个服务器运行的是HTTP服务</p>
 
-<span class="k">@end</span>
+<p>2, 获得首页信息: GET /OneForWeb/one/getHp_N?strDate=yyyy-MM-dd&amp;strRow=1 这条API会根据strDate和strRow的不同而返回不同日期的首页信息。straDate=2014-11-20&amp;strRow=1表示2014年11月20日的第一个首页，strRow=2则为第二个首页（即是2014年11月19日的第一个首页，下面的类似）。样例返回:</p>
+<pre><code class="language-objectivec">
+{
+    "result": "SUCCESS", 
+    "hpEntity": {
+        "sWebLk": "http://wufazhuce.com/one/vol.783", 
+        "strAuthor": "三只猫喵&amp;绘图/花芍子", 
+        "strContent": "一见钟情的感觉是这样的：我们在很久以前就已经相爱，只是在相识的那一刻才刚刚见面。 by 曹畅洲", 
+        "strDayDiffer": "", 
+        "strHpId": "800", 
+        "strHpTitle": "VOL.783", 
+        "strLastUpdateDate": "2014-11-28 17:47:30", 
+        "strMarketTime": "2014-11-29", 
+        "strOriginalImgUrl": "http://pic.yupoo.com/hanapp/EeynIPXi/pFm80.jpg", 
+        "strPn": "28015", 
+        "strThumbnailUrl": "http://pic.yupoo.com/hanapp/EeynIPXi/pFm80.jpg", 
+        "wImgUrl": "http://211.152.49.184:9000/upload/onephoto/f1416917552059.jpg"
+    }
+}
+</code></pre>
 
-<span class="k">@implementation</span> <span class="nc">RequestHandler</span>
+<p>3, 获得文章信息：GET /OneForWeb/one/getC_N?strDate=yyyy-MM-dd&amp;strRow=1&amp;strMS=1
+这条API会根据strDate和strRow的不同而返回不同日期的文章内容，这正是我们想要的！样例返回结构:</p>
+<pre><code class="language-objectivec">
+{
+    "contentEntity": {
+        "strLastUpdateDate": "2014-11-29 11:33:33", 
+        "strContent": "这里是文章内容，太长不贴", 
+        "sWebLk": "http://wufazhuce.com/one/vol.783#articulo", 
+        "wImgUrl": "http://211.152.49.184:9000/upload/onephoto/f1416917576343.jpg", 
+        "sRdNum": "292686", 
+        "strPraiseNumber": "16476", 
+        "strContDayDiffer": "", 
+        "strContentId": "858", 
+        "strContTitle": "安全感", 
+        "strContAuthor": "满城烟火", 
+        "strContAuthorIntroduce": "（责任编辑：金子棋）", 
+        "strContMarketTime": "2014-11-29", 
+        "sGW": "我站在门外，看着屋里的两人，心也跟着暖了。", 
+        "sAuth": "满城烟火，作家、编剧。", 
+        "sWbN": "@满城烟火", 
+        "subTitle": ""
+    }, 
+    "result": "SUCCESS"
+}
+</code></pre>
 
-<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithHost:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">host</span> <span class="p">{</span>
-    <span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="n">init</span><span class="p">];</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">self</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">host</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="n">stringWithString</span><span class="o">:</span><span class="n">host</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
-<span class="p">}</span>
+<p>4, 获得问答题信息: GET /OneForWeb/one/getQ_N?strUi=&amp;strDate=yyyy-MM-dd&amp;strRow=1
+这条API会根据strDate和strRow的不同而返回不同日期的问答信息，样例返回:</p>
+<pre><code class="language-objectivec">
+{
+    "result": "SUCCESS", 
+    "questionAdEntity": {
+        "entQNCmt": {
+            "pNum": "", 
+            "strCnt": "", 
+            "strD": "", 
+            "strId": "", 
+            "upFg": ""
+        }, 
+        "sWebLk": "http://wufazhuce.com/one/vol.783#cuestion", 
+        "strAnswerContent": "这个问题，我可以回答一下，因为我和你正在经历一个年龄差不多的时期...内容太长，不放了", 
+        "strAnswerTitle": "@里则林 答Nico小姐：", 
+        "strDayDiffer": "", 
+        "strLastUpdateDate": "2014-11-29 16:46:51", 
+        "strPraiseNumber": "9213", 
+        "strQuestionContent": "Nico小姐问：我今年二十一，觉得无论做什么都提不起劲。在这个二十多岁的年纪我们应该做什么将来才不会后悔？", 
+        "strQuestionId": "804", 
+        "strQuestionMarketTime": "2014-11-29", 
+        "strQuestionTitle": "二十多岁该做些什么，将来才不会后悔？"
+    }
+}
+</code></pre>
 
-<span class="k">-</span> <span class="p">(</span><span class="n">NSURLSession</span> <span class="o">*</span><span class="p">)</span><span class="nf">session</span> <span class="p">{</span>
-    <span class="c1">//lazy initialize</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">_session</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="n">NSURLSessionConfiguration</span> <span class="o">*</span><span class="n">config</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURLSessionConfiguration</span> <span class="n">defaultSessionConfiguration</span><span class="p">];</span>
-        <span class="n">_session</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURLSession</span> <span class="n">sessionWithConfiguration</span><span class="o">:</span><span class="n">config</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">_session</span><span class="p">;</span>
-<span class="p">}</span>
+<p>5, 获得东西栏目的信息: GET /OneForWeb/one/o_f?strDate=yyyy-MM-dd&amp;strRow=1
+这条API会根据strDate和strRow的不同而返回不同的日期的东西栏目的信息，样例返回:</p>
+<pre><code class="language-objectivec">
+{
+    "rs": "SUCCESS", 
+    "entTg": {
+        "strBu": "http://pic.yupoo.com/hanapp/EezfK2lb/2YkKG.jpg", 
+        "strId": "320", 
+        "strLastUpdateDate": "2014-11-25 21:17:29", 
+        "strPn": "0", 
+        "strTc": "并不是所有蛋糕都很娘炮。", 
+        "strTm": "2014-11-28", 
+        "strTt": "3D颅骨蛋糕模", 
+        "strWu": "http://wufazhuce.com/one/vol.782#cosas"
+    }
+}
+</code></pre>
 
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">requestNotesWithAppendPath:</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">path</span> <span class="nf">WithCompletionHandler:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">notes</span><span class="p">))</span> <span class="n">completionHandler</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">_host</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="c1">//setup url string</span>
-        <span class="n">NSString</span> <span class="o">*</span><span class="n">urlString</span> <span class="o">=</span> <span class="p">[</span><span class="n">_host</span> <span class="n">stringByAppendingString</span><span class="o">:</span><span class="n">path</span><span class="p">];</span>
-        <span class="c1">//set up an url object</span>
-        <span class="n">NSURL</span> <span class="o">*</span><span class="n">url</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURL</span> <span class="n">URLWithString</span><span class="o">:</span><span class="n">urlString</span><span class="p">];</span>
-        <span class="c1">//set up an request</span>
-        <span class="n">NSURLRequest</span> <span class="o">*</span><span class="n">request</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURLRequest</span> <span class="n">requestWithURL</span><span class="o">:</span><span class="n">url</span><span class="p">];</span>
-        <span class="p">[</span><span class="n">UIApplication</span> <span class="n">sharedApplication</span><span class="p">].</span><span class="n">networkActivityIndicatorVisible</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
-        <span class="c1">//set up a dataTask</span>
-        <span class="n">NSURLSessionDataTask</span> <span class="o">*</span><span class="n">dataTask</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">session</span> <span class="n">dataTaskWithRequest</span><span class="o">:</span><span class="n">request</span> <span class="n">completionHandler</span><span class="o">:^</span><span class="p">(</span><span class="n">NSData</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">NSURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">error</span> <span class="p">)</span> <span class="p">{</span>
-                <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">httpResponse</span> <span class="o">=</span> <span class="p">(</span><span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="p">)</span><span class="n">response</span><span class="p">;</span>
-                <span class="k">if</span> <span class="p">(</span> <span class="n">httpResponse</span><span class="p">.</span><span class="n">statusCode</span> <span class="o">==</span> <span class="mi">200</span> <span class="p">)</span> <span class="p">{</span>
-                    <span class="n">NSError</span> <span class="o">*</span><span class="n">jsonError</span><span class="p">;</span>
-                    <span class="n">NSArray</span> <span class="o">*</span><span class="n">notesArray</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSJSONSerialization</span> <span class="n">JSONObjectWithData</span><span class="o">:</span><span class="n">data</span> <span class="n">options</span><span class="o">:</span><span class="n">NSJSONReadingAllowFragments</span> <span class="n">error</span><span class="o">:&amp;</span><span class="n">jsonError</span><span class="p">];</span>
-                    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">jsonError</span> <span class="p">)</span> <span class="p">{</span>
-                        <span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_main_queue</span><span class="p">(),</span> <span class="o">^</span><span class="p">{</span>
-                            <span class="p">[</span><span class="n">UIApplication</span> <span class="n">sharedApplication</span><span class="p">].</span><span class="n">networkActivityIndicatorVisible</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span>
-                            <span class="n">completionHandler</span><span class="p">(</span><span class="n">notesArray</span><span class="p">);</span>
-                        <span class="p">});</span>
-                        
-                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;json Error!&quot;</span><span class="p">);</span>
-                    <span class="p">}</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;bad response:%d&quot;</span><span class="p">,</span> <span class="n">httpResponse</span><span class="p">.</span><span class="n">statusCode</span><span class="p">);</span>
-                <span class="p">}</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;dataTask error!&quot;</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}];</span>
-        <span class="p">[</span><span class="n">dataTask</span> <span class="n">resume</span><span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<h2 id="model">Model</h2>
 
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">downloadImageWithAppendPath</span><span class="o">:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">path</span> <span class="n">WithCompletionHandler</span><span class="o">:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSData</span> <span class="o">*</span><span class="p">))</span><span class="n">completionHandler</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">_host</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="n">NSString</span> <span class="o">*</span><span class="n">urlString</span> <span class="o">=</span> <span class="p">[</span><span class="n">_host</span> <span class="n">stringByAppendingString</span><span class="o">:</span><span class="n">path</span><span class="p">];</span>
-        <span class="n">NSURL</span> <span class="o">*</span><span class="n">url</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURL</span> <span class="n">URLWithString</span><span class="o">:</span><span class="n">urlString</span><span class="p">];</span>
-        <span class="n">NSURLRequest</span> <span class="o">*</span><span class="n">request</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURLRequest</span> <span class="n">requestWithURL</span><span class="o">:</span><span class="n">url</span><span class="p">];</span>
-        <span class="p">[</span><span class="n">UIApplication</span> <span class="n">sharedApplication</span><span class="p">].</span><span class="n">networkActivityIndicatorVisible</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
-        
-        <span class="n">NSURLSessionDownloadTask</span> <span class="o">*</span><span class="n">downloadTask</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">session</span> <span class="n">downloadTaskWithRequest</span><span class="o">:</span><span class="n">request</span> <span class="n">completionHandler</span><span class="o">:^</span><span class="p">(</span><span class="n">NSURL</span> <span class="o">*</span><span class="n">location</span><span class="p">,</span> <span class="n">NSURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">error</span> <span class="p">)</span> <span class="p">{</span>
-                <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">httpResponse</span> <span class="o">=</span> <span class="p">(</span><span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="p">)</span><span class="n">response</span><span class="p">;</span>
-                <span class="k">if</span> <span class="p">(</span> <span class="n">httpResponse</span><span class="p">.</span><span class="n">statusCode</span> <span class="o">==</span> <span class="mi">200</span> <span class="p">)</span> <span class="p">{</span>
-                    <span class="c1">//copy the file from temp dictionary pictureDirectory</span>
-                    <span class="n">NSFileManager</span> <span class="o">*</span><span class="n">fileManager</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSFileManager</span> <span class="n">defaultManager</span><span class="p">];</span>
-                    <span class="c1">//find pictureDirectory</span>
-                    <span class="n">NSArray</span> <span class="o">*</span><span class="n">URLs</span> <span class="o">=</span> <span class="p">[</span><span class="n">fileManager</span> <span class="n">URLsForDirectory</span><span class="o">:</span><span class="n">NSPicturesDirectory</span> <span class="n">inDomains</span><span class="o">:</span><span class="n">NSUserDomainMask</span><span class="p">];</span>
-                    <span class="n">NSURL</span> <span class="o">*</span><span class="n">documentsDictionary</span> <span class="o">=</span> <span class="n">URLs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-                    <span class="c1">//setup the destination path the item to copy to</span>
-                    <span class="n">NSURL</span> <span class="o">*</span><span class="n">destinationPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentsDictionary</span> <span class="n">URLByAppendingPathComponent</span><span class="o">:</span><span class="p">[</span><span class="n">location</span> <span class="n">lastPathComponent</span><span class="p">]];</span>
-                    <span class="n">NSError</span> <span class="o">*</span><span class="n">fileError</span><span class="p">;</span>
-                    <span class="c1">//remove the exist file</span>
-                    <span class="p">[</span><span class="n">fileManager</span> <span class="n">removeItemAtURL</span><span class="o">:</span><span class="n">destinationPath</span> <span class="n">error</span><span class="o">:&amp;</span><span class="n">fileError</span><span class="p">];</span>
-                    <span class="c1">//copy temp file to destination</span>
-                    <span class="kt">BOOL</span> <span class="n">success</span> <span class="o">=</span> <span class="p">[</span><span class="n">fileManager</span> <span class="n">copyItemAtURL</span><span class="o">:</span><span class="n">location</span> <span class="n">toURL</span><span class="o">:</span><span class="n">destinationPath</span> <span class="n">error</span><span class="o">:&amp;</span><span class="n">fileError</span><span class="p">];</span>
-                    <span class="k">if</span> <span class="p">(</span> <span class="n">success</span> <span class="p">)</span> <span class="p">{</span>
-                        <span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_main_queue</span><span class="p">(),</span> <span class="o">^</span><span class="p">{</span>
-                            <span class="p">[</span><span class="n">UIApplication</span> <span class="n">sharedApplication</span><span class="p">].</span><span class="n">networkActivityIndicatorVisible</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span>
-                            <span class="n">NSData</span> <span class="o">*</span><span class="n">imageData</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSData</span> <span class="n">dataWithContentsOfFile</span><span class="o">:</span><span class="p">[</span><span class="n">destinationPath</span> <span class="n">path</span><span class="p">]];</span>
-                            <span class="n">completionHandler</span><span class="p">(</span><span class="n">imageData</span><span class="p">);</span>
-                        <span class="p">});</span>
-                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Can not copy file&quot;</span><span class="p">);</span>
-                    <span class="p">}</span>
+<p>可以看到返回回来的json文本是一个类似字典的格式，iOS中可以c利用</p>
+<pre><code class="language-objectivec">
+NSError *jsonError;
+NSDictionary *dict =［NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&amp;jsonError];
+</code></pre>
+<p>来把objective解析成NSDictionary对象。直接使用Dictionary会是一个糟糕的设计，因为我只有遍历或者打印整个字典才能看到这个字典里的元素信息，所以我们会把objective解析成Model类来使用。这里我们借助软件objective Accelerator来帮我们把上面的返回的objective解析成Model Class，如图所c示:</p>
 
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;bad response:%d&quot;</span><span class="p">,</span> <span class="n">httpResponse</span><span class="p">.</span><span class="n">statusCode</span><span class="p">);</span>
-                <span class="p">}</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;download error!&quot;</span><span class="p">);</span>
-            <span class="p">}</span>
-            
-        <span class="p">}];</span>
-        
-        <span class="p">[</span><span class="n">downloadTask</span> <span class="n">resume</span><span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<figure>
+<a href="http://jeason.me/images/2014/05/05/ModelClass.png"><img src="http://jeason.me/images/2014/05/05/ModelClass.png" /></a>
+</figure>
 
-<span class="k">@end</span>
-</code></pre></div>
+<p>在<a href="http://jeason.me/images/2014/05/05/OneModel.zip">这里</a>可以下载到完整的所有Model类。</p>
 
-<p>这里我们可以看到一个网络请求（NSURLSessionXXTask）是通过NSURLSession创建的，而一个NSURLSession则需要一个Configuation来配置，这里我们用了默认的配置。每一个网络请求在创建之初都是挂起的，都需要通过传递resume消息来让它启动。</p>
+<h2 id="engine">Engine</h2>
 
-<h2 id="appdelegatenote">修改AppDelegate里的Note数据来源</h2>
-<p>只需要把NoteAppDelegate里notes相关的代码注释掉就好了= =</p>
+<p>接下来我们就来编写一个网络引擎，可以利用它发送HTTP请求，并将返回的数据初始化Model类并返回给调用者来处理。</p>
 
-<h2 id="notelistviewcontrollernote">修改NoteListViewController里的Note来源</h2>
-<ol>
-  <li>首先把listArray的自定义getter删掉，即删掉函数-(NSMutableArray *)listArray;</li>
-  <li>在viewDidLoad方法中的最后面添加</li>
-</ol>
+<pre><code class="language-objectivec">
+//
+//  OneNetWorkEngine.h
+//  OneClient
+//
+//  Created by Jeason on 14/11/29.
+//  Copyright (c) 2014年 Jeason. All rights reserved.
+//
 
-<div class="highlight"><pre><code class="objective-c">    
-    <span class="n">RequestHandler</span> <span class="o">*</span><span class="n">networkHandler</span> <span class="o">=</span> <span class="p">[[</span><span class="n">RequestHandler</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithHost</span><span class="o">:</span><span class="s">@&quot;http://jeason.me&quot;</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">networkHandler</span> <span class="n">requestNotesWithAppendPath</span><span class="o">:</span><span class="s">@&quot;/images/2014/05/05/DemoNotes.json&quot;</span> <span class="n">WithCompletionHandler</span><span class="o">:^</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">notes</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;fetch notes...&quot;</span><span class="p">);</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">listArray</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSMutableArray</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+//1
+@import Foundation;
+@class OneArticleInfo;
+@class OneQAndAInfo;
+@class OneItemInfo;
+@class OneHeadPageModel;
+@class UIImage;
 
-        <span class="n">NSNumberFormatter</span> <span class="o">*</span><span class="n">formatter</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSNumberFormatter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-        <span class="k">for</span><span class="p">(</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">note</span> <span class="k">in</span> <span class="n">notes</span> <span class="p">)</span> <span class="p">{</span>
-            
-            <span class="n">Note</span> <span class="o">*</span><span class="n">noteObject</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Note</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-            <span class="c1">//content</span>
-            <span class="n">noteObject</span><span class="p">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">note</span><span class="p">[</span><span class="s">@&quot;content&quot;</span><span class="p">];</span>
-            <span class="c1">//note id</span>
-            <span class="n">NSString</span> <span class="o">*</span><span class="n">noteIDString</span> <span class="o">=</span> <span class="n">note</span><span class="p">[</span><span class="s">@&quot;noteID&quot;</span><span class="p">];</span>
-            <span class="n">NSNumber</span> <span class="o">*</span><span class="n">noteIDNumber</span> <span class="o">=</span> <span class="p">[</span><span class="n">formatter</span> <span class="n">numberFromString</span><span class="o">:</span><span class="n">noteIDString</span><span class="p">];</span>
-            <span class="n">noteObject</span><span class="p">.</span><span class="n">NoteID</span> <span class="o">=</span> <span class="p">[</span><span class="n">noteIDNumber</span> <span class="n">unsignedIntegerValue</span><span class="p">];</span>
-            <span class="c1">//image</span>
-            <span class="n">NSString</span> <span class="o">*</span><span class="n">iconPath</span> <span class="o">=</span> <span class="n">note</span><span class="p">[</span><span class="s">@&quot;imageURL&quot;</span><span class="p">];</span>
-            <span class="p">[</span><span class="n">networkHandler</span> <span class="n">downloadImageWithAppendPath</span><span class="o">:</span><span class="n">iconPath</span> <span class="n">WithCompletionHandler</span><span class="o">:^</span><span class="p">(</span><span class="n">NSData</span> <span class="o">*</span><span class="n">imageData</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">noteObject</span><span class="p">.</span><span class="n">imageData</span> <span class="o">=</span> <span class="n">imageData</span><span class="p">;</span>
-            <span class="p">}];</span>
-            <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">listArray</span> <span class="n">addObject</span><span class="o">:</span><span class="n">noteObject</span><span class="p">];</span>
-        <span class="p">}</span>
-        
-        <span class="p">[</span><span class="n">_listTableView</span> <span class="n">reloadData</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="p">];</span>
-</code></pre></div>
+//2
+typedef void (^ArticleReturnBlock)(OneArticleInfo *result, NSError *err);
+typedef void (^QAndAInfoReturnBlock)(OneQAndAInfo *result, NSError *err);
+typedef void (^ItemInfoReturnBlock)(OneItemInfo *result, NSError *err);
+typedef void (^HeadPageReturnBlock)(OneHeadPageModel *result, NSError *err);
+typedef void (^DownloadImageReturnBlock)(UIImage *result, NSError *err);
 
-<h2 id="noteview">为NoteView添加图片</h2>
-<p>在NoteViewController.m的viewDidLoad的最后面注释5的后面添加</p>
+@interface OneNetWorkEngine : NSObject
 
-<div class="highlight"><pre><code class="objective-c">    <span class="n">UIImage</span> <span class="o">*</span><span class="n">image</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIImage</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithData</span><span class="o">:</span><span class="n">_note</span><span class="p">.</span><span class="n">imageData</span><span class="p">];</span>
-    <span class="n">UIImageView</span> <span class="o">*</span><span class="n">imageView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIImageView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">CGRectMake</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="o">-</span><span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="o">-</span><span class="n">inset</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">inset</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="p">)];</span>
-    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">imageView</span><span class="p">];</span>
-</code></pre></div>
+- (void)fetchPageContentsAtDate:(NSDate *)date
+                 WithCompletion:(ArticleReturnBlock)handler;
+
+- (void)fetchHeadPageInfoAtDate:(NSDate *)date
+                 WithCompletion:(HeadPageReturnBlock)handler;
+
+- (void)fetchQAndAInfoAtDate:(NSDate *)date
+              WithCompletion:(QAndAInfoReturnBlock)handler;
+
+- (void)fetchItemInfoAtDate:(NSDate *)date
+             WithCompletion:(ItemInfoReturnBlock)handler;
+
+- (void)downloadImageFromURL:(NSString *)urlStr
+             WithCompletion:(DownloadImageReturnBlock)handler;
+
+@end
+
+</code></pre>
+
+<p>注释1: 就像我们之前讲的那样，尽量使用@import来将库导进来，这样可以提供链接的效率。而@class只是声明了这个类的存在，而没有真正把这个类的头文件导入进来，我们应该在.m里面加入#import才能知道这个类的具体接口,这么做是为了避免头文件包火车的现象（想想你import了一个类，实际上却因为这个类已经import了其他多个类导致你import了太多不必要的头文件）。</p>
+
+<p>注释2: 可以看到我们为了避免OC里block带来的语法障碍，我们一般会对这些block进行重命名(typedef)。</p>
+
+<pre><code class="language-objectivec">
+//
+//  OneNetWorkEngine.m
+//  OneClient
+//
+//  Created by Jeason on 14/11/29.
+//  Copyright (c) 2014年 Jeason. All rights reserved.
+//
+
+#import "OneNetWorkEngine.h"
+#import "DataModels.h"
+#import "AppDelegate.h"
+#import "NSDate+DateToString.h"
+
+static NSString *articlePathFormate = @"OneForWeb/one/getC_N?strDate=%@&amp;strRow=%d&amp;strMS=%d";
+static NSString *defaultHost = @"http://211.152.49.185:8001/";
+static NSString *dateFormat = @"yyyy-MM-dd";
+
+@interface OneNetWorkEngine()
+
+@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, strong) NSString *host;
+
+@end
+
+@implementation OneNetWorkEngine
+
+- (instancetype)initWithHost:(NSString *)host {
+    self = [super init];
+    if ( self ) {
+        self.host = host;
+    }
+    return self;
+}
+
+- (NSURLSession *)session {
+    if ( _session == nil ) {
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        _session = [NSURLSession sessionWithConfiguration:config];
+    }
+    return _session;
+}
+
+- (NSString *)host {
+    if ( _host == nil ) {
+        _host = defaultHost;
+    }
+    return _host;
+}
+
+- (void)fetchPageContentsAtDate:(NSDate *)date
+                 WithCompletion:(ArticleReturnBlock)handler; {
+    //setup url string
+
+    //1
+    NSString *dateStr = [date dateToStringInFormat:dateFormat];
+    NSString *articlePath = [NSString stringWithFormat:articlePathFormate,dateStr,1,1];
+    NSString *urlString = [self.host stringByAppendingString:articlePath];
+    //set up an url object
+    NSURL *url = [NSURL URLWithString:urlString];
+    //set up an request
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+    //2
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
+    //set up a dataTask
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if ( !error ) { //3
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+            if ( httpResponse.statusCode == 200 ) { //4
+                NSError *jsonError;
+                NSDictionary *articleDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&amp;jsonError];
+                if ( !jsonError ) { //5
+                    OneArticleInfo *obj = [OneArticleInfo modelObjectWithDictionary:articleDict];
+                    dispatch_async(dispatch_get_main_queue(), ^{    //6
+                        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                        handler(obj, nil);
+                    });
+                    
+                } else {
+                    NSLog(@"json Error!");
+                dispatch_async(dispatch_get_main_queue(), ^{ 
+                    handler(nil, jsonError);
+                });                
+            }
+            } else {
+                NSLog(@"bad response:%ld ForURL: %@", httpResponse.statusCode, url);
+                NSError *httpError = [NSError errorWithDomain:@"Http Response Error"
+                                                         code:httpResponse.statusCode
+                                                     userInfo:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{ 
+                    handler(nil, httpError);
+                });
+            }
+        } else {
+            NSLog(@"dataTask error!");
+            dispatch_async(dispatch_get_main_queue(), ^{ 
+                handler(nil, error);
+            });     
+        }
+    }];
+    //7
+    [dataTask resume];
+
+}
+
+- (void)fetchHeadPageInfoAtDate:(NSDate *)date
+                 WithCompletion:(HeadPageReturnBlock)handler;
+{
+    //TODO:
+}
+- (void)fetchQAndAInfoAtDate:(NSDate *)date
+              WithCompletion:(QAndAInfoReturnBlock)handler;
+{
+    //TODO:
+}
+- (void)fetchItemInfoAtDate:(NSDate *)date
+             WithCompletion:(ItemInfoReturnBlock)handler;
+{
+    //TODO:
+}
+- (void)downloadImageFromURL:(NSString *)urlStr
+             WithCompletion:(DownloadImageReturnBlock)handler;
+{
+    //TODO:
+}
+@end
+</code></pre>
+
+<p>注释 1:这里用了一个NSDate的Category来将NSDate转成String，这个非常简单所以就不再贴上来了。</p>
+
+<p>注释 2:这句话是在视图上显示转菊花的标志。</p>
+
+<p>注释 3:当网络错误时，我们要处理网络错误，可以在这一层处理，也可以通过handler回调给上一层处理。</p>
+
+<p>注释 4:我们只处理http状态码为200（即OK）的情况，其他情况都被视为错误而回调给上一层处理。</p>
+
+<p>注释 5:NSJSONSerialization是iOS封装的解析json文本为字典的类，一旦json格式不合法时它会通过jsonError来通知调用者。</p>
+
+<p>注释6:当我们网络请求完成后，因为NSURLSession的请求都是异步的，所以这时还是处于网络请求的线程中，而调用这个网络接口的对象是位于主线程的，所以我们要通过dispatch_async来回调会主线程。</p>
+
+<p>注释7: 我们新建完一个Task之后调用resume才是网络请求真正开始。</p>
+
+<h1 id="view">View</h1>
+<p>View的部分主要是通过一个WebView来加载返回的strContent内容，比较简单我这就不贴了。</p>
+
+<h1 id="assignment">Assignment</h1>
+<p>完成TODO里面的内容，并尝试调用他们获得其他内容。</p>
 
                         <br>
                     <span class="entry-tags">
@@ -429,8 +600,8 @@
                     <footer class="post-footer entry-meta">
                         
                         <div class="post-author text-center">                       
-	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
-	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	        <img src="http://jeason.me/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://jeason.me/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
 	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
 </div> 
                         <div id="disqus_thread"></div><!-- /#disqus_thread -->
@@ -440,7 +611,7 @@
 </div>
 
 
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/objective_tutorial.jpg)" >
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://jeason.me/images/objective_tutorial.jpg)" >
 
 
     <div class="inner">
@@ -468,45 +639,45 @@
                     <i class="icon-github"></i>
                 </a>
             </li>
-            <li><a href="http://localhost:4000/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+            <li><a href="http://jeason.me/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
                     <i class="icon-rss"></i>
                 </a>
             </li>
 
         </ul>
             <p class="copy-text">
-                <a href="http://localhost:4000/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+                <a href="http://jeason.me/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
             </p>
 
             <ul class="menu-items">
             
             <li>
                 
-                    <a href="http://localhost:4000/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                    <a href="http://jeason.me/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://localhost:4000/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                    <a href="http://jeason.me/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://localhost:4000/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                    <a href="http://jeason.me/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://localhost:4000/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                    <a href="http://jeason.me/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://localhost:4000/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
+                    <a href="http://jeason.me/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
                 
             </li>
             
@@ -539,17 +710,17 @@
 
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
-    <script type="text/javascript" src="http://localhost:4000/assets/js/waypoints.min.js"></script>
-    <script type="text/javascript" src="http://localhost:4000/assets/js/script.js"></script>
+<script>window.jQuery || document.write('<script src="http://jeason.me/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://jeason.me/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://jeason.me/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://jeason.me/assets/js/script.js"></script>
 
 
 <!-- Jekyll Simple Search option -->
 <script>
   $(document).ready(function() {
       $('.search-field').simpleJekyllSearch({
-          jsonFile : 'http://localhost:4000/search.json',
+          jsonFile : 'http://jeason.me/search.json',
           searchResults : '.search-results',
           template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
           noResults: '<p>Nothing found.</p>'

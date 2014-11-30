@@ -2,26 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Jeason</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-11-24T16:57:36+08:00</updated>
-<id>http://localhost:4000/</id>
+<link rel="self" type="application/atom+xml" href="http://jeason.me/feed.xml" />
+<link rel="alternate" type="text/html" href="http://jeason.me" />
+<updated>2014-11-30T10:20:35+08:00</updated>
+<id>http://jeason.me/</id>
 <author>
   <name>Jeason George</name>
-  <uri>http://localhost:4000/</uri>
+  <uri>http://jeason.me/</uri>
   <email>sysu.ss.jeason@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[对二值图像去噪：搜索与随机算法结合]]></title>
-  <link>http://localhost:4000/blog/Denoise%2BBinary%2BImage</link>
-  <id>http://localhost:4000/blog/Denoise+Binary+Image</id>
+  <link>http://jeason.me/blog/Denoise%2BBinary%2BImage</link>
+  <id>http://jeason.me/blog/Denoise+Binary+Image</id>
   <published>2014-11-20T00:00:00+08:00</published>
   <updated>2014-11-20T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;section&gt;
@@ -75,7 +75,7 @@
 
 &lt;h3 id=&quot;section-4&quot;&gt;爬山法模型&lt;/h3&gt;
 &lt;center&gt;
-&lt;img src=&quot;http://localhost:4000/images/2014/11/20/somepic.jpg&quot; /&gt;
+&lt;img src=&quot;http://jeason.me/images/2014/11/20/somepic.jpg&quot; /&gt;
 &lt;/center&gt;
 
 &lt;p&gt;爬山法是一个搜索算法，根据一个elevation（评价函数），评价函数的意义（决定寻找的是最大值还是最小值），在状态空间中寻找一个最能满足要求的状态。爬山法每次move只会往前看一步，并不会生成一个搜索树，只保存当前的状态以及对应的评价函数的值。导致的后果就是爬山法往往只能找到一个局部最大值，其最大的缺点就是不能下山。如图所示，current state会逐渐走到local maximum上面而不是global maximum。&lt;/p&gt;
@@ -86,7 +86,7 @@
 &lt;h3 id=&quot;section-6&quot;&gt;模拟退火算法模型&lt;/h3&gt;
 &lt;p&gt;模拟退火算法是在爬山法的基础上进行改良而得到的。爬山法是完完全全的贪心法，每次都鼠目寸光的选择一个当前最优解，因此只能搜索到局部的最优值。模拟退火其实也是一种贪心算法，但是它的搜索过程引入了随机因素。模拟退火算法以一定的概率来接受一个比当前解要差的解，因此有可能会跳出这个局部的最优解，达到全局的最优解。模拟退火算法的流程框图如下:&lt;/p&gt;
 &lt;center&gt;
-&lt;img src=&quot;http://localhost:4000/images/2014/11/20/FlowChart.jpg&quot; /&gt;
+&lt;img src=&quot;http://jeason.me/images/2014/11/20/FlowChart.jpg&quot; /&gt;
 &lt;/center&gt;
 
 &lt;h1 id=&quot;section-7&quot;&gt;算法&lt;/h1&gt;
@@ -291,8 +291,8 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/AI.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/binaryzation.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/AI.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/binaryzation.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -306,8 +306,8 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/addNoice.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/denoice(1).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/addNoice.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/denoice(1).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -325,8 +325,8 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/denoice(2).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/result(2).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/denoice(2).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/result(2).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -344,8 +344,8 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/denoice(3).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/result(3).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/denoice(3).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/result(3).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -363,8 +363,8 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/denoice(4).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/result(4).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/denoice(4).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/result(4).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -372,19 +372,19 @@
 &lt;p&gt;使用了模拟退火算法改良后，效果进一步加强，大部分结果都在99.4%以上。&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Denoise%2BBinary%2BImage&quot;&gt;对二值图像去噪：搜索与随机算法结合&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; November 20, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Denoise%2BBinary%2BImage&quot;&gt;对二值图像去噪：搜索与随机算法结合&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; November 20, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[iOS和Android的Emoji表情同步方案]]></title>
-  <link>http://localhost:4000/blog/iOS%2BAnroid%2BEmoji</link>
-  <id>http://localhost:4000/blog/iOS+Anroid+Emoji</id>
+  <link>http://jeason.me/blog/iOS%2BAnroid%2BEmoji</link>
+  <id>http://jeason.me/blog/iOS+Anroid+Emoji</id>
   <published>2014-08-24T00:00:00+08:00</published>
   <updated>2014-08-24T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;最近在做一个聊天的应用，有一个问题就是iOS跟Android的Emoji字符不对应导致显示不正常。因为iOS这部分是先做的，所以便让负责安卓的同学想办法兼容iOS的编码表，不过安卓的同学想尽办法也没办法搞到Apple Color Emoji的编码表，不过他却找到了有几百张Emoji表情的图片，后来经过整理剩下180张是完整的放在项目里的，图片下载在&lt;a href=&quot;http://pan.baidu.com/s/1o6qMC22&quot;&gt;这里&lt;/a&gt;.于是，我就利用这些图片来想办法跟现有的项目兼容。&lt;/p&gt;
@@ -411,166 +411,171 @@
 
 &lt;p&gt;NSString+Emoji.h&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  NSString+Emoji.h&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  EmojiAdapter&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  Created by Jeason on 14-8-11.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  Copyright (c) 2014年 EmojiAdapter. All rights reserved.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+//
+//  NSString+Emoji.h
+//  EmojiAdapter
+//
+//  Created by Jeason on 14-8-11.
+//  Copyright (c) 2014年 EmojiAdapter. All rights reserved.
+//
 
-&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;Foundation/Foundation.h&amp;gt;&lt;/span&gt;
+#import &amp;lt;Foundation/Foundation.h&amp;gt;
 
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;(Emoji)&lt;/span&gt;
+@interface NSString (Emoji)
 
-&lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  Encode a string contains emoji string to a string contains emoji filename.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  Just encode each substring to filename, if it hs no associating filename, it will return nil.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  @return the encoded string&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;encodeString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+/**
+ *  Encode a string contains emoji string to a string contains emoji filename.
+ *  Just encode each substring to filename, if it hs no associating filename, it will return nil.
+ *  @return the encoded string
+ */
+- (NSString *)encodeString;
 
-&lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  Decode the string contains file names to String contains emoji string.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  @return the result string&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;decodeString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+/**
+ *  Decode the string contains file names to String contains emoji string.
+ *
+ *  @return the result string
+ */
+- (NSString *)decodeString;
 
-&lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  Generate the encode dictionary to encode an emoji string to filename&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  @return the encode dictionary&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;encodeDictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+/**
+ *  Generate the encode dictionary to encode an emoji string to filename
+ *
+ *  @return the encode dictionary
+ */
++ (NSDictionary *)encodeDictionary;
 
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+@end
+
+
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;NSString+Emoji.m&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  NSString+Emoji.m&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  EmojiAdapter&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  Created by Jeason on 14-8-11.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  Copyright (c) 2014年 EmojiAdapter. All rights reserved.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+//
+//  NSString+Emoji.m
+//  EmojiAdapter
+//
+//  Created by Jeason on 14-8-11.
+//  Copyright (c) 2014年 EmojiAdapter. All rights reserved.
+//
 
-&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;NSString+Emoji.h&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;Emoji.h&amp;quot;&lt;/span&gt;
+#import &quot;NSString+Emoji.h&quot;
+#import &quot;Emoji.h&quot;
 
-&lt;span class=&quot;cp&quot;&gt;#define EmojiBegin 0x02&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#define EmojiEnd   0x03&lt;/span&gt;
+#define EmojiBegin 0x02
+#define EmojiEnd   0x03
 
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;(Emoji)&lt;/span&gt;
+@implementation NSString (Emoji)
 
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;decodeString&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;__block&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isEmojiBegin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;__block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emojiFileName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;//temp var to store the file name&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;__block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSMutableString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSMutableString&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringWithString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+-(NSString *)decodeString {
+    __block BOOL isEmojiBegin = false;
+    __block NSString *emojiFileName = @&quot;&quot;;      //temp var to store the file name
+    __block NSMutableString *result = [NSMutableString stringWithString:@&quot;&quot;];
     
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enumerateSubstringsInRange&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSMakeRange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-                               &lt;span class=&quot;nl&quot;&gt;options:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSStringEnumerationByComposedCharacterSequences&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//setperate as composed character&lt;/span&gt;
-                            &lt;span class=&quot;nl&quot;&gt;usingBlock:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSRange&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;substringRange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSRange&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enclosingRange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8Str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;substring&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UTF8String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                                &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aChar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;substring&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;characterAtIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//a unicode substr&amp;#39;s length is 2&lt;/span&gt;
-                                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aChar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EmojiBegin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8Str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//卧槽，句号的unicode编码刚好第一个字符就是0x02&lt;/span&gt;
-                                    &lt;span class=&quot;n&quot;&gt;isEmojiBegin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aChar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EmojiEnd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8Str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//if it is in end&lt;/span&gt;
-                                    &lt;span class=&quot;n&quot;&gt;isEmojiBegin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                                    &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emoji&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emojiFileName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;decodeEmojiString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//decode the filename&lt;/span&gt;
-                                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emoji&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//if decode succ&lt;/span&gt;
-                                        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;appendString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emoji&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//add to result&lt;/span&gt;
-                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                                    &lt;span class=&quot;n&quot;&gt;emojiFileName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//clear file name&lt;/span&gt;
-                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isEmojiBegin&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//the next substring is part of filename&lt;/span&gt;
-                                        &lt;span class=&quot;n&quot;&gt;emojiFileName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emojiFileName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringByAppendingString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//the next substring is the normal string&lt;/span&gt;
-                                        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;appendString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                            &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+    [self enumerateSubstringsInRange:NSMakeRange(0, [self length])
+                               options:NSStringEnumerationByComposedCharacterSequences //setperate as composed character
+                            usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+                                const char *utf8Str = [substring UTF8String];
+                                char aChar = [substring characterAtIndex:0]; //a unicode substr&#39;s length is 2
+                                if ( aChar == EmojiBegin &amp;amp;&amp;amp; strlen(utf8Str) == 1 ) { //卧槽，句号的unicode编码刚好第一个字符就是0x02
+                                    isEmojiBegin = YES;
+                                } else if ( aChar == EmojiEnd &amp;amp;&amp;amp; strlen(utf8Str) == 1 ) {   //if it is in end
+                                    isEmojiBegin = NO;
+                                    NSString *emoji = [emojiFileName decodeEmojiString];    //decode the filename
+                                    if ( emoji != nil ) {   //if decode succ
+                                        [result appendString:emoji];    //add to result
+                                    }
+                                    emojiFileName = @&quot;&quot;;    //clear file name
+                                } else {
+                                    if ( isEmojiBegin ) {   //the next substring is part of filename
+                                        emojiFileName = [emojiFileName stringByAppendingString:substring];
+                                    } else {    //the next substring is the normal string
+                                        [result appendString:substring];
+                                    }
+                                }
+                            }];
     
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringWithString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    return [NSString stringWithString:result];
+}
 
-&lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  Decode a single file name to emoji string&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  @return the decode emoji string&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;decodeEmojiString&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plistName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//if the filename is valid&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;characterAtIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;f&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;characterAtIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;l&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//flower&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;plistName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;EmojiFlower&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//face&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;plistName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;EmojiFace&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;characterAtIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;s&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;characterAtIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;t&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//status&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;plistName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;EmojiStatus&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//symbol&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;plistName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;EmojiSymbol&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;characterAtIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;m&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;//meal&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;plistName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;EmojiMeal&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSBundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mainBundle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pathForResource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plistName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ofType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;plist&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decodeDict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initWithContentsOfFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//read the plist file&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSInteger&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emojiCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decodeDict&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;objectForKey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Emoji&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emojiWithCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emojiCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+/**
+ *  Decode a single file name to emoji string
+ *
+ *  @return the decode emoji string
+ */
+- (NSString *)decodeEmojiString {
+    NSString *plistName;
+    if ( [self length] &amp;gt;= 3 ) { //if the filename is valid
+        if ( [self characterAtIndex:0] == &#39;f&#39; ) {
+            if ( [self characterAtIndex:1] == &#39;l&#39; ) {
+                //flower
+                plistName = @&quot;EmojiFlower&quot;;
+            } else {
+                //face
+                plistName = @&quot;EmojiFace&quot;;
+            }
+        } else if ( [self characterAtIndex:0] == &#39;s&#39; ) {
+            if ( [self characterAtIndex:1] == &#39;t&#39; ) {
+                //status
+                plistName = @&quot;EmojiStatus&quot;;
+            } else {
+                //symbol
+                plistName = @&quot;EmojiSymbol&quot;;
+            }
+        } else if ( [self characterAtIndex:0] == &#39;m&#39; ) {
+            //meal
+            plistName = @&quot;EmojiMeal&quot;;
+        }
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:plistName ofType:@&quot;plist&quot;];
+        NSDictionary *decodeDict = [[NSDictionary alloc] initWithContentsOfFile:filePath];//read the plist file
+        NSInteger emojiCode = [[decodeDict objectForKey:self] intValue];
+        return [Emoji emojiWithCode:emojiCode];
+    } else {
+        return @&quot;&quot;;
+    }
+}
 
-&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;encodeDictionary&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plistNames&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;@[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;ToEmojiFace&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;ToEmojiFlower&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;ToEmojiStatus&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;ToEmojiSymbol&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;ToEmojiMeal&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSMutableDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toEmojiDict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSMutableDictionary&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pName&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plistNames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSBundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mainBundle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pathForResource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ofType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;plist&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initWithContentsOfFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toEmojiDict&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addEntriesFromDictionary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;toEmojiDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
++ (NSDictionary *)encodeDictionary {
+    NSArray *plistNames = @[@&quot;ToEmojiFace&quot;, @&quot;ToEmojiFlower&quot;, @&quot;ToEmojiStatus&quot;, @&quot;ToEmojiSymbol&quot;, @&quot;ToEmojiMeal&quot;];
+    NSMutableDictionary *toEmojiDict = [NSMutableDictionary dictionary];
+    for (NSString *pName in plistNames) {
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:pName ofType:@&quot;plist&quot;];
+        NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:filePath];
+        [toEmojiDict addEntriesFromDictionary:dict];
+    }
+    return toEmojiDict;
+}
 
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;encodeString&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+- (NSString *)encodeString {
     
-    &lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toEmojiDict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encodeDictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    NSDictionary *toEmojiDict = [NSString encodeDictionary];
     
-    &lt;span class=&quot;n&quot;&gt;__block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSMutableString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSMutableString&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringWithString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enumerateSubstringsInRange&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSMakeRange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-                             &lt;span class=&quot;nl&quot;&gt;options:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSStringEnumerationByComposedCharacterSequences&lt;/span&gt;
-                          &lt;span class=&quot;nl&quot;&gt;usingBlock:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSRange&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;substringRange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSRange&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enclosingRange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                              &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encodeStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;toEmojiDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                              &lt;span class=&quot;n&quot;&gt;encodeStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encodeStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;substring&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encodeStr&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encodeEmojiString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                              &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;appendString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encodeStr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                          &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+    __block NSMutableString *result = [NSMutableString stringWithString:@&quot;&quot;];
+    [self enumerateSubstringsInRange:NSMakeRange(0, [self length])
+                             options:NSStringEnumerationByComposedCharacterSequences
+                          usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+                              NSString *encodeStr = toEmojiDict[substring];
+                              encodeStr = encodeStr == nil ? substring : [encodeStr encodeEmojiString];
+                              [result appendString:encodeStr];
+                          }];
     
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringWithString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    return [NSString stringWithString:result];
+}
 
-&lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  Encode emoji string with a prefix and a postfix&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  @return the encoded emoji string&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;encodeEmojiString&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringWithFormat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;%c%@%c&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EmojiBegin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EmojiEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+/**
+ *  Encode emoji string with a prefix and a postfix
+ *
+ *  @return the encoded emoji string
+ */
+-(NSString *)encodeEmojiString {
+    return [NSString stringWithFormat:@&quot;%c%@%c&quot;,EmojiBegin, self, EmojiEnd];
+}
 
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+@end
+
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;这样子，就可以在需要写数据库和发送网络的时候调用
 &lt;code&gt;
@@ -587,19 +592,19 @@ someChatMsg = [someChatMsg decodeString];
 &lt;h2 id=&quot;section-2&quot;&gt;补充一句&lt;/h2&gt;
 &lt;p&gt;为什么要筛选只有180个表情呢，因为发现不论是手Q还是微信还是自带的Emoji键盘，它都是每行有7个表情，一页有3行，最后一个是删除键，这样子180个表情就有180 ／ （7*3-1） ＝ 9页啦，所以180个已经是非常足够了的，太多页也会让用户失去耐心~&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/iOS%2BAnroid%2BEmoji&quot;&gt;iOS和Android的Emoji表情同步方案&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; August 24, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/iOS%2BAnroid%2BEmoji&quot;&gt;iOS和Android的Emoji表情同步方案&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; August 24, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Java开发入门]]></title>
-  <link>http://localhost:4000/blog/Java%2BIntro</link>
-  <id>http://localhost:4000/blog/Java+Intro</id>
+  <link>http://jeason.me/blog/Java%2BIntro</link>
+  <id>http://jeason.me/blog/Java+Intro</id>
   <published>2014-08-04T00:00:00+08:00</published>
   <updated>2014-08-04T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;最近因为实训和编译原理课程的缘故所以开始要看一下java的内容。因为知道XCode以及其一套开发套件对我学习OC的帮助有多大，所以快速的搭建好自己的Java开发环境就至关重要。所以就整理一下，方便有需要的同学可以参考一下。本文适合那些:&lt;/p&gt;
@@ -658,7 +663,7 @@ someChatMsg = [someChatMsg decodeString];
 &lt;p&gt;在了解了Java语法，下载了最新的JDK和JVM后，就可以考虑来写写代码了，我一开始想直接用XCode来写，发现XCode4以后就不支持Java开发了＝。＝&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/08/05/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/08/05/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/08/05/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/08/05/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;我马上想到了用Emacs，不过我的Emacs已经被我配置成一个C/C++ IDE了，要把java开发也配置得那么顺心，实在懒得再折腾，之后试了下在sublime下写了一会，发现实在不够顺手，最后装了个gVim勉强还能写一点小程序。Vim得快捷键+命令什么的，虽然感觉挺方便挺强大，但是对于习惯了Emacs快捷键，会一直不停的按C+X, C+S的我来说，实在是噩梦，所以我写完了几个程序之后就放弃了Vim。最后的最后我找到了一个叫NetBean的IDE，可以把它的编辑器改成Emacs的快捷键绑定，也能方便的查看JDK的文档和方便的写单元测试，也算是能基本满足我的要求了，只是因为它是用纯Java写成的，会有一点小卡……&lt;/p&gt;
@@ -824,25 +829,25 @@ someChatMsg = [someChatMsg decodeString];
 &lt;p&gt;然后再在这个文件夹目录下执行&lt;code&gt;你解压的文件夹/bin/sonar-runner&lt;/code&gt;命令，就可以分析你的代码了，然后打开http://localhost:9000就可以看到你的分析结果啦，如果出现下面的页面，就说明你已经完成了SonarQube的配置啦：&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/08/05/2.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/08/05/2.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/08/05/2.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/08/05/2.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;总结&lt;/h2&gt;
 &lt;p&gt;至此，总算是可以开始用Java大干一场来开发东西啦，当然本文没有详细地介绍各个工具安装和使用的步骤，只是简单总结一下Java开发需要配置的东西，剩下的就靠大家自己去搜索解决吧(´･_･`)。&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Java%2BIntro&quot;&gt;Java开发入门&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; August 04, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Java%2BIntro&quot;&gt;Java开发入门&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; August 04, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[iOS开发入门：Swift]]></title>
-  <link>http://localhost:4000/blog/Intro%2BSwift</link>
-  <id>http://localhost:4000/blog/Intro+Swift</id>
+  <link>http://jeason.me/blog/Intro%2BSwift</link>
+  <id>http://jeason.me/blog/Intro+Swift</id>
   <published>2014-06-10T00:00:00+08:00</published>
   <updated>2014-06-10T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;本文假设你已经对Swift的基本的数据类型，变量等都有一定的了解，有过面向对象和面向函数的编程经验自然是最好的了。&lt;/p&gt;
@@ -1114,19 +1119,19 @@ extension JEInt: Addable {
 &lt;p&gt;完成《Swift By Tutorials》第三章的Demo&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Intro%2BSwift&quot;&gt;iOS开发入门：Swift&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; June 10, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Intro%2BSwift&quot;&gt;iOS开发入门：Swift&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; June 10, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[CocoaSocket实践（一）:Socket简介]]></title>
-  <link>http://localhost:4000/blog/Socket%2BIntro</link>
-  <id>http://localhost:4000/blog/Socket+Intro</id>
+  <link>http://jeason.me/blog/Socket%2BIntro</link>
+  <id>http://jeason.me/blog/Socket+Intro</id>
   <published>2014-06-01T00:00:00+08:00</published>
   <updated>2014-06-01T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这是本站关于CocoaSocket编程实践专题的第一篇文章，这个专题并不是为了探讨如何使用CocoaAsynSocket库来实现一个iOS客户端或者是OS X服务器，而是为了研究这个库的具体实现细节以及其所采用的技术。本文力图用1个小时以内的时间为读者介绍Socket以及对应的TCP/UDP协议等网络知识，所讲内容多为个人理解和外文搬运，对于socket编程只是很浅的一个入门，更多的内容可以参考其他关于socket的书籍。&lt;/p&gt;
@@ -1155,7 +1160,7 @@ extension JEInt: Addable {
 &lt;h2 id=&quot;section&quot;&gt;概述&lt;/h2&gt;
 &lt;p&gt;如果你之前有过使用基于文件传输的协议来进行网络通信的实践（如HTTP，FTP），那么使用基于socket传输的协议（TCP，UDP）来进行网络通信将会是一种更靠近底层的工作，但使用socket却能有很大的性能上的提升。事实上，在&lt;a href=&quot;http://baike.baidu.com/link?url=yGUAWSFEonLlu2TwBpCCWUsI9b2i64CcNKeqZ2U-u3Cw3ZNiOlhS2vmxscu_OIRLAvREGHxl0KfGVK2qWlIee_#4&quot;&gt;ISO/OSI网络体系结构&lt;/a&gt;中, HTTP等协议位于应用层，而TCP协议位于传输层，如下图所示。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/06/01/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/06/01/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/06/01/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/06/01/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;sockt&quot;&gt;Sockt是一个端点&lt;/h2&gt;
@@ -1206,22 +1211,22 @@ extension JEInt: Addable {
 &lt;h2 id=&quot;section-4&quot;&gt;结语&lt;/h2&gt;
 &lt;p&gt;现在，你应该对于socket网络有了一定的了解，接下来我们会以&lt;a href=&quot;https://github.com/robbiehanson/CocoaAsyncSocket&quot;&gt;CocoaAsyncSocket&lt;/a&gt;这个项目作为分析样本，来解释Socket网络编程的具体实现细节，希望这会是一个很好的帮助你我学习的专题。&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Socket%2BIntro&quot;&gt;CocoaSocket实践（一）:Socket简介&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; June 01, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Socket%2BIntro&quot;&gt;CocoaSocket实践（一）:Socket简介&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; June 01, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[Apple Club培训教程（四）：iOS网络]]></title>
-  <link>http://localhost:4000/blog/Network</link>
-  <id>http://localhost:4000/blog/Network</id>
+  <title type="html"><![CDATA[iOS入门（四）：iOS网络]]></title>
+  <link>http://jeason.me/blog/Network</link>
+  <id>http://jeason.me/blog/Network</id>
   <published>2014-05-05T00:00:00+08:00</published>
   <updated>2014-05-05T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
-  <content type="html">&lt;p&gt;这是Apple Club的第四期培训教程,今天我们主要介绍iOS中的网络编程。更确切的说，是介绍iOS7中的NSURLSession这个新的API，参考自&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html&quot;&gt;URL Loading System Programming Guide&lt;/a&gt;,&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/Introduction/Introduction.html&quot;&gt;NSURLSession Class Reference&lt;/a&gt;和一些其他博文。&lt;/p&gt;
+  <content type="html">&lt;p&gt;今天我们主要介绍iOS中的网络编程。更确切的说，是介绍iOS7中的NSURLSession这个新的API，参考自&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html&quot;&gt;URL Loading System Programming Guide&lt;/a&gt;,&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/Introduction/Introduction.html&quot;&gt;NSURLSession Class Reference&lt;/a&gt;和一些其他博文。&lt;/p&gt;
 
 &lt;section&gt;
   &lt;header&gt;
@@ -1230,50 +1235,60 @@ extension JEInt: Addable {
 &lt;div id=&quot;drawer&quot;&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#section&quot;&gt;概述&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#httpp&quot;&gt;HTTPP语义下的网络&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#url-loading&quot;&gt;URL Loading&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#nsurlsession&quot;&gt;NSURLSession&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#nsurlsessiontask&quot;&gt;NSURLSessionTask&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#block&quot;&gt;Block&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#nsurlsessionconfiguration&quot;&gt;NSURLSessionConfiguration&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#nsurlsessiontask&quot;&gt;NSURLSessionTask&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#coding-time&quot;&gt;Coding Time&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-1&quot;&gt;编写网络引擎&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#requesthandlerh&quot;&gt;RequestHandler.h&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#requsethandlerm&quot;&gt;RequsetHandler.m&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#appdelegatenote&quot;&gt;修改AppDelegate里的Note数据来源&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#notelistviewcontrollernote&quot;&gt;修改NoteListViewController里的Note来源&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#noteview&quot;&gt;为NoteView添加图片&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#configuration-management&quot;&gt;Configuration Management&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#cache-management&quot;&gt;Cache Management&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#demo-time&quot;&gt;Demo Time&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#start&quot;&gt;Start&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#protocol&quot;&gt;Protocol&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#model&quot;&gt;Model&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#engine&quot;&gt;Engine&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#view&quot;&gt;View&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#assignment&quot;&gt;Assignment&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
   &lt;/div&gt;
 &lt;/section&gt;
 
 &lt;h1 id=&quot;section&quot;&gt;概述&lt;/h1&gt;
-&lt;p&gt;iOS7以前，Foundation里Apple提供的网络处理API是NSURLConnection，随着iOS7/OS X 10.9的发布，Apple也带来了一个新的网络处理的API。它在沿用原有的NSURL/NSURLRequest/NSURLResponse这些类及相关概念的基础上，新增了NSURLSession这个类以及与之相关联的NSURLSessionConfiguration和NSURLSessionTask这两个类。下面就来一一介绍这三个新增的类和他们是如何组织起来的。&lt;/p&gt;
+&lt;p&gt;我们可以看到，在URL Load System中，我们看到NSURL这一系列的系统都是被设计成可以处理多个协议的——包括 FTP、HTTP、HTTPS——所以我们这里讲的是内容本是协议无关的。但是为了更好地说明，我们采用HTTP为例的方式来说明这个系统是怎么运作的。&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/05/05/01.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/table.png&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;httpp&quot;&gt;HTTPP语义下的网络&lt;/h2&gt;
+
+&lt;p&gt;HTTP是一个客户端终端（用户）和服务器端（网站）请求和应答的标准,是一个基于&lt;b&gt;文本传输&lt;/b&gt;的协议。通常，由HTTP客户端发起一个请求，建立一个到服务器指定端口（默认是80端口）的TCP连接。HTTP服务器则在那个端口监听客户端的请求。一旦收到请求，服务器会向客户端返回一个状态，比如”HTTP/1.1 200 OK”，以及返回的内容，如请求的文件、错误消息、或者其它信息。&lt;/p&gt;
+
+&lt;h1 id=&quot;url-loading&quot;&gt;URL Loading&lt;/h1&gt;
+&lt;p&gt;iOS7以前，Foundation里Apple提供的网络处理API是NSURLConnection，随着iOS7/OS X 10.9的发布，Apple也带来了一个新的网络处理的API。它在沿用原有的NSURL/NSURLRequest/NSURLResponse这些类及相关概念的基础上，新增了NSURLSession这个类以及与之相关联的NSURLSessionConfiguration和NSURLSessionTask这两个类。&lt;/p&gt;
 
 &lt;h2 id=&quot;nsurlsession&quot;&gt;NSURLSession&lt;/h2&gt;
-&lt;p&gt;NSURLSession提供了http网络会话的抽象，我们可以在上面创建多个单一会话任务（发送http请求，返回响应数据，暂停http请求，重置http请求，取消http请求等）。而Apple为这些会话任务提供了另一个抽象－－NSURLSessionTask。一个Session的创建需要制定它的“配置信息”，如每个会话的缓存，cookie和证书验证等等，这个配置信息抽象为NSURLSessionConfiguration.在确定了配置信息之后，一个session可以通过NSURLSession的一个类方法
-&lt;code&gt;[NSURLSession sessionWithConfiguration:someConfig]&lt;/code&gt;来创建.&lt;/p&gt;
+&lt;p&gt;NSURLSession提供了http网络会话的抽象，我们可以在上面创建多个单一会话任务（发送http请求，返回响应数据，暂停http请求，重置http请求，取消http请求等）。而Apple为这些会话任务提供了另一个抽象－－NSURLSessionTask。&lt;/p&gt;
 
 &lt;h2 id=&quot;nsurlsessiontask&quot;&gt;NSURLSessionTask&lt;/h2&gt;
 
 &lt;p&gt;NSURLSessionTask是一个虚基类，在上面定义了一系列的函数接口，如：&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someTask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resume&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;开始一个会话任务&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someTask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cancel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;取消一个会话任务&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someTask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;suspend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;挂起一个会话任务&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+[someTask resume];      //开始一个会话任务
+[someTask cancel];      //取消一个会话任务
+[someTask suspend];     //挂起一个会话任务
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;为了特定的功能，Apple提供了三个它的非虚子类，分别是NSURLSessionDataTask，NSURLSessionDownloadTask和NSURLSessionUploadTask，他们的关系如下：&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/05/05/01.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/05/05/01.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/05/05/01.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/01.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -1291,247 +1306,408 @@ extension JEInt: Addable {
 &lt;p&gt;创建这些xxTask，都是通过定义在NSURLSession上工厂模式的方法：
 &lt;code&gt;
 - [NSURLSessionObject dataTask/downloadTask/uploadTaskWithRequest:completionHandler:]
-&lt;/code&gt;
-来创建的
-在这里，CompletionHanlder接受的时一个block对象，用来处理和操作返回的信息。可能在之前的培训里没有介绍到block这个概念，所以还是简单介绍一下吧&lt;/p&gt;
+&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+工厂模式一般用于“生产”一个类族，用一个工厂类的类方法来新建对象，而不是通过new。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;来创建的。在这里，CompletionHanlder接受的是一个block，用来处理和操作返回的信息。可以看到NSURLSession这一系列的网络请求都是异步执行的，而不是同步执行。&lt;/p&gt;
 
-&lt;h3 id=&quot;block&quot;&gt;Block&lt;/h3&gt;
+&lt;h1 id=&quot;configuration-management&quot;&gt;Configuration Management&lt;/h1&gt;
 
-&lt;p&gt;Block其实是iOS里封装提供出来的函数闭包的概念，它是在iOS4以后被提出来取代delegate和call back模式的一种新的概念。
- 对于闭包（block),有很多定义，其中闭包就是能够读取其它函数内部变量的函数，这个定义即接近本质又较好理解。对于刚接触Block的同学，会觉得有些绕，因为我们习惯写这样的程序main(){ funA();} funA(){funB();} funB(){…..}; 就是函数main调用函数A，函数A调用函数B… 函数们依次顺序执行，但现实中不全是这样的，例如Jeason在团队里是个PM的角色，手下有3个程序员：经纶、经伦、径伦，当他给经伦安排实现功能F1时，他并不等着经伦完成之后，再去安排经纶去实现F2，而是安排给经纶功能F1，经伦功能F2，径伦功能F3，然后安排完了去约会，而当经伦遇到问题时，他会来找jeason，当经伦做完时，会通知jeason，这就是一个异步执行的例子。在这种情形下，Block便可大显身手，因为在Jeason给经伦安排工作时，同时会告诉经伦若果遇到困难，如何能找到他报告问题（例如打他手机号），这就是jeason给经伦的一个回调接口，要回调的操作，比如接到电话，百度一下后，返回网页内容给经伦，这就是一个Block，在jeason交待工作时，已经定义好，并且取得了F1的任务号（局部变量），却是在当经伦遇到问题时，才调用执行。&lt;/p&gt;
+&lt;p&gt;一个Session的创建需要制定它的“配置信息”，如每个会话的缓存，cookie和证书验证等等，这个配置信息抽象为NSURLSessionConfiguration.在确定了配置信息之后，一个session可以通过NSURLSession的一个类方法(工厂模式)
+&lt;code&gt;[NSURLSession sessionWithConfiguration:someConfig]&lt;/code&gt;来创建.
+NSURLSessionConfiguration有三个类构造函数，这很好地说明了NSURLSession是为不同的用例而设计的。&lt;/p&gt;
 
-&lt;p&gt;block在多线程编程和函数式编程（并不是函数式的语言才能面向函数的编程＝。＝）里都有着重要的应用，想对block更进一步了解的同学，可以看看唐巧的&lt;a href=&quot;http://blog.devtang.com/blog/2013/07/28/a-look-inside-blocks/&quot;&gt;这篇博文&lt;/a&gt;;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
++ defaultSessionConfiguration返回标准配置，这实际上与NSURLConnection的网络协议栈是一样的，具有相同的共享NSHTTPCookieStorage，共享NSURLCache和共享NSURLCredentialStorage。
 
-&lt;h2 id=&quot;nsurlsessionconfiguration&quot;&gt;NSURLSessionConfiguration&lt;/h2&gt;
++ ephemeralSessionConfiguration返回一个预设配置，没有持久性存储的缓存，Cookie或证书。这对于实现像秘密浏览功能的App来说，是很理想的。
 
-&lt;p&gt;NSURLSessionConfiguration有三个类构造函数，这很好地说明了NSURLSession是为不同的用例而设计的。&lt;/p&gt;
++ backgroundSessionConfiguration：独特之处在于，它会创建一个后台会话。后台会话不同于常规的会话，它甚至可以在应用程序挂起，退出，崩溃的情况下运行上传和下载任务。初始化时指定的标识符（有点类似于操作系统里的PCB），被用于向任何可能在进程外恢复后台传输的进程提供上下文。
 
-&lt;p&gt;－ + defaultSessionConfiguration返回标准配置，这实际上与NSURLConnection的网络协议栈是一样的，具有相同的共享NSHTTPCookieStorage，共享NSURLCache和共享NSURLCredentialStorage。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;－ + ephemeralSessionConfiguration返回一个预设配置，没有持久性存储的缓存，Cookie或证书。这对于实现像秘密浏览功能的App来说，是很理想的。&lt;/p&gt;
+&lt;p&gt;所以当我们想要请求一个互联网上的文件时，我们的一般做法是:根据实际的情况，新建一个符合需求的NSURLSessionConfiguration,例如:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;－ + backgroundSessionConfiguration：独特之处在于，它会创建一个后台会话。后台会话不同于常规的会话，它甚至可以在应用程序挂起，退出，崩溃的情况下运行上传和下载任务。初始化时指定的标识符（有点类似于操作系统里的PCB），被用于向任何可能在进程外恢复后台传输的进程提供上下文。&lt;/p&gt;
+&lt;p&gt;之后我们再用这个配置类去配置我们的会话工厂NSURLSession，像下面这样:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&quot;coding-time&quot;&gt;Coding Time&lt;/h1&gt;
-&lt;p&gt;这里，我们继续我们之前的项目，让我们的Note的内容可以来源于网络，在&lt;a href=&quot;http://localhost:4000/images/2014/05/05/Note.zip&quot;&gt;这里&lt;/a&gt;可以下载到之前的项目。&lt;/p&gt;
+&lt;p&gt;接下来我们就可以利用session来产生我们的请求对象并开始我们的网络请求啦:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
-&lt;h2 id=&quot;section-1&quot;&gt;编写网络引擎&lt;/h2&gt;
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request 
+completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    //handle response here
+};
 
-&lt;p&gt;首先先点击File-&amp;gt;New-&amp;gt;File…-&amp;gt;Objective-C Class,名字就取RequestHandler，继承自NSObject&lt;/p&gt;
+[dataTask resume];
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;requesthandlerh&quot;&gt;RequestHandler.h&lt;/h3&gt;
+&lt;h1 id=&quot;cache-management&quot;&gt;Cache Management&lt;/h1&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  RequestHandler.h&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  Note&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  Created by Jeason on 14-5-8.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  Copyright (c) 2014年 Jeason. All rights reserved.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;p&gt;网络缓存减少了需要向服务器发送请求的次数，同时也提升了离线或在低速网络中使用应用的体验。
+当一个请求完成下载来自服务器的回应，一个缓存的回应将在本地保存。下一次同一个请求再发起时，本地保存的回应就会马上返回，不需要连接服务器。试想一下如果没有缓存数据，我们对于每个文件可能都要重复的进行多次请求/响应的操作，这在一些没有实时性的应用里面是非常糟糕的。所以我们需要对一些不常改变而又非常大的文件数据进行适当的缓存。之后的网络请求模式就变成了如下的图所示:&lt;/p&gt;
 
-&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;Foundation/Foundation.h&amp;gt;&lt;/span&gt;
+&lt;figure&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/05/05/ERD.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/ERD.png&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
 
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RequestHandler&lt;/span&gt; : &lt;span class=&quot;nc&quot;&gt;NSObject&lt;/span&gt;
+&lt;p&gt;我们可以看到这里的Cache只是一级缓存，实际上我们可以做更多级的缓存（如硬盘缓存和内存缓存结合）。我们可以利用NSURLCache来实现内存缓存，而硬盘缓存往往需要我们针对不同的文件格式来设计不同的缓存策略和压缩方案。&lt;/p&gt;
 
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;h1 id=&quot;demo-time&quot;&gt;Demo Time&lt;/h1&gt;
 
-&lt;span class=&quot;c1&quot;&gt;//1&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;requestNotesWithAppendPath:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;WithCompletionHandler:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;notes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;h2 id=&quot;start&quot;&gt;Start&lt;/h2&gt;
+&lt;p&gt;这次的Demo来自于我之前在听&lt;a href=&quot;http://music.163.com/#/song?id=316908&quot;&gt;杨千嬅的一首歌&lt;/a&gt;的时候看到评论里大家都在讨论一个(就是传说中韩寒监制那个＝＝)里面的一篇文章。&lt;/p&gt;
 
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;downloadImageWithAppendPath:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;WithCompletionHandler:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/05/05/one.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/one.png&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
 
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instancetype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;initWithHost:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;但是当我想去一个里看11月10号的文章时，我发现它App里面最多只能回滚到上一周……所以就有了这个Demo，你可以选择日期然后就可以阅读这个日期里的文章。效果图如下:&lt;/p&gt;
 
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;half&quot;&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;可以看到block的基本声明写法，(void (^)(NSArray *notes)) completionHandler，其中void表示block的返回类型，(NSArray *notes)是block接受的参数，completionHandler是block的名字,它看起来就像是传递了一个函数指针进来一样，没错，作为C语言的超集，OC里的Block其实就是函数指针实现的一种抽象。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/05/05/final1.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/final1.png&quot; /&gt;&lt;/a&gt;
 
-&lt;h3 id=&quot;requsethandlerm&quot;&gt;RequsetHandler.m&lt;/h3&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/05/05/final2.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/final2.png&quot; /&gt;&lt;/a&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  RequestHandler.m&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  Note&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  Created by Jeason on 14-5-8.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//  Copyright (c) 2014年 Jeason. All rights reserved.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;/figure&gt;
 
-&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;RequestHandler.h&amp;quot;&lt;/span&gt;
+&lt;h2 id=&quot;protocol&quot;&gt;Protocol&lt;/h2&gt;
 
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RequestHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;p&gt;在通过对一个App抓包分析后，大概分析出几条协议与接口信息如下:&lt;/p&gt;
 
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSURLSession&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;1, Host:211.152.49.185:8001 这个告诉我们这个服务器运行的是HTTP服务&lt;/p&gt;
 
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;p&gt;2, 获得首页信息: GET /OneForWeb/one/getHp_N?strDate=yyyy-MM-dd&amp;amp;strRow=1 这条API会根据strDate和strRow的不同而返回不同日期的首页信息。straDate=2014-11-20&amp;amp;strRow=1表示2014年11月20日的第一个首页，strRow=2则为第二个首页（即是2014年11月19日的第一个首页，下面的类似）。样例返回:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+{
+    &quot;result&quot;: &quot;SUCCESS&quot;, 
+    &quot;hpEntity&quot;: {
+        &quot;sWebLk&quot;: &quot;http://wufazhuce.com/one/vol.783&quot;, 
+        &quot;strAuthor&quot;: &quot;三只猫喵&amp;amp;绘图/花芍子&quot;, 
+        &quot;strContent&quot;: &quot;一见钟情的感觉是这样的：我们在很久以前就已经相爱，只是在相识的那一刻才刚刚见面。 by 曹畅洲&quot;, 
+        &quot;strDayDiffer&quot;: &quot;&quot;, 
+        &quot;strHpId&quot;: &quot;800&quot;, 
+        &quot;strHpTitle&quot;: &quot;VOL.783&quot;, 
+        &quot;strLastUpdateDate&quot;: &quot;2014-11-28 17:47:30&quot;, 
+        &quot;strMarketTime&quot;: &quot;2014-11-29&quot;, 
+        &quot;strOriginalImgUrl&quot;: &quot;http://pic.yupoo.com/hanapp/EeynIPXi/pFm80.jpg&quot;, 
+        &quot;strPn&quot;: &quot;28015&quot;, 
+        &quot;strThumbnailUrl&quot;: &quot;http://pic.yupoo.com/hanapp/EeynIPXi/pFm80.jpg&quot;, 
+        &quot;wImgUrl&quot;: &quot;http://211.152.49.184:9000/upload/onephoto/f1416917552059.jpg&quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RequestHandler&lt;/span&gt;
+&lt;p&gt;3, 获得文章信息：GET /OneForWeb/one/getC_N?strDate=yyyy-MM-dd&amp;amp;strRow=1&amp;amp;strMS=1
+这条API会根据strDate和strRow的不同而返回不同日期的文章内容，这正是我们想要的！样例返回结构:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+{
+    &quot;contentEntity&quot;: {
+        &quot;strLastUpdateDate&quot;: &quot;2014-11-29 11:33:33&quot;, 
+        &quot;strContent&quot;: &quot;这里是文章内容，太长不贴&quot;, 
+        &quot;sWebLk&quot;: &quot;http://wufazhuce.com/one/vol.783#articulo&quot;, 
+        &quot;wImgUrl&quot;: &quot;http://211.152.49.184:9000/upload/onephoto/f1416917576343.jpg&quot;, 
+        &quot;sRdNum&quot;: &quot;292686&quot;, 
+        &quot;strPraiseNumber&quot;: &quot;16476&quot;, 
+        &quot;strContDayDiffer&quot;: &quot;&quot;, 
+        &quot;strContentId&quot;: &quot;858&quot;, 
+        &quot;strContTitle&quot;: &quot;安全感&quot;, 
+        &quot;strContAuthor&quot;: &quot;满城烟火&quot;, 
+        &quot;strContAuthorIntroduce&quot;: &quot;（责任编辑：金子棋）&quot;, 
+        &quot;strContMarketTime&quot;: &quot;2014-11-29&quot;, 
+        &quot;sGW&quot;: &quot;我站在门外，看着屋里的两人，心也跟着暖了。&quot;, 
+        &quot;sAuth&quot;: &quot;满城烟火，作家、编剧。&quot;, 
+        &quot;sWbN&quot;: &quot;@满城烟火&quot;, 
+        &quot;subTitle&quot;: &quot;&quot;
+    }, 
+    &quot;result&quot;: &quot;SUCCESS&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instancetype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;initWithHost:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringWithString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;p&gt;4, 获得问答题信息: GET /OneForWeb/one/getQ_N?strUi=&amp;amp;strDate=yyyy-MM-dd&amp;amp;strRow=1
+这条API会根据strDate和strRow的不同而返回不同日期的问答信息，样例返回:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+{
+    &quot;result&quot;: &quot;SUCCESS&quot;, 
+    &quot;questionAdEntity&quot;: {
+        &quot;entQNCmt&quot;: {
+            &quot;pNum&quot;: &quot;&quot;, 
+            &quot;strCnt&quot;: &quot;&quot;, 
+            &quot;strD&quot;: &quot;&quot;, 
+            &quot;strId&quot;: &quot;&quot;, 
+            &quot;upFg&quot;: &quot;&quot;
+        }, 
+        &quot;sWebLk&quot;: &quot;http://wufazhuce.com/one/vol.783#cuestion&quot;, 
+        &quot;strAnswerContent&quot;: &quot;这个问题，我可以回答一下，因为我和你正在经历一个年龄差不多的时期...内容太长，不放了&quot;, 
+        &quot;strAnswerTitle&quot;: &quot;@里则林 答Nico小姐：&quot;, 
+        &quot;strDayDiffer&quot;: &quot;&quot;, 
+        &quot;strLastUpdateDate&quot;: &quot;2014-11-29 16:46:51&quot;, 
+        &quot;strPraiseNumber&quot;: &quot;9213&quot;, 
+        &quot;strQuestionContent&quot;: &quot;Nico小姐问：我今年二十一，觉得无论做什么都提不起劲。在这个二十多岁的年纪我们应该做什么将来才不会后悔？&quot;, 
+        &quot;strQuestionId&quot;: &quot;804&quot;, 
+        &quot;strQuestionMarketTime&quot;: &quot;2014-11-29&quot;, 
+        &quot;strQuestionTitle&quot;: &quot;二十多岁该做些什么，将来才不会后悔？&quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSURLSession&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;session&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//lazy initialize&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_session&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSURLSessionConfiguration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSURLSessionConfiguration&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultSessionConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;_session&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSURLSession&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sessionWithConfiguration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;p&gt;5, 获得东西栏目的信息: GET /OneForWeb/one/o_f?strDate=yyyy-MM-dd&amp;amp;strRow=1
+这条API会根据strDate和strRow的不同而返回不同的日期的东西栏目的信息，样例返回:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+{
+    &quot;rs&quot;: &quot;SUCCESS&quot;, 
+    &quot;entTg&quot;: {
+        &quot;strBu&quot;: &quot;http://pic.yupoo.com/hanapp/EezfK2lb/2YkKG.jpg&quot;, 
+        &quot;strId&quot;: &quot;320&quot;, 
+        &quot;strLastUpdateDate&quot;: &quot;2014-11-25 21:17:29&quot;, 
+        &quot;strPn&quot;: &quot;0&quot;, 
+        &quot;strTc&quot;: &quot;并不是所有蛋糕都很娘炮。&quot;, 
+        &quot;strTm&quot;: &quot;2014-11-28&quot;, 
+        &quot;strTt&quot;: &quot;3D颅骨蛋糕模&quot;, 
+        &quot;strWu&quot;: &quot;http://wufazhuce.com/one/vol.782#cosas&quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;requestNotesWithAppendPath:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;WithCompletionHandler:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;notes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_host&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//setup url string&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urlString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_host&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringByAppendingString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//set up an url object&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;URLWithString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urlString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//set up an request&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSURLRequest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSURLRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestWithURL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIApplication&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;networkActivityIndicatorVisible&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//set up a dataTask&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSURLSessionDataTask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataTask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dataTaskWithRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSURLResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;NSHTTPURLResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;httpResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSHTTPURLResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;httpResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;statusCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jsonError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;notesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSJSONSerialization&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JSONObjectWithData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSJSONReadingAllowFragments&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jsonError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jsonError&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;dispatch_async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dispatch_get_main_queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIApplication&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;networkActivityIndicatorVisible&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                            &lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;notesArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-                        
-                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;json Error!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;bad response:%d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;httpResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;statusCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;dataTask error!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataTask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resume&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;h2 id=&quot;model&quot;&gt;Model&lt;/h2&gt;
 
-&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;downloadImageWithAppendPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WithCompletionHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_host&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urlString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_host&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringByAppendingString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;URLWithString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urlString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSURLRequest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSURLRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestWithURL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIApplication&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;networkActivityIndicatorVisible&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        
-        &lt;span class=&quot;n&quot;&gt;NSURLSessionDownloadTask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;downloadTask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;downloadTaskWithRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSURLResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;NSHTTPURLResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;httpResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSHTTPURLResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;httpResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;statusCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;c1&quot;&gt;//copy the file from temp dictionary pictureDirectory&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                    &lt;span class=&quot;c1&quot;&gt;//find pictureDirectory&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;URLs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;URLsForDirectory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSPicturesDirectory&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inDomains&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSUserDomainMask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentsDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;URLs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                    &lt;span class=&quot;c1&quot;&gt;//setup the destination path the item to copy to&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;destinationPath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentsDictionary&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;URLByAppendingPathComponent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastPathComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                    &lt;span class=&quot;c1&quot;&gt;//remove the exist file&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;removeItemAtURL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;destinationPath&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                    &lt;span class=&quot;c1&quot;&gt;//copy temp file to destination&lt;/span&gt;
-                    &lt;span class=&quot;kt&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;success&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copyItemAtURL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;toURL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;destinationPath&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;success&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;dispatch_async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dispatch_get_main_queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIApplication&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;networkActivityIndicatorVisible&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                            &lt;span class=&quot;n&quot;&gt;NSData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSData&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dataWithContentsOfFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;destinationPath&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
-                            &lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;Can not copy file&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;p&gt;可以看到返回回来的json文本是一个类似字典的格式，iOS中可以c利用&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+NSError *jsonError;
+NSDictionary *dict =［NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&amp;amp;jsonError];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;来把objective解析成NSDictionary对象。直接使用Dictionary会是一个糟糕的设计，因为我只有遍历或者打印整个字典才能看到这个字典里的元素信息，所以我们会把objective解析成Model类来使用。这里我们借助软件objective Accelerator来帮我们把上面的返回的objective解析成Model Class，如图所c示:&lt;/p&gt;
 
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;bad response:%d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;httpResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;statusCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;download error!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            
-        &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-        
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;downloadTask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resume&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;figure&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/05/05/ModelClass.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/ModelClass.png&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
 
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在&lt;a href=&quot;http://jeason.me/images/2014/05/05/OneModel.zip&quot;&gt;这里&lt;/a&gt;可以下载到完整的所有Model类。&lt;/p&gt;
 
-&lt;p&gt;这里我们可以看到一个网络请求（NSURLSessionXXTask）是通过NSURLSession创建的，而一个NSURLSession则需要一个Configuation来配置，这里我们用了默认的配置。每一个网络请求在创建之初都是挂起的，都需要通过传递resume消息来让它启动。&lt;/p&gt;
+&lt;h2 id=&quot;engine&quot;&gt;Engine&lt;/h2&gt;
 
-&lt;h2 id=&quot;appdelegatenote&quot;&gt;修改AppDelegate里的Note数据来源&lt;/h2&gt;
-&lt;p&gt;只需要把NoteAppDelegate里notes相关的代码注释掉就好了= =&lt;/p&gt;
+&lt;p&gt;接下来我们就来编写一个网络引擎，可以利用它发送HTTP请求，并将返回的数据初始化Model类并返回给调用者来处理。&lt;/p&gt;
 
-&lt;h2 id=&quot;notelistviewcontrollernote&quot;&gt;修改NoteListViewController里的Note来源&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;首先把listArray的自定义getter删掉，即删掉函数-(NSMutableArray *)listArray;&lt;/li&gt;
-  &lt;li&gt;在viewDidLoad方法中的最后面添加&lt;/li&gt;
-&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+//
+//  OneNetWorkEngine.h
+//  OneClient
+//
+//  Created by Jeason on 14/11/29.
+//  Copyright (c) 2014年 Jeason. All rights reserved.
+//
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;    
-    &lt;span class=&quot;n&quot;&gt;RequestHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;networkHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RequestHandler&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initWithHost&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;http://jeason.me&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;networkHandler&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestNotesWithAppendPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;/images/2014/05/05/DemoNotes.json&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WithCompletionHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;notes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;fetch notes...&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSMutableArray&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+//1
+@import Foundation;
+@class OneArticleInfo;
+@class OneQAndAInfo;
+@class OneItemInfo;
+@class OneHeadPageModel;
+@class UIImage;
 
-        &lt;span class=&quot;n&quot;&gt;NSNumberFormatter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNumberFormatter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;notes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            
-            &lt;span class=&quot;n&quot;&gt;Note&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;noteObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Note&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;//content&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;noteObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;content&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;//note id&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;noteIDString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;noteID&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;noteIDNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberFromString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;noteIDString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;noteObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NoteID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;noteIDNumber&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unsignedIntegerValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;//image&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iconPath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;imageURL&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;networkHandler&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;downloadImageWithAppendPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iconPath&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WithCompletionHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;noteObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imageData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listArray&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;noteObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_listTableView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reloadData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+//2
+typedef void (^ArticleReturnBlock)(OneArticleInfo *result, NSError *err);
+typedef void (^QAndAInfoReturnBlock)(OneQAndAInfo *result, NSError *err);
+typedef void (^ItemInfoReturnBlock)(OneItemInfo *result, NSError *err);
+typedef void (^HeadPageReturnBlock)(OneHeadPageModel *result, NSError *err);
+typedef void (^DownloadImageReturnBlock)(UIImage *result, NSError *err);
 
-&lt;h2 id=&quot;noteview&quot;&gt;为NoteView添加图片&lt;/h2&gt;
-&lt;p&gt;在NoteViewController.m的viewDidLoad的最后面注释5的后面添加&lt;/p&gt;
+@interface OneNetWorkEngine : NSObject
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;objective-c&quot;&gt;    &lt;span class=&quot;n&quot;&gt;UIImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIImage&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initWithData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;UIImageView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIImageView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initWithFrame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGRectMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+- (void)fetchPageContentsAtDate:(NSDate *)date
+                 WithCompletion:(ArticleReturnBlock)handler;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Network&quot;&gt;Apple Club培训教程（四）：iOS网络&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; May 05, 2014.&lt;/p&gt;</content>
+- (void)fetchHeadPageInfoAtDate:(NSDate *)date
+                 WithCompletion:(HeadPageReturnBlock)handler;
+
+- (void)fetchQAndAInfoAtDate:(NSDate *)date
+              WithCompletion:(QAndAInfoReturnBlock)handler;
+
+- (void)fetchItemInfoAtDate:(NSDate *)date
+             WithCompletion:(ItemInfoReturnBlock)handler;
+
+- (void)downloadImageFromURL:(NSString *)urlStr
+             WithCompletion:(DownloadImageReturnBlock)handler;
+
+@end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注释1: 就像我们之前讲的那样，尽量使用@import来将库导进来，这样可以提供链接的效率。而@class只是声明了这个类的存在，而没有真正把这个类的头文件导入进来，我们应该在.m里面加入#import才能知道这个类的具体接口,这么做是为了避免头文件包火车的现象（想想你import了一个类，实际上却因为这个类已经import了其他多个类导致你import了太多不必要的头文件）。&lt;/p&gt;
+
+&lt;p&gt;注释2: 可以看到我们为了避免OC里block带来的语法障碍，我们一般会对这些block进行重命名(typedef)。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+//
+//  OneNetWorkEngine.m
+//  OneClient
+//
+//  Created by Jeason on 14/11/29.
+//  Copyright (c) 2014年 Jeason. All rights reserved.
+//
+
+#import &quot;OneNetWorkEngine.h&quot;
+#import &quot;DataModels.h&quot;
+#import &quot;AppDelegate.h&quot;
+#import &quot;NSDate+DateToString.h&quot;
+
+static NSString *articlePathFormate = @&quot;OneForWeb/one/getC_N?strDate=%@&amp;amp;strRow=%d&amp;amp;strMS=%d&quot;;
+static NSString *defaultHost = @&quot;http://211.152.49.185:8001/&quot;;
+static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
+
+@interface OneNetWorkEngine()
+
+@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, strong) NSString *host;
+
+@end
+
+@implementation OneNetWorkEngine
+
+- (instancetype)initWithHost:(NSString *)host {
+    self = [super init];
+    if ( self ) {
+        self.host = host;
+    }
+    return self;
+}
+
+- (NSURLSession *)session {
+    if ( _session == nil ) {
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        _session = [NSURLSession sessionWithConfiguration:config];
+    }
+    return _session;
+}
+
+- (NSString *)host {
+    if ( _host == nil ) {
+        _host = defaultHost;
+    }
+    return _host;
+}
+
+- (void)fetchPageContentsAtDate:(NSDate *)date
+                 WithCompletion:(ArticleReturnBlock)handler; {
+    //setup url string
+
+    //1
+    NSString *dateStr = [date dateToStringInFormat:dateFormat];
+    NSString *articlePath = [NSString stringWithFormat:articlePathFormate,dateStr,1,1];
+    NSString *urlString = [self.host stringByAppendingString:articlePath];
+    //set up an url object
+    NSURL *url = [NSURL URLWithString:urlString];
+    //set up an request
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+    //2
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
+    //set up a dataTask
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if ( !error ) { //3
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+            if ( httpResponse.statusCode == 200 ) { //4
+                NSError *jsonError;
+                NSDictionary *articleDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&amp;amp;jsonError];
+                if ( !jsonError ) { //5
+                    OneArticleInfo *obj = [OneArticleInfo modelObjectWithDictionary:articleDict];
+                    dispatch_async(dispatch_get_main_queue(), ^{    //6
+                        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                        handler(obj, nil);
+                    });
+                    
+                } else {
+                    NSLog(@&quot;json Error!&quot;);
+                dispatch_async(dispatch_get_main_queue(), ^{ 
+                    handler(nil, jsonError);
+                });                
+            }
+            } else {
+                NSLog(@&quot;bad response:%ld ForURL: %@&quot;, httpResponse.statusCode, url);
+                NSError *httpError = [NSError errorWithDomain:@&quot;Http Response Error&quot;
+                                                         code:httpResponse.statusCode
+                                                     userInfo:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{ 
+                    handler(nil, httpError);
+                });
+            }
+        } else {
+            NSLog(@&quot;dataTask error!&quot;);
+            dispatch_async(dispatch_get_main_queue(), ^{ 
+                handler(nil, error);
+            });     
+        }
+    }];
+    //7
+    [dataTask resume];
+
+}
+
+- (void)fetchHeadPageInfoAtDate:(NSDate *)date
+                 WithCompletion:(HeadPageReturnBlock)handler;
+{
+    //TODO:
+}
+- (void)fetchQAndAInfoAtDate:(NSDate *)date
+              WithCompletion:(QAndAInfoReturnBlock)handler;
+{
+    //TODO:
+}
+- (void)fetchItemInfoAtDate:(NSDate *)date
+             WithCompletion:(ItemInfoReturnBlock)handler;
+{
+    //TODO:
+}
+- (void)downloadImageFromURL:(NSString *)urlStr
+             WithCompletion:(DownloadImageReturnBlock)handler;
+{
+    //TODO:
+}
+@end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注释 1:这里用了一个NSDate的Category来将NSDate转成String，这个非常简单所以就不再贴上来了。&lt;/p&gt;
+
+&lt;p&gt;注释 2:这句话是在视图上显示转菊花的标志。&lt;/p&gt;
+
+&lt;p&gt;注释 3:当网络错误时，我们要处理网络错误，可以在这一层处理，也可以通过handler回调给上一层处理。&lt;/p&gt;
+
+&lt;p&gt;注释 4:我们只处理http状态码为200（即OK）的情况，其他情况都被视为错误而回调给上一层处理。&lt;/p&gt;
+
+&lt;p&gt;注释 5:NSJSONSerialization是iOS封装的解析json文本为字典的类，一旦json格式不合法时它会通过jsonError来通知调用者。&lt;/p&gt;
+
+&lt;p&gt;注释6:当我们网络请求完成后，因为NSURLSession的请求都是异步的，所以这时还是处于网络请求的线程中，而调用这个网络接口的对象是位于主线程的，所以我们要通过dispatch_async来回调会主线程。&lt;/p&gt;
+
+&lt;p&gt;注释7: 我们新建完一个Task之后调用resume才是网络请求真正开始。&lt;/p&gt;
+
+&lt;h1 id=&quot;view&quot;&gt;View&lt;/h1&gt;
+&lt;p&gt;View的部分主要是通过一个WebView来加载返回的strContent内容，比较简单我这就不贴了。&lt;/p&gt;
+
+&lt;h1 id=&quot;assignment&quot;&gt;Assignment&lt;/h1&gt;
+&lt;p&gt;完成TODO里面的内容，并尝试调用他们获得其他内容。&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Network&quot;&gt;iOS入门（四）：iOS网络&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; May 05, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Apple Club培训教程（二）：UI编程]]></title>
-  <link>http://localhost:4000/blog/iOS%2BUI%2Bporgramming</link>
-  <id>http://localhost:4000/blog/iOS+UI+porgramming</id>
+  <link>http://jeason.me/blog/iOS%2BUI%2Bporgramming</link>
+  <id>http://jeason.me/blog/iOS+UI+porgramming</id>
   <published>2014-03-31T00:00:00+08:00</published>
   <updated>2014-03-31T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这是SYSU Apple Club系列培训的第二篇。&lt;a href=&quot;http://jeason.me/blog/Objective-C+Introduction/&quot;&gt;上一篇&lt;/a&gt;我们学习了Objective－C的基本语法，而且知道了Foundation库内的一些重要的数据结构。这篇教程主要是厘清一些基本概念，让你对iOS UI编程的内在机制有一定的了解。本文主要参考自我的理解和
@@ -1569,7 +1745,7 @@ extension JEInt: Addable {
 &lt;p&gt;&lt;code&gt;这里主要讲的是iOS中的MVC&lt;/code&gt;。它是iOS中最常用的设计模式中的一种，理解它，就会顺带提及很多其他的重要的设计模式的内容。废话不多说，先看下Stanford CS193p课程里的一张图&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/31/2.gif&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/2.gif&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/31/2.gif&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/2.gif&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Model是管理数据的，View是管理视图的。我们知道，当数据更新之后，View也应该相应地动态更新。但是MVC规定了，Model不允许直接跟View打交道。为了达到这一目标，就有了Controller这个中间桥梁。为了达到Model与Controller更好地分离，iOS就引入了Key－Value－Observing和Notification这两种设计模式（如上图所示）。这两个东西我们以后会具体讲到，现在简单来讲，就是实现了把M内的变化告知C，然后C再把变化反映到V上。&lt;/p&gt;
@@ -1582,7 +1758,7 @@ extension JEInt: Addable {
 &lt;p&gt;接下来我们就开始具体的来看看一个iOS app是怎样组织起来的。先新建一个SigleView Application，项目名就为Note就好了。打开它，会看到有这么个组织结构:&lt;/p&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/31/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/31/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;main&quot;&gt;main函数&lt;/h3&gt;
@@ -1654,7 +1830,7 @@ extension JEInt: Addable {
 这是理解iOS UI编程的另一个重要的概念，先看一张图。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/31/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/31/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -1696,7 +1872,7 @@ extension JEInt: Addable {
 &lt;p&gt;UIView是iOS里组成我们UI的基本单元，UI的基本功能我觉得就只有两个：提供内容和导航用户完成人机交互。为了实现不同的视觉效果和导航方式，iOS通过继承UIView为我们提供了近20种的原生控件，包括了简单的按钮，文字显示，还有一些复杂的View如UITableView。我们可以用这些控件一个个叠加组成我们需要的界面，就好像ps那样一个个图层（图层是有上下之分的，view与view之间也是）组成漂亮的图像,如图所示。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/31/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/31/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;section&quot;&gt;代码&lt;/h3&gt;
@@ -1818,7 +1994,7 @@ extension JEInt: Addable {
 &lt;h3 id=&quot;bulid--run&quot;&gt;Bulid &amp;amp; Run&lt;/h3&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/31/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/31/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;总结&lt;/h2&gt;
@@ -1846,19 +2022,19 @@ extension JEInt: Addable {
   &lt;li&gt;阅读&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UIKitUICatalog.pdf&quot;&gt;Apple的《UIKitUICatalog》&lt;/a&gt;对基本的控件都有一定的了解。&lt;/li&gt;
 &lt;/ol&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/iOS%2BUI%2Bporgramming&quot;&gt;Apple Club培训教程（二）：UI编程&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 31, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/iOS%2BUI%2Bporgramming&quot;&gt;Apple Club培训教程（二）：UI编程&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 31, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[iOS开发入门教程：Objective-C]]></title>
-  <link>http://localhost:4000/blog/Objective-C%2BIntroduction</link>
-  <id>http://localhost:4000/blog/Objective-C+Introduction</id>
+  <link>http://jeason.me/blog/Objective-C%2BIntroduction</link>
+  <id>http://jeason.me/blog/Objective-C+Introduction</id>
   <published>2014-03-28T00:00:00+08:00</published>
   <updated>2014-03-28T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了&lt;a href=&quot;https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550&quot;&gt;Stanford‘的CS193p课程&lt;/a&gt;，已及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。&lt;/p&gt;
@@ -2296,22 +2472,22 @@ extension JEInt: Addable {
 &lt;p&gt;完成《iOS iOS_Apprentice_1_Getting_Started》的Demo，Enjoy your game :-)&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/10/30/1.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/10/30/1.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/10/30/1.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/10/30/1.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Objective-C%2BIntroduction&quot;&gt;iOS开发入门教程：Objective-C&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Objective-C%2BIntroduction&quot;&gt;iOS开发入门教程：Objective-C&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SE 数据结构课程总结]]></title>
-  <link>http://localhost:4000/blog/DS%2BCourse%2BReview</link>
-  <id>http://localhost:4000/blog/DS+Course+Review</id>
+  <link>http://jeason.me/blog/DS%2BCourse%2BReview</link>
+  <id>http://jeason.me/blog/DS+Course+Review</id>
   <published>2014-03-08T00:00:00+08:00</published>
   <updated>2014-03-08T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这注定会是一篇很长的博文，可能我一次难以把它完全写好。本文主要是基于中山大学的《SE-221 数据结构与算法》这门课的课程内容而写，以后可能还有其他数据结构方面的补充与完善。&lt;/p&gt;
@@ -2433,7 +2609,7 @@ extension JEInt: Addable {
 &lt;p&gt;举个例子吧：关键字为{89,18,49,58,69}插入到一个散列表中的情况。此时线性探测的方法是取d_i=i。并假定取关键字除以10的余数为散列函数法则。&lt;/p&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;第一次碰撞发生在填装49的时候。地址为9的单元已经填装了89这个关键字，所以取i=1，往下查找一个单位，发现为空，所以将49填装在地址为0的空单元。插入58时，地址8处发生第一次碰撞，d = 1, 探测位置9，发生第二次碰撞，d= 2,探测位置1，位置1为空，将58插入位置1。69同理。
@@ -2451,7 +2627,7 @@ extension JEInt: Addable {
 &lt;h3 id=&quot;section-5&quot;&gt;单独链表法&lt;/h3&gt;
 &lt;p&gt;它的思想是将散列到同一个存储位置的所有元素保存在一个链表中。即为链接List的顺序List。对于有相同的f(key)的key值构成了一个链表，而所有的这些链表组成的数组就是单独链接法得到的哈希表，如下图所示:
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/6.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/6.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-6&quot;&gt;单独链表法的平均探测次数&lt;/h3&gt;
@@ -2471,13 +2647,13 @@ extension JEInt: Addable {
 &lt;h3 id=&quot;section-7&quot;&gt;满二叉树&lt;/h3&gt;
 &lt;p&gt;一棵深度为k，且有2^k-1个节点称之为满二叉树，如下图所示
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-8&quot;&gt;完全二叉树&lt;/h3&gt;
 &lt;p&gt;完全二叉树又叫做堆，它是深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中序号为1至n的节点对应时，称之为完全二叉树。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-9&quot;&gt;二叉树的遍历&lt;/h3&gt;
@@ -2487,7 +2663,7 @@ extension JEInt: Addable {
 后序遍历：左子树-&amp;gt;右子树-&amp;gt;根节点
 例如：求下面树的三种遍历
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;前序遍历：abdefgc&lt;/p&gt;
@@ -2506,7 +2682,7 @@ extension JEInt: Addable {
 &lt;/ul&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/7.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/7.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/7.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/7.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -2514,18 +2690,18 @@ extension JEInt: Addable {
 &lt;/ul&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/8.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/8.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;section-11&quot;&gt;图的遍历&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;p&gt;采用深度优先搜索和广度优先搜索的方法遍历图。（见下文：基本算法－基于图论的算法）&lt;/p&gt;
 
 &lt;h3 id=&quot;section-12&quot;&gt;拓扑排序&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/08/9.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/9.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h1 id=&quot;section-13&quot;&gt;基本算法&lt;/h1&gt;
@@ -2979,19 +3155,19 @@ extension JEInt: Addable {
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/DS%2BCourse%2BReview&quot;&gt;SE 数据结构课程总结&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/DS%2BCourse%2BReview&quot;&gt;SE 数据结构课程总结&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[一种简单适配iOS开发中各种屏幕的投机取巧方法]]></title>
-  <link>http://localhost:4000/blog/View%2Bin%2BView</link>
-  <id>http://localhost:4000/blog/View+in+View</id>
+  <link>http://jeason.me/blog/View%2Bin%2BView</link>
+  <id>http://jeason.me/blog/View+in+View</id>
   <published>2014-03-02T00:00:00+08:00</published>
   <updated>2014-03-02T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;正如标题所说，Jeason想出来的这个方法是投机取巧式的，是有一定适用条件的。在这里，我不会将IOS中不同尺寸不同系统的适配问题统统讲完，不过会在后面给出其他适配方法的链接。&lt;/p&gt;
@@ -3038,13 +3214,13 @@ extension JEInt: Addable {
 &lt;p&gt;为了方便说明这个方法，我随手弄了一个小project，如下图所示，虽然丑了点，不过大概能表达出真实的情况。
   这是一个登录页面，上面有很多个必要的控件而且有一个iOS7风格的导航栏，还有背景图。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;现在这样在3.5寸，iOS7的模拟器上运行视觉上是OK的。（不要问我为什么会这么丑，这只是demo）问题主要是出现在当在iOS6上和4寸的模拟器上时，会出现比较大的问题，如下所示。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/2.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;正如第一张图所示，iOS6的self.view.frame的零点是在状态栏以下的位置，而iOS7的则是在整个屏幕的最左上方位置，两者纵坐标相差20px。而第二张图则说明了另一个问题，就是在依靠xib搭建的界面元素不会动态地去布局。&lt;/p&gt;
@@ -3055,7 +3231,7 @@ extension JEInt: Addable {
 
 &lt;h3 id=&quot;view&quot;&gt;引入内层View&lt;/h3&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -3069,7 +3245,7 @@ extension JEInt: Addable {
 &lt;h3 id=&quot;autolayout&quot;&gt;使用autolayout&lt;/h3&gt;
 &lt;p&gt;正如上面所说的，我们是要让内层view整体平移，所以只需在内层view上添加autolayout就可以了。首先不管是iOS6还是iOS7中，内层view的底/左/右端和外层view的底/左/右端的距离都为0。所以通过xib中添加这三个constrains就可以了，如下图所示。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;那个小红点是由我们只确定了下左右的constrains，而对上端没有约束造成的。对于内层view的上端和外层view的距离，我们希望它在iOS6中为－20px，即在iOS6中内层view上推20px，而在iOS7中为0px。这种动态效果是要靠代码中来实现的。&lt;/p&gt;
@@ -3119,7 +3295,7 @@ extension JEInt: Addable {
 
 &lt;p&gt;关于autolayout的使用，可以参考Apple中关于&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Introduction/Introduction.html&quot;&gt;autolayout的文档&lt;/a&gt;。现在，我们再运行一下模拟器，可以看到iOS6中已经可以显示正常了。不过在4寸屏幕上的问题仍然没有解决。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/6.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/6.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;p&gt;不过没有关系，我们有autolayout!&lt;/p&gt;
 
@@ -3127,13 +3303,13 @@ extension JEInt: Addable {
 &lt;p&gt;4寸屏幕主要是让背景图片可以伸缩填充整个屏幕，所以要在背景图片的imageView上添加高度为greater than current value的constrains，底部距离内层View为0px的constrains就可以了，如图所示。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/9.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/9.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;至此所有的适配工作已经完成，整个页面可以在iOS6/iOS7，3.5/4寸屏幕上显示基本正常。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/7.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/7.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/2014/03/02/8.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/8.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-3&quot;&gt;总结&lt;/h2&gt;
@@ -3168,19 +3344,19 @@ extension JEInt: Addable {
 &lt;/ol&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 02, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 02, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[漫游中大]]></title>
-  <link>http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</link>
-  <id>http://localhost:4000/album/漫游中大</id>
+  <link>http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</link>
+  <id>http://jeason.me/album/漫游中大</id>
   <published>2014-03-01T00:00:00+08:00</published>
   <updated>2014-03-01T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://jeason.me</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;blockquote&gt;
@@ -3195,51 +3371,51 @@ extension JEInt: Addable {
 
 &lt;p&gt;1.广州的地铁几乎可以带你游遍广州任意角落。到康乐园，只需搭上八号线，然后从拥挤喧哗的鹭江地铁口出来，沿着马路直走100米左右，便可以到中大南校区的东门所在。走进门内，迎来的是另一个世界。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1990.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1990.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;2.在校道飞驰来往的车辆和两排稀稀落落的便利商店，似乎是宁静美丽的康乐园与嘈杂不堪的中间地带。这里链接着校园与外部，书香与尾气，宁静与浮华。校道的两旁,有着各式各样的涂鸦与横幅，彰显着校园的青春气息。
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1989.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1989.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1988.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1988.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1978.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1978.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1989.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1989.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1988.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1988.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1978.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1978.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;3.当你经过旁边的小路进入校园内部的时候，康乐园就开始忍不住像你展示它的美丽了。古树，红楼，美女；花香，鸟语，人闹。它就像是一个世外桃源一般，吸引着任何向往祥和的生灵。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1977.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1977.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1980.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1980.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1983.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1983.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1985.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1985.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1971.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1971.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;4.校园内几乎每一个关键的道路口都会有明确的标示，提醒人们不要被美不胜收的校园迷惑了方向。按照路牌指示，我向&lt;a href=&quot;http://library.sysu.edu.cn/web/guest/index&quot;&gt;图书馆&lt;/a&gt;前进。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1981.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1981.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1981.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1981.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;5.当然那么美丽的校园，图书馆自然不是读书的唯一去处，去图书馆借一本自己喜欢的小说，或坐在木椅或坐在草坪，那都是非常不错的选择。
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1974.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1974.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;6.终于，我沿着路旁参天的古树，来到了周围一片肃静的图书馆。凭着中山大学的校园卡刷卡入馆去了～。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1970.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1970.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1969.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1969.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;figure&gt;
 	&lt;figcaption&gt;漫步康乐园&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7&quot;&gt;漫游中大&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 01, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7&quot;&gt;漫游中大&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 01, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>

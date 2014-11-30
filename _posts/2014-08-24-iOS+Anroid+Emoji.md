@@ -39,8 +39,7 @@ iOS之前的Emoji部分，是用了[这个文件夹里的类](https://gist.githu
 
 NSString+Emoji.h
 
-{% highlight objective-c %}
-
+<pre><code class="language-objectivec">
 //
 //  NSString+Emoji.h
 //  EmojiAdapter
@@ -77,12 +76,11 @@ NSString+Emoji.h
 @end
 
 
-{% endhighlight %}
-
+</code></pre>
 
 NSString+Emoji.m
 
-{% highlight objective-c %}
+<pre><code class="language-objectivec">
 //
 //  NSString+Emoji.m
 //  EmojiAdapter
@@ -205,7 +203,7 @@ NSString+Emoji.m
 
 @end
 
-{% endhighlight %}
+</code></pre>
 
 这样子，就可以在需要写数据库和发送网络的时候调用
 <code>

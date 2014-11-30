@@ -3906,6 +3906,18 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help;
 }
+.token.foundation {
+  color:#3399ff;
+}
+
+.token.marco {
+  color: #996633;
+}
+
+.token.documentation,
+.token.method {
+  color: #ffff00;
+}
 
 pre.line-numbers {
   position: relative;
