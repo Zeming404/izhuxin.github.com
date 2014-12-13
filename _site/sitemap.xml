@@ -2,64 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      
     <url>
-        <loc>http://jeason.me/</loc>
+        <loc>http://localhost:4000/</loc>
     </url> 
     <url>
-        <loc>http://jeason.me/blog</loc>
+        <loc>http://localhost:4000/blog</loc>
     </url> 
     <url>
-        <loc>http://jeason.me/diary</loc>
+        <loc>http://localhost:4000/diary</loc>
     </url> 
     <url>
-        <loc>http://jeason.me/album</loc>
+        <loc>http://localhost:4000/album</loc>
     </url> 
     <url>
-        <loc>http://jeason.me/about</loc>
+        <loc>http://localhost:4000/about</loc>
     </url>
     
     
     <url>
-        <loc>http://jeason.me/blog/Denoise%2BBinary%2BImage</loc>
+        <loc>http://localhost:4000/blog/Thread</loc>
     </url>
     
     <url>
-        <loc>http://jeason.me/blog/iOS%2BAnroid%2BEmoji</loc>
+        <loc>http://localhost:4000/blog/Denoise%2BBinary%2BImage</loc>
     </url>
     
     <url>
-        <loc>http://jeason.me/blog/Java%2BIntro</loc>
+        <loc>http://localhost:4000/blog/iOS%2BAnroid%2BEmoji</loc>
     </url>
     
     <url>
-        <loc>http://jeason.me/blog/Intro%2BSwift</loc>
+        <loc>http://localhost:4000/blog/Java%2BIntro</loc>
     </url>
     
     <url>
-        <loc>http://jeason.me/blog/Socket%2BIntro</loc>
+        <loc>http://localhost:4000/blog/Intro%2BSwift</loc>
     </url>
     
     <url>
-        <loc>http://jeason.me/blog/Network</loc>
+        <loc>http://localhost:4000/blog/Socket%2BIntro</loc>
     </url>
     
     <url>
-        <loc>http://jeason.me/blog/iOS%2BUI%2Bporgramming</loc>
+        <loc>http://localhost:4000/blog/Network</loc>
     </url>
     
     <url>
-        <loc>http://jeason.me/blog/Objective-C%2BIntroduction</loc>
+        <loc>http://localhost:4000/blog/iOS%2BUI%2Bporgramming</loc>
     </url>
     
     <url>
-        <loc>http://jeason.me/blog/DS%2BCourse%2BReview</loc>
+        <loc>http://localhost:4000/blog/Objective-C%2BIntroduction</loc>
     </url>
     
     <url>
-        <loc>http://jeason.me/blog/View%2Bin%2BView</loc>
+        <loc>http://localhost:4000/blog/DS%2BCourse%2BReview</loc>
     </url>
     
     <url>
-        <loc>http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</loc>
+        <loc>http://localhost:4000/blog/View%2Bin%2BView</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</loc>
     </url>
     
 </urlset>

@@ -13,16 +13,16 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="SE 数据结构课程总结">
 <meta property="og:description" content="">
-<meta property="og:url" content="http://jeason.me/blog/DS%2BCourse%2BReview">
+<meta property="og:url" content="http://localhost:4000/blog/DS%2BCourse%2BReview">
 <meta property="og:site_name" content="Jeason">
-<meta property="og:image" content="http://jeason.me/images/J.jpg">
+<meta property="og:image" content="http://localhost:4000/images/J.jpg">
 
 
 
 
 
-<link rel="canonical" href="http://jeason.me/blog/DS%2BCourse%2BReview">
-<link href="http://jeason.me/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+<link rel="canonical" href="http://localhost:4000/blog/DS%2BCourse%2BReview">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
 
 
 <!-- http://t.co/dKP3o1e -->
@@ -31,8 +31,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/style.css" />
 
 <div class="search-wrapper">
     <div class="search-form">
@@ -73,29 +73,29 @@
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="http://jeason.me/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="http://jeason.me/favicon.png">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="http://jeason.me/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://jeason.me/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://jeason.me/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://jeason.me/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
 
-<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://jeason.me/images/J.jpg)" itemscope itemtype="http://schema.org/Organization">
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/J.jpg)" itemscope itemtype="http://schema.org/Organization">
 
 
     <div class="inner">
         <div class="container">
-            <a class="brand" href="http://jeason.me" role="banner" itemprop="url">
+            <a class="brand" href="http://localhost:4000" role="banner" itemprop="url">
 
-                <img itemprop="logo" src="http://jeason.me/images/logo.png" alt="Jeason Logo" />
+                <img itemprop="logo" src="http://localhost:4000/images/logo.png" alt="Jeason Logo" />
 
             <h1 class="blog-title light" itemprop="name">
                 Jeason
@@ -142,7 +142,7 @@
                         
                         <div class="post-info text-center small">
                             <span class="entry-date date published updated"><time datetime="2014-03-08T00:00:00+08:00" class="post-time" itemprop="datePublished">08 Mar 2014</time><span>
-                            in <span class="post-tags"><a href="http://jeason.me/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                            in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
                         </div>
                     </header>
                     <div class="post-body bordered-bottom" itemprop="description">
@@ -266,7 +266,7 @@
 <p>举个例子吧：关键字为{89,18,49,58,69}插入到一个散列表中的情况。此时线性探测的方法是取d_i=i。并假定取关键字除以10的余数为散列函数法则。</p>
 
 <figure class="half">
-<a href="http://jeason.me/images/2014/03/08/1.jpg"><img src="http://jeason.me/images/2014/03/08/1.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/08/1.jpg"><img src="http://localhost:4000/images/2014/03/08/1.jpg" /></a>
 </figure>
 
 <p>第一次碰撞发生在填装49的时候。地址为9的单元已经填装了89这个关键字，所以取i=1，往下查找一个单位，发现为空，所以将49填装在地址为0的空单元。插入58时，地址8处发生第一次碰撞，d = 1, 探测位置9，发生第二次碰撞，d= 2,探测位置1，位置1为空，将58插入位置1。69同理。
@@ -284,7 +284,7 @@
 <h3 id="section-5">单独链表法</h3>
 <p>它的思想是将散列到同一个存储位置的所有元素保存在一个链表中。即为链接List的顺序List。对于有相同的f(key)的key值构成了一个链表，而所有的这些链表组成的数组就是单独链接法得到的哈希表，如下图所示:
 <figure class="half">
-<a href="http://jeason.me/images/2014/03/08/6.jpg"><img src="http://jeason.me/images/2014/03/08/6.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/08/6.jpg"><img src="http://localhost:4000/images/2014/03/08/6.jpg" /></a>
 </figure></p>
 
 <h3 id="section-6">单独链表法的平均探测次数</h3>
@@ -304,13 +304,13 @@
 <h3 id="section-7">满二叉树</h3>
 <p>一棵深度为k，且有2^k-1个节点称之为满二叉树，如下图所示
 <figure class="half">
-<a href="http://jeason.me/images/2014/03/08/3.jpg"><img src="http://jeason.me/images/2014/03/08/3.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/08/3.jpg"><img src="http://localhost:4000/images/2014/03/08/3.jpg" /></a>
 </figure></p>
 
 <h3 id="section-8">完全二叉树</h3>
 <p>完全二叉树又叫做堆，它是深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中序号为1至n的节点对应时，称之为完全二叉树。
 <figure class="half">
-<a href="http://jeason.me/images/2014/03/08/2.jpg"><img src="http://jeason.me/images/2014/03/08/2.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/08/2.jpg"><img src="http://localhost:4000/images/2014/03/08/2.jpg" /></a>
 </figure></p>
 
 <h3 id="section-9">二叉树的遍历</h3>
@@ -320,7 +320,7 @@
 后序遍历：左子树-&gt;右子树-&gt;根节点
 例如：求下面树的三种遍历
 <figure class="half">
-<a href="http://jeason.me/images/2014/03/08/4.jpg"><img src="http://jeason.me/images/2014/03/08/4.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/08/4.jpg"><img src="http://localhost:4000/images/2014/03/08/4.jpg" /></a>
 </figure></p>
 
 <p>前序遍历：abdefgc</p>
@@ -339,7 +339,7 @@
 </ul>
 
 <figure class="half">
-<a href="http://jeason.me/images/2014/03/08/7.jpg"><img src="http://jeason.me/images/2014/03/08/7.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/08/7.jpg"><img src="http://localhost:4000/images/2014/03/08/7.jpg" /></a>
 </figure>
 
 <ul>
@@ -347,18 +347,18 @@
 </ul>
 
 <figure>
-<a href="http://jeason.me/images/2014/03/08/8.jpg"><img src="http://jeason.me/images/2014/03/08/8.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/08/8.jpg"><img src="http://localhost:4000/images/2014/03/08/8.jpg" /></a>
 </figure>
 
 <h3 id="section-11">图的遍历</h3>
 <figure class="half">
-<a href="http://jeason.me/images/2014/03/08/5.jpg"><img src="http://jeason.me/images/2014/03/08/5.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/08/5.jpg"><img src="http://localhost:4000/images/2014/03/08/5.jpg" /></a>
 </figure>
 <p>采用深度优先搜索和广度优先搜索的方法遍历图。（见下文：基本算法－基于图论的算法）</p>
 
 <h3 id="section-12">拓扑排序</h3>
 <figure class="half">
-<a href="http://jeason.me/images/2014/03/08/9.jpg"><img src="http://jeason.me/images/2014/03/08/9.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/08/9.jpg"><img src="http://localhost:4000/images/2014/03/08/9.jpg" /></a>
 </figure>
 
 <h1 id="section-13">基本算法</h1>
@@ -823,8 +823,8 @@
                     <footer class="post-footer entry-meta">
                         
                         <div class="post-author text-center">                       
-	        <img src="http://jeason.me/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
-	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://jeason.me/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
 	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
 </div> 
                         <div id="disqus_thread"></div><!-- /#disqus_thread -->
@@ -834,7 +834,7 @@
 </div>
 
 
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://jeason.me/images/J.jpg)" >
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/J.jpg)" >
 
 
     <div class="inner">
@@ -862,45 +862,45 @@
                     <i class="icon-github"></i>
                 </a>
             </li>
-            <li><a href="http://jeason.me/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+            <li><a href="http://localhost:4000/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
                     <i class="icon-rss"></i>
                 </a>
             </li>
 
         </ul>
             <p class="copy-text">
-                <a href="http://jeason.me/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+                <a href="http://localhost:4000/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
             </p>
 
             <ul class="menu-items">
             
             <li>
                 
-                    <a href="http://jeason.me/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
                 
             </li>
             
@@ -933,17 +933,17 @@
 
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://jeason.me/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://jeason.me/assets/js/scripts.min.js"></script>
-    <script type="text/javascript" src="http://jeason.me/assets/js/waypoints.min.js"></script>
-    <script type="text/javascript" src="http://jeason.me/assets/js/script.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/script.js"></script>
 
 
 <!-- Jekyll Simple Search option -->
 <script>
   $(document).ready(function() {
       $('.search-field').simpleJekyllSearch({
-          jsonFile : 'http://jeason.me/search.json',
+          jsonFile : 'http://localhost:4000/search.json',
           searchResults : '.search-results',
           template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
           noResults: '<p>Nothing found.</p>'

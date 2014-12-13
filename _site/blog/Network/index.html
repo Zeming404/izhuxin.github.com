@@ -13,16 +13,16 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS入门（四）：iOS网络">
 <meta property="og:description" content="">
-<meta property="og:url" content="http://jeason.me/blog/Network">
+<meta property="og:url" content="http://localhost:4000/blog/Network">
 <meta property="og:site_name" content="Jeason">
-<meta property="og:image" content="http://jeason.me/images/objective_tutorial.jpg">
+<meta property="og:image" content="http://localhost:4000/images/objective_tutorial.jpg">
 
 
 
 
 
-<link rel="canonical" href="http://jeason.me/blog/Network">
-<link href="http://jeason.me/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+<link rel="canonical" href="http://localhost:4000/blog/Network">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
 
 
 <!-- http://t.co/dKP3o1e -->
@@ -31,8 +31,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/style.css" />
 
 <div class="search-wrapper">
     <div class="search-form">
@@ -47,28 +47,28 @@
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="http://jeason.me/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="http://jeason.me/favicon.png">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="http://jeason.me/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://jeason.me/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://jeason.me/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://jeason.me/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
-<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://jeason.me/images/objective_tutorial.jpg)" itemscope itemtype="http://schema.org/Organization">
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/objective_tutorial.jpg)" itemscope itemtype="http://schema.org/Organization">
 
 
     <div class="inner">
         <div class="container">
-            <a class="brand" href="http://jeason.me" role="banner" itemprop="url">
+            <a class="brand" href="http://localhost:4000" role="banner" itemprop="url">
 
-                <img itemprop="logo" src="http://jeason.me/images/logo.png" alt="Jeason Logo" />
+                <img itemprop="logo" src="http://localhost:4000/images/logo.png" alt="Jeason Logo" />
 
             <h1 class="blog-title light" itemprop="name">
                 Jeason
@@ -115,7 +115,7 @@
                         
                         <div class="post-info text-center small">
                             <span class="entry-date date published updated"><time datetime="2014-05-05T00:00:00+08:00" class="post-time" itemprop="datePublished">05 May 2014</time><span>
-                            in <span class="post-tags"><a href="http://jeason.me/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                            in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
                         </div>
                     </header>
                     <div class="post-body bordered-bottom" itemprop="description">
@@ -157,7 +157,7 @@
 <p>我们可以看到，在URL Load System中，我们看到NSURL这一系列的系统都是被设计成可以处理多个协议的——包括 FTP、HTTP、HTTPS——所以我们这里讲的是内容本是协议无关的。但是为了更好地说明，我们采用HTTP为例的方式来说明这个系统是怎么运作的。</p>
 
 <figure>
-<a href="http://jeason.me/images/2014/05/05/01.png"><img src="http://jeason.me/images/2014/05/05/table.png" /></a>
+<a href="http://localhost:4000/images/2014/05/05/01.png"><img src="http://localhost:4000/images/2014/05/05/table.png" /></a>
 </figure>
 
 <h2 id="httpp">HTTPP语义下的网络</h2>
@@ -182,7 +182,7 @@
 <p>为了特定的功能，Apple提供了三个它的非虚子类，分别是NSURLSessionDataTask，NSURLSessionDownloadTask和NSURLSessionUploadTask，他们的关系如下：</p>
 
 <figure>
-<a href="http://jeason.me/images/2014/05/05/01.png"><img src="http://jeason.me/images/2014/05/05/01.png" /></a>
+<a href="http://localhost:4000/images/2014/05/05/01.png"><img src="http://localhost:4000/images/2014/05/05/01.png" /></a>
 </figure>
 
 <ul>
@@ -249,7 +249,7 @@ completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 当一个请求完成下载来自服务器的回应，一个缓存的回应将在本地保存。下一次同一个请求再发起时，本地保存的回应就会马上返回，不需要连接服务器。试想一下如果没有缓存数据，我们对于每个文件可能都要重复的进行多次请求/响应的操作，这在一些没有实时性的应用里面是非常糟糕的。所以我们需要对一些不常改变而又非常大的文件数据进行适当的缓存。之后的网络请求模式就变成了如下的图所示:</p>
 
 <figure>
-<a href="http://jeason.me/images/2014/05/05/ERD.png"><img src="http://jeason.me/images/2014/05/05/ERD.png" /></a>
+<a href="http://localhost:4000/images/2014/05/05/ERD.png"><img src="http://localhost:4000/images/2014/05/05/ERD.png" /></a>
 </figure>
 
 <p>我们可以看到这里的Cache只是一级缓存，实际上我们可以做更多级的缓存（如硬盘缓存和内存缓存结合）。我们可以利用NSURLCache来实现内存缓存，而硬盘缓存往往需要我们针对不同的文件格式来设计不同的缓存策略和压缩方案。</p>
@@ -260,16 +260,16 @@ completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 <p>这次的Demo来自于我之前在听<a href="http://music.163.com/#/song?id=316908">杨千嬅的一首歌</a>的时候看到评论里大家都在讨论一个(就是传说中韩寒监制那个＝＝)里面的一篇文章。</p>
 
 <figure>
-<a href="http://jeason.me/images/2014/05/05/one.png"><img src="http://jeason.me/images/2014/05/05/one.png" /></a>
+<a href="http://localhost:4000/images/2014/05/05/one.png"><img src="http://localhost:4000/images/2014/05/05/one.png" /></a>
 </figure>
 
 <p>但是当我想去一个里看11月10号的文章时，我发现它App里面最多只能回滚到上一周……所以就有了这个Demo，你可以选择日期然后就可以阅读这个日期里的文章。效果图如下:</p>
 
 <figure class="half">
 
-<a href="http://jeason.me/images/2014/05/05/final1.png"><img src="http://jeason.me/images/2014/05/05/final1.png" /></a>
+<a href="http://localhost:4000/images/2014/05/05/final1.png"><img src="http://localhost:4000/images/2014/05/05/final1.png" /></a>
 
-<a href="http://jeason.me/images/2014/05/05/final2.png"><img src="http://jeason.me/images/2014/05/05/final2.png" /></a>
+<a href="http://localhost:4000/images/2014/05/05/final2.png"><img src="http://localhost:4000/images/2014/05/05/final2.png" /></a>
 
 </figure>
 
@@ -381,10 +381,10 @@ NSDictionary *dict =［NSJSONSerialization JSONObjectWithData:data options:NSJSO
 <p>来把objective解析成NSDictionary对象。直接使用Dictionary会是一个糟糕的设计，因为我只有遍历或者打印整个字典才能看到这个字典里的元素信息，所以我们会把objective解析成Model类来使用。这里我们借助软件objective Accelerator来帮我们把上面的返回的objective解析成Model Class，如图所c示:</p>
 
 <figure>
-<a href="http://jeason.me/images/2014/05/05/ModelClass.png"><img src="http://jeason.me/images/2014/05/05/ModelClass.png" /></a>
+<a href="http://localhost:4000/images/2014/05/05/ModelClass.png"><img src="http://localhost:4000/images/2014/05/05/ModelClass.png" /></a>
 </figure>
 
-<p>在<a href="http://jeason.me/images/2014/05/05/OneModel.zip">这里</a>可以下载到完整的所有Model类。</p>
+<p>在<a href="http://localhost:4000/images/2014/05/05/OneModel.zip">这里</a>可以下载到完整的所有Model类。</p>
 
 <h2 id="engine">Engine</h2>
 
@@ -600,8 +600,8 @@ static NSString *dateFormat = @"yyyy-MM-dd";
                     <footer class="post-footer entry-meta">
                         
                         <div class="post-author text-center">                       
-	        <img src="http://jeason.me/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
-	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://jeason.me/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
 	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
 </div> 
                         <div id="disqus_thread"></div><!-- /#disqus_thread -->
@@ -611,7 +611,7 @@ static NSString *dateFormat = @"yyyy-MM-dd";
 </div>
 
 
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://jeason.me/images/objective_tutorial.jpg)" >
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/objective_tutorial.jpg)" >
 
 
     <div class="inner">
@@ -639,45 +639,45 @@ static NSString *dateFormat = @"yyyy-MM-dd";
                     <i class="icon-github"></i>
                 </a>
             </li>
-            <li><a href="http://jeason.me/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+            <li><a href="http://localhost:4000/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
                     <i class="icon-rss"></i>
                 </a>
             </li>
 
         </ul>
             <p class="copy-text">
-                <a href="http://jeason.me/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+                <a href="http://localhost:4000/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
             </p>
 
             <ul class="menu-items">
             
             <li>
                 
-                    <a href="http://jeason.me/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
                 
             </li>
             
@@ -710,17 +710,17 @@ static NSString *dateFormat = @"yyyy-MM-dd";
 
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://jeason.me/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://jeason.me/assets/js/scripts.min.js"></script>
-    <script type="text/javascript" src="http://jeason.me/assets/js/waypoints.min.js"></script>
-    <script type="text/javascript" src="http://jeason.me/assets/js/script.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/script.js"></script>
 
 
 <!-- Jekyll Simple Search option -->
 <script>
   $(document).ready(function() {
       $('.search-field').simpleJekyllSearch({
-          jsonFile : 'http://jeason.me/search.json',
+          jsonFile : 'http://localhost:4000/search.json',
           searchResults : '.search-results',
           template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
           noResults: '<p>Nothing found.</p>'

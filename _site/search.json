@@ -1,9 +1,17 @@
 [
 	
 		{
+		  "title"      : "iOS开发入门：多线程编程",
+		  "category"   : "blog",
+		  "url"        : "http://localhost:4000/blog/Thread",
+		  "date"       : "2014-12-13 00:00:00 +0800",
+		  "shortdate"  : "December 13, 2014"
+		} ,
+	
+		{
 		  "title"      : "对二值图像去噪：搜索与随机算法结合",
 		  "category"   : "blog",
-		  "url"        : "http://jeason.me/blog/Denoise%2BBinary%2BImage",
+		  "url"        : "http://localhost:4000/blog/Denoise%2BBinary%2BImage",
 		  "date"       : "2014-11-20 00:00:00 +0800",
 		  "shortdate"  : "November 20, 2014"
 		} ,
@@ -11,7 +19,7 @@
 		{
 		  "title"      : "iOS和Android的Emoji表情同步方案",
 		  "category"   : "blog",
-		  "url"        : "http://jeason.me/blog/iOS%2BAnroid%2BEmoji",
+		  "url"        : "http://localhost:4000/blog/iOS%2BAnroid%2BEmoji",
 		  "date"       : "2014-08-24 00:00:00 +0800",
 		  "shortdate"  : "August 24, 2014"
 		} ,
@@ -19,7 +27,7 @@
 		{
 		  "title"      : "Java开发入门",
 		  "category"   : "blog",
-		  "url"        : "http://jeason.me/blog/Java%2BIntro",
+		  "url"        : "http://localhost:4000/blog/Java%2BIntro",
 		  "date"       : "2014-08-04 00:00:00 +0800",
 		  "shortdate"  : "August 04, 2014"
 		} ,
@@ -27,7 +35,7 @@
 		{
 		  "title"      : "iOS开发入门：Swift",
 		  "category"   : "blog",
-		  "url"        : "http://jeason.me/blog/Intro%2BSwift",
+		  "url"        : "http://localhost:4000/blog/Intro%2BSwift",
 		  "date"       : "2014-06-10 00:00:00 +0800",
 		  "shortdate"  : "June 10, 2014"
 		} ,
@@ -35,7 +43,7 @@
 		{
 		  "title"      : "CocoaSocket实践（一）:Socket简介",
 		  "category"   : "blog",
-		  "url"        : "http://jeason.me/blog/Socket%2BIntro",
+		  "url"        : "http://localhost:4000/blog/Socket%2BIntro",
 		  "date"       : "2014-06-01 00:00:00 +0800",
 		  "shortdate"  : "June 01, 2014"
 		} ,
@@ -43,7 +51,7 @@
 		{
 		  "title"      : "iOS入门（四）：iOS网络",
 		  "category"   : "blog",
-		  "url"        : "http://jeason.me/blog/Network",
+		  "url"        : "http://localhost:4000/blog/Network",
 		  "date"       : "2014-05-05 00:00:00 +0800",
 		  "shortdate"  : "May 05, 2014"
 		} ,
@@ -51,7 +59,7 @@
 		{
 		  "title"      : "Apple Club培训教程（二）：UI编程",
 		  "category"   : "blog",
-		  "url"        : "http://jeason.me/blog/iOS%2BUI%2Bporgramming",
+		  "url"        : "http://localhost:4000/blog/iOS%2BUI%2Bporgramming",
 		  "date"       : "2014-03-31 00:00:00 +0800",
 		  "shortdate"  : "March 31, 2014"
 		} ,
@@ -59,7 +67,7 @@
 		{
 		  "title"      : "iOS开发入门教程：Objective-C",
 		  "category"   : "blog",
-		  "url"        : "http://jeason.me/blog/Objective-C%2BIntroduction",
+		  "url"        : "http://localhost:4000/blog/Objective-C%2BIntroduction",
 		  "date"       : "2014-03-28 00:00:00 +0800",
 		  "shortdate"  : "March 28, 2014"
 		} ,
@@ -67,7 +75,7 @@
 		{
 		  "title"      : "SE 数据结构课程总结",
 		  "category"   : "blog",
-		  "url"        : "http://jeason.me/blog/DS%2BCourse%2BReview",
+		  "url"        : "http://localhost:4000/blog/DS%2BCourse%2BReview",
 		  "date"       : "2014-03-08 00:00:00 +0800",
 		  "shortdate"  : "March 08, 2014"
 		} ,
@@ -75,7 +83,7 @@
 		{
 		  "title"      : "一种简单适配iOS开发中各种屏幕的投机取巧方法",
 		  "category"   : "blog",
-		  "url"        : "http://jeason.me/blog/View%2Bin%2BView",
+		  "url"        : "http://localhost:4000/blog/View%2Bin%2BView",
 		  "date"       : "2014-03-02 00:00:00 +0800",
 		  "shortdate"  : "March 02, 2014"
 		} ,
@@ -83,7 +91,7 @@
 		{
 		  "title"      : "漫游中大",
 		  "category"   : "album",
-		  "url"        : "http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7",
+		  "url"        : "http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7",
 		  "date"       : "2014-03-01 00:00:00 +0800",
 		  "shortdate"  : "March 01, 2014"
 		} 

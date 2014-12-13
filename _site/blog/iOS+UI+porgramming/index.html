@@ -13,16 +13,16 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Apple Club培训教程（二）：UI编程">
 <meta property="og:description" content="">
-<meta property="og:url" content="http://jeason.me/blog/iOS%2BUI%2Bporgramming">
+<meta property="og:url" content="http://localhost:4000/blog/iOS%2BUI%2Bporgramming">
 <meta property="og:site_name" content="Jeason">
-<meta property="og:image" content="http://jeason.me/images/iOSUIs.jpg">
+<meta property="og:image" content="http://localhost:4000/images/iOSUIs.jpg">
 
 
 
 
 
-<link rel="canonical" href="http://jeason.me/blog/iOS%2BUI%2Bporgramming">
-<link href="http://jeason.me/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
+<link rel="canonical" href="http://localhost:4000/blog/iOS%2BUI%2Bporgramming">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Jeason Feed">
 
 
 <!-- http://t.co/dKP3o1e -->
@@ -31,8 +31,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="http://jeason.me/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/style.css" />
 
 <div class="search-wrapper">
     <div class="search-form">
@@ -47,28 +47,28 @@
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="http://jeason.me/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="http://jeason.me/favicon.png">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="http://jeason.me/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://jeason.me/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://jeason.me/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://jeason.me/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
-<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://jeason.me/images/iOSUIs.jpg)" itemscope itemtype="http://schema.org/Organization">
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(http://localhost:4000/images/iOSUIs.jpg)" itemscope itemtype="http://schema.org/Organization">
 
 
     <div class="inner">
         <div class="container">
-            <a class="brand" href="http://jeason.me" role="banner" itemprop="url">
+            <a class="brand" href="http://localhost:4000" role="banner" itemprop="url">
 
-                <img itemprop="logo" src="http://jeason.me/images/logo.png" alt="Jeason Logo" />
+                <img itemprop="logo" src="http://localhost:4000/images/logo.png" alt="Jeason Logo" />
 
             <h1 class="blog-title light" itemprop="name">
                 Jeason
@@ -115,7 +115,7 @@
                         
                         <div class="post-info text-center small">
                             <span class="entry-date date published updated"><time datetime="2014-03-31T00:00:00+08:00" class="post-time" itemprop="datePublished">31 Mar 2014</time><span>
-                            in <span class="post-tags"><a href="http://jeason.me/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
+                            in <span class="post-tags"><a href="http://localhost:4000/categories/index.html#blog" data-toggle="tooltip" title="Other posts from the Blog category" rel="tag">Blog</a></span>
                         </div>
                     </header>
                     <div class="post-body bordered-bottom" itemprop="description">
@@ -155,7 +155,7 @@
 <p><code>这里主要讲的是iOS中的MVC</code>。它是iOS中最常用的设计模式中的一种，理解它，就会顺带提及很多其他的重要的设计模式的内容。废话不多说，先看下Stanford CS193p课程里的一张图</p>
 
 <figure>
-<a href="http://jeason.me/images/2014/03/31/2.gif"><img src="http://jeason.me/images/2014/03/31/2.gif" /></a>
+<a href="http://localhost:4000/images/2014/03/31/2.gif"><img src="http://localhost:4000/images/2014/03/31/2.gif" /></a>
 </figure>
 
 <p>Model是管理数据的，View是管理视图的。我们知道，当数据更新之后，View也应该相应地动态更新。但是MVC规定了，Model不允许直接跟View打交道。为了达到这一目标，就有了Controller这个中间桥梁。为了达到Model与Controller更好地分离，iOS就引入了Key－Value－Observing和Notification这两种设计模式（如上图所示）。这两个东西我们以后会具体讲到，现在简单来讲，就是实现了把M内的变化告知C，然后C再把变化反映到V上。</p>
@@ -168,7 +168,7 @@
 <p>接下来我们就开始具体的来看看一个iOS app是怎样组织起来的。先新建一个SigleView Application，项目名就为Note就好了。打开它，会看到有这么个组织结构:</p>
 
 <figure class="half">
-<a href="http://jeason.me/images/2014/03/31/4.jpg"><img src="http://jeason.me/images/2014/03/31/4.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/31/4.jpg"><img src="http://localhost:4000/images/2014/03/31/4.jpg" /></a>
 </figure>
 
 <h3 id="main">main函数</h3>
@@ -240,7 +240,7 @@
 这是理解iOS UI编程的另一个重要的概念，先看一张图。</p>
 
 <figure>
-<a href="http://jeason.me/images/2014/03/31/1.jpg"><img src="http://jeason.me/images/2014/03/31/1.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/31/1.jpg"><img src="http://localhost:4000/images/2014/03/31/1.jpg" /></a>
 </figure>
 
 <ul>
@@ -282,7 +282,7 @@
 <p>UIView是iOS里组成我们UI的基本单元，UI的基本功能我觉得就只有两个：提供内容和导航用户完成人机交互。为了实现不同的视觉效果和导航方式，iOS通过继承UIView为我们提供了近20种的原生控件，包括了简单的按钮，文字显示，还有一些复杂的View如UITableView。我们可以用这些控件一个个叠加组成我们需要的界面，就好像ps那样一个个图层（图层是有上下之分的，view与view之间也是）组成漂亮的图像,如图所示。</p>
 
 <figure>
-<a href="http://jeason.me/images/2014/03/31/3.jpg"><img src="http://jeason.me/images/2014/03/31/3.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/31/3.jpg"><img src="http://localhost:4000/images/2014/03/31/3.jpg" /></a>
 </figure>
 
 <h3 id="section">代码</h3>
@@ -404,7 +404,7 @@
 <h3 id="bulid--run">Bulid &amp; Run</h3>
 
 <figure>
-<a href="http://jeason.me/images/2014/03/31/5.jpg"><img src="http://jeason.me/images/2014/03/31/5.jpg" /></a>
+<a href="http://localhost:4000/images/2014/03/31/5.jpg"><img src="http://localhost:4000/images/2014/03/31/5.jpg" /></a>
 </figure>
 
 <h2 id="section-1">总结</h2>
@@ -443,8 +443,8 @@
                     <footer class="post-footer entry-meta">
                         
                         <div class="post-author text-center">                       
-	        <img src="http://jeason.me/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
-	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://jeason.me/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
+	        <img src="http://localhost:4000/images/headphoto.JPG" alt="Jeason George's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Jeason George" itemprop="url">Jeason George</a></span></h4>
 	    <p>创作，只是为了让我不会对浮躁的社会无话可说</p>
 </div> 
                         <div id="disqus_thread"></div><!-- /#disqus_thread -->
@@ -454,7 +454,7 @@
 </div>
 
 
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://jeason.me/images/iOSUIs.jpg)" >
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(http://localhost:4000/images/iOSUIs.jpg)" >
 
 
     <div class="inner">
@@ -482,45 +482,45 @@
                     <i class="icon-github"></i>
                 </a>
             </li>
-            <li><a href="http://jeason.me/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
+            <li><a href="http://localhost:4000/feed.xml" data-toggle="tooltip" title="Atom/RSS feed" target="_blank">
                     <i class="icon-rss"></i>
                 </a>
             </li>
 
         </ul>
             <p class="copy-text">
-                <a href="http://jeason.me/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
+                <a href="http://localhost:4000/about/">Jeason George</a> &copy; 2014 &bull; All rights reserved.
             </p>
 
             <ul class="menu-items">
             
             <li>
                 
-                    <a href="http://jeason.me/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/"><i class="icon-home"></i>首页</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/blog"><i class="icon-bug"></i>技术博客</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/diary"><i class="icon-book"></i>杂谈日志</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/album"><i class="icon-camera"></i>游记相册</a>&nbsp;&bull;
                 
             </li>
             
             <li>
                 
-                    <a href="http://jeason.me/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
+                    <a href="http://localhost:4000/about"><i class="icon-user"></i>关于</a>&nbsp;&bull;
                 
             </li>
             
@@ -553,17 +553,17 @@
 
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://jeason.me/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://jeason.me/assets/js/scripts.min.js"></script>
-    <script type="text/javascript" src="http://jeason.me/assets/js/waypoints.min.js"></script>
-    <script type="text/javascript" src="http://jeason.me/assets/js/script.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="http://localhost:4000/assets/js/script.js"></script>
 
 
 <!-- Jekyll Simple Search option -->
 <script>
   $(document).ready(function() {
       $('.search-field').simpleJekyllSearch({
-          jsonFile : 'http://jeason.me/search.json',
+          jsonFile : 'http://localhost:4000/search.json',
           searchResults : '.search-results',
           template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
           noResults: '<p>Nothing found.</p>'

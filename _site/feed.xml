@@ -2,26 +2,320 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Jeason</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://jeason.me/feed.xml" />
-<link rel="alternate" type="text/html" href="http://jeason.me" />
-<updated>2014-11-30T10:20:35+08:00</updated>
-<id>http://jeason.me/</id>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000" />
+<updated>2014-12-13T18:14:28+08:00</updated>
+<id>http://localhost:4000/</id>
 <author>
   <name>Jeason George</name>
-  <uri>http://jeason.me/</uri>
+  <uri>http://localhost:4000/</uri>
   <email>sysu.ss.jeason@gmail.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[iOS开发入门：多线程编程]]></title>
+  <link>http://localhost:4000/blog/Thread</link>
+  <id>http://localhost:4000/blog/Thread</id>
+  <published>2014-12-13T00:00:00+08:00</published>
+  <updated>2014-12-13T00:00:00+08:00</updated>
+  <author>
+    <name>Jeason George</name>
+    <uri>http://localhost:4000</uri>
+    <email>sysu.ss.jeason@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;这次主要是关于iOS多线程编程的应用，可能会涉及到一些基础知识。主要参考资料为《Objective-C高级编程》这本书以及Apple的&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/General/Conceptual/ConcurrencyProgrammingGuide/Introduction/Introduction.html&quot;&gt;《Concurrency Programming Guide》&lt;/a&gt;。同样的本文纯为个人理解，有不对的地方大家再指出来。&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;线程和多线程&lt;/h1&gt;
+&lt;p&gt;线程这个词可能有些人并不是很了解，所以先普及一下基本知识。CPU到底是怎么执行我们的代码的呢？我们可以在运行的程序中利用调试器设置断点来看看CPU正在做些什么，比如像下面这种命令:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+0x30b83e62:  cmp    r1, #0x0
+0x30b83e64:  blt    0x30b83e72                ; CA::Layer::layout_if_needed(CA::Transaction*) + 406
+0x30b83e66:  add.w  r1, r0, r1, lsl #2
+0x30b83e6a:  ldr    r2, [r1, #124]!
+0x30b83e6e:  cmp    r2, #0x0
+0x30b83e70:  bne    0x30b83e48                ; CA::Layer::layout_if_needed(CA::Transaction*) + 364
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以看到这是一段汇编指令，另外我们也注意到了有一些跳转指令(blt，bne)。因为汇编指令几乎都能只翻译成一句CPU机器代码，所以可以认为这就是我们CPU正在执行的操作。Mac/iPhone的操作系统iOS/OS X会根据用户选择的应用程序把可执行的文件装载进内存，文件里面的内容就是这些CPU指令。然后CPU从应用程序指定的地址开始一个个地执行CPU指令。当出现跳转指令的时候（比如if、else、循环语句等），CPU会偏移到某个地址执行，完了之后再向后移动。因此可以用下面这张图来刻画CPU的行为：&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/12/13/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/12/13/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;这里所说的一条无分叉的路径就称为线程。&lt;/p&gt;
+
+&lt;p&gt;线程分为两种：一种是用户级线程，其管理往往是一些用户级线程库来实现的（比如POSIX的Pthread库）；还有一种是内核级线程，其管理是由操作系统实现的。一般来说当用户级线程执行的时候可能会需要利用操作系统提供的服务（比如printf就是调用操作系统的API来把ASCII码输出到屏幕上），这时会由用户级线程切换到内核级线程，这样的过程称为模式转换。&lt;/p&gt;
+
+&lt;p&gt;当我们可以某一个时刻有多条这种路径的时候我们就称为多线程。而对于只有一个CPU核的处理器来说，操作系统会在某个系统事件发生时（这里的某个系统事件即为中断），进行线程的调度让CPU可以来回地在多个线程上执行操作。而线程的调度也就为我们常说的上下文切换。这样每个线程都占有了CPU部分时间，看上去就好像CPU可以并行地执行多个线程的代码一样。而对于那些有多个CPU核的处理器，就真的是有多个CPU核并行地执行我们的代码了。&lt;/p&gt;
+
+&lt;p&gt;在这里我们并不深究操作系统是怎么调度让CPU执行那个线程的问题了，因为这足够花一个月讲几章书的内容才能讲完。不过这里我们要体会到的有几点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;多线程的编程可以提高执行的效率，即对于多核的处理器，并发地执行可以最大化的利用CPU。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;多线程的编程容易造成数据的不一致问题：即当有多个线程同时对某个数据进行读写操作时会造成数据冲突。下文会有一个单例模式的书写来说明这个问题。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;多个只享有部分资源的线程，因为要等待剩余的资料才能继续执行导致的循环等待的过程。试想两辆相对而行的卡车在过一座很窄的桥，两个卡车都因为占有了部分的桥，但又没有占有全部的桥，导致两个卡车都必须要等待对方那部分才能完整地通过。这样就导致了循环等待的过程，这个现象称为死锁。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;太多的线程会造成资源的浪费，并且可能会占用大量的内存。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;要解决这些复杂的问题要涉及到线程的同步和线程池管理的问题，这又可以是一篇长篇大论……而且即使通晓理论，实际操作时这些问题仍容易出现。不过没有关系，崇尚技术的苹果的工程师给了我们解决方案。&lt;/p&gt;
+
+&lt;h1 id=&quot;gcd&quot;&gt;GCD&lt;/h1&gt;
+
+&lt;p&gt;GCD（Grand Central Dispatch）是苹果公司提出来的一个管理用户级线程的跨时代的技术和以及其实现方案。苹果公司的表述如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;我们将用户级线程的管理用的代码在内核级上实现，这样开发者只需要定义想执行的任务并追加到适当的队列中，GCD就能生成必要的线程并按计划执行。由于线程管理是作为操作系统的一部分来实现的，所以比以前的线程更有效率。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;更让人难以置信的是：GCD提供的API非常的简洁，我们可以用简短且合乎直观的几句话表达复杂繁琐的多线程编程。接下来就来看看GCD提供的API:&lt;/p&gt;
+
+&lt;h2 id=&quot;dispatch-queue&quot;&gt;Dispatch queue&lt;/h2&gt;
+
+&lt;p&gt;Dispatch Queue是执行等待的队列，我们可以利用其他API（dispatch_async等）为这些queue增加一个想要执行的block，然后dispatch queue按照FIFO的顺序执行。另外GCD提供了两种dispatch queue,一种是串行的queue，另一种是并行的queue，我们下面会用实际代码来说明这两种queue的不同。&lt;/p&gt;
+
+&lt;h3 id=&quot;queue&quot;&gt;获得queue对象&lt;/h3&gt;
+
+&lt;p&gt;有两种方法可以获得dispatch queue，一种是通过dispatch_queue_create函数生成一个dispatch_queue_t的对象.函数原型如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+dispatch_queue_t
+dispatch_queue_create(const char *label, dispatch_queue_attr_t attr);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中dispatch_queue_attr_t为&lt;code&gt;DISPATCH_QUEUE_CONCURRENT&lt;/code&gt;时返回的即为并行的队列，当为&lt;code&gt;NULL&lt;/code&gt;时返回的即为串行队列。&lt;/p&gt;
+
+&lt;p&gt;下面是生成dispatch quque的示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+
+    dispatch_queue_t serialQueue = dispatch_queue_create(&quot;Serial Queue&quot;, NULL);
+    dispatch_queue_t concurrentQueue = dispatch_queue_create(&quot;Concurrent Queue&quot;, DISPATCH_QUEUE_CONCURRENT);
+    
+    /**
+     *  Add Task to Queue
+     */
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;还有一种方法是通过其他API来获取系统提供的dispatch queue&lt;/p&gt;
+
+&lt;p&gt;操作系统为我们生成了几种类型的dispatch queue：Main Dispatch Queue和Global Dispatch Queue&lt;/p&gt;
+
+&lt;p&gt;Main Dispatch Queue的task会自动在主线程上执行，而Global Dispatch Queue则是一种优先队列，优先级分别为高、默认、低还有后台。Main Dispatch Queue是一种串行队列，而Global Dispatch Queue则是并行的。&lt;/p&gt;
+
+&lt;p&gt;各种dispatch queue的获取方法如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    
+    dispatch_queue_t globalQueueHigh = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+    
+    dispatch_queue_t globalQueueDefault = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_queue_t globalQueueLow = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
+    
+    dispatch_queue_t globalQueueBackground = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+
+    /**
+     *  Add Task to Queue
+     */
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;taskqueue&quot;&gt;追加Task到queue中&lt;/h2&gt;
+
+&lt;p&gt;有两种方式可以把追加Task（即是一个返回为空的block）到Dispatch Queue中：dispatch_sync和dispatch_async。dispatch_sync即是同步追加，只有当追加的block执行结束了才会返回原来的线程。而dispatch_async则不会等待追加的block执行结束才返回而是添加完立刻返回。而追加的block什么时候执行则是GCD的实现来控制的。下面的例子很好的说明了这个问题&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+    NSLog(@&quot;Before SYNC Add Task To Concurrent Queue&quot;);
+    dispatch_sync(globalQueueDefault, ^{
+        NSLog(@&quot;In SYNC Block&quot;);
+    });
+    NSLog(@&quot;After Add SYNC Task\n&quot;);
+    
+    NSLog(@&quot;Before ASYNC Add Task To Concurrent Queue&quot;);
+    dispatch_async(globalQueueDefault, ^{
+        NSLog(@&quot;In ASYNC Block&quot;);
+    });
+    NSLog(@&quot;After Add ASYNC Task&quot;);    
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这时候的输出是这样的：
+2014-12-13 16:59:07.923 GCDDemo[3874:81972] Before SYNC Add Task To Concurrent Queue
+2014-12-13 16:59:07.924 GCDDemo[3874:81972] In SYNC Block
+2014-12-13 16:59:07.924 GCDDemo[3874:81972] After Add SYNC Task&lt;/p&gt;
+
+&lt;p&gt;2014-12-13 16:59:07.924 GCDDemo[3874:81972] Before ASYNC Add Task To Concurrent Queue
+2014-12-13 16:59:07.924 GCDDemo[3874:81972] After Add ASYNC Task
+2014-12-13 16:59:07.925 GCDDemo[3874:82022] In ASYNC Block&lt;/p&gt;
+
+&lt;p&gt;这时候我们利用dispatch_async来检查说明我们串行队列和并行队列的特性。测试一下下面这段代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+    for ( int i = 0; i &amp;lt; 10; i++ ) {
+        dispatch_async(globalQueueDefault, ^{
+            for ( int i = 0; i &amp;lt; 1000000; i++ );    //wait some time
+            NSLog(@&quot;In Block #%d&quot;, i);
+        });
+    }
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以及这段代码:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+    for ( int i = 0; i &amp;lt; 10; i++ ) {
+        dispatch_async(mainQueue, ^{
+            for ( int i = 0; i &amp;lt; 1000000; i++ );    //wait some time
+            NSLog(@&quot;In Block #%d&quot;, i);
+        });
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;他们的输出分别为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+2014-12-13 17:21:19.756 GCDDemo[3940:88003] In Block #1
+2014-12-13 17:21:19.762 GCDDemo[3940:88003] In Block #3
+2014-12-13 17:21:19.756 GCDDemo[3940:88001] In Block #0
+2014-12-13 17:21:19.766 GCDDemo[3940:88003] In Block #4
+2014-12-13 17:21:19.768 GCDDemo[3940:88001] In Block #5
+2014-12-13 17:21:19.769 GCDDemo[3940:88003] In Block #6
+2014-12-13 17:21:19.770 GCDDemo[3940:88001] In Block #7
+2014-12-13 17:21:19.759 GCDDemo[3940:88000] In Block #2
+2014-12-13 17:21:19.772 GCDDemo[3940:88003] In Block #8
+2014-12-13 17:21:19.773 GCDDemo[3940:88001] In Block #9
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;和&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+2014-12-13 17:23:09.320 GCDDemo[3961:88760] In Block #0
+2014-12-13 17:23:09.324 GCDDemo[3961:88760] In Block #1
+2014-12-13 17:23:09.326 GCDDemo[3961:88760] In Block #2
+2014-12-13 17:23:09.329 GCDDemo[3961:88760] In Block #3
+2014-12-13 17:23:09.331 GCDDemo[3961:88760] In Block #4
+2014-12-13 17:23:09.334 GCDDemo[3961:88760] In Block #5
+2014-12-13 17:23:09.336 GCDDemo[3961:88760] In Block #6
+2014-12-13 17:23:09.339 GCDDemo[3961:88760] In Block #7
+2014-12-13 17:23:09.341 GCDDemo[3961:88760] In Block #8
+2014-12-13 17:23:09.344 GCDDemo[3961:88760] In Block #9
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;api&quot;&gt;其他API&lt;/h2&gt;
+
+&lt;p&gt;GCD的其他主要API包括有：&lt;/p&gt;
+
+&lt;p&gt;－ 用于变更Dispatch Queue的优先级的dispatch_set_target_queue.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;用于指定block要在某个时间后执行的dispatch_after.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;用于在追加到queue中的多个处理组成一组全部结束再返回的dispatch_group_async(sync)和group返回后通知的dispatch_group_notify.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;-　用于挂起和恢复某个queue的dispatch_suspend和dispatch_resume.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用于保证只执行一次的dispatch_once.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在这里我们只详细介绍dispatch_once，剩下的API作为大家的练习完成。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;单例模式&lt;/h3&gt;
+
+&lt;p&gt;单例模式简单的讲就是这个类的实例在整个应用的生命周期有且只有一个实例。我们来看看传统的单例模式的写法:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+
+static id instance = nil;
+
+- (instancetype)init {
+    if ( instance == nil ) {
+        //1
+        instance = [super init];
+        if ( instance ) {
+            //do some initial job
+        }
+    }
+    return instance;
+}
+
+- (id)copyWithZone:(NSZone *)zone; {
+    return nil;
+}
+
+- (id)copy {
+    return nil;
+}
+
++ (instancetype)getInstance {
+    return [[someClass alloc] init];
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;单例模式的主要实现方式就是重写构造函数，而整个类内有一个static的实例对象，并且禁用掉深拷贝。这个实例对外通过getInstance方法来获得。&lt;/p&gt;
+
+&lt;p&gt;好了，整个实现看起来相当完美，但是如果是在多线程的编程环境下就不一样了：
+假设有线程1在某个时刻调用了getInstance方法，当执行到注释1处的时候突然发生了线程的切换，由线程2开始执行。而如果此时线程2调用了getInstance方法，此时instance仍然为nil，所以仍然会执行到注释1处。这样就会创建出两个实例出来！我们的单实例就会失效。这时候我们可以利用GCD的dispatch_once来实现这种线程安全的单例模式：&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-objectivec&quot;&gt;
+static id instance = nil;
+
+- (instancetype)init {
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;amp;onceToken, ^{
+        instance = [super init];
+        if ( instance ) {
+            //do some initial job
+        }
+    });
+    return instance;
+}
+
+- (id)copyWithZone:(NSZone *)zone; {
+    return nil;
+}
+
+- (id)copy {
+    return nil;
+}
+
++ (instancetype)getInstance {
+    return [[ViewController alloc] init];
+}
+
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;其他多线程编程方案&lt;/h1&gt;
+
+&lt;p&gt;除了GCD，Apple还有一个Objective-C级别的多线程技术：NSOperationQueue。而NSOperationQueue又是基于GCD实现的，并且GCD足够简单易用，所以我们只有在很少的情况下会使用到它，这里也只是作为大家的练习去查阅相关的文档和博客。
+作为开源组织的贡献大头，苹果公司也把那么优雅的GCD进行了&lt;a href=&quot;http://libdispatch.macosforge.org&quot;&gt;开源&lt;/a&gt;，我们可以利用其将GCD的技术移植到其他包括FreeBSD、Linux、Windows等操作系统上使用。&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Thread&quot;&gt;iOS开发入门：多线程编程&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; December 13, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[对二值图像去噪：搜索与随机算法结合]]></title>
-  <link>http://jeason.me/blog/Denoise%2BBinary%2BImage</link>
-  <id>http://jeason.me/blog/Denoise+Binary+Image</id>
+  <link>http://localhost:4000/blog/Denoise%2BBinary%2BImage</link>
+  <id>http://localhost:4000/blog/Denoise+Binary+Image</id>
   <published>2014-11-20T00:00:00+08:00</published>
   <updated>2014-11-20T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;section&gt;
@@ -75,7 +369,7 @@
 
 &lt;h3 id=&quot;section-4&quot;&gt;爬山法模型&lt;/h3&gt;
 &lt;center&gt;
-&lt;img src=&quot;http://jeason.me/images/2014/11/20/somepic.jpg&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/images/2014/11/20/somepic.jpg&quot; /&gt;
 &lt;/center&gt;
 
 &lt;p&gt;爬山法是一个搜索算法，根据一个elevation（评价函数），评价函数的意义（决定寻找的是最大值还是最小值），在状态空间中寻找一个最能满足要求的状态。爬山法每次move只会往前看一步，并不会生成一个搜索树，只保存当前的状态以及对应的评价函数的值。导致的后果就是爬山法往往只能找到一个局部最大值，其最大的缺点就是不能下山。如图所示，current state会逐渐走到local maximum上面而不是global maximum。&lt;/p&gt;
@@ -86,7 +380,7 @@
 &lt;h3 id=&quot;section-6&quot;&gt;模拟退火算法模型&lt;/h3&gt;
 &lt;p&gt;模拟退火算法是在爬山法的基础上进行改良而得到的。爬山法是完完全全的贪心法，每次都鼠目寸光的选择一个当前最优解，因此只能搜索到局部的最优值。模拟退火其实也是一种贪心算法，但是它的搜索过程引入了随机因素。模拟退火算法以一定的概率来接受一个比当前解要差的解，因此有可能会跳出这个局部的最优解，达到全局的最优解。模拟退火算法的流程框图如下:&lt;/p&gt;
 &lt;center&gt;
-&lt;img src=&quot;http://jeason.me/images/2014/11/20/FlowChart.jpg&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/images/2014/11/20/FlowChart.jpg&quot; /&gt;
 &lt;/center&gt;
 
 &lt;h1 id=&quot;section-7&quot;&gt;算法&lt;/h1&gt;
@@ -291,8 +585,8 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/AI.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/binaryzation.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/AI.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/binaryzation.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -306,8 +600,8 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/addNoice.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/denoice(1).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/addNoice.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/denoice(1).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -325,8 +619,8 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/denoice(2).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/result(2).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/denoice(2).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/result(2).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -344,8 +638,8 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/denoice(3).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/result(3).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/denoice(3).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/result(3).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -363,8 +657,8 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/denoice(4).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://jeason.me/images/2014/11/20/result(4).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/denoice(4).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://localhost:4000/images/2014/11/20/result(4).png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -372,19 +666,19 @@
 &lt;p&gt;使用了模拟退火算法改良后，效果进一步加强，大部分结果都在99.4%以上。&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Denoise%2BBinary%2BImage&quot;&gt;对二值图像去噪：搜索与随机算法结合&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; November 20, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Denoise%2BBinary%2BImage&quot;&gt;对二值图像去噪：搜索与随机算法结合&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; November 20, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[iOS和Android的Emoji表情同步方案]]></title>
-  <link>http://jeason.me/blog/iOS%2BAnroid%2BEmoji</link>
-  <id>http://jeason.me/blog/iOS+Anroid+Emoji</id>
+  <link>http://localhost:4000/blog/iOS%2BAnroid%2BEmoji</link>
+  <id>http://localhost:4000/blog/iOS+Anroid+Emoji</id>
   <published>2014-08-24T00:00:00+08:00</published>
   <updated>2014-08-24T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;最近在做一个聊天的应用，有一个问题就是iOS跟Android的Emoji字符不对应导致显示不正常。因为iOS这部分是先做的，所以便让负责安卓的同学想办法兼容iOS的编码表，不过安卓的同学想尽办法也没办法搞到Apple Color Emoji的编码表，不过他却找到了有几百张Emoji表情的图片，后来经过整理剩下180张是完整的放在项目里的，图片下载在&lt;a href=&quot;http://pan.baidu.com/s/1o6qMC22&quot;&gt;这里&lt;/a&gt;.于是，我就利用这些图片来想办法跟现有的项目兼容。&lt;/p&gt;
@@ -592,19 +886,19 @@ someChatMsg = [someChatMsg decodeString];
 &lt;h2 id=&quot;section-2&quot;&gt;补充一句&lt;/h2&gt;
 &lt;p&gt;为什么要筛选只有180个表情呢，因为发现不论是手Q还是微信还是自带的Emoji键盘，它都是每行有7个表情，一页有3行，最后一个是删除键，这样子180个表情就有180 ／ （7*3-1） ＝ 9页啦，所以180个已经是非常足够了的，太多页也会让用户失去耐心~&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/iOS%2BAnroid%2BEmoji&quot;&gt;iOS和Android的Emoji表情同步方案&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; August 24, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/iOS%2BAnroid%2BEmoji&quot;&gt;iOS和Android的Emoji表情同步方案&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; August 24, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Java开发入门]]></title>
-  <link>http://jeason.me/blog/Java%2BIntro</link>
-  <id>http://jeason.me/blog/Java+Intro</id>
+  <link>http://localhost:4000/blog/Java%2BIntro</link>
+  <id>http://localhost:4000/blog/Java+Intro</id>
   <published>2014-08-04T00:00:00+08:00</published>
   <updated>2014-08-04T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;最近因为实训和编译原理课程的缘故所以开始要看一下java的内容。因为知道XCode以及其一套开发套件对我学习OC的帮助有多大，所以快速的搭建好自己的Java开发环境就至关重要。所以就整理一下，方便有需要的同学可以参考一下。本文适合那些:&lt;/p&gt;
@@ -663,7 +957,7 @@ someChatMsg = [someChatMsg decodeString];
 &lt;p&gt;在了解了Java语法，下载了最新的JDK和JVM后，就可以考虑来写写代码了，我一开始想直接用XCode来写，发现XCode4以后就不支持Java开发了＝。＝&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/08/05/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/08/05/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/08/05/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/08/05/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;我马上想到了用Emacs，不过我的Emacs已经被我配置成一个C/C++ IDE了，要把java开发也配置得那么顺心，实在懒得再折腾，之后试了下在sublime下写了一会，发现实在不够顺手，最后装了个gVim勉强还能写一点小程序。Vim得快捷键+命令什么的，虽然感觉挺方便挺强大，但是对于习惯了Emacs快捷键，会一直不停的按C+X, C+S的我来说，实在是噩梦，所以我写完了几个程序之后就放弃了Vim。最后的最后我找到了一个叫NetBean的IDE，可以把它的编辑器改成Emacs的快捷键绑定，也能方便的查看JDK的文档和方便的写单元测试，也算是能基本满足我的要求了，只是因为它是用纯Java写成的，会有一点小卡……&lt;/p&gt;
@@ -829,25 +1123,25 @@ someChatMsg = [someChatMsg decodeString];
 &lt;p&gt;然后再在这个文件夹目录下执行&lt;code&gt;你解压的文件夹/bin/sonar-runner&lt;/code&gt;命令，就可以分析你的代码了，然后打开http://localhost:9000就可以看到你的分析结果啦，如果出现下面的页面，就说明你已经完成了SonarQube的配置啦：&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/08/05/2.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/08/05/2.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/08/05/2.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/08/05/2.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;总结&lt;/h2&gt;
 &lt;p&gt;至此，总算是可以开始用Java大干一场来开发东西啦，当然本文没有详细地介绍各个工具安装和使用的步骤，只是简单总结一下Java开发需要配置的东西，剩下的就靠大家自己去搜索解决吧(´･_･`)。&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Java%2BIntro&quot;&gt;Java开发入门&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; August 04, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Java%2BIntro&quot;&gt;Java开发入门&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; August 04, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[iOS开发入门：Swift]]></title>
-  <link>http://jeason.me/blog/Intro%2BSwift</link>
-  <id>http://jeason.me/blog/Intro+Swift</id>
+  <link>http://localhost:4000/blog/Intro%2BSwift</link>
+  <id>http://localhost:4000/blog/Intro+Swift</id>
   <published>2014-06-10T00:00:00+08:00</published>
   <updated>2014-06-10T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;本文假设你已经对Swift的基本的数据类型，变量等都有一定的了解，有过面向对象和面向函数的编程经验自然是最好的了。&lt;/p&gt;
@@ -1119,19 +1413,19 @@ extension JEInt: Addable {
 &lt;p&gt;完成《Swift By Tutorials》第三章的Demo&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Intro%2BSwift&quot;&gt;iOS开发入门：Swift&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; June 10, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Intro%2BSwift&quot;&gt;iOS开发入门：Swift&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; June 10, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[CocoaSocket实践（一）:Socket简介]]></title>
-  <link>http://jeason.me/blog/Socket%2BIntro</link>
-  <id>http://jeason.me/blog/Socket+Intro</id>
+  <link>http://localhost:4000/blog/Socket%2BIntro</link>
+  <id>http://localhost:4000/blog/Socket+Intro</id>
   <published>2014-06-01T00:00:00+08:00</published>
   <updated>2014-06-01T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这是本站关于CocoaSocket编程实践专题的第一篇文章，这个专题并不是为了探讨如何使用CocoaAsynSocket库来实现一个iOS客户端或者是OS X服务器，而是为了研究这个库的具体实现细节以及其所采用的技术。本文力图用1个小时以内的时间为读者介绍Socket以及对应的TCP/UDP协议等网络知识，所讲内容多为个人理解和外文搬运，对于socket编程只是很浅的一个入门，更多的内容可以参考其他关于socket的书籍。&lt;/p&gt;
@@ -1160,7 +1454,7 @@ extension JEInt: Addable {
 &lt;h2 id=&quot;section&quot;&gt;概述&lt;/h2&gt;
 &lt;p&gt;如果你之前有过使用基于文件传输的协议来进行网络通信的实践（如HTTP，FTP），那么使用基于socket传输的协议（TCP，UDP）来进行网络通信将会是一种更靠近底层的工作，但使用socket却能有很大的性能上的提升。事实上，在&lt;a href=&quot;http://baike.baidu.com/link?url=yGUAWSFEonLlu2TwBpCCWUsI9b2i64CcNKeqZ2U-u3Cw3ZNiOlhS2vmxscu_OIRLAvREGHxl0KfGVK2qWlIee_#4&quot;&gt;ISO/OSI网络体系结构&lt;/a&gt;中, HTTP等协议位于应用层，而TCP协议位于传输层，如下图所示。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/06/01/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/06/01/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/06/01/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/06/01/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;sockt&quot;&gt;Sockt是一个端点&lt;/h2&gt;
@@ -1211,19 +1505,19 @@ extension JEInt: Addable {
 &lt;h2 id=&quot;section-4&quot;&gt;结语&lt;/h2&gt;
 &lt;p&gt;现在，你应该对于socket网络有了一定的了解，接下来我们会以&lt;a href=&quot;https://github.com/robbiehanson/CocoaAsyncSocket&quot;&gt;CocoaAsyncSocket&lt;/a&gt;这个项目作为分析样本，来解释Socket网络编程的具体实现细节，希望这会是一个很好的帮助你我学习的专题。&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Socket%2BIntro&quot;&gt;CocoaSocket实践（一）:Socket简介&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; June 01, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Socket%2BIntro&quot;&gt;CocoaSocket实践（一）:Socket简介&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; June 01, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[iOS入门（四）：iOS网络]]></title>
-  <link>http://jeason.me/blog/Network</link>
-  <id>http://jeason.me/blog/Network</id>
+  <link>http://localhost:4000/blog/Network</link>
+  <id>http://localhost:4000/blog/Network</id>
   <published>2014-05-05T00:00:00+08:00</published>
   <updated>2014-05-05T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;今天我们主要介绍iOS中的网络编程。更确切的说，是介绍iOS7中的NSURLSession这个新的API，参考自&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html&quot;&gt;URL Loading System Programming Guide&lt;/a&gt;,&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/Introduction/Introduction.html&quot;&gt;NSURLSession Class Reference&lt;/a&gt;和一些其他博文。&lt;/p&gt;
@@ -1263,7 +1557,7 @@ extension JEInt: Addable {
 &lt;p&gt;我们可以看到，在URL Load System中，我们看到NSURL这一系列的系统都是被设计成可以处理多个协议的——包括 FTP、HTTP、HTTPS——所以我们这里讲的是内容本是协议无关的。但是为了更好地说明，我们采用HTTP为例的方式来说明这个系统是怎么运作的。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/05/05/01.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/table.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/05/05/01.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/05/05/table.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;httpp&quot;&gt;HTTPP语义下的网络&lt;/h2&gt;
@@ -1288,7 +1582,7 @@ extension JEInt: Addable {
 &lt;p&gt;为了特定的功能，Apple提供了三个它的非虚子类，分别是NSURLSessionDataTask，NSURLSessionDownloadTask和NSURLSessionUploadTask，他们的关系如下：&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/05/05/01.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/01.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/05/05/01.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/05/05/01.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -1355,7 +1649,7 @@ completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 当一个请求完成下载来自服务器的回应，一个缓存的回应将在本地保存。下一次同一个请求再发起时，本地保存的回应就会马上返回，不需要连接服务器。试想一下如果没有缓存数据，我们对于每个文件可能都要重复的进行多次请求/响应的操作，这在一些没有实时性的应用里面是非常糟糕的。所以我们需要对一些不常改变而又非常大的文件数据进行适当的缓存。之后的网络请求模式就变成了如下的图所示:&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/05/05/ERD.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/ERD.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/05/05/ERD.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/05/05/ERD.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;我们可以看到这里的Cache只是一级缓存，实际上我们可以做更多级的缓存（如硬盘缓存和内存缓存结合）。我们可以利用NSURLCache来实现内存缓存，而硬盘缓存往往需要我们针对不同的文件格式来设计不同的缓存策略和压缩方案。&lt;/p&gt;
@@ -1366,16 +1660,16 @@ completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 &lt;p&gt;这次的Demo来自于我之前在听&lt;a href=&quot;http://music.163.com/#/song?id=316908&quot;&gt;杨千嬅的一首歌&lt;/a&gt;的时候看到评论里大家都在讨论一个(就是传说中韩寒监制那个＝＝)里面的一篇文章。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/05/05/one.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/one.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/05/05/one.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/05/05/one.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;但是当我想去一个里看11月10号的文章时，我发现它App里面最多只能回滚到上一周……所以就有了这个Demo，你可以选择日期然后就可以阅读这个日期里的文章。效果图如下:&lt;/p&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
 
-&lt;a href=&quot;http://jeason.me/images/2014/05/05/final1.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/final1.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/05/05/final1.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/05/05/final1.png&quot; /&gt;&lt;/a&gt;
 
-&lt;a href=&quot;http://jeason.me/images/2014/05/05/final2.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/final2.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/05/05/final2.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/05/05/final2.png&quot; /&gt;&lt;/a&gt;
 
 &lt;/figure&gt;
 
@@ -1487,10 +1781,10 @@ NSDictionary *dict =［NSJSONSerialization JSONObjectWithData:data options:NSJSO
 &lt;p&gt;来把objective解析成NSDictionary对象。直接使用Dictionary会是一个糟糕的设计，因为我只有遍历或者打印整个字典才能看到这个字典里的元素信息，所以我们会把objective解析成Model类来使用。这里我们借助软件objective Accelerator来帮我们把上面的返回的objective解析成Model Class，如图所c示:&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/05/05/ModelClass.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/05/05/ModelClass.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/05/05/ModelClass.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/05/05/ModelClass.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;在&lt;a href=&quot;http://jeason.me/images/2014/05/05/OneModel.zip&quot;&gt;这里&lt;/a&gt;可以下载到完整的所有Model类。&lt;/p&gt;
+&lt;p&gt;在&lt;a href=&quot;http://localhost:4000/images/2014/05/05/OneModel.zip&quot;&gt;这里&lt;/a&gt;可以下载到完整的所有Model类。&lt;/p&gt;
 
 &lt;h2 id=&quot;engine&quot;&gt;Engine&lt;/h2&gt;
 
@@ -1695,19 +1989,19 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;h1 id=&quot;assignment&quot;&gt;Assignment&lt;/h1&gt;
 &lt;p&gt;完成TODO里面的内容，并尝试调用他们获得其他内容。&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Network&quot;&gt;iOS入门（四）：iOS网络&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; May 05, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Network&quot;&gt;iOS入门（四）：iOS网络&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; May 05, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Apple Club培训教程（二）：UI编程]]></title>
-  <link>http://jeason.me/blog/iOS%2BUI%2Bporgramming</link>
-  <id>http://jeason.me/blog/iOS+UI+porgramming</id>
+  <link>http://localhost:4000/blog/iOS%2BUI%2Bporgramming</link>
+  <id>http://localhost:4000/blog/iOS+UI+porgramming</id>
   <published>2014-03-31T00:00:00+08:00</published>
   <updated>2014-03-31T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这是SYSU Apple Club系列培训的第二篇。&lt;a href=&quot;http://jeason.me/blog/Objective-C+Introduction/&quot;&gt;上一篇&lt;/a&gt;我们学习了Objective－C的基本语法，而且知道了Foundation库内的一些重要的数据结构。这篇教程主要是厘清一些基本概念，让你对iOS UI编程的内在机制有一定的了解。本文主要参考自我的理解和
@@ -1745,7 +2039,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;p&gt;&lt;code&gt;这里主要讲的是iOS中的MVC&lt;/code&gt;。它是iOS中最常用的设计模式中的一种，理解它，就会顺带提及很多其他的重要的设计模式的内容。废话不多说，先看下Stanford CS193p课程里的一张图&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/31/2.gif&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/2.gif&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/31/2.gif&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/2.gif&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Model是管理数据的，View是管理视图的。我们知道，当数据更新之后，View也应该相应地动态更新。但是MVC规定了，Model不允许直接跟View打交道。为了达到这一目标，就有了Controller这个中间桥梁。为了达到Model与Controller更好地分离，iOS就引入了Key－Value－Observing和Notification这两种设计模式（如上图所示）。这两个东西我们以后会具体讲到，现在简单来讲，就是实现了把M内的变化告知C，然后C再把变化反映到V上。&lt;/p&gt;
@@ -1758,7 +2052,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;p&gt;接下来我们就开始具体的来看看一个iOS app是怎样组织起来的。先新建一个SigleView Application，项目名就为Note就好了。打开它，会看到有这么个组织结构:&lt;/p&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/31/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/31/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;main&quot;&gt;main函数&lt;/h3&gt;
@@ -1830,7 +2124,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 这是理解iOS UI编程的另一个重要的概念，先看一张图。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/31/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/31/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -1872,7 +2166,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;p&gt;UIView是iOS里组成我们UI的基本单元，UI的基本功能我觉得就只有两个：提供内容和导航用户完成人机交互。为了实现不同的视觉效果和导航方式，iOS通过继承UIView为我们提供了近20种的原生控件，包括了简单的按钮，文字显示，还有一些复杂的View如UITableView。我们可以用这些控件一个个叠加组成我们需要的界面，就好像ps那样一个个图层（图层是有上下之分的，view与view之间也是）组成漂亮的图像,如图所示。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/31/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/31/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;section&quot;&gt;代码&lt;/h3&gt;
@@ -1994,7 +2288,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;h3 id=&quot;bulid--run&quot;&gt;Bulid &amp;amp; Run&lt;/h3&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/31/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/31/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/31/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/31/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;总结&lt;/h2&gt;
@@ -2022,19 +2316,19 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
   &lt;li&gt;阅读&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UIKitUICatalog.pdf&quot;&gt;Apple的《UIKitUICatalog》&lt;/a&gt;对基本的控件都有一定的了解。&lt;/li&gt;
 &lt;/ol&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/iOS%2BUI%2Bporgramming&quot;&gt;Apple Club培训教程（二）：UI编程&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 31, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/iOS%2BUI%2Bporgramming&quot;&gt;Apple Club培训教程（二）：UI编程&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 31, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[iOS开发入门教程：Objective-C]]></title>
-  <link>http://jeason.me/blog/Objective-C%2BIntroduction</link>
-  <id>http://jeason.me/blog/Objective-C+Introduction</id>
+  <link>http://localhost:4000/blog/Objective-C%2BIntroduction</link>
+  <id>http://localhost:4000/blog/Objective-C+Introduction</id>
   <published>2014-03-28T00:00:00+08:00</published>
   <updated>2014-03-28T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;因为最近要给俱乐部的新人做一下技术培训，所以就想先把忽悠的内容写一下。本文假设你已经有了面向对象的编程思想，学过至少一种编程语言（如C++），同时也对C语言足够熟悉。本文主要是由我自己学习IOS开发的过程中学到的对Objective－C的认识总结而来，同时也参考了&lt;a href=&quot;https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550&quot;&gt;Stanford‘的CS193p课程&lt;/a&gt;，已及《Effective Objective-C 2.0》这本书，所讲的只是我的个人理解，如果有明显错误，希望大家能指出来。&lt;/p&gt;
@@ -2472,22 +2766,22 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;p&gt;完成《iOS iOS_Apprentice_1_Getting_Started》的Demo，Enjoy your game :-)&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/10/30/1.png&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/10/30/1.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/10/30/1.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/10/30/1.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/Objective-C%2BIntroduction&quot;&gt;iOS开发入门教程：Objective-C&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Objective-C%2BIntroduction&quot;&gt;iOS开发入门教程：Objective-C&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[SE 数据结构课程总结]]></title>
-  <link>http://jeason.me/blog/DS%2BCourse%2BReview</link>
-  <id>http://jeason.me/blog/DS+Course+Review</id>
+  <link>http://localhost:4000/blog/DS%2BCourse%2BReview</link>
+  <id>http://localhost:4000/blog/DS+Course+Review</id>
   <published>2014-03-08T00:00:00+08:00</published>
   <updated>2014-03-08T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;这注定会是一篇很长的博文，可能我一次难以把它完全写好。本文主要是基于中山大学的《SE-221 数据结构与算法》这门课的课程内容而写，以后可能还有其他数据结构方面的补充与完善。&lt;/p&gt;
@@ -2609,7 +2903,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;p&gt;举个例子吧：关键字为{89,18,49,58,69}插入到一个散列表中的情况。此时线性探测的方法是取d_i=i。并假定取关键字除以10的余数为散列函数法则。&lt;/p&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;第一次碰撞发生在填装49的时候。地址为9的单元已经填装了89这个关键字，所以取i=1，往下查找一个单位，发现为空，所以将49填装在地址为0的空单元。插入58时，地址8处发生第一次碰撞，d = 1, 探测位置9，发生第二次碰撞，d= 2,探测位置1，位置1为空，将58插入位置1。69同理。
@@ -2627,7 +2921,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;h3 id=&quot;section-5&quot;&gt;单独链表法&lt;/h3&gt;
 &lt;p&gt;它的思想是将散列到同一个存储位置的所有元素保存在一个链表中。即为链接List的顺序List。对于有相同的f(key)的key值构成了一个链表，而所有的这些链表组成的数组就是单独链接法得到的哈希表，如下图所示:
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/6.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/6.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/6.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-6&quot;&gt;单独链表法的平均探测次数&lt;/h3&gt;
@@ -2647,13 +2941,13 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;h3 id=&quot;section-7&quot;&gt;满二叉树&lt;/h3&gt;
 &lt;p&gt;一棵深度为k，且有2^k-1个节点称之为满二叉树，如下图所示
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-8&quot;&gt;完全二叉树&lt;/h3&gt;
 &lt;p&gt;完全二叉树又叫做堆，它是深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中序号为1至n的节点对应时，称之为完全二叉树。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/2.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-9&quot;&gt;二叉树的遍历&lt;/h3&gt;
@@ -2663,7 +2957,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 后序遍历：左子树-&amp;gt;右子树-&amp;gt;根节点
 例如：求下面树的三种遍历
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;前序遍历：abdefgc&lt;/p&gt;
@@ -2682,7 +2976,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;/ul&gt;
 
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/7.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/7.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/7.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/7.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -2690,18 +2984,18 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;/ul&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/8.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/8.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/8.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;section-11&quot;&gt;图的遍历&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;p&gt;采用深度优先搜索和广度优先搜索的方法遍历图。（见下文：基本算法－基于图论的算法）&lt;/p&gt;
 
 &lt;h3 id=&quot;section-12&quot;&gt;拓扑排序&lt;/h3&gt;
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/08/9.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/08/9.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/08/9.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;h1 id=&quot;section-13&quot;&gt;基本算法&lt;/h1&gt;
@@ -3155,19 +3449,19 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/DS%2BCourse%2BReview&quot;&gt;SE 数据结构课程总结&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/DS%2BCourse%2BReview&quot;&gt;SE 数据结构课程总结&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[一种简单适配iOS开发中各种屏幕的投机取巧方法]]></title>
-  <link>http://jeason.me/blog/View%2Bin%2BView</link>
-  <id>http://jeason.me/blog/View+in+View</id>
+  <link>http://localhost:4000/blog/View%2Bin%2BView</link>
+  <id>http://localhost:4000/blog/View+in+View</id>
   <published>2014-03-02T00:00:00+08:00</published>
   <updated>2014-03-02T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;正如标题所说，Jeason想出来的这个方法是投机取巧式的，是有一定适用条件的。在这里，我不会将IOS中不同尺寸不同系统的适配问题统统讲完，不过会在后面给出其他适配方法的链接。&lt;/p&gt;
@@ -3214,13 +3508,13 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;p&gt;为了方便说明这个方法，我随手弄了一个小project，如下图所示，虽然丑了点，不过大概能表达出真实的情况。
   这是一个登录页面，上面有很多个必要的控件而且有一个iOS7风格的导航栏，还有背景图。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/1.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/1.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/1.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;现在这样在3.5寸，iOS7的模拟器上运行视觉上是OK的。（不要问我为什么会这么丑，这只是demo）问题主要是出现在当在iOS6上和4寸的模拟器上时，会出现比较大的问题，如下所示。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/2.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/2.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/3.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/3.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/2.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/3.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;正如第一张图所示，iOS6的self.view.frame的零点是在状态栏以下的位置，而iOS7的则是在整个屏幕的最左上方位置，两者纵坐标相差20px。而第二张图则说明了另一个问题，就是在依靠xib搭建的界面元素不会动态地去布局。&lt;/p&gt;
@@ -3231,7 +3525,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 
 &lt;h3 id=&quot;view&quot;&gt;引入内层View&lt;/h3&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/4.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/4.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/4.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;ul&gt;
@@ -3245,7 +3539,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;h3 id=&quot;autolayout&quot;&gt;使用autolayout&lt;/h3&gt;
 &lt;p&gt;正如上面所说的，我们是要让内层view整体平移，所以只需在内层view上添加autolayout就可以了。首先不管是iOS6还是iOS7中，内层view的底/左/右端和外层view的底/左/右端的距离都为0。所以通过xib中添加这三个constrains就可以了，如下图所示。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/5.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/5.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/5.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;那个小红点是由我们只确定了下左右的constrains，而对上端没有约束造成的。对于内层view的上端和外层view的距离，我们希望它在iOS6中为－20px，即在iOS6中内层view上推20px，而在iOS7中为0px。这种动态效果是要靠代码中来实现的。&lt;/p&gt;
@@ -3295,7 +3589,7 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 
 &lt;p&gt;关于autolayout的使用，可以参考Apple中关于&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Introduction/Introduction.html&quot;&gt;autolayout的文档&lt;/a&gt;。现在，我们再运行一下模拟器，可以看到iOS6中已经可以显示正常了。不过在4寸屏幕上的问题仍然没有解决。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/6.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/6.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/6.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;p&gt;不过没有关系，我们有autolayout!&lt;/p&gt;
 
@@ -3303,13 +3597,13 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;p&gt;4寸屏幕主要是让背景图片可以伸缩填充整个屏幕，所以要在背景图片的imageView上添加高度为greater than current value的constrains，底部距离内层View为0px的constrains就可以了，如图所示。&lt;/p&gt;
 
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/9.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/9.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/9.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;至此所有的适配工作已经完成，整个页面可以在iOS6/iOS7，3.5/4寸屏幕上显示基本正常。
 &lt;figure class=&quot;half&quot;&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/7.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/7.jpg&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;http://jeason.me/images/2014/03/02/8.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/2014/03/02/8.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/7.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/2014/03/02/8.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-3&quot;&gt;总结&lt;/h2&gt;
@@ -3344,19 +3638,19 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 &lt;/ol&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 02, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/View%2Bin%2BView&quot;&gt;一种简单适配iOS开发中各种屏幕的投机取巧方法&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 02, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[漫游中大]]></title>
-  <link>http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</link>
-  <id>http://jeason.me/album/漫游中大</id>
+  <link>http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7</link>
+  <id>http://localhost:4000/album/漫游中大</id>
   <published>2014-03-01T00:00:00+08:00</published>
   <updated>2014-03-01T00:00:00+08:00</updated>
   <author>
     <name>Jeason George</name>
-    <uri>http://jeason.me</uri>
+    <uri>http://localhost:4000</uri>
     <email>sysu.ss.jeason@gmail.com</email>
   </author>
   <content type="html">&lt;blockquote&gt;
@@ -3371,51 +3665,51 @@ static NSString *dateFormat = @&quot;yyyy-MM-dd&quot;;
 
 &lt;p&gt;1.广州的地铁几乎可以带你游遍广州任意角落。到康乐园，只需搭上八号线，然后从拥挤喧哗的鹭江地铁口出来，沿着马路直走100米左右，便可以到中大南校区的东门所在。走进门内，迎来的是另一个世界。&lt;/p&gt;
 &lt;figure&gt;
-&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1990.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1990.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1990.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;2.在校道飞驰来往的车辆和两排稀稀落落的便利商店，似乎是宁静美丽的康乐园与嘈杂不堪的中间地带。这里链接着校园与外部，书香与尾气，宁静与浮华。校道的两旁,有着各式各样的涂鸦与横幅，彰显着校园的青春气息。
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1989.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1989.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1988.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1988.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1978.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1978.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1989.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1989.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1988.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1988.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1978.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1978.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;3.当你经过旁边的小路进入校园内部的时候，康乐园就开始忍不住像你展示它的美丽了。古树，红楼，美女；花香，鸟语，人闹。它就像是一个世外桃源一般，吸引着任何向往祥和的生灵。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1977.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1977.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1980.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1980.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1977.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1980.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1983.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1983.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1985.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1985.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1971.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1971.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1983.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1985.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1971.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;4.校园内几乎每一个关键的道路口都会有明确的标示，提醒人们不要被美不胜收的校园迷惑了方向。按照路牌指示，我向&lt;a href=&quot;http://library.sysu.edu.cn/web/guest/index&quot;&gt;图书馆&lt;/a&gt;前进。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1981.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1981.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1981.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1981.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1982.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;5.当然那么美丽的校园，图书馆自然不是读书的唯一去处，去图书馆借一本自己喜欢的小说，或坐在木椅或坐在草坪，那都是非常不错的选择。
 &lt;figure class=&quot;third&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1974.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1974.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1974.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1986.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1984.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;6.终于，我沿着路旁参天的古树，来到了周围一片肃静的图书馆。凭着中山大学的校园卡刷卡入馆去了～。
 &lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1970.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1970.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://jeason.me/images/gallery/IMG_1969.jpg&quot;&gt;&lt;img src=&quot;http://jeason.me/images/gallery/IMG_1969.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1970.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gallery/IMG_1969.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;figure&gt;
 	&lt;figcaption&gt;漫步康乐园&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://jeason.me/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7&quot;&gt;漫游中大&lt;/a&gt; Jeason George at &lt;a href=&quot;http://jeason.me&quot;&gt;Jeason&lt;/a&gt; March 01, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/album/%E6%BC%AB%E6%B8%B8%E4%B8%AD%E5%A4%A7&quot;&gt;漫游中大&lt;/a&gt; Jeason George at &lt;a href=&quot;http://localhost:4000&quot;&gt;Jeason&lt;/a&gt; March 01, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>
